@@ -51,7 +51,7 @@ model = "gpt-3.5-turbo"
 
 # %%
 input_data = "./data/php_21.01.2024.json"
-output_filename = "./data/php_ChatGPT_English.json"
+output_filename = f"./data/php_ChatGPT_{output_language}.json"
 book_name = "Philippians"
 
 # %%
@@ -83,7 +83,12 @@ The gloss for this in French is:
 {chunk['gloss']}
 ```
 
-What is the gloss for this in {output_language}?  Mark added words not found the Greek but needed by {output_language} with *asterisks*. Output the answer in JSON.
+What is the gloss for these specific words in {output_language}?  Mark supplemental implicit words with *asterisks* in the gloss. Output the answer in JSON.
+
+Example output:
+```json
+{{"gloss": "proclaim *the* Christ"}}
+```
 """.strip()
 
 # %%
@@ -127,18 +132,13 @@ def extract_answer_from_response( _response ):
     for key, value in response.items():
         if output_language.lower() in key.lower():
             return value
+        
+    #see if the key "gloss" works.
+    if 'gloss' in response:
+        return response['gloss']
 
     raise ValueError("Result not in expected format.")   
 
-# %%
-test_verse_index = 0
-test_chunk_index = 0
-
-# %%
-
-test_response = generate_gloss_for( data, test_verse_index, test_chunk_index, book_name )
-
-print( extract_answer_from_response( test_response ) )
 
 # %%
 def number_of_verses( _data ):
@@ -146,24 +146,49 @@ def number_of_verses( _data ):
 def number_of_chunks( _data, verse_index ):
     return len(_data[verse_index]['chunks'])
 
-print( f"Number of verses: {number_of_verses(data)}" )
-print( f"Number of chunks in {test_verse_index}: {number_of_chunks(data, test_verse_index)}" )
-
-# %%
-test_response
 
 # %%
 output_data = copy.deepcopy(data)
 
-for verse_index in range(0, number_of_verses(data)):
-    for chunk_index in range(0, number_of_chunks(data, verse_index)):
-        response = generate_gloss_for( data, verse_index, chunk_index, book_name )
-        answer = extract_answer_from_response( response )
-        output_data[verse_index]['chunks'][chunk_index]['gloss'] = answer
+verse_index = 0
+chunk_index = 0
+
+# %%
+
+#append to process.log
+with open( "process.log", "a" ) as fout:
+    done = False
+
+    while not done:
+
+        if verse_index >= number_of_verses(data):
+            done = True
+
+        if not done:
+            fout.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
+            fout.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, book_name )}\n\n")
+
+            response = generate_gloss_for( data, verse_index, chunk_index, book_name )
+
+            fout.write( f"Response:\n{response.choices[0].message.content}\n\n" )
+
+            answer = extract_answer_from_response( response )
+
+            fout.write( f"Answer:\n{answer}\n\n" )
+            fout.flush()
+
+            output_data[verse_index]['chunks'][chunk_index]['gloss'] = answer
+
+            chunk_index += 1
+            if chunk_index >= number_of_chunks(data, verse_index):
+                verse_index += 1
+                chunk_index = 0
+
+
 
 # %%
 with open( output_filename, 'w' ) as fout:
-    fout.write( json.dumps( output_data ), indent=4 )
+    fout.write( json.dumps( output_data, indent=4 ) )
 
 # %%
 
