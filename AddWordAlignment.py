@@ -5,7 +5,7 @@
 import getpass, json, re, copy, os
 
 
-host_local = True
+host_local = False
 
 if not host_local:
     from openai import OpenAI
@@ -91,15 +91,11 @@ This is the output gloss from the previous translation:
 {_n.join( str(index) + ': ' + token for index, token in enumerate(tokenized_gloss) ) }
 ```
 
-Which source word translates to the word `{gloss_index}: {tokenized_gloss[gloss_index]}` or is it implicit?
+Don't mention any of the other source words in your response.
 
-Respond with the index(s) of the greek word, or `-1` for supplemental implicit words.
-Multiple indexes should be separated by commas.
+If the word is implicit, say so.
 
-Example output:
-```
-[0]
-```
+Which source word translates to the word "{gloss_index}: {tokenized_gloss[gloss_index]}" or is it implicit?
 """.strip()
 
 # %%
@@ -128,24 +124,85 @@ def map_gloss_token( _data, verse_index, chunk_index, gloss_index, _book_name ):
         return response[0]['generated_text'][-1]['content']
 
 
-def extract_answer_from_response( _response ):
+def extract_answer_from_response( _response, source_words ):
     
-    extractor_regular_expression = r"(```)?(?:json)?\[(?P<list_data>.*?)\](```)?"
-    match = re.search(extractor_regular_expression, _response, re.DOTALL)
 
-    if not match:
-        #see if it is a raw list of numbers.
-        try:
-            return [int(x) for x in _response.split(',') if int(x) >= 0]
-        except ValueError:
-            raise ValueError("Result not in expected format.")
+    #see if it is a raw list of numbers.
+    try:
+        return [int(x) for x in _response.split(',') if int(x) >= 0]
+    except ValueError:
 
-    extracted_data = match.group('list_data')
+        #'The word "the" in the English translation is implicit. The Greek source words in this context are "Χριστῷ" (Christ) and "Ἰησοῦ" (Jesus). The word "the" is not directly translated from the Greek source words but is understood in the English sentence structure.'
+        implicit_keys = [
+            "is implicit", "is implied", "not directly translated from"
+        ]
+        #if the response includes this then it is an implied word    
+        for key in implicit_keys:
+            if key in _response:
+                return []
+        #compile all the quoted text in the response.
+        quoted_strings = re.findall(r'"(.*?)"', _response) + re.findall(r"'(.*?)'", _response)
 
-    #now parse the json.
-    parsed_data = [int(x) for x in extracted_data.split(',') if int(x) >= 0]
+        #also add in the ``` ``` quoted items.`
+        quoted_strings += re.findall(r'```(.*?)```', _response, re.DOTALL)
 
-    return parsed_data 
+        if quoted_strings:
+            quoted_strings = [x.strip().replace('.', '').replace(',', '') for x in quoted_strings]
+
+            #see if any of the source words are exactly in the quoted_strings.
+            result = []
+            for source_index, source_word in enumerate(source_words):
+                if source_word['content'] in quoted_strings:
+                    result.append(source_index)
+            if result:
+                return result
+            
+            #Now see if the source words with an index on the front is in the quoted_strings.
+            result = []
+            for source_index, source_word in enumerate(source_words):
+                if str(source_index) + ': ' + source_word['content'] in quoted_strings:
+                    result.append(source_index)
+            if result:
+                return result
+
+            #see if any of the source words are in any of the quoted_strings.
+            result = []
+            for source_index, source_word in enumerate(source_words):
+                for quoted_string in quoted_strings:
+                    if source_word['content'] in quoted_string:
+                        result.append(source_index)
+            if result:
+                return result
+            
+
+            #see if any of the quoted_strings are indexes.
+            result = []
+            for source_index, source_word in enumerate(source_words):
+                for quoted_string in quoted_strings:
+                    if str(source_index) == quoted_string:
+                        result.append(source_index)
+            if result:
+                return result
+            
+        #see if the words are in the response loose with an index
+        result = []
+        for source_index, source_word in enumerate(source_words):
+            if str(source_index) + ': ' + source_word['content']  in _response:
+                result.append(source_index)
+        if result:
+            return result
+
+        #see if any of the source words are in the response but not quoted.
+        result = []
+        for source_index, source_word in enumerate(source_words):
+            if source_word['content'] in _response:
+                result.append(source_index)
+        if result:
+            return result
+
+    raise ValueError("Result not in expected format.")
+
+
 
 # %%
 def number_of_verses( _data ):
@@ -185,7 +242,7 @@ with open( "match_process.log", "a" ) as fout:
 
             fout.write( f"Response:\n{response}\n\n" )
 
-            answer = extract_answer_from_response( response )
+            answer = extract_answer_from_response( response, data[verse_index]['chunks'][chunk_index]['source'] )
 
             fout.write( f"Answer:\n{answer}\n\n" )
             fout.flush()
@@ -196,6 +253,11 @@ with open( "match_process.log", "a" ) as fout:
             gloss_tokenized = strip_and_tokenize_gloss( output_data[verse_index]['chunks'][chunk_index]['gloss'] )
             source_words = output_data[verse_index]['chunks'][chunk_index]['source']
             output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'][ f"{gloss_index}: {gloss_tokenized[gloss_index]}" ] = [f"{index}: {source_words[index]['content']}" for index in answer]
+
+            fout.write( "gloss_mapping:\n" )
+            fout.write( json.dumps( output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'], indent=4 ) )
+            fout.write( "\n\n" )
+            fout.flush()
 
             #update the indexes
             gloss_index += 1

@@ -34,7 +34,38 @@ for input_file in glob.glob(input_files):
         chunk_index = 0
         last_reference = ""
 
-        fout.write("<html><body>\n")
+        fout.write( """
+<html>
+<title>{output_file}</title>
+<style>
+    /* Internal CSS */
+    .navy-blue { color: navy; }
+    .forest-green { color: forestgreen; }
+    .burgundy { color: #800020; }
+    .goldenrod { color: goldenrod; }
+    .slate-gray { color: slategray; }
+    .deep-purple { color: deeppurple; }
+    .teal { color: teal; }
+    .maroon { color: maroon; }
+    .olive-green { color: olive; }
+    .royal-blue { color: royalblue; }
+</style>
+</head>
+<body>
+""".strip() )
+        colors = [
+            "navy-blue",
+            "forest-green",
+            "burgundy",
+            "goldenrod",
+            "slate-gray",
+            "deep-purple",
+            "teal",
+            "maroon",
+            "olive-green",
+            "royal-blue",
+        ]
+        
         while not done:
 
             if verse_index >= number_of_verses(data):
@@ -50,6 +81,11 @@ for input_file in glob.glob(input_files):
 
                 reference = f"{book_name} {first_piece['cv']}"
                 verse_text = f"{verse['sourceString']}"
+
+                gloss_mapping = None
+                if 'gloss_mapping' in chunk: 
+                    gloss_mapping = chunk['gloss_mapping']
+
                 if reference != last_reference:
                     if table_open:
                         fout.write("</table>\n")
@@ -66,9 +102,27 @@ for input_file in glob.glob(input_files):
                     last_reference = reference
 
 
+                if not gloss_mapping:
+                    greek_piece = ' '.join(source['content'] for source in sources)
+                else:
+                    greek_pieces_html = []
+                    for index, source in enumerate(sources):
+                        greek_pieces_html.append( f"<span class='{colors[index % len(colors)]}'>{source['content']}</span>" )
+                    greek_piece = ' '.join(greek_pieces_html)
 
-                greek_piece = ' '.join(source['content'] for source in sources)
-                output_piece = chunk['gloss']
+                if not gloss_mapping:
+                    output_piece = chunk['gloss']
+                else:
+                    output_pieces_html = []
+                    for target, sources in gloss_mapping.items():
+                        target_word = target.split(":")[1].strip()
+                        if sources:
+                            source = sources[0] #can't color it multiple colors so just take the first color.
+                            source_index = int(source.split(":")[0].strip())
+                            output_pieces_html.append( f"<span class='{colors[source_index % len(colors)]}'>{target_word}</span>" )
+                        else:
+                            output_pieces_html.append( f"<i>{target_word}</i>" )
+                    output_piece = ' '.join( output_pieces_html )
 
                 #fout.write(f"<li>{greek_piece} - {output_piece}</li>")
                 #fout.write(f"<li style='display: flex; justify-content: space-between;'>{greek_piece} - {output_piece}</li>")
