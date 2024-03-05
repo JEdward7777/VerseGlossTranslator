@@ -10,27 +10,6 @@ from transformers import pipeline
 output_language = "English"
 
 # %%
-def generate_prompt_string( _data, verse_index, chunk_index, _book_name ):
-    verse = _data[verse_index]
-    chunks = verse['chunks']
-    chunk = chunks[chunk_index]
-    sources = chunk['source']
-    first_piece = sources[0]
-
-    return f"""
-Look at this verse:
-{_book_name} {first_piece['cv']}: {verse['sourceString']}
-
-Focus on these specific words:
-{' '.join(source['content'] for source in sources)}
-
-The gloss for this in French is:
-{chunk['gloss']}
-
-What is the gloss for this in {output_language}?
-""".strip()
-
-# %%
 system_message = f"""
 You are a language professor preparing language material.  
 You are translating subsections of Bible verses from Greek and French into {output_language}.
@@ -55,6 +34,8 @@ def generate_prompt_string( _data, verse_index, chunk_index, _book_name ):
     sources = chunk['source']
     first_piece = sources[0]
 
+    _n = '\n' #f-string objection < python 3.12
+
     return f"""
 Look at this verse:
 ```
@@ -64,6 +45,11 @@ Look at this verse:
 Focus on these specific words:
 ```
 {' '.join(source['content'] for source in sources)}
+```
+
+Morphology information:
+```
+{_n.join( source['content'] + ': ' + ','.join(source['morph']) for source in sources) }
 ```
 
 The gloss for this in French is:

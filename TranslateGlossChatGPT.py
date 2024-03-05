@@ -21,26 +21,6 @@ if not openai_api_key:
 # %%
 output_language = "English"
 
-# %%
-def generate_prompt_string( _data, verse_index, chunk_index, _book_name ):
-    verse = _data[verse_index]
-    chunks = verse['chunks']
-    chunk = chunks[chunk_index]
-    sources = chunk['source']
-    first_piece = sources[0]
-
-    return f"""
-Look at this verse:
-{_book_name} {first_piece['cv']}: {verse['sourceString']}
-
-Focus on these specific words:
-{' '.join(source['content'] for source in sources)}
-
-The gloss for this in French is:
-{chunk['gloss']}
-
-What is the gloss for this in {output_language}?
-""".strip()
 
 # %%
 system_message = f"""
@@ -95,7 +75,7 @@ What is the gloss for these specific words in {output_language}?  Mark supplemen
 
 Example output:
 ```json
-{{"gloss": "proclaim *the* Christ"}}
+{{"gloss": "combined-words and *implicit words* example"}}
 ```
 """.strip()
 
