@@ -67,6 +67,8 @@ def generate_prompt_string( _data, verse_index, chunk_index, _book_name ):
     sources = chunk['source']
     first_piece = sources[0]
 
+    _n = '\n' #f-string objection < python 3.12
+
     return f"""
 Look at this verse:
 ```
@@ -76,6 +78,11 @@ Look at this verse:
 Focus on these specific words:
 ```
 {' '.join(source['content'] for source in sources)}
+```
+
+Morphology information:
+```
+{_n.join( source['content'] + ': ' + ','.join(source['morph']) for source in sources) }
 ```
 
 The gloss for this in French is:
