@@ -28,7 +28,8 @@ You are a language professor preparing language material.
 You are translating subsections of Bible verses from Greek and French into {output_language}.
 """.strip()
 #model = "gpt-3.5-turbo"
-model = "gpt-4"
+#model = "gpt-4"
+model = "gpt-4-1106-preview"
 
 # %%
 input_data = "./data/php_21.01.2024.json"

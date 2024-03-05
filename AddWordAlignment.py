@@ -49,10 +49,12 @@ book_name = "Philippians"
 
 # %%
 def strip_and_tokenize_gloss( gloss ):
+    gloss = gloss.replace( '-', ' ' ).gloss.replace( '*', ' ' ).strip()
 
-    gloss = gloss.replace( '-', ' ' ).replace( '  ', ' ' ).strip()
+    while '  ' in gloss:
+        gloss = gloss.replace( '  ', ' ' )
 
-    tokens_to_nuke = ['.', '?', '!', ',', '"', "'", '(', ')', '*']
+    tokens_to_nuke = ['.', '?', '!', ',', '"', "'", '(', ')']
     for token in tokens_to_nuke:
         gloss = gloss.replace( token, '' )
 
