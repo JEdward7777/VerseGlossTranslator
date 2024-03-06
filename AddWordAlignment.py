@@ -134,11 +134,11 @@ def extract_answer_from_response( _response, source_words ):
 
         #'The word "the" in the English translation is implicit. The Greek source words in this context are "Χριστῷ" (Christ) and "Ἰησοῦ" (Jesus). The word "the" is not directly translated from the Greek source words but is understood in the English sentence structure.'
         implicit_keys = [
-            "is implicit", "is an implicit", "is implied", "is **implicit**", "not directly translated from", "is not explicitly mentioned", "is not mapped",
+            "is implicit", "is an implicit", "is implied", "is **implicit**", "not directly translated from", "is not explicitly mentioned", "is not mapped", "No source word translates to", "No source word maps to", "None of the source words from the verse translates to", "does not have a corresponding source word",
         ]
         #if the response includes this then it is an implied word    
         for key in implicit_keys:
-            if key in _response:
+            if key.lower() in _response.lower():
                 return []
         #compile all the quoted text in the response.
         quoted_strings = re.findall(r'"(.*?)"', _response) + re.findall(r"'(.*?)'", _response)
