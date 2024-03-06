@@ -34,22 +34,25 @@ for input_file in glob.glob(input_files):
         chunk_index = 0
         last_reference = ""
 
-        fout.write( """
+        fout.write( f"""
 <html>
-<title>{output_file}</title>
-<style>
-    /* Internal CSS */
-    .navy-blue { color: navy; }
-    .forest-green { color: forestgreen; }
-    .burgundy { color: #800020; }
-    .goldenrod { color: goldenrod; }
-    .slate-gray { color: slategray; }
-    .deep-purple { color: deeppurple; }
-    .teal { color: teal; }
-    .maroon { color: maroon; }
-    .olive-green { color: olive; }
-    .royal-blue { color: royalblue; }
-</style>
+    <title>{output_file}</title>
+""".strip() )
+        
+        fout.write( """
+    <style>
+        /* Internal CSS */
+        .navy-blue { color: navy; }
+        .forest-green { color: forestgreen; }
+        .burgundy { color: #800020; }
+        .goldenrod { color: goldenrod; }
+        .slate-gray { color: slategray; }
+        .deep-purple { color: deeppurple; }
+        .teal { color: teal; }
+        .maroon { color: maroon; }
+        .olive-green { color: olive; }
+        .royal-blue { color: royalblue; }
+    </style>
 </head>
 <body>
 """.strip() )

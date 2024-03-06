@@ -159,7 +159,7 @@ with open( "hermes_process.log", "a" ) as fout:
 
 # %%
 with open( output_filename, 'w' ) as fout:
-    fout.write( json.dumps( output_data, indent=4 ) )
+    fout.write( json.dumps( output_data, indent=4, ensure_ascii=False  ) )
 
 # %%
 

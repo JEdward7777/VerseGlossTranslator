@@ -2,7 +2,7 @@
 # # Translate Gloss by ChatGPT
 
 # %%
-import getpass, json, re, copy, os
+import getpass, json, re, copy, os, time
 
 
 host_local = False
@@ -38,6 +38,7 @@ You are translating subsections of Bible verses from Greek and French into {outp
 if not host_local:
     model = "gpt-3.5-turbo"
     #model = "gpt-4"
+    #model = "gpt-4-1106-preview"
 else:
     hugging_face_model = "teknium/OpenHermes-2.5-Mistral-7B"
 
@@ -49,7 +50,7 @@ book_name = "Philippians"
 
 # %%
 def strip_and_tokenize_gloss( gloss ):
-    gloss = gloss.replace( '-', ' ' ).gloss.replace( '*', ' ' ).strip()
+    gloss = gloss.replace( '-', ' ' ).replace( '*', ' ' ).strip()
 
     while '  ' in gloss:
         gloss = gloss.replace( '  ', ' ' )
@@ -136,7 +137,7 @@ def extract_answer_from_response( _response, source_words ):
 
         #'The word "the" in the English translation is implicit. The Greek source words in this context are "Χριστῷ" (Christ) and "Ἰησοῦ" (Jesus). The word "the" is not directly translated from the Greek source words but is understood in the English sentence structure.'
         implicit_keys = [
-            "is implicit", "is implied", "not directly translated from"
+            "is implicit", "is an implicit", "is implied", "is **implicit**", "not directly translated from", "is not explicitly mentioned",
         ]
         #if the response includes this then it is an implied word    
         for key in implicit_keys:
@@ -202,7 +203,7 @@ def extract_answer_from_response( _response, source_words ):
         if result:
             return result
 
-    raise ValueError("Result not in expected format.")
+    raise ValueError(f"Result not in expected format: {_response}")
 
 
 
@@ -227,56 +228,70 @@ chunk_index = 0 #TODO: make sure this is zero.
 gloss_index = 0
 # %%
 
+starting_time = time.time()
+
 #append to match_process.log
 with open( "match_process.log", "a" ) as fout:
     done = False
 
     while not done:
 
-        if gloss_index >= number_of_gloss_tokens(data, verse_index, chunk_index):
+        if verse_index >= number_of_verses(data):
             done = True
 
         if not done:
             fout.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
             fout.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, gloss_index, book_name )}\n\n")
 
-            response = map_gloss_token( data, verse_index, chunk_index, gloss_index, book_name )
+            #if we fail to extract an answer from the response we want to loop.
+            try:
 
-            fout.write( f"Response:\n{response}\n\n" )
+                response = map_gloss_token( data, verse_index, chunk_index, gloss_index, book_name )
 
-            answer = extract_answer_from_response( response, data[verse_index]['chunks'][chunk_index]['source'] )
+                fout.write( f"Response:\n{response}\n\n" )
 
-            fout.write( f"Answer:\n{answer}\n\n" )
-            fout.flush()
+                answer = extract_answer_from_response( response, data[verse_index]['chunks'][chunk_index]['source'] )
 
-            if 'gloss_mapping' not in output_data[verse_index]['chunks'][chunk_index]:
-                output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'] = {}
+                fout.write( f"Answer:\n{answer}\n\n" )
+                fout.flush()
 
-            gloss_tokenized = strip_and_tokenize_gloss( output_data[verse_index]['chunks'][chunk_index]['gloss'] )
-            source_words = output_data[verse_index]['chunks'][chunk_index]['source']
-            output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'][ f"{gloss_index}: {gloss_tokenized[gloss_index]}" ] = [f"{index}: {source_words[index]['content']}" for index in answer]
+                if 'gloss_mapping' not in output_data[verse_index]['chunks'][chunk_index]:
+                    output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'] = {}
 
-            fout.write( "gloss_mapping:\n" )
-            fout.write( json.dumps( output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'], indent=4 ) )
-            fout.write( "\n\n" )
-            fout.flush()
+                gloss_tokenized = strip_and_tokenize_gloss( output_data[verse_index]['chunks'][chunk_index]['gloss'] )
+                source_words = output_data[verse_index]['chunks'][chunk_index]['source']
+                output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'][ f"{gloss_index}: {gloss_tokenized[gloss_index]}" ] = [f"{index}: {source_words[index]['content']}" for index in answer]
 
-            #update the indexes
-            gloss_index += 1
+                fout.write( "gloss_mapping:\n" )
+                fout.write( json.dumps( output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'], indent=4, ensure_ascii=False ) )
+                fout.write( "\n\n" )
+                fout.flush()
 
-            if gloss_index >= number_of_gloss_tokens(data, verse_index, chunk_index):
-                chunk_index += 1
-                gloss_index = 0
+                #update the indexes
+                gloss_index += 1
 
-            if chunk_index >= number_of_chunks(data, verse_index):
-                verse_index += 1
-                chunk_index = 0
+                if gloss_index >= number_of_gloss_tokens(data, verse_index, chunk_index):
+                    chunk_index += 1
+                    gloss_index = 0
 
+                if chunk_index >= number_of_chunks(data, verse_index):
+                    verse_index += 1
+                    chunk_index = 0
+
+                    now = time.time()
+                    end_estimation_time = now + (now - starting_time) * (number_of_verses(data) - verse_index) / (verse_index)
+                    print( f"Estimated end time: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
+
+            except ValueError as e:
+                fout.write( f"Error: {e}\n" )
+                fout.flush()
+                time.sleep(10)
+                print( f"Retrying verse {verse_index} chunk {chunk_index} because of {e}" )
 
 
 # %%
 with open( output_filename, 'w' ) as fout:
-    fout.write( json.dumps( output_data, indent=4 ) )
+    fout.write( json.dumps( output_data, indent=4, ensure_ascii=False  ) )
 
 # %%
 
