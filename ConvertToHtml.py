@@ -1,7 +1,12 @@
 # %%
 
 input_files = "./data/*.json"
-book_name = "Philippians"
+
+book_name_map = {
+    "jud13.json": "Jude",
+    "Mat67.json": "Matthew",
+    "php_21.01.2024.json": "Philippians",
+}
 
 # %%
 
@@ -19,6 +24,11 @@ def number_of_chunks( _data, verse_index ):
 
 #iterate through input files using glob.
 for input_file in glob.glob(input_files):
+    if input_file in book_name_map:
+        book_name = book_name_map[input_file]
+    else:
+        book_name = input_file.split("/")[-1].split(".")[0]
+
     with open(input_file) as fin:
         data = json.load(fin)
 
