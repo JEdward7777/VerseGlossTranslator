@@ -298,7 +298,7 @@ with open( "match_process.log", "a" ) as fout:
 
                 now = time.time()
                 end_estimation_time = now + (now - starting_time) * (number_of_verses(data) - verse_index) / (verse_index)
-                print( f"Estimated end time: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
+                print( f"Estimated end time: {time.strftime('%Y-%m-%d %I:%M:%S %p', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
 
 
 

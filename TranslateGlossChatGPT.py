@@ -2,7 +2,7 @@
 # # Translate Gloss by ChatGPT
 
 # %%
-import getpass, json, re, copy, os
+import getpass, json, re, copy, os, time
 from openai import OpenAI
 
 # %%
@@ -19,8 +19,7 @@ if not openai_api_key:
     openai_api_key = getpass.getpass("OpenAI api key?")
 
 # %%
-output_language = "English"
-
+output_language = "Farsi"
 
 # %%
 system_message = f"""
@@ -143,9 +142,10 @@ verse_index = 0
 chunk_index = 0
 
 # %%
+starting_time = time.time()
 
 #append to process.log
-with open( "process.log", "a" ) as fout:
+with open( f"{book_name}_{output_language}_process.log", "w" ) as process_out:
     done = False
 
     while not done:
@@ -154,17 +154,17 @@ with open( "process.log", "a" ) as fout:
             done = True
 
         if not done:
-            fout.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
-            fout.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, book_name )}\n\n")
+            process_out.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
+            process_out.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, book_name )}\n\n")
 
             response = generate_gloss_for( data, verse_index, chunk_index, book_name )
 
-            fout.write( f"Response:\n{response.choices[0].message.content}\n\n" )
+            process_out.write( f"Response:\n{response.choices[0].message.content}\n\n" )
 
             answer = extract_answer_from_response( response )
 
-            fout.write( f"Answer:\n{answer}\n\n" )
-            fout.flush()
+            process_out.write( f"Answer:\n{answer}\n\n" )
+            process_out.flush()
 
             output_data[verse_index]['chunks'][chunk_index]['gloss'] = answer
 
@@ -173,11 +173,16 @@ with open( "process.log", "a" ) as fout:
                 verse_index += 1
                 chunk_index = 0
 
+                now = time.time()
+                end_estimation_time = now + (now - starting_time) * (number_of_verses(data) - verse_index) / (verse_index)
+                print( f"Estimated end time: {time.strftime('%Y-%m-%d %I:%M:%S %p', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
+
+
 
 
 # %%
-with open( output_filename, 'w' ) as fout:
-    fout.write( json.dumps( output_data, indent=4, ensure_ascii=False  ) )
+with open( output_filename, 'w' ) as result_file_out:
+    result_file_out.write( json.dumps( output_data, indent=4, ensure_ascii=False  ) )
 
 # %%
 
