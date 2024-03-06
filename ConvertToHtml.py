@@ -47,7 +47,7 @@ for input_file in glob.glob(input_files):
         .burgundy { color: #800020; }
         .goldenrod { color: goldenrod; }
         .slate-gray { color: slategray; }
-        .deep-purple { color: deeppurple; }
+        .deep-purple { color: #36013F; }
         .teal { color: teal; }
         .maroon { color: maroon; }
         .olive-green { color: olive; }
@@ -110,7 +110,8 @@ for input_file in glob.glob(input_files):
                 else:
                     greek_pieces_html = []
                     for index, source in enumerate(sources):
-                        greek_pieces_html.append( f"<span class='{colors[index % len(colors)]}'>{source['content']}</span>" )
+                        morphology_title = f"{source['content']} ({','.join(source['morph'])})".replace( '"', '&quot;' ).replace( "'", '&apos;' )
+                        greek_pieces_html.append( f"<span class='{colors[index % len(colors)]}' title='{morphology_title}'>{source['content']}</span>" )
                     greek_piece = ' '.join(greek_pieces_html)
 
                 if not gloss_mapping:
@@ -121,7 +122,7 @@ for input_file in glob.glob(input_files):
                         
                         title_tag = ""
                         if 'gloss_debug' in chunk and target in chunk['gloss_debug']:
-                            source_escaped = chunk['gloss_debug'][target].replace('<','&lt;').replace('>','&gt;').replace('"','&quot;')
+                            source_escaped = chunk['gloss_debug'][target].replace('<','&lt;').replace('>','&gt;').replace('"','&quot;').replace( "'", '&apos;' )
                             title_tag = f" title=\"{source_escaped}\""
 
 
