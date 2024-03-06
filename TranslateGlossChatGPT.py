@@ -35,13 +35,20 @@ extra_ChatGPT_instructions = ""
 # book_name = "Philippians"
 # exclude_source_gloss = True #Don't include the french when producing French.
 
-output_language = "Farsi"
-input_data = "./data/php_21.01.2024.json"
+# output_language = "Farsi"
+# input_data = "./data/php_21.01.2024.json"
+# book_name = "Philippians"
+# extra_ChatGPT_instructions = "\n\nUse Christian words such as in Persion Old Version. Do not use Muslim words or Arabic words."
+
+
+output_language = "French"
+input_data = "./data/auto_11-philippians.json"
 book_name = "Philippians"
-extra_ChatGPT_instructions = "\n\nUse Christian words such as in Persion Old Version. Do not use Muslim words or Arabic words."
+exclude_source_gloss = True #Don't include the french when producing French.
 
 # %%
-output_filename = f"./data/{book_name}_ChatGPT_{output_language}.json"
+input_data_basename = os.path.basename( input_data ).split(".")[0]
+output_filename = f"./data/{input_data_basename}_ChatGPT_{output_language}.json"
 
 # %%
 system_message = f"""
@@ -68,36 +75,45 @@ def generate_prompt_string( _data, verse_index, chunk_index, _book_name ):
 
     _n = '\n' #f-string objection < python 3.12
 
-    return f"""
+    result = f"""
 Look at this verse:
 ```
 {_book_name} {first_piece['cv']}: {verse['sourceString']}
 ```
+""".lstrip()
 
+    result += f"""
 Focus on these specific words:
 ```
 {' '.join(source['content'] for source in sources)}
 ```
+"""
 
+    if any( ('morph' in source) for source in sources ):
+        result += f"""
 Morphology information:
 ```
-{_n.join( source['content'] + ': ' + ','.join(source['morph']) for source in sources) }
+{_n.join( source['content'] + ': ' + ','.join(source['morph']) for source in sources if 'morph' in source) }
 ```
+"""
 
-""" + (f"""
+    if not exclude_source_gloss:
+        result += f"""
 The gloss for this in French is:
 ```
 {chunk['gloss']}
 ```
+"""
 
-""" if not exclude_source_gloss else "") + f"""
+    result += f"""
 What is the gloss for these specific words in {output_language}?  Mark supplemental implicit words with *asterisks* in the gloss. Output the answer in JSON. {extra_ChatGPT_instructions}
 
 Example output:
 ```json
 {{"gloss": "combined-words and *implicit words* example"}}
 ```
-""".strip()
+"""
+    return result.strip()
 
 # %%
 print( generate_prompt_string( data, 0, 0, book_name ) )
@@ -118,7 +134,7 @@ def generate_gloss_for( _data, verse_index, chunk_index, _book_name ):
 
 # %%
 
-def extract_answer_from_response( _response ):
+def extract_answer_from_response( _response, greek_sentence ):
     #This checks to see if it is in a MarkDown block.
     extractor_regular_expression = r"```(?:json)?(?P<json_data>.*?)```"
     match = re.search(extractor_regular_expression, _response.choices[0].message.content, re.DOTALL)
@@ -143,6 +159,12 @@ def extract_answer_from_response( _response ):
         
     #see if the key "gloss" works.
     if 'gloss' in response:
+
+        #make sure none of the greek made it into the output.
+        for word in greek_sentence.split():
+            if word in response['gloss']:
+                raise ValueError("Greek word found in gloss.")
+
         return response['gloss']
 
     raise ValueError("Result not in expected format.")   
@@ -165,7 +187,7 @@ chunk_index = 0
 starting_time = time.time()
 
 #append to process.log
-with open( f"{book_name}_{output_language}_process.log", "w" ) as process_out:
+with open( f"{input_data_basename}_{output_language}_process.log", "w" ) as process_out:
     done = False
 
     while not done:
@@ -174,30 +196,35 @@ with open( f"{book_name}_{output_language}_process.log", "w" ) as process_out:
             done = True
 
         if not done:
-            process_out.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
-            process_out.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, book_name )}\n\n")
+            try:
+                process_out.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
+                process_out.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, book_name )}\n\n")
 
-            response = generate_gloss_for( data, verse_index, chunk_index, book_name )
+                response = generate_gloss_for( data, verse_index, chunk_index, book_name )
 
-            process_out.write( f"Response:\n{response.choices[0].message.content}\n\n" )
+                process_out.write( f"Response:\n{response.choices[0].message.content}\n\n" )
 
-            answer = extract_answer_from_response( response )
+                answer = extract_answer_from_response( response )
 
-            process_out.write( f"Answer:\n{answer}\n\n" )
-            process_out.flush()
+                process_out.write( f"Answer:\n{answer}\n\n" )
+                process_out.flush()
 
-            output_data[verse_index]['chunks'][chunk_index]['gloss'] = answer
+                output_data[verse_index]['chunks'][chunk_index]['gloss'] = answer
 
-            chunk_index += 1
-            if chunk_index >= number_of_chunks(data, verse_index):
-                verse_index += 1
-                chunk_index = 0
+                chunk_index += 1
+                if chunk_index >= number_of_chunks(data, verse_index):
+                    verse_index += 1
+                    chunk_index = 0
 
-                now = time.time()
-                end_estimation_time = now + (now - starting_time) * (number_of_verses(data) - verse_index) / (verse_index)
-                print( f"Estimated end time: {time.strftime('%Y-%m-%d %I:%M:%S %p', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
+                    now = time.time()
+                    end_estimation_time = now + (now - starting_time) * (number_of_verses(data) - verse_index) / (verse_index)
+                    print( f"Estimated end time: {time.strftime('%Y-%m-%d %I:%M:%S %p', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
 
-
+            #catch ValueError
+            except ValueError as e:
+                process_out.write( f"Error processing verse {verse_index} chunk {chunk_index}: {e}\n" )
+                process_out.flush()
+                time.sleep(10)
 
 
 # %%
