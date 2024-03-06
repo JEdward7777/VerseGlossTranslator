@@ -43,6 +43,7 @@ for input_file in glob.glob(input_files):
         verse_index = 0
         chunk_index = 0
         last_reference = ""
+        last_verse_text = ""
 
         fout.write( f"""
 <html>
@@ -93,7 +94,7 @@ for input_file in glob.glob(input_files):
                 first_piece = sources[0]
 
                 reference = f"{book_name} {first_piece['cv']}"
-                verse_text = f"{verse['sourceString']}"
+                verse_text = f"{verse['sourceString']}".replace( "'", "&apos;" ).replace( '"', "&quot;" ).replace( "<", "&lt;" ).replace( ">", "&gt;" )
 
                 gloss_mapping = None
                 if 'gloss_mapping' in chunk: 
@@ -104,9 +105,11 @@ for input_file in glob.glob(input_files):
                         fout.write("</table>\n")
                         table_open = False
 
-                    fout.write("<hr>\n")
-                    fout.write(f"<b>{reference}</b><br>\n")
-                    fout.write(f"{verse_text}\n")
+                    if verse_text != last_verse_text:
+                        fout.write( "<hr>\n" )
+                        fout.write( f"{verse_text}")
+                        last_verse_text = verse_text
+                    fout.write( f"<hr><b>{reference}</b><br><hr>\n" )
 
 
                     fout.write( "<table><tr><th>Greek</th><th>Gloss</th></tr>\n" )

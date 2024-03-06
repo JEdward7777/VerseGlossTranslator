@@ -47,6 +47,7 @@ with open(output_filename, "w") as fout:
     verse_index = 0
     chunk_index = 0
     last_reference = ""
+    last_verse_text = ""
 
     fout.write( f"""
 <html>
@@ -103,9 +104,11 @@ with open(output_filename, "w") as fout:
                     fout.write("</table>\n")
                     table_open = False
 
-                fout.write("<hr>\n")
-                fout.write(f"<b>{reference}</b><br>\n")
-                fout.write(f"{verse_text}\n")
+                if verse_text != last_verse_text:
+                    fout.write( "<hr>\n" )
+                    fout.write( f"{verse_text}")
+                    last_verse_text = verse_text
+                fout.write( f"<hr><b>{reference}</b><br><hr>\n" )
 
                 fout.write( "<table><tr><th>Greek</th>")
                 for input_config in input_files_array:
