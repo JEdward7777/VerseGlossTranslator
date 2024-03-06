@@ -7,11 +7,14 @@ input_files_array = [ {
 #     "filename": "./data/php_OpenHerm_English.json",
 #     "title": "OpenHermes English",
 # },{
-    "filename": "./data/php_ChatGPT_English.json",
-    "title": "ChatGPT English",
-},{
+#     "filename": "./data/php_ChatGPT_English.json",
+#     "title": "ChatGPT English",
+# },{
     "filename": "./data/php_ChatGPT_English_matched.json",
     "title": "ChatGPT English (matched)",
+},{
+    "filename": "./data/php_ChatGPT_Farsi.json",
+    "title": "ChatGPT Farsi",
 },{
     "filename": "./data/php_ChatGPT_Spanish.json",
     "title": "ChatGPT Spanish",

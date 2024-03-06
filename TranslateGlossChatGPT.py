@@ -18,15 +18,27 @@ if os.path.exists("config.json"):
 if not openai_api_key:
     openai_api_key = getpass.getpass("OpenAI api key?")
 
+exclude_source_gloss = False
+extra_ChatGPT_instructions = ""
 # %%
 # output_language = "Farsi"
 # input_data = "./data/php_21.01.2024.json"
 # output_filename = f"./data/php_ChatGPT_{output_language}.json"
 # book_name = "Philippians"
 
-output_language = "English"
-input_data = "./data/tite21_21.01.2024.json"
-book_name = "Titus"
+# output_language = "English"
+# input_data = "./data/tite21_21.01.2024.json"
+# book_name = "Titus"
+
+# output_language = "French"
+# input_data = "./data/php_21.01.2024.json"
+# book_name = "Philippians"
+# exclude_source_gloss = True #Don't include the french when producing French.
+
+output_language = "Farsi"
+input_data = "./data/php_21.01.2024.json"
+book_name = "Philippians"
+extra_ChatGPT_instructions = "\n\nUse Christian words such as in Persion Old Version. Do not use Muslim words or Arabic words."
 
 # %%
 output_filename = f"./data/{book_name}_ChatGPT_{output_language}.json"
@@ -72,12 +84,14 @@ Morphology information:
 {_n.join( source['content'] + ': ' + ','.join(source['morph']) for source in sources) }
 ```
 
+""" + (f"""
 The gloss for this in French is:
 ```
 {chunk['gloss']}
 ```
 
-What is the gloss for these specific words in {output_language}?  Mark supplemental implicit words with *asterisks* in the gloss. Output the answer in JSON.
+""" if not exclude_source_gloss else "") + f"""
+What is the gloss for these specific words in {output_language}?  Mark supplemental implicit words with *asterisks* in the gloss. Output the answer in JSON. {extra_ChatGPT_instructions}
 
 Example output:
 ```json
