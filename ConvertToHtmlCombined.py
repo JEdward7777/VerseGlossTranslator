@@ -118,7 +118,9 @@ with open(output_filename, "w") as fout:
 
             greek_pieces_html = []
             for index, source in enumerate(sources):
-                greek_pieces_html.append( f"<span class='{colors[index % len(colors)]}'>{source['content']}</span>" )
+                morphology_title = f"{source['content']} ({','.join(source['morph'])})".replace( '"', '&quot;' ).replace( "'", '&apos;' )
+
+                greek_pieces_html.append( f"<span class='{colors[index % len(colors)]}' title='{morphology_title}'>{source['content']}</span>" )
             greek_piece = ' '.join(greek_pieces_html)
 
 

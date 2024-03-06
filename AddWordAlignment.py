@@ -227,8 +227,7 @@ gloss_index = 0
 
 starting_time = time.time()
 
-#append to match_process.log
-with open( "match_process.log", "a" ) as fout:
+with open( f"match_{book_name}_{output_language}_process.log", "w" ) as fout:
     done = False
 
     while not done:
