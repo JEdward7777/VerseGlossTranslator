@@ -19,7 +19,7 @@ input_files_array = [ {
     "filename": "./data/php_ChatGPT_Russian.json",
     "title": "ChatGPT Russian",
 }]
-book_name = "Philippines"
+book_name = "Philippians"
 output_filename = f"./data/Combined_output_for_{book_name}.html"
 
 # %%

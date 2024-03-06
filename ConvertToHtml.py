@@ -1,7 +1,7 @@
 # %%
 
 input_files = "./data/*.json"
-book_name = "Philippines"
+book_name = "Philippians"
 
 # %%
 

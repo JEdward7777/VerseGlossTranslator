@@ -19,7 +19,17 @@ if not openai_api_key:
     openai_api_key = getpass.getpass("OpenAI api key?")
 
 # %%
-output_language = "Farsi"
+# output_language = "Farsi"
+# input_data = "./data/php_21.01.2024.json"
+# output_filename = f"./data/php_ChatGPT_{output_language}.json"
+# book_name = "Philippians"
+
+output_language = "English"
+input_data = "./data/tite21_21.01.2024.json"
+book_name = "Titus"
+
+# %%
+output_filename = f"./data/{book_name}_ChatGPT_{output_language}.json"
 
 # %%
 system_message = f"""
@@ -30,10 +40,6 @@ You are translating subsections of Bible verses from Greek and French into {outp
 #model = "gpt-4"
 model = "gpt-4-1106-preview"
 
-# %%
-input_data = "./data/php_21.01.2024.json"
-output_filename = f"./data/php_ChatGPT_{output_language}.json"
-book_name = "Philippians"
 
 # %%
 #go ahead and load the data.
