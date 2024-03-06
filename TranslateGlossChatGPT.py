@@ -65,6 +65,18 @@ model = "gpt-4-1106-preview"
 with open( input_data ) as fin:
     data = json.loads( fin.read() )
 
+def strip_and_tokenize_gloss( gloss ):
+    gloss = gloss.replace( '-', ' ' ).replace( '*', ' ' ).strip()
+
+    while '  ' in gloss:
+        gloss = gloss.replace( '  ', ' ' )
+
+    tokens_to_nuke = ['.', '?', '!', ',', '"', "'", '(', ')']
+    for token in tokens_to_nuke:
+        gloss = gloss.replace( token, '' )
+
+    return gloss.split()
+
 # %%
 def generate_prompt_string( _data, verse_index, chunk_index, _book_name ):
     verse = _data[verse_index]
@@ -134,7 +146,7 @@ def generate_gloss_for( _data, verse_index, chunk_index, _book_name ):
 
 # %%
 
-def extract_answer_from_response( _response, greek_sentence ):
+def extract_answer_from_response( _response, greek_chunk ):
     #This checks to see if it is in a MarkDown block.
     extractor_regular_expression = r"```(?:json)?(?P<json_data>.*?)```"
     match = re.search(extractor_regular_expression, _response.choices[0].message.content, re.DOTALL)
@@ -161,7 +173,7 @@ def extract_answer_from_response( _response, greek_sentence ):
     if 'gloss' in response:
 
         #make sure none of the greek made it into the output.
-        for word in greek_sentence.split():
+        for word in greek_chunk:
             if word in response['gloss']:
                 raise ValueError("Greek word found in gloss.")
 
@@ -204,7 +216,13 @@ with open( f"{input_data_basename}_{output_language}_process.log", "w" ) as proc
 
                 process_out.write( f"Response:\n{response.choices[0].message.content}\n\n" )
 
-                answer = extract_answer_from_response( response )
+
+            
+                sources = data[verse_index]['chunks'][chunk_index]['source']
+                greek_chunk = ' '.join(source['content'] for source in sources).replace( ",", "").replace( '.', '' ).replace( "?", "" ).replace( "!", "" )
+                greek_chunk = strip_and_tokenize_gloss( greek_chunk )
+
+                answer = extract_answer_from_response( response, greek_chunk )
 
                 process_out.write( f"Answer:\n{answer}\n\n" )
                 process_out.flush()
