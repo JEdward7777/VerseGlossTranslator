@@ -118,13 +118,23 @@ for input_file in glob.glob(input_files):
                 else:
                     output_pieces_html = []
                     for target, sources in gloss_mapping.items():
+                        
+                        title_tag = ""
+                        if 'gloss_debug' in chunk and target in chunk['gloss_debug']:
+                            source_escaped = chunk['gloss_debug'][target].replace('<','&lt;').replace('>','&gt;').replace('"','&quot;')
+                            title_tag = f" title=\"{source_escaped}\""
+
+
                         target_word = target.split(":")[1].strip()
                         if sources:
                             source = sources[0] #can't color it multiple colors so just take the first color.
                             source_index = int(source.split(":")[0].strip())
-                            output_pieces_html.append( f"<span class='{colors[source_index % len(colors)]}'>{target_word}</span>" )
+                            output_pieces_html.append( f"<span class='{colors[source_index % len(colors)]}'{title_tag}>{target_word}</span>" )
                         else:
-                            output_pieces_html.append( f"<i>{target_word}</i>" )
+                            output_piece = f"<i>{target_word}</i>"
+                            if title_tag:
+                                output_piece = f"<span{title_tag}>{output_piece}</span>"
+                            output_pieces_html.append( output_piece )
                     output_piece = ' '.join( output_pieces_html )
 
                 #fout.write(f"<li>{greek_piece} - {output_piece}</li>")

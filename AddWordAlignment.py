@@ -89,16 +89,13 @@ Focus on these specific source words:
 { _n.join( str(index) + ": " + source['content'] for index, source in enumerate(sources) ) }
 ```
 
-This is the output gloss from the previous translation:
+This is the output translation of the source words:
 ```
 {_n.join( str(index) + ': ' + token for index, token in enumerate(tokenized_gloss) ) }
 ```
 
-Don't mention any of the other source words in your response.
-
-If the word is implicit, say so.
-
-Which source word translates to the word "{gloss_index}: {tokenized_gloss[gloss_index]}" or is it implicit?
+Which source word, if any, translates to the output word "{gloss_index}: {tokenized_gloss[gloss_index]}"? If no source word translates to "{tokenized_gloss[gloss_index]}," state that it is not mapped.
+Don't mention any other source word in your response.
 """.strip()
 
 # %%
@@ -137,7 +134,7 @@ def extract_answer_from_response( _response, source_words ):
 
         #'The word "the" in the English translation is implicit. The Greek source words in this context are "Χριστῷ" (Christ) and "Ἰησοῦ" (Jesus). The word "the" is not directly translated from the Greek source words but is understood in the English sentence structure.'
         implicit_keys = [
-            "is implicit", "is an implicit", "is implied", "is **implicit**", "not directly translated from", "is not explicitly mentioned",
+            "is implicit", "is an implicit", "is implied", "is **implicit**", "not directly translated from", "is not explicitly mentioned", "is not mapped",
         ]
         #if the response includes this then it is an implied word    
         for key in implicit_keys:
@@ -240,58 +237,74 @@ with open( "match_process.log", "a" ) as fout:
             done = True
 
         if not done:
-            fout.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
+            fout.write( f"Processing verse {verse_index} chunk {chunk_index} gloss {gloss_index}\n" )
             fout.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, gloss_index, book_name )}\n\n")
 
             #if we fail to extract an answer from the response we want to loop.
-            try:
+            
 
-                response = map_gloss_token( data, verse_index, chunk_index, gloss_index, book_name )
+            collected_answers = []
+            found_consistency = False
+            while not found_consistency:
+                try:
+                    response = map_gloss_token( data, verse_index, chunk_index, gloss_index, book_name )
 
-                fout.write( f"Response:\n{response}\n\n" )
+                    fout.write( f"Response:\n{response}\n\n" )
 
-                answer = extract_answer_from_response( response, data[verse_index]['chunks'][chunk_index]['source'] )
+                    answer = extract_answer_from_response( response, data[verse_index]['chunks'][chunk_index]['source'] )
 
-                fout.write( f"Answer:\n{answer}\n\n" )
-                fout.flush()
+                    fout.write( f"Answer:\n{answer}\n\n" )
+                    fout.flush()
 
-                if 'gloss_mapping' not in output_data[verse_index]['chunks'][chunk_index]:
-                    output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'] = {}
+                    answer_string = ",".join([str(x) for x in answer])
 
-                gloss_tokenized = strip_and_tokenize_gloss( output_data[verse_index]['chunks'][chunk_index]['gloss'] )
-                source_words = output_data[verse_index]['chunks'][chunk_index]['source']
-                output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'][ f"{gloss_index}: {gloss_tokenized[gloss_index]}" ] = [f"{index}: {source_words[index]['content']}" for index in answer]
+                    if answer_string in collected_answers:
+                        found_consistency = True
 
-                fout.write( "gloss_mapping:\n" )
-                fout.write( json.dumps( output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'], indent=4, ensure_ascii=False ) )
-                fout.write( "\n\n" )
-                fout.flush()
+                    collected_answers.append( answer_string )
 
-                #update the indexes
-                gloss_index += 1
+                except ValueError as e:
+                    fout.write( f"Error: {e}\n" )
+                    fout.flush()
+                    time.sleep(10)
+                    print( f"Retrying verse {verse_index} chunk {chunk_index} because of {e}" )
 
-                if gloss_index >= number_of_gloss_tokens(data, verse_index, chunk_index):
-                    chunk_index += 1
-                    gloss_index = 0
+            if 'gloss_mapping' not in output_data[verse_index]['chunks'][chunk_index]:
+                output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'] = {}
 
-                if chunk_index >= number_of_chunks(data, verse_index):
-                    verse_index += 1
-                    chunk_index = 0
+            gloss_tokenized = strip_and_tokenize_gloss( output_data[verse_index]['chunks'][chunk_index]['gloss'] )
+            source_words = output_data[verse_index]['chunks'][chunk_index]['source']
+            output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'][ f"{gloss_index}: {gloss_tokenized[gloss_index]}" ] = [f"{index}: {source_words[index]['content']}" for index in answer]
 
-                    now = time.time()
-                    end_estimation_time = now + (now - starting_time) * (number_of_verses(data) - verse_index) / (verse_index)
-                    print( f"Estimated end time: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
+            fout.write( "gloss_mapping:\n" )
+            fout.write( json.dumps( output_data[verse_index]['chunks'][chunk_index]['gloss_mapping'], indent=4, ensure_ascii=False ) )
+            fout.write( "\n\n" )
+            fout.flush()
 
-            except ValueError as e:
-                fout.write( f"Error: {e}\n" )
-                fout.flush()
-                time.sleep(10)
-                print( f"Retrying verse {verse_index} chunk {chunk_index} because of {e}" )
+            if 'gloss_debug' not in output_data[verse_index]['chunks'][chunk_index]:
+                output_data[verse_index]['chunks'][chunk_index]['gloss_debug'] = {}
+            output_data[verse_index]['chunks'][chunk_index]['gloss_debug'][f"{gloss_index}: {gloss_tokenized[gloss_index]}"] = response
+
+            #update the indexes
+            gloss_index += 1
+
+            if gloss_index >= number_of_gloss_tokens(data, verse_index, chunk_index):
+                chunk_index += 1
+                gloss_index = 0
+
+            if chunk_index >= number_of_chunks(data, verse_index):
+                verse_index += 1
+                chunk_index = 0
+
+                now = time.time()
+                end_estimation_time = now + (now - starting_time) * (number_of_verses(data) - verse_index) / (verse_index)
+                print( f"Estimated end time: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
+
 
 
 # %%
-with open( output_filename, 'w' ) as fout:
-    fout.write( json.dumps( output_data, indent=4, ensure_ascii=False  ) )
+with open( output_filename, 'w' ) as fout2:
+    fout2.write( json.dumps( output_data, indent=4, ensure_ascii=False  ) )
 
 # %%
 
