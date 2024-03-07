@@ -25,14 +25,27 @@
 # book_name = "Philippians"
 # output_filename = f"./data/Combined_output_for_{book_name}.html"
 
+# #-----
+# input_files_array = [ {
+#     "filename": "./data/auto_11-philippians_ChatGPT_French.json",
+#     "title": "ChatGPT French",
+# },{
+#     "filename": "./data/auto_11-philippians_OpenHerm_English.json",
+#     "title": "OpenHerm English",
+# }]
+# book_name = "Philippians"
+# output_filename = f"./data/Combined_auto_output_for_{book_name}.html"
+
+
+#-----
 input_files_array = [ {
-    "filename": "./data/auto_11-philippians_ChatGPT_French.json",
+    "filename": "./data/auto_21-1peter_ChatGPT_French.json",
     "title": "ChatGPT French",
 },{
-    "filename": "./data/auto_11-philippians_OpenHerm_English.json",
-    "title": "OpenHerm English",
+    "filename": "./data/auto_21-1peter_ChatGPT_English.json",
+    "title": "ChatGPT English",
 }]
-book_name = "Philippians"
+book_name = "1 Peter"
 output_filename = f"./data/Combined_auto_output_for_{book_name}.html"
 
 
