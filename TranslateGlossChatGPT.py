@@ -25,6 +25,7 @@ if not openai_api_key:
 exclude_source_gloss = False
 extra_ChatGPT_instructions = ""
 reference_bible_usfx_zip = ""
+output_suffix = ""
 
 # %%
 # output_language = "Farsi"
@@ -41,12 +42,12 @@ reference_bible_usfx_zip = ""
 # book_name = "Philippians"
 # exclude_source_gloss = True #Don't include the french when producing French.
 
-output_language = "Farsi"
-input_data = "./data/php_21.01.2024.json"
-book_name = "Philippians"
-extra_ChatGPT_instructions = "\n\nUse Christian words such as in Persion Old Version. Do not use Muslim words or Arabic words."
-reference_bible_usfx_zip = "./data/Farsi_pesOPV_usfx.zip/pesOPV_usfx.xml"
-bcv_template = "PHP.{0}.{1}"
+# output_language = "Farsi"
+# input_data = "./data/php_21.01.2024.json"
+# book_name = "Philippians"
+# extra_ChatGPT_instructions = "\n\nUse Christian words such as in Persion Old Version. Do not use Muslim words or Arabic words."
+# reference_bible_usfx_zip = "./data/Farsi_pesOPV_usfx.zip/pesOPV_usfx.xml"
+# bcv_template = "PHP.{0}.{1}"
 
 
 # output_language = "French"
@@ -63,9 +64,17 @@ bcv_template = "PHP.{0}.{1}"
 # input_data = "./data/auto_21-1peter_ChatGPT_French.json"
 # book_name = "1 Peter"
 
+output_language = "French"
+input_data = "./data/auto_11-philippians.json"
+book_name = "Philippians"
+exclude_source_gloss = True #Don't include the french when producing French.
+reference_bible_usfx_zip = "./data/French_frasbl_usfx.zip/frasbl_usfx.xml"
+bcv_template = "PHP.{0}.{1}"
+output_suffix = "_frasbl"
+
 # %%
 input_data_basename = os.path.basename( input_data ).replace( ".json", "" ).replace( "_ChatGPT_French", "" )
-output_filename = f"./data/{input_data_basename}_ChatGPT_{output_language}.json"
+output_filename = f"./data/{input_data_basename}_ChatGPT_{output_language}{output_suffix}.json"
 
 # %%
 system_message = f"""
@@ -93,12 +102,42 @@ if reference_bible_usfx_zip:
             xml_string = f.read().decode('utf-8')
             bible_usfx = ET.fromstring( xml_string )
 
+
+def get_node_text( node, bcv_code, recording ):
+    #iterate inline through the tree and record all text and tail, after recording is true
+    #and then stop when we hit a different bcv code.  recording is an array so that it is
+    #passed by reference.
+
+    #trim out f nodes.  I think they are foot notes.
+    if node.tag == "f":
+        return ""
+
+    result = ""
+
+    if "bcv" in node.attrib:
+        recording[0] = node.attrib.get( "bcv" ) == bcv_code
+    
+    if recording[0]:
+        if node.text:
+            result += node.text
+
+    for child in node:
+        result += get_node_text( child, bcv_code, recording )
+
+    if recording[0]:
+        if node.tail:
+            result += node.tail
+
+    return result
+
+
 def get_context_verse( cv ):
     if bible_usfx is None: return None
     chapter, verse = cv.split( ":" )
     bcv_code = bcv_template.format( chapter, verse )
-    found_node = bible_usfx.find(f".//*[@bcv='{bcv_code}']")
-    if found_node is not None: return found_node.tail
+    result = get_node_text(bible_usfx, bcv_code, [False])
+    result = result.strip()
+    if result: return result
     return None
 
 #     print("hi")
