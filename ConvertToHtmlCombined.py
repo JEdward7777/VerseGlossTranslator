@@ -1,29 +1,40 @@
 # %%
 
+# input_files_array = [ {
+#     "filename": "./data/php_21.01.2024.json",
+#     "title": "French"
+# },{
+# #     "filename": "./data/php_OpenHerm_English.json",
+# #     "title": "OpenHermes English",
+# # },{
+# #     "filename": "./data/php_ChatGPT_English.json",
+# #     "title": "ChatGPT English",
+# # },{
+#     "filename": "./data/php_ChatGPT_English_matched.json",
+#     "title": "ChatGPT English (matched)",
+# },{
+#     "filename": "./data/php_ChatGPT_Farsi.json",
+#     "title": "ChatGPT Farsi",
+# },{
+#     "filename": "./data/php_ChatGPT_Spanish.json",
+#     "title": "ChatGPT Spanish",
+# },{
+#     "filename": "./data/php_ChatGPT_Russian.json",
+#     "title": "ChatGPT Russian",
+# }]
+# book_name = "Philippians"
+# output_filename = f"./data/Combined_output_for_{book_name}.html"
+
 input_files_array = [ {
-    "filename": "./data/php_21.01.2024.json",
-    "title": "French"
+    "filename": "./data/auto_11-philippians_ChatGPT_French.json",
+    "title": "ChatGPT French",
 },{
-#     "filename": "./data/php_OpenHerm_English.json",
-#     "title": "OpenHermes English",
-# },{
-#     "filename": "./data/php_ChatGPT_English.json",
-#     "title": "ChatGPT English",
-# },{
-    "filename": "./data/php_ChatGPT_English_matched.json",
-    "title": "ChatGPT English (matched)",
-},{
-    "filename": "./data/php_ChatGPT_Farsi.json",
-    "title": "ChatGPT Farsi",
-},{
-    "filename": "./data/php_ChatGPT_Spanish.json",
-    "title": "ChatGPT Spanish",
-},{
-    "filename": "./data/php_ChatGPT_Russian.json",
-    "title": "ChatGPT Russian",
+    "filename": "./data/auto_11-philippians_OpenHerm_English.json",
+    "title": "OpenHerm English",
 }]
 book_name = "Philippians"
-output_filename = f"./data/Combined_output_for_{book_name}.html"
+output_filename = f"./data/Combined_auto_output_for_{book_name}.html"
+
 
 # %%
 
@@ -124,7 +135,10 @@ with open(output_filename, "w") as fout:
 
             greek_pieces_html = []
             for index, source in enumerate(sources):
-                morphology_title = f"{source['content']} ({','.join(source['morph'])})".replace( '"', '&quot;' ).replace( "'", '&apos;' )
+                if any( ('morph' in source) for source in sources ):
+                    morphology_title = f"{source['content']} ({','.join(source['morph'])})".replace( '"', '&quot;' ).replace( "'", '&apos;' )
+                else:
+                    morphology_title = ""
                 greek_pieces_html.append( f"<span class='{colors[index % len(colors)]}' title='{morphology_title}'>{source['content']}</span>" )
             greek_piece = ' '.join(greek_pieces_html)
 

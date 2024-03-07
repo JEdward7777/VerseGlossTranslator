@@ -2,7 +2,7 @@
 # # Translate Gloss by ChatGPT
 
 # %%
-import getpass, json, re, copy, os
+import getpass, json, re, copy, os, time
 from transformers import pipeline
 
 
@@ -16,9 +16,15 @@ You are translating subsections of Bible verses from Greek and French into {outp
 """.strip()
 hugging_face_model = "teknium/OpenHermes-2.5-Mistral-7B"
 
+exclude_source_gloss = False
+extra_ChatGPT_instructions = "\nDon't assume the French knows which words are supplemented."
+
 # %%
-input_data = "./data/php_21.01.2024.json"
-output_filename = f"./data/php_OpenHerm_{output_language}.json"
+# input_data = "./data/php_21.01.2024.json"
+# output_filename = f"./data/php_OpenHerm_{output_language}.json"
+# book_name = "Philippians"
+input_data = "./data/auto_11-philippians_ChatGPT_French.json"
+output_filename = f"./data/auto_11-philippians_OpenHerm_{output_language}.json"
 book_name = "Philippians"
 
 # %%
@@ -36,34 +42,45 @@ def generate_prompt_string( _data, verse_index, chunk_index, _book_name ):
 
     _n = '\n' #f-string objection < python 3.12
 
-    return f"""
+    result = f"""
 Look at this verse:
 ```
 {_book_name} {first_piece['cv']}: {verse['sourceString']}
 ```
+""".lstrip()
 
+    result += f"""
 Focus on these specific words:
 ```
 {' '.join(source['content'] for source in sources)}
 ```
+"""
 
+    if any( ('morph' in source) for source in sources ):
+        result += f"""
 Morphology information:
 ```
-{_n.join( source['content'] + ': ' + ','.join(source['morph']) for source in sources) }
+{_n.join( source['content'] + ': ' + ','.join(source['morph']) for source in sources if 'morph' in source) }
 ```
+"""
 
+    if not exclude_source_gloss:
+        result += f"""
 The gloss for this in French is:
 ```
 {chunk['gloss']}
 ```
+"""
 
-What is the gloss for these specific words in {output_language}?  Mark supplemental implicit words with *asterisks* in the gloss. Output the answer in JSON.
+    result += f"""
+What is the gloss for these specific words in {output_language}?  Mark supplemental implicit words with *asterisks* in the gloss. Output the answer in JSON. {extra_ChatGPT_instructions}
 
 Example output:
 ```json
-{{"gloss": "proclaim *the* Christ"}}
+{{"gloss": "combined-words and *implicit words* example"}}
 ```
-""".strip()
+"""
+    return result.strip()
 
 # %%
 print( generate_prompt_string( data, 0, 0, book_name ) )
@@ -125,6 +142,7 @@ verse_index = 0
 chunk_index = 0
 
 # %%
+starting_time = time.time()
 
 #append to process.log
 with open( "hermes_process.log", "a" ) as fout:
@@ -136,24 +154,33 @@ with open( "hermes_process.log", "a" ) as fout:
             done = True
 
         if not done:
-            fout.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
-            fout.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, book_name )}\n\n")
+            try:
+                fout.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
+                fout.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, book_name )}\n\n")
 
-            response = generate_gloss_for( data, verse_index, chunk_index, book_name )
+                response = generate_gloss_for( data, verse_index, chunk_index, book_name )
 
-            fout.write( f"Response:\n{response}\n\n" )
+                fout.write( f"Response:\n{response}\n\n" )
 
-            answer = extract_answer_from_response( response )
+                answer = extract_answer_from_response( response )
 
-            fout.write( f"Answer:\n{answer}\n\n" )
-            fout.flush()
+                fout.write( f"Answer:\n{answer}\n\n" )
+                fout.flush()
 
-            output_data[verse_index]['chunks'][chunk_index]['gloss'] = answer
+                output_data[verse_index]['chunks'][chunk_index]['gloss'] = answer
 
-            chunk_index += 1
-            if chunk_index >= number_of_chunks(data, verse_index):
-                verse_index += 1
-                chunk_index = 0
+                chunk_index += 1
+                if chunk_index >= number_of_chunks(data, verse_index):
+                    verse_index += 1
+                    chunk_index = 0
+
+                    now = time.time()
+                    end_estimation_time = now + (now - starting_time) * (number_of_verses(data) - verse_index) / (verse_index)
+                    print( f"Estimated end time: {time.strftime('%Y-%m-%d %I:%M:%S %p', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
+
+            except ValueError as e:
+                fout.write( f"Error processing verse {verse_index} chunk {chunk_index}: {e}\n" )
+                fout.flush()
 
 
 
