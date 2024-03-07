@@ -7,101 +7,44 @@ from openai import OpenAI
 import zipfile
 import xml.etree.ElementTree as ET
 
-# %%
-# see if we can get an openai api key out of a config.json file
-openai_api_key = None
-if os.path.exists("config.json"):
-    with open("config.json") as f:
-        config = json.load(f)
-        if "openai_api_key" in config:
-            openai_api_key = config["openai_api_key"]
 
 # %%
-if not openai_api_key:
-    openai_api_key = getpass.getpass("OpenAI api key?")
+def get_input_data_basename( input_data ):
+    input_data_basename = os.path.basename( input_data ).replace( ".json", "" ).replace( "_ChatGPT_French", "" )
+    return input_data_basename
+
+def get_output_filename( input_data_basename, output_language, output_suffix ):
+    output_filename = f"./data/{input_data_basename}_ChatGPT_{output_language}{output_suffix}.json"
+    return output_filename
 
 # %%
-# some defaults.
-exclude_source_gloss = False
-extra_ChatGPT_instructions = ""
-reference_bible_usfx_zip = ""
-output_suffix = ""
+def get_system_message( output_language ):
+    system_message = f"""
+    You are a language professor preparing language material.  
+    You are translating subsections of Bible verses from Greek and French into {output_language}.
+    """.strip()
+    return system_message
 
-# %%
-# output_language = "Farsi"
-# input_data = "./data/php_21.01.2024.json"
-# output_filename = f"./data/php_ChatGPT_{output_language}.json"
-# book_name = "Philippians"
-
-# output_language = "English"
-# input_data = "./data/tite21_21.01.2024.json"
-# book_name = "Titus"
-
-# output_language = "French"
-# input_data = "./data/php_21.01.2024.json"
-# book_name = "Philippians"
-# exclude_source_gloss = True #Don't include the french when producing French.
-
-# output_language = "Farsi"
-# input_data = "./data/php_21.01.2024.json"
-# book_name = "Philippians"
-# extra_ChatGPT_instructions = "\n\nUse Christian words such as in Persion Old Version. Do not use Muslim words or Arabic words."
-# reference_bible_usfx_zip = "./data/Farsi_pesOPV_usfx.zip/pesOPV_usfx.xml"
-# bcv_template = "PHP.{0}.{1}"
-
-
-# output_language = "French"
-# input_data = "./data/auto_11-philippians.json"
-# book_name = "Philippians"
-# exclude_source_gloss = True #Don't include the french when producing French.
-
-# output_language = "French"
-# input_data = "./data/auto_21-1peter.json"
-# book_name = "1 Peter"
-# exclude_source_gloss = True #Don't include the french when producing French.
-
-# output_language = "English"
-# input_data = "./data/auto_21-1peter_ChatGPT_French.json"
-# book_name = "1 Peter"
-
-output_language = "French"
-input_data = "./data/auto_11-philippians.json"
-book_name = "Philippians"
-exclude_source_gloss = True #Don't include the french when producing French.
-reference_bible_usfx_zip = "./data/French_frasbl_usfx.zip/frasbl_usfx.xml"
-bcv_template = "PHP.{0}.{1}"
-output_suffix = "_frasbl"
-extra_ChatGPT_instructions = "\n\nStick as close to the Greek as possible with a hyper literal translation."
-
-# %%
-input_data_basename = os.path.basename( input_data ).replace( ".json", "" ).replace( "_ChatGPT_French", "" )
-output_filename = f"./data/{input_data_basename}_ChatGPT_{output_language}{output_suffix}.json"
-
-# %%
-system_message = f"""
-You are a language professor preparing language material.  
-You are translating subsections of Bible verses from Greek and French into {output_language}.
-""".strip()
-#model = "gpt-3.5-turbo"
-#model = "gpt-4"
-model = "gpt-4-1106-preview"
 
 
 # %%
-bible_usfx = None
-if reference_bible_usfx_zip:
-    zip_path = reference_bible_usfx_zip.split( ".zip/" )[0] + ".zip"
-    xml_path_in_zip = reference_bible_usfx_zip.split( ".zip/" )[1]
 
-    #parse the xml tree in the zip file for usfx.
-    with zipfile.ZipFile( zip_path, 'r' ) as zip:
-        # #print out all the files in the zip file
-        # for filename in zip.namelist():
-        #     print( filename )
+def get_bible_usfx( reference_bible_usfx_zip ):
+    bible_usfx = None
+    if reference_bible_usfx_zip:
+        zip_path = reference_bible_usfx_zip.split( ".zip/" )[0] + ".zip"
+        xml_path_in_zip = reference_bible_usfx_zip.split( ".zip/" )[1]
 
-        with zip.open( xml_path_in_zip ) as f:
-            xml_string = f.read().decode('utf-8')
-            bible_usfx = ET.fromstring( xml_string )
+        #parse the xml tree in the zip file for usfx.
+        with zipfile.ZipFile( zip_path, 'r' ) as zip:
+            # #print out all the files in the zip file
+            # for filename in zip.namelist():
+            #     print( filename )
+
+            with zip.open( xml_path_in_zip ) as f:
+                xml_string = f.read().decode('utf-8')
+                bible_usfx = ET.fromstring( xml_string )
+    return bible_usfx
 
 
 def get_node_text( node, bcv_code, recording ):
@@ -132,7 +75,7 @@ def get_node_text( node, bcv_code, recording ):
     return result
 
 
-def get_context_verse( cv ):
+def get_context_verse( cv, bible_usfx, bcv_template ):
     if bible_usfx is None: return None
     chapter, verse = cv.split( ":" )
     bcv_code = bcv_template.format( chapter, verse )
@@ -146,8 +89,10 @@ def get_context_verse( cv ):
 
 # %%
 #go ahead and load the data.
-with open( input_data ) as fin:
-    data = json.loads( fin.read() )
+def get_data( input_data ):
+    with open( input_data ) as fin:
+        data = json.loads( fin.read() )
+    return data
 
 def strip_and_tokenize_gloss( gloss ):
     gloss = gloss.replace( '-', ' ' ).replace( '*', ' ' ).strip()
@@ -162,7 +107,7 @@ def strip_and_tokenize_gloss( gloss ):
     return gloss.split()
 
 # %%
-def generate_prompt_string( _data, verse_index, chunk_index, _book_name ):
+def generate_prompt_string( _data, verse_index, chunk_index, _book_name, bible_usfx, bcv_template, exclude_source_gloss, output_language, extra_ChatGPT_instructions ):
     verse = _data[verse_index]
     chunks = verse['chunks']
     chunk = chunks[chunk_index]
@@ -178,7 +123,7 @@ Look at this verse:
 ```
 """.lstrip()
     
-    reference_verse = get_context_verse( first_piece['cv'] )
+    reference_verse = get_context_verse( first_piece['cv'], bible_usfx, bcv_template )
     if reference_verse is not None:
         result += f"""
 This is a target translation:
@@ -220,13 +165,11 @@ Example output:
 """
     return result.strip()
 
-# %%
-print( generate_prompt_string( data, 0, 0, book_name ) )
+
 
 # %%
-client = OpenAI( api_key = openai_api_key )
-def generate_gloss_for( _data, verse_index, chunk_index, _book_name ):
-    prompt = generate_prompt_string( _data, verse_index, chunk_index, _book_name )
+def generate_gloss_for( _data, verse_index, chunk_index, _book_name, system_message, bible_usfx, model, bcv_template, exclude_source_gloss, output_language, extra_ChatGPT_instructions, client ):
+    prompt = generate_prompt_string( _data, verse_index, chunk_index, _book_name, bible_usfx, bcv_template, exclude_source_gloss, output_language, extra_ChatGPT_instructions )
     response = client.chat.completions.create(
         model=model,
         messages=[
@@ -239,7 +182,7 @@ def generate_gloss_for( _data, verse_index, chunk_index, _book_name ):
 
 # %%
 
-def extract_answer_from_response( _response, greek_chunk ):
+def extract_answer_from_response( _response, greek_chunk, output_language ):
     #This checks to see if it is in a MarkDown block.
     extractor_regular_expression = r"```(?:json)?(?P<json_data>.*?)```"
     match = re.search(extractor_regular_expression, _response.choices[0].message.content, re.DOTALL)
@@ -283,66 +226,171 @@ def number_of_chunks( _data, verse_index ):
 
 
 # %%
-output_data = copy.deepcopy(data)
+def get_output_data( data, input_data_basename, book_name, bible_usfx, output_language, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model, openai_api_key, output_callback=None ):
 
-verse_index = 0
-chunk_index = 0
+    if output_callback:
+        output_callback( "Starting..." )
+
+    client = OpenAI( api_key = openai_api_key )
+    
+    system_message = get_system_message( output_language )
+
+    output_data = copy.deepcopy(data)
+
+    verse_index = 0
+    chunk_index = 0
+
+
+    starting_time = time.time()
+
+    #append to process.log
+    with open( f"{input_data_basename}_{output_language}_process.log", "w" ) as process_out:
+        done = False
+
+        while not done:
+
+            if verse_index >= number_of_verses(data):
+                done = True
+
+            if not done:
+                try:
+                    process_out.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
+                    process_out.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, book_name, bible_usfx, bcv_template, exclude_source_gloss, output_language, extra_ChatGPT_instructions )}\n\n")
+
+                    response = generate_gloss_for( data, verse_index, chunk_index, book_name, system_message, bible_usfx, model, bcv_template, exclude_source_gloss, output_language, extra_ChatGPT_instructions, client )
+
+                    process_out.write( f"Response:\n{response.choices[0].message.content}\n\n" )
+
+
+                
+                    sources = data[verse_index]['chunks'][chunk_index]['source']
+                    greek_chunk = ' '.join(source['content'] for source in sources).replace( ",", "").replace( '.', '' ).replace( "?", "" ).replace( "!", "" )
+                    greek_chunk = strip_and_tokenize_gloss( greek_chunk )
+
+                    answer = extract_answer_from_response( response, greek_chunk, output_language )
+
+                    process_out.write( f"Answer:\n{answer}\n\n" )
+                    process_out.flush()
+
+                    output_data[verse_index]['chunks'][chunk_index]['gloss'] = answer
+
+                    chunk_index += 1
+                    if chunk_index >= number_of_chunks(data, verse_index):
+                        verse_index += 1
+                        chunk_index = 0
+
+                        now = time.time()
+                        end_estimation_time = now + (now - starting_time) * (number_of_verses(data) - verse_index) / (verse_index)
+                        print( f"Estimated end time: {time.strftime('%Y-%m-%d %I:%M:%S %p', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
+
+                        if output_callback:
+                            output_callback( f"Estimated end time: {time.strftime('%Y-%m-%d %I:%M:%S %p', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
+
+                #catch ValueError
+                except ValueError as e:
+                    process_out.write( f"Error processing verse {verse_index} chunk {chunk_index}: {e}\n" )
+                    process_out.flush()
+                    if output_callback:
+                        output_callback( f"Error processing verse {verse_index} chunk {chunk_index}: {e}" )
+                    time.sleep(10)
+    return output_data
 
 # %%
-starting_time = time.time()
-
-#append to process.log
-with open( f"{input_data_basename}_{output_language}_process.log", "w" ) as process_out:
-    done = False
-
-    while not done:
-
-        if verse_index >= number_of_verses(data):
-            done = True
-
-        if not done:
-            try:
-                process_out.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
-                process_out.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, book_name )}\n\n")
-
-                response = generate_gloss_for( data, verse_index, chunk_index, book_name )
-
-                process_out.write( f"Response:\n{response.choices[0].message.content}\n\n" )
-
-
-            
-                sources = data[verse_index]['chunks'][chunk_index]['source']
-                greek_chunk = ' '.join(source['content'] for source in sources).replace( ",", "").replace( '.', '' ).replace( "?", "" ).replace( "!", "" )
-                greek_chunk = strip_and_tokenize_gloss( greek_chunk )
-
-                answer = extract_answer_from_response( response, greek_chunk )
-
-                process_out.write( f"Answer:\n{answer}\n\n" )
-                process_out.flush()
-
-                output_data[verse_index]['chunks'][chunk_index]['gloss'] = answer
-
-                chunk_index += 1
-                if chunk_index >= number_of_chunks(data, verse_index):
-                    verse_index += 1
-                    chunk_index = 0
-
-                    now = time.time()
-                    end_estimation_time = now + (now - starting_time) * (number_of_verses(data) - verse_index) / (verse_index)
-                    print( f"Estimated end time: {time.strftime('%Y-%m-%d %I:%M:%S %p', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
-
-            #catch ValueError
-            except ValueError as e:
-                process_out.write( f"Error processing verse {verse_index} chunk {chunk_index}: {e}\n" )
-                process_out.flush()
-                time.sleep(10)
-
-
-# %%
-with open( output_filename, 'w' ) as result_file_out:
-    result_file_out.write( json.dumps( output_data, indent=4, ensure_ascii=False  ) )
+def write_output_data( output_data, output_filename ):
+    with open( output_filename, 'w' ) as result_file_out:
+        result_file_out.write( json.dumps( output_data, indent=4, ensure_ascii=False  ) )
 
 # %%
 
 
+#Adding a main break so I can call this script from a web gui wrapper.
+if __name__ == "__main__":
+    #I added _ prefix to everything so that I could tell when functions were taking the values from the global scope.
 
+    
+    # see if we can get an openai api key out of a config.json file
+    _openai_api_key = None
+    if os.path.exists("config.json"):
+        with open("config.json") as f:
+            config = json.load(f)
+            if "openai_api_key" in config:
+                _openai_api_key = config["openai_api_key"]
+
+    
+    if not _openai_api_key:
+        _openai_api_key = getpass.getpass("OpenAI api key?")
+
+
+    #model = "gpt-3.5-turbo"
+    #model = "gpt-4"
+    _model = "gpt-4-1106-preview"
+
+
+    #client = OpenAI( api_key = _openai_api_key )
+
+    # some defaults.
+    _exclude_source_gloss = False
+    _extra_ChatGPT_instructions = ""
+    _reference_bible_usfx_zip = ""
+    _output_suffix = ""
+
+
+    # output_language = "Farsi"
+    # input_data = "./data/php_21.01.2024.json"
+    # output_filename = f"./data/php_ChatGPT_{output_language}.json"
+    # book_name = "Philippians"
+
+    # output_language = "English"
+    # input_data = "./data/tite21_21.01.2024.json"
+    # book_name = "Titus"
+
+    # output_language = "French"
+    # input_data = "./data/php_21.01.2024.json"
+    # book_name = "Philippians"
+    # exclude_source_gloss = True #Don't include the french when producing French.
+
+    # output_language = "Farsi"
+    # input_data = "./data/php_21.01.2024.json"
+    # book_name = "Philippians"
+    # extra_ChatGPT_instructions = "\n\nUse Christian words such as in Persion Old Version. Do not use Muslim words or Arabic words."
+    # reference_bible_usfx_zip = "./data/Farsi_pesOPV_usfx.zip/pesOPV_usfx.xml"
+    # bcv_template = "PHP.{0}.{1}"
+
+
+    # output_language = "French"
+    # input_data = "./data/auto_11-philippians.json"
+    # book_name = "Philippians"
+    # exclude_source_gloss = True #Don't include the french when producing French.
+
+    # output_language = "French"
+    # input_data = "./data/auto_21-1peter.json"
+    # book_name = "1 Peter"
+    # exclude_source_gloss = True #Don't include the french when producing French.
+
+    # output_language = "English"
+    # input_data = "./data/auto_21-1peter_ChatGPT_French.json"
+    # book_name = "1 Peter"
+
+    _output_language = "French"
+    _input_data = "./data/auto_11-philippians.json"
+    _book_name = "Philippians"
+    _exclude_source_gloss = True #Don't include the french when producing French.
+    _reference_bible_usfx_zip = "./data/French_frasbl_usfx.zip/frasbl_usfx.xml"
+    _bcv_template = "PHP.{0}.{1}"
+    _output_suffix = "_frasbl"
+    _extra_ChatGPT_instructions = "\n\nStick as close to the Greek as possible with a hyper literal translation."
+
+
+    _data = get_data( _input_data )
+
+    _input_data_basename = get_input_data_basename( _input_data )
+
+    _bible_usfx = get_bible_usfx( _reference_bible_usfx_zip )
+
+    _output_data = get_output_data( _data, _input_data_basename, _book_name, _bible_usfx, _output_language, _bcv_template, _exclude_source_gloss, _extra_ChatGPT_instructions, _model, _openai_api_key )
+
+    _output_filename = get_output_filename( _input_data_basename, _output_language, _output_suffix )
+
+    write_output_data( _output_data, _output_filename )
+
+    print( "Done." )
