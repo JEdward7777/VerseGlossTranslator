@@ -138,6 +138,24 @@ def get_text( node ):
         return node.text
     else:
         return " ".join( get_text( child ) for child in node )
+    
+def get_leaves( node ):
+    if len( node ) == 0:
+        yield node
+    else:
+        for child in node:
+            yield from get_leaves( child )
+    
+def sort_nodes( nodes ):
+    def location_key( node ):
+        x = node.attrib['ref']
+        book, x = x.split( " " )
+        chapter, x = x.split(":")
+        verse, index = x.split( "!" )
+        return int(chapter),int(verse),int(index)
+    return sorted( nodes, key=location_key )
+        
+
 # %%
 def filename_to_chunked_sentences( filename ):
     tree = ET.parse(filename)
@@ -145,9 +163,13 @@ def filename_to_chunked_sentences( filename ):
 
     chunked_sentences = []
     for sentence in root:
+        leaves = list( get_leaves( sentence ) )
+        sorted_leaves = sort_nodes( leaves )
+        text = get_text( sorted_leaves ) 
+        #print_chunks( [leaves, sorted_leaves] )
         chunked_sentence = clump_singles(harvest_at_floating_depth( sentence, trim_num_leaves ), string_num_leaves)
         chunked_sentence_object = {
-            "text": get_text(sentence),
+            "text": text,
             "chunks": chunked_sentence
         }
         #print_chunked_sentences( [chunked_sentence_object] )
