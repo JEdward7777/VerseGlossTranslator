@@ -71,6 +71,7 @@ exclude_source_gloss = True #Don't include the french when producing French.
 reference_bible_usfx_zip = "./data/French_frasbl_usfx.zip/frasbl_usfx.xml"
 bcv_template = "PHP.{0}.{1}"
 output_suffix = "_frasbl"
+extra_ChatGPT_instructions = "\n\nStick as close to the Greek as possible with a hyper literal translation."
 
 # %%
 input_data_basename = os.path.basename( input_data ).replace( ".json", "" ).replace( "_ChatGPT_French", "" )

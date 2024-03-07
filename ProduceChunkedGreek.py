@@ -186,6 +186,8 @@ def transform_source( source ):
         #"morph": [], #The Clear information has a morphid which isn't the same.
         "cv": source.attrib['ref'].split(" ")[-1].split( "!" )[0]
     }
+    #The Clear strong number doesn't have a G on the front of it.
+    if not result["strong"][0].startswith( "G" ): result["strong"][0] = "G" + result["strong"][0]
     return result
 
 def transform_chunk( chunk ):
