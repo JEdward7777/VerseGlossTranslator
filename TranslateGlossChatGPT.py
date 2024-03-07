@@ -4,6 +4,8 @@
 # %%
 import getpass, json, re, copy, os, time
 from openai import OpenAI
+import zipfile
+import xml.etree.ElementTree as ET
 
 # %%
 # see if we can get an openai api key out of a config.json file
@@ -18,8 +20,12 @@ if os.path.exists("config.json"):
 if not openai_api_key:
     openai_api_key = getpass.getpass("OpenAI api key?")
 
+# %%
+# some defaults.
 exclude_source_gloss = False
 extra_ChatGPT_instructions = ""
+reference_bible_usfx_zip = ""
+
 # %%
 # output_language = "Farsi"
 # input_data = "./data/php_21.01.2024.json"
@@ -35,19 +41,30 @@ extra_ChatGPT_instructions = ""
 # book_name = "Philippians"
 # exclude_source_gloss = True #Don't include the french when producing French.
 
-# output_language = "Farsi"
-# input_data = "./data/php_21.01.2024.json"
-# book_name = "Philippians"
-# extra_ChatGPT_instructions = "\n\nUse Christian words such as in Persion Old Version. Do not use Muslim words or Arabic words."
-
-
-output_language = "French"
-input_data = "./data/auto_11-philippians.json"
+output_language = "Farsi"
+input_data = "./data/php_21.01.2024.json"
 book_name = "Philippians"
-exclude_source_gloss = True #Don't include the french when producing French.
+extra_ChatGPT_instructions = "\n\nUse Christian words such as in Persion Old Version. Do not use Muslim words or Arabic words."
+reference_bible_usfx_zip = "./data/Farsi_pesOPV_usfx.zip/pesOPV_usfx.xml"
+bcv_template = "PHP.{0}.{1}"
+
+
+# output_language = "French"
+# input_data = "./data/auto_11-philippians.json"
+# book_name = "Philippians"
+# exclude_source_gloss = True #Don't include the french when producing French.
+
+# output_language = "French"
+# input_data = "./data/auto_21-1peter.json"
+# book_name = "1 Peter"
+# exclude_source_gloss = True #Don't include the french when producing French.
+
+# output_language = "English"
+# input_data = "./data/auto_21-1peter_ChatGPT_French.json"
+# book_name = "1 Peter"
 
 # %%
-input_data_basename = os.path.basename( input_data ).split(".")[0]
+input_data_basename = os.path.basename( input_data ).replace( ".json", "" ).replace( "_ChatGPT_French", "" )
 output_filename = f"./data/{input_data_basename}_ChatGPT_{output_language}.json"
 
 # %%
@@ -58,6 +75,33 @@ You are translating subsections of Bible verses from Greek and French into {outp
 #model = "gpt-3.5-turbo"
 #model = "gpt-4"
 model = "gpt-4-1106-preview"
+
+
+# %%
+bible_usfx = None
+if reference_bible_usfx_zip:
+    zip_path = reference_bible_usfx_zip.split( ".zip/" )[0] + ".zip"
+    xml_path_in_zip = reference_bible_usfx_zip.split( ".zip/" )[1]
+
+    #parse the xml tree in the zip file for usfx.
+    with zipfile.ZipFile( zip_path, 'r' ) as zip:
+        # #print out all the files in the zip file
+        # for filename in zip.namelist():
+        #     print( filename )
+
+        with zip.open( xml_path_in_zip ) as f:
+            xml_string = f.read().decode('utf-8')
+            bible_usfx = ET.fromstring( xml_string )
+
+def get_context_verse( cv ):
+    if bible_usfx is None: return None
+    chapter, verse = cv.split( ":" )
+    bcv_code = bcv_template.format( chapter, verse )
+    found_node = bible_usfx.find(f".//*[@bcv='{bcv_code}']")
+    if found_node is not None: return found_node.tail
+    return None
+
+#     print("hi")
 
 
 # %%
@@ -93,6 +137,15 @@ Look at this verse:
 {_book_name} {first_piece['cv']}: {verse['sourceString']}
 ```
 """.lstrip()
+    
+    reference_verse = get_context_verse( first_piece['cv'] )
+    if reference_verse is not None:
+        result += f"""
+This is a target translation:
+```
+{reference_verse}
+```
+"""
 
     result += f"""
 Focus on these specific words:
