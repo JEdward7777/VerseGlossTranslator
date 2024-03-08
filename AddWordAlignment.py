@@ -276,10 +276,7 @@ def get_output_data( host_local, openai_api_key, model_name, data, book_name, ou
                         time.sleep(10)
 
                 if not found_consistency:
-                    if collected_answers:
-                        answer = collected_answers[0]
-                    else:
-                        answer = []
+                    answer = []
                     response = "No consistent answer found after " + str(MAX_RETRIES) + " retries."
                     
 

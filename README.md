@@ -12,7 +12,7 @@ Before using VerseGlossTranslator, ensure you have the OpenAI client installed. 
 pip install openai
 ```
 
-If you are going to use the Streamlit webgui, you will need to install that as well.
+If you are going to use the Streamlit web gui, you will need to install that as well.
 ```bash
 pip install streamlit
 ```
@@ -38,7 +38,7 @@ streamlit run TranslateGlossChatGPT_StreamlitGui.py
 2. Fill in the data requested by the web application.
 3. Click Translate
 
-![webgui screenshot](data/Translate_Gloss_ChatGPT_StreamLit_screenshot.png)
+![web gui screenshot](data/Translate_Gloss_ChatGPT_StreamLit_screenshot.png)
 
 # Warning:
 

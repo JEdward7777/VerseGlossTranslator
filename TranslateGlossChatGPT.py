@@ -168,29 +168,35 @@ Example output:
 
 
 # %%
-def generate_gloss_for( _data, verse_index, chunk_index, _book_name, system_message, bible_usfx, model, bcv_template, exclude_source_gloss, output_language, extra_ChatGPT_instructions, client ):
-    prompt = generate_prompt_string( _data, verse_index, chunk_index, _book_name, bible_usfx, bcv_template, exclude_source_gloss, output_language, extra_ChatGPT_instructions )
-    response = client.chat.completions.create(
-        model=model,
-        messages=[
+def generate_gloss_for( data, verse_index, chunk_index, book_name, system_message, bible_usfx, model_name, bcv_template, exclude_source_gloss, output_language, extra_ChatGPT_instructions, client_or_pipe, host_local ):
+    prompt = generate_prompt_string( data, verse_index, chunk_index, book_name, bible_usfx, bcv_template, exclude_source_gloss, output_language, extra_ChatGPT_instructions )
+    messages=[
             {"role": "system", "content": system_message},
             {"role": "user", "content": prompt}
         ]
-    )
-    #return response.choices[0].text,
-    return response
+
+    if not host_local:
+        response = client_or_pipe.chat.completions.create(
+            model=model_name,
+            messages=messages
+        )
+        #return response.choices[0].text,
+        return response.choices[0].message.content
+    else:
+        response = client_or_pipe(messages, max_new_tokens=128)
+        return response[0]['generated_text'][-1]['content']
 
 # %%
 
 def extract_answer_from_response( _response, greek_chunk, output_language ):
     #This checks to see if it is in a MarkDown block.
     extractor_regular_expression = r"```(?:json)?(?P<json_data>.*?)```"
-    match = re.search(extractor_regular_expression, _response.choices[0].message.content, re.DOTALL)
+    match = re.search(extractor_regular_expression, _response, re.DOTALL)
 
     if not match:
         #This one checks for just raw json
         extractor_regular_expression = r"(?P<json_data>\{.*\})"
-        match = re.search(extractor_regular_expression, _response.choices[0].message.content, re.DOTALL)
+        match = re.search(extractor_regular_expression, _response, re.DOTALL)
 
         if not match:
             raise ValueError("Result not in expected format.")
@@ -226,12 +232,17 @@ def number_of_chunks( _data, verse_index ):
 
 
 # %%
-def get_output_data( data, input_data_basename, book_name, bible_usfx, output_language, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model, openai_api_key, output_callback=None ):
+def get_output_data( data, input_data_basename, book_name, bible_usfx, output_language, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model_name, openai_api_key, host_local, output_callback=None ):
 
     if output_callback:
         output_callback( "Starting..." )
 
-    client = OpenAI( api_key = openai_api_key )
+    if not host_local:
+        from openai import OpenAI
+        client_or_pipe = OpenAI( api_key = openai_api_key )
+    else:
+        from transformers import pipeline
+        client_or_pipe = pipeline("text-generation", model_name)
     
     system_message = get_system_message( output_language )
 
@@ -257,9 +268,9 @@ def get_output_data( data, input_data_basename, book_name, bible_usfx, output_la
                     process_out.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
                     process_out.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, book_name, bible_usfx, bcv_template, exclude_source_gloss, output_language, extra_ChatGPT_instructions )}\n\n")
 
-                    response = generate_gloss_for( data, verse_index, chunk_index, book_name, system_message, bible_usfx, model, bcv_template, exclude_source_gloss, output_language, extra_ChatGPT_instructions, client )
+                    response = generate_gloss_for( data, verse_index, chunk_index, book_name, system_message, bible_usfx, model_name, bcv_template, exclude_source_gloss, output_language, extra_ChatGPT_instructions, client_or_pipe, host_local )
 
-                    process_out.write( f"Response:\n{response.choices[0].message.content}\n\n" )
+                    process_out.write( f"Response:\n{response}\n\n" )
 
 
                 
@@ -321,9 +332,14 @@ if __name__ == "__main__":
         _openai_api_key = getpass.getpass("OpenAI api key?")
 
 
-    #model = "gpt-3.5-turbo"
-    #model = "gpt-4"
-    _model = "gpt-4-1106-preview"
+    _host_local = False
+
+    if not _host_local:
+        #_model_name = "gpt-3.5-turbo"
+        #_model_name = "gpt-4"
+        _model_name = "gpt-4-1106-preview"
+    else:
+        _model_name = "teknium/OpenHermes-2.5-Mistral-7B"
 
 
     #client = OpenAI( api_key = _openai_api_key )
@@ -387,7 +403,7 @@ if __name__ == "__main__":
 
     _bible_usfx = get_bible_usfx( _reference_bible_usfx_zip )
 
-    _output_data = get_output_data( _data, _input_data_basename, _book_name, _bible_usfx, _output_language, _bcv_template, _exclude_source_gloss, _extra_ChatGPT_instructions, _model, _openai_api_key )
+    _output_data = get_output_data( _data, _input_data_basename, _book_name, _bible_usfx, _output_language, _bcv_template, _exclude_source_gloss, _extra_ChatGPT_instructions, _model_name, _openai_api_key, _host_local )
 
     _output_filename = get_output_filename( _input_data_basename, _output_language, _output_suffix )
 

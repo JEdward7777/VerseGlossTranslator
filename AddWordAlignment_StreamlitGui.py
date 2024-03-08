@@ -25,10 +25,10 @@ def main():
     output_language = st.text_input( f'What is the gloss language being aligned?' )
     if not output_language: ready = False
 
-    streamlit_file = st.file_uploader( f'Please provide the juxtilinear json to be aligned.')
+    streamlit_file = st.file_uploader( f'Please provide the juxtalinear json to be aligned.')
     if not streamlit_file: ready = False
 
-    host_local = st.checkbox( "Do you want to use a local HuggingFace model instead of an OpenAI model?", value=True )
+    host_local = st.checkbox( "Do you want to use a local HuggingFace model instead of an OpenAI model?", value=False )
 
     if not host_local:
         model_name = st.selectbox( 'Which OpenAI model would you like to use?', ('gpt-3.5-turbo', 'gpt-4-1106-preview', 'gpt-4') )
