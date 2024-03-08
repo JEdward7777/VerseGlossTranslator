@@ -145,7 +145,7 @@ chunk_index = 0
 starting_time = time.time()
 
 #append to process.log
-with open( "hermes_process.log", "a" ) as fout:
+with open( "hermes_process.log", "a" ) as process_file_out:
     done = False
 
     while not done:
@@ -155,17 +155,17 @@ with open( "hermes_process.log", "a" ) as fout:
 
         if not done:
             try:
-                fout.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
-                fout.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, book_name )}\n\n")
+                process_file_out.write( f"Processing verse {verse_index} chunk {chunk_index}\n" )
+                process_file_out.write( f"Prompt string:\n{generate_prompt_string( data, verse_index, chunk_index, book_name )}\n\n")
 
                 response = generate_gloss_for( data, verse_index, chunk_index, book_name )
 
-                fout.write( f"Response:\n{response}\n\n" )
+                process_file_out.write( f"Response:\n{response}\n\n" )
 
                 answer = extract_answer_from_response( response )
 
-                fout.write( f"Answer:\n{answer}\n\n" )
-                fout.flush()
+                process_file_out.write( f"Answer:\n{answer}\n\n" )
+                process_file_out.flush()
 
                 output_data[verse_index]['chunks'][chunk_index]['gloss'] = answer
 
@@ -179,14 +179,14 @@ with open( "hermes_process.log", "a" ) as fout:
                     print( f"Estimated end time: {time.strftime('%Y-%m-%d %I:%M:%S %p', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
 
             except ValueError as e:
-                fout.write( f"Error processing verse {verse_index} chunk {chunk_index}: {e}\n" )
-                fout.flush()
+                process_file_out.write( f"Error processing verse {verse_index} chunk {chunk_index}: {e}\n" )
+                process_file_out.flush()
 
 
 
 # %%
-with open( output_filename, 'w' ) as fout:
-    fout.write( json.dumps( output_data, indent=4, ensure_ascii=False  ) )
+with open( output_filename, 'w' ) as process_file_out:
+    process_file_out.write( json.dumps( output_data, indent=4, ensure_ascii=False  ) )
 
 # %%
 

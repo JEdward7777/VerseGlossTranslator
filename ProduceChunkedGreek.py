@@ -183,7 +183,7 @@ def transform_source( source ):
         "content": source.text,
         "lemma": [source.attrib['UnicodeLemma']],
         "strong": [source.attrib['StrongNumber']],
-        #"morph": [], #The Clear information has a morphid which isn't the same.
+        #"morph": [], #The Clear information has a morphid which is a reference not morph info.
         "cv": source.attrib['ref'].split(" ")[-1].split( "!" )[0]
     }
     #The Clear strong number doesn't have a G on the front of it.
@@ -209,8 +209,8 @@ def transform_sentence( sentence ):
 def convert_file( in_filename, out_filename ):
     chunked_sentences = filename_to_chunked_sentences( in_filename )
     converted_chunked_sentences = [transform_sentence( sentence ) for sentence in chunked_sentences]
-    with open( out_filename, 'w', encoding='utf-8') as fout:
-        json.dump( converted_chunked_sentences, fout, indent=2, ensure_ascii=False )
+    with open( out_filename, 'w', encoding='utf-8') as file_out:
+        json.dump( converted_chunked_sentences, file_out, indent=2, ensure_ascii=False )
 
 # %%
 #iterate over all the files.

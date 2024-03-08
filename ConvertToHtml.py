@@ -37,7 +37,7 @@ for input_file in glob.glob(input_files):
 
 
 
-    with open(output_file, "w") as fout:
+    with open(output_file, "w") as file_out:
         done = False
         table_open = False
         verse_index = 0
@@ -45,12 +45,12 @@ for input_file in glob.glob(input_files):
         last_reference = ""
         last_verse_text = ""
 
-        fout.write( f"""
+        file_out.write( f"""
 <html>
     <title>{output_file}</title>
 """.strip() )
         
-        fout.write( """
+        file_out.write( """
     <style>
         /* Internal CSS */
         .navy-blue { color: navy; }
@@ -102,17 +102,17 @@ for input_file in glob.glob(input_files):
 
                 if reference != last_reference:
                     if table_open:
-                        fout.write("</table>\n")
+                        file_out.write("</table>\n")
                         table_open = False
 
                     if verse_text != last_verse_text:
-                        fout.write( "<hr>\n" )
-                        fout.write( f"{verse_text}")
+                        file_out.write( "<hr>\n" )
+                        file_out.write( f"{verse_text}")
                         last_verse_text = verse_text
-                    fout.write( f"<hr><b>{reference}</b><br><hr>\n" )
+                    file_out.write( f"<hr><b>{reference}</b><br><hr>\n" )
 
 
-                    fout.write( "<table><tr><th>Greek</th><th>Gloss</th></tr>\n" )
+                    file_out.write( "<table><tr><th>Greek</th><th>Gloss</th></tr>\n" )
                     table_open = True
 
                     last_reference = reference
@@ -151,9 +151,9 @@ for input_file in glob.glob(input_files):
                             output_pieces_html.append( output_piece )
                     output_piece = ' '.join( output_pieces_html )
 
-                #fout.write(f"<li>{greek_piece} - {output_piece}</li>")
-                #fout.write(f"<li style='display: flex; justify-content: space-between;'>{greek_piece} - {output_piece}</li>")
-                fout.write( f"<tr><td>{greek_piece}</td><td>{output_piece}</td></tr>\n" )
+                #file_out.write(f"<li>{greek_piece} - {output_piece}</li>")
+                #file_out.write(f"<li style='display: flex; justify-content: space-between;'>{greek_piece} - {output_piece}</li>")
+                file_out.write( f"<tr><td>{greek_piece}</td><td>{output_piece}</td></tr>\n" )
 
 
                 chunk_index += 1
@@ -162,9 +162,9 @@ for input_file in glob.glob(input_files):
                     chunk_index = 0
         
         if table_open:
-            fout.write("</table>\n")
+            file_out.write("</table>\n")
             table_open = False
-        fout.write("</body></html>\n")
+        file_out.write("</body></html>\n")
 
 
 # %

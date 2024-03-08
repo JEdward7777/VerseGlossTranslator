@@ -83,7 +83,10 @@ def main():
         output_message_pane = st.empty()
 
         def output_callback( message ):
-            output_message_pane.text( message )
+            #output_message_pane.text( message )
+            output_message_pane.empty()
+            with output_message_pane:
+                st.write( message )
 
 
         output_data = TranslateGlossChatGPT.get_output_data( data, input_data_basename, book_name, bible_usfx, 
@@ -96,7 +99,6 @@ def main():
         st.download_button( label="Download the translated json", data=output_data_json, file_name=output_filename, mime="application/json" )
 
         
-        #just print done even though nothing happened yet.
         output_callback( 'Done' )
 
 

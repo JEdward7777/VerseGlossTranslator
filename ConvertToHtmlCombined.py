@@ -68,7 +68,7 @@ for input_config in input_files_array:
         input_config['data'] = json.load(fin)
         
 
-with open(output_filename, "w") as fout:
+with open(output_filename, "w") as file_out:
     done = False
     table_open = False
     verse_index = 0
@@ -76,12 +76,12 @@ with open(output_filename, "w") as fout:
     last_reference = ""
     last_verse_text = ""
 
-    fout.write( f"""
+    file_out.write( f"""
 <html>
 <title>{output_filename}</title>
 """.strip() )
     
-    fout.write( """
+    file_out.write( """
 <style>
     /* Internal CSS */
     .navy-blue { color: navy; }
@@ -128,19 +128,19 @@ with open(output_filename, "w") as fout:
 
             if reference != last_reference:
                 if table_open:
-                    fout.write("</table>\n")
+                    file_out.write("</table>\n")
                     table_open = False
 
                 if verse_text != last_verse_text:
-                    fout.write( "<hr>\n" )
-                    fout.write( f"{verse_text}")
+                    file_out.write( "<hr>\n" )
+                    file_out.write( f"{verse_text}")
                     last_verse_text = verse_text
-                fout.write( f"<hr><b>{reference}</b><br><hr>\n" )
+                file_out.write( f"<hr><b>{reference}</b><br><hr>\n" )
 
-                fout.write( "<table><tr><th>Greek</th>")
+                file_out.write( "<table><tr><th>Greek</th>")
                 for input_config in input_files_array:
-                    fout.write( "<th>" + input_config['title'] + "</th>" )
-                fout.write( "</tr>\n" )
+                    file_out.write( "<th>" + input_config['title'] + "</th>" )
+                file_out.write( "</tr>\n" )
                 table_open = True
 
                 last_reference = reference
@@ -156,7 +156,7 @@ with open(output_filename, "w") as fout:
             greek_piece = ' '.join(greek_pieces_html)
 
 
-            fout.write( "<tr><td>" + greek_piece + "</td>" )
+            file_out.write( "<tr><td>" + greek_piece + "</td>" )
 
             for input_config in input_files_array:
                 gloss_mapping = None
@@ -187,8 +187,8 @@ with open(output_filename, "w") as fout:
                                 output_piece = f"<span{title_tag}>{output_piece}</span>"
                             output_pieces_html.append( output_piece )
                     output_piece = ' '.join( output_pieces_html )
-                fout.write( f"<td>{output_piece}</td>" )
-            fout.write( "</tr>\n" )
+                file_out.write( f"<td>{output_piece}</td>" )
+            file_out.write( "</tr>\n" )
 
 
             data = input_files_array[0]['data']
@@ -199,9 +199,9 @@ with open(output_filename, "w") as fout:
                 chunk_index = 0
     
     if table_open:
-        fout.write("</table>\n")
+        file_out.write("</table>\n")
         table_open = False
-    fout.write("</body></html>\n")
+    file_out.write("</body></html>\n")
 
 
 # %
