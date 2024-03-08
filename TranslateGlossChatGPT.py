@@ -232,7 +232,7 @@ def number_of_chunks( _data, verse_index ):
 
 
 # %%
-def get_output_data( data, input_data_basename, book_name, bible_usfx, output_language, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model_name, openai_api_key, host_local, output_callback=None ):
+def get_output_data( data, input_data_basename, book_name, bible_usfx, output_language, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model_name, openai_api_key, host_local, output_callback=None, gloss_output_callback=None ):
 
     if output_callback:
         output_callback( "Starting..." )
@@ -253,6 +253,9 @@ def get_output_data( data, input_data_basename, book_name, bible_usfx, output_la
 
 
     starting_time = time.time()
+
+    if gloss_output_callback:
+        gloss_output_log = []
 
     #append to process.log
     with open( f"{input_data_basename}_{output_language}_process.log", "w" ) as process_out:
@@ -284,6 +287,10 @@ def get_output_data( data, input_data_basename, book_name, bible_usfx, output_la
                     process_out.flush()
 
                     output_data[verse_index]['chunks'][chunk_index]['gloss'] = answer
+
+                    if gloss_output_callback:
+                        gloss_output_log.append( {"greek": ' '.join(source['content'] for source in sources), "translation": answer, "cv": data[verse_index]['chunks'][chunk_index]['source'][0]['cv']} )
+                        gloss_output_callback( gloss_output_log )
 
                     chunk_index += 1
                     if chunk_index >= number_of_chunks(data, verse_index):

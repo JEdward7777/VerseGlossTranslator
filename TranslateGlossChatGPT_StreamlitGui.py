@@ -88,15 +88,28 @@ def main():
 
         output_message_pane = st.empty()
 
+        gloss_output_pane = st.empty()
+
         def output_callback( message ):
             #output_message_pane.text( message )
             output_message_pane.empty()
             with output_message_pane:
                 st.write( message )
 
+        def gloss_output_callback( gloss_log ):
+            gloss_output_pane.empty()
+            with gloss_output_pane:
+                output = "|CV|Gloss|Translation|\n"
+                output += "| -- | -- | -- |\n"
+                for gloss in gloss_log:
+                    output += f"|{book_name} {gloss['cv']}|{gloss['greek']}|{gloss['translation']}|\n"
+                st.markdown( output )
+                
+
+
         output_data = TranslateGlossChatGPT.get_output_data( data, input_data_basename, book_name, bible_usfx, 
             output_language, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model_name, 
-            openai_api_key, host_local, output_callback )
+            openai_api_key, host_local, output_callback, gloss_output_callback )
         
 
         #now need to string output_data to json and then provide it as a download link in streamlit.
