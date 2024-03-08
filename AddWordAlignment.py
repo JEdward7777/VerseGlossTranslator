@@ -121,7 +121,7 @@ def extract_answer_from_response( _response, source_words ):
     except ValueError:
 
         implicit_keys = [
-            "is implicit", "is an implicit", "is implied", "is **implicit**", "not directly translated from", "is not explicitly mentioned", "is not mapped", "No source word translates to", "No source word that translates to", "No source word maps to", "None of the source words from the verse translates to", "does not have a corresponding source word",
+            "is implicit", "is an implicit", "is implied", "is **implicit**", "not directly translated from", "is not explicitly mentioned", "is not mapped", "No source word translates to", "No source word that translates to", "No source word maps to", "None of the source words from the verse translates to", "does not have a corresponding source word", "None of the specified source words translate to", "There is no source word that directly translates",
         ]
         #if the response includes this then it is an implied word    
         for key in implicit_keys:
