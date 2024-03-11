@@ -17,6 +17,8 @@ If you are going to use the Streamlit web gui, you will need to install that as 
 pip install streamlit
 ```
 
+If you are going to use the HuggingFace transformers models to run locally, you will need to install transformers as well as a couple other models which the tool set will complain about.
+
 Additionally, you will need an OpenAI API key. Make sure to set up your API key following the instructions provided by OpenAI.
 
 ## Usage

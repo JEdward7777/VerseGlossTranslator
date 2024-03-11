@@ -8,16 +8,19 @@ def main():
     ready = True
     st.title( 'TranslateGlossChatGPT' )
 
-    openai_api_key = None
-    if os.path.exists("config.json"):
-        with open("config.json") as f:
-            config = json.load(f)
-            if "openai_api_key" in config:
-                openai_api_key = config["openai_api_key"]
+    host_local = st.checkbox( "Do you want to use a local HuggingFace model instead of an OpenAI model?", value=False )
 
-    if not openai_api_key:
-        openai_api_key = st.text_input( 'What is your OpenAI API key?' )
-    if not openai_api_key: ready = False
+    openai_api_key = None
+    if not host_local:
+        if os.path.exists("config.json"):
+            with open("config.json") as f:
+                config = json.load(f)
+                if "openai_api_key" in config:
+                    openai_api_key = config["openai_api_key"]
+
+        if not openai_api_key:
+            openai_api_key = st.text_input( 'What is your OpenAI API key?' )
+        if not openai_api_key: ready = False
 
     book_name = st.text_input( "What is the name of the book of the Bible you wish to translate, (e.g. 1 Peter)?" )
     if not book_name: ready = False
@@ -61,8 +64,6 @@ def main():
             bcv_template = st.text_input( f'What is the template for the bcv code for looking up verses in {xml_path_in_zip}?', 'PHP.{0}.{1}' )
             if not bcv_template: ready = False
             
-
-    host_local = st.checkbox( "Do you want to use a local HuggingFace model instead of an OpenAI model?", value=False )
     if not host_local:
         model_name = st.selectbox( 'Which OpenAI model would you like to use?', ('gpt-4-1106-preview', 'gpt-3.5-turbo', 'gpt-4') )
     else:

@@ -183,7 +183,7 @@ def generate_gloss_for( data, verse_index, chunk_index, book_name, system_messag
         #return response.choices[0].text,
         return response.choices[0].message.content
     else:
-        response = client_or_pipe(messages, max_new_tokens=128)
+        response = client_or_pipe(messages, max_new_tokens=128, do_sample=True)
         return response[0]['generated_text'][-1]['content']
 
 # %%
