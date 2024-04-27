@@ -379,6 +379,13 @@ if __name__ == "__main__":
     # reference_bible_usfx_zip = "./data/Farsi_pesOPV_usfx.zip/pesOPV_usfx.xml"
     # bcv_template = "PHP.{0}.{1}"
 
+    _output_language = "Arabic"
+    _input_data = "./data/php_21.01.2024.json"
+    _book_name = "Philippians"
+    _extra_ChatGPT_instructions = "\n\nUse Christian words such as in the provided Arabic version."
+    _reference_bible_usfx_zip = "./data/arb-vd_usfx.zip/arb-vd_usfx.xml"
+    _bcv_template = "PHP.{0}.{1}"
+
 
     # output_language = "French"
     # input_data = "./data/auto_11-philippians.json"
@@ -394,14 +401,14 @@ if __name__ == "__main__":
     # input_data = "./data/auto_21-1peter_ChatGPT_French.json"
     # book_name = "1 Peter"
 
-    _output_language = "French"
-    _input_data = "./data/auto_11-philippians.json"
-    _book_name = "Philippians"
-    _exclude_source_gloss = True #Don't include the french when producing French.
-    _reference_bible_usfx_zip = "./data/French_frasbl_usfx.zip/frasbl_usfx.xml"
-    _bcv_template = "PHP.{0}.{1}"
-    _output_suffix = "_frasbl"
-    _extra_ChatGPT_instructions = "\n\nStick as close to the Greek as possible with a hyper literal translation."
+    # _output_language = "French"
+    # _input_data = "./data/auto_11-philippians.json"
+    # _book_name = "Philippians"
+    # _exclude_source_gloss = True #Don't include the french when producing French.
+    # _reference_bible_usfx_zip = "./data/French_frasbl_usfx.zip/frasbl_usfx.xml"
+    # _bcv_template = "PHP.{0}.{1}"
+    # _output_suffix = "_frasbl"
+    # _extra_ChatGPT_instructions = "\n\nStick as close to the Greek as possible with a hyper literal translation."
 
 
     _data = get_data( _input_data )
