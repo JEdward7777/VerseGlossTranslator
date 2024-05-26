@@ -9,7 +9,16 @@ from collections import defaultdict
 # %%
 
 input_file_filter = "auto_\\d+-([^_]+).json"
-directory_structure = "/data/auto_just_greek/{book}/{chapter}.html"
+directory_template = "/data/auto_just_greek/{book}/{chapter}.html"
+
+
+def relative_link( other_book, other_chapter, current_book, current_chapter ):
+    other_file = directory_template.format( book=other_book, chapter=other_chapter )
+    this_file = directory_template.format( book=current_book, chapter=current_chapter )
+
+    relative_path = os.path.relpath(other_file, os.path.dirname(this_file))
+    
+    return relative_path
 
 def collect_files( input_folder, input_file_filter ):
     pattern = re.compile(input_file_filter)
@@ -55,13 +64,13 @@ def generate_output_files( book_chapter_verse_to_sentence ):
     for book_name, chapter_verse_to_sentence in book_chapter_verse_to_sentence.items():
         for chapter_number, verse_to_sentence in chapter_verse_to_sentence.items():
             #we have a page per chapter.
-            abs_output_filename = directory_structure.format( book=book_name, chapter=chapter_number )
+            abs_output_filename = directory_template.format( book=book_name, chapter=chapter_number )
             output_filename = f".{abs_output_filename}"
             #create missing folders.
             os.makedirs(os.path.dirname(output_filename), exist_ok=True)
 
             with open( output_filename, 'w' ) as fout:
-                fout.write( f"<html><head><title>{book_name} {chapter_number}</title>\n" )
+                fout.write( f"<!DOCTYPE html><html><head><title>{book_name} {chapter_number}</title>\n" )
 
                 fout.write( """
 <meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
@@ -176,6 +185,29 @@ li:hover ul {
     padding: 20px;
   }
 
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
 </style>
                 """.strip() )
 
@@ -191,28 +223,63 @@ li:hover ul {
                 #write a menu structure. https://alistapart.com/article/horizdropdowns/
                 fout.write( "<ul class=\"menu\">\n" )
                 for other_book_name, other_chapter_verse_to_sentence in book_chapter_verse_to_sentence.items():
-                    fout.write( f" <li class=\"menu_item\"><a href=\"#\">{other_book_name}</a>\n" )
+                    if other_book_name == book_name:
+                        menu_class = "current-book-chapter"
+                    else:
+                        menu_class = ""
+                    other_chapter = 1
+                    if other_chapter in other_chapter_verse_to_sentence:
+                        other_filename = relative_link( other_book_name, other_chapter, book_name, chapter_number )
+                        fout.write( f" <li class=\"menu_item\"><a href=\"{other_filename}\" class=\"{menu_class}\">{other_book_name}</a>\n" )
+                    else:
+                        fout.write( f" <li class=\"menu_item\"><a href=\"#\" class=\"{menu_class}\">{other_book_name}</a>\n" )
                     fout.write( f"  <ul class=\"submenu\">\n" )
                     for other_chapter, other_verse_to_sentence in other_chapter_verse_to_sentence.items():
-                        other_filename = directory_structure.format( book=other_book_name, chapter=other_chapter )
-                        fout.write( f"   <li class=\"submenu_item\"><a href=\"{other_filename}\">{other_chapter}</a></li>\n" )
+                        other_filename = relative_link( other_book_name, other_chapter, book_name, chapter_number )
+                        if other_book_name == book_name and other_chapter == chapter_number:
+                            submenu_class = "current-book-chapter"
+                        else:
+                            submenu_class = ""
+                        fout.write( f"   <li class=\"submenu_item\"><a href=\"{other_filename}\" class=\"{submenu_class}\">{other_chapter}</a></li>\n" )
 
                         if other_book_name == book_name and other_chapter == chapter_number:
                             prev_link = last_other_link
                             last_other_was_current = True
                         else:
                             if last_other_was_current:
-                                next_link = f"<a href=\"{other_filename}\">{other_book_name} {other_chapter} -&gt;</a>"
+                                next_link = f"<a href=\"{other_filename}\" class=\"chapter-link\">-&gt;</a>"
                             last_other_was_current = False
-                        last_other_link = f"<a href=\"{other_filename}\">&lt;- {other_book_name} {other_chapter}</a>"
+                        last_other_link = f"<a href=\"{other_filename}\" class=\"chapter-link\">&lt;-</a>"
 
                     fout.write( f"  </ul></li>\n" )
                 fout.write( "</ul>\n" )
 
                 fout.write( "<div class=\"content\">\n" )
 
+                chapter_links = ""
+
+                chapter_links += "<div class=\"chapter-links\">\n"
+
                 if prev_link:
-                    fout.write( f"<p>{prev_link}</p>\n" )
+                    chapter_links += f"{prev_link}\n"
+                else:
+                    chapter_links += "<a class=\"chapter-link\" href=\"#\">&lt;-</a>\n"
+
+                for other_chapter in chapter_verse_to_sentence.keys():
+                    if other_chapter == chapter_number:
+                        chapter_link_class = "selected-chapter-link"
+                    else:
+                        chapter_link_class = "chapter-link"
+                    other_filename = relative_link( book_name, other_chapter, book_name, chapter_number )
+                    chapter_links +=  f"<a href=\"{other_filename}\" class=\"{chapter_link_class}\">{other_chapter}</a>\n"
+
+                if next_link:
+                    chapter_links +=  f"{next_link}\n"
+                else:
+                    chapter_links += "<a class=\"chapter-link\" href=\"#\">-&gt;</a>\n"
+                chapter_links +=  "</div>\n"
+
+                fout.write( chapter_links )
 
                 # for verse, sentence in verse_to_sentence.items():
 
@@ -331,33 +398,9 @@ li:hover ul {
                     table_open = False
 
 
-                if next_link:
-                    fout.write( f"<p>{next_link}</p>\n" )
+                fout.write( chapter_links )
 
                 fout.write( "</div>\n" )
-
-                fout.write( """
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  var menuItems = document.querySelectorAll('.menu_item');
-
-
-  console.log( "running menu items" );
-
-  menuItems.forEach(function (menuItem) {
-    console.log( "running menu item " + menuItem );
-
-    menuItem.addEventListener('click', function (event) {
-      var submenu = menuItem.querySelector('ul');
-      if (submenu) {
-        //event.preventDefault(); // Prevent default link behavior
-        submenu.classList.toggle('show'); // Toggle the 'show' class to display/hide submenu
-      }
-    });
-  });
-});
-</script>
-                """.strip())
 
                 fout.write( "</body></html>\n" )
 # %%

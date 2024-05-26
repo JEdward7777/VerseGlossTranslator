@@ -1,0 +1,925 @@
+<!DOCTYPE html><html><head><title>luke 10</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="../matthew/1.html" class="">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../matthew/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../matthew/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../matthew/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../matthew/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../matthew/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../matthew/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../matthew/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../matthew/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../matthew/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../matthew/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../matthew/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../matthew/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../matthew/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../matthew/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../matthew/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../matthew/16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="../matthew/17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="../matthew/18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="../matthew/19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="../matthew/20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="../matthew/21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="../matthew/22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="../matthew/23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="../matthew/24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="../matthew/25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="../matthew/26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="../matthew/27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="../matthew/28.html" class="">28</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../mark/1.html" class="">mark</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../mark/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../mark/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../mark/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../mark/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../mark/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../mark/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../mark/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../mark/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../mark/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../mark/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../mark/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../mark/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../mark/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../mark/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../mark/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../mark/16.html" class="">16</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">luke</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="10.html" class="current-book-chapter">10</a></li>
+   <li class="submenu_item"><a href="11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="24.html" class="">24</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../john/1.html" class="">john</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../john/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../john/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../john/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../john/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../john/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../john/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../john/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../john/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../john/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../john/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../john/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../john/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../john/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../john/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../john/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../john/16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="../john/17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="../john/18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="../john/19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="../john/20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="../john/21.html" class="">21</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../acts/1.html" class="">acts</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../acts/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../acts/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../acts/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../acts/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../acts/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../acts/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../acts/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../acts/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../acts/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../acts/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../acts/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../acts/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../acts/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../acts/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../acts/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../acts/16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="../acts/17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="../acts/18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="../acts/19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="../acts/20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="../acts/21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="../acts/22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="../acts/23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="../acts/24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="../acts/25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="../acts/26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="../acts/27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="../acts/28.html" class="">28</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../romans/1.html" class="">romans</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../romans/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../romans/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../romans/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../romans/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../romans/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../romans/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../romans/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../romans/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../romans/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../romans/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../romans/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../romans/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../romans/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../romans/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../romans/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../romans/16.html" class="">16</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../1corinthians/1.html" class="">1corinthians</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../1corinthians/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../1corinthians/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../1corinthians/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../1corinthians/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../1corinthians/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../1corinthians/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../1corinthians/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../1corinthians/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../1corinthians/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../1corinthians/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../1corinthians/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../1corinthians/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../1corinthians/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../1corinthians/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../1corinthians/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../1corinthians/16.html" class="">16</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../2corinthians/1.html" class="">2corinthians</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../2corinthians/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../2corinthians/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../2corinthians/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../2corinthians/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../2corinthians/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../2corinthians/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../2corinthians/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../2corinthians/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../2corinthians/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../2corinthians/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../2corinthians/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../2corinthians/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../2corinthians/13.html" class="">13</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../galatians/1.html" class="">galatians</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../galatians/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../galatians/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../galatians/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../galatians/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../galatians/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../galatians/6.html" class="">6</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../ephesians/1.html" class="">ephesians</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../ephesians/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../ephesians/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../ephesians/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../ephesians/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../ephesians/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../ephesians/6.html" class="">6</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../philippians/1.html" class="">philippians</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../philippians/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../philippians/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../philippians/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../philippians/4.html" class="">4</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../colossians/1.html" class="">colossians</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../colossians/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../colossians/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../colossians/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../colossians/4.html" class="">4</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../1thessalonians/1.html" class="">1thessalonians</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../1thessalonians/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../1thessalonians/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../1thessalonians/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../1thessalonians/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../1thessalonians/5.html" class="">5</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../2thessalonians/1.html" class="">2thessalonians</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../2thessalonians/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../2thessalonians/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../2thessalonians/3.html" class="">3</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../1timothy/1.html" class="">1timothy</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../1timothy/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../1timothy/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../1timothy/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../1timothy/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../1timothy/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../1timothy/6.html" class="">6</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../2timothy/1.html" class="">2timothy</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../2timothy/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../2timothy/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../2timothy/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../2timothy/4.html" class="">4</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../titus/1.html" class="">titus</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../titus/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../titus/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../titus/3.html" class="">3</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../philemon/1.html" class="">philemon</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../philemon/1.html" class="">1</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../hebrews/1.html" class="">hebrews</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../hebrews/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../hebrews/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../hebrews/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../hebrews/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../hebrews/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../hebrews/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../hebrews/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../hebrews/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../hebrews/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../hebrews/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../hebrews/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../hebrews/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../hebrews/13.html" class="">13</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../james/1.html" class="">james</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../james/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../james/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../james/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../james/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../james/5.html" class="">5</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../1peter/1.html" class="">1peter</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../1peter/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../1peter/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../1peter/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../1peter/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../1peter/5.html" class="">5</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../2peter/1.html" class="">2peter</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../2peter/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../2peter/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../2peter/3.html" class="">3</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../1john/1.html" class="">1john</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../1john/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../1john/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../1john/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../1john/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../1john/5.html" class="">5</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../2john/1.html" class="">2john</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../2john/1.html" class="">1</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../3john/1.html" class="">3john</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../3john/1.html" class="">1</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../jude/1.html" class="">jude</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../jude/1.html" class="">1</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../revelation/1.html" class="">revelation</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../revelation/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../revelation/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../revelation/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../revelation/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../revelation/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../revelation/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../revelation/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../revelation/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../revelation/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../revelation/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../revelation/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../revelation/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../revelation/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../revelation/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../revelation/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../revelation/16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="../revelation/17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="../revelation/18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="../revelation/19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="../revelation/20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="../revelation/21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="../revelation/22.html" class="">22</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="9.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="selected-chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="11.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Μετὰ δὲ ταῦτα ἀνέδειξεν ὁ Κύριος ἑτέρους ἑβδομήκοντα, καὶ ἀπέστειλεν αὐτοὺς ἀνὰ δύο πρὸ προσώπου αὐτοῦ εἰς πᾶσαν πόλιν καὶ τόπον οὗ ἤμελλεν αὐτὸς ἔρχεσθαι.<hr><b>luke 10:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td><not implemented></td></tr>
+<tr><td>Μετὰ ταῦτα ἀνέδειξεν ὁ Κύριος ἑτέρους ἑβδομήκοντα,</td><td><not implemented></td></tr>
+<tr><td>καὶ ἀπέστειλεν αὐτοὺς ἀνὰ δύο</td><td><not implemented></td></tr>
+<tr><td>πρὸ προσώπου αὐτοῦ</td><td><not implemented></td></tr>
+<tr><td>εἰς πᾶσαν πόλιν</td><td><not implemented></td></tr>
+<tr><td>καὶ τόπον</td><td><not implemented></td></tr>
+<tr><td>οὗ ἤμελλεν αὐτὸς ἔρχεσθαι.</td><td><not implemented></td></tr>
+</table>
+<hr>
+ἔλεγεν δὲ πρὸς αὐτούς Ὁ μὲν θερισμὸς πολύς, οἱ δὲ ἐργάται ὀλίγοι·<hr><b>luke 10:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἔλεγεν πρὸς αὐτούς</td><td><not implemented></td></tr>
+<tr><td>μὲν Ὁ θερισμὸς πολύς,</td><td><not implemented></td></tr>
+<tr><td>δὲ οἱ ἐργάται ὀλίγοι·</td><td><not implemented></td></tr>
+<tr><td>οὖν δεήθητε</td><td><not implemented></td></tr>
+<tr><td>τοῦ Κυρίου τοῦ θερισμοῦ</td><td><not implemented></td></tr>
+<tr><td>ὅπως ἐργάτας ἐκβάλῃ</td><td><not implemented></td></tr>
+<tr><td>εἰς τὸν θερισμὸν αὐτοῦ.</td><td><not implemented></td></tr>
+</table>
+<hr>
+ὑπάγετε· ἰδοὺ ἀποστέλλω ὑμᾶς ὡς ἄρνας ἐν μέσῳ λύκων.<hr><b>luke 10:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὑπάγετε· ἰδοὺ ἀποστέλλω ὑμᾶς</td><td><not implemented></td></tr>
+<tr><td>ὡς ἄρνας ἐν μέσῳ λύκων.</td><td><not implemented></td></tr>
+</table>
+<hr>
+μὴ βαστάζετε βαλλάντιον, μὴ πήραν, μὴ ὑποδήματα· καὶ μηδένα κατὰ τὴν ὁδὸν ἀσπάσησθε.<hr><b>luke 10:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μὴ βαστάζετε βαλλάντιον,</td><td><not implemented></td></tr>
+<tr><td>μὴ πήραν,</td><td><not implemented></td></tr>
+<tr><td>μὴ ὑποδήματα·</td><td><not implemented></td></tr>
+<tr><td>καὶ μηδένα κατὰ τὴν ὁδὸν</td><td><not implemented></td></tr>
+<tr><td>ἀσπάσησθε.</td><td><not implemented></td></tr>
+</table>
+<hr>
+εἰς ἣν δ’ ἂν εἰσέλθητε οἰκίαν, πρῶτον λέγετε Εἰρήνη τῷ οἴκῳ τούτῳ.<hr><b>luke 10:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δ’ ἂν εἰς ἣν οἰκίαν,</td><td><not implemented></td></tr>
+<tr><td>εἰσέλθητε πρῶτον λέγετε</td><td><not implemented></td></tr>
+<tr><td>Εἰρήνη τῷ οἴκῳ τούτῳ.</td><td><not implemented></td></tr>
+</table>
+<hr>
+καὶ ἐὰν ἐκεῖ ᾖ υἱὸς εἰρήνης, ἐπαναπαήσεται ἐπ’ αὐτὸν ἡ εἰρήνη ὑμῶν·<hr><b>luke 10:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐὰν</td><td><not implemented></td></tr>
+<tr><td>ἐκεῖ ᾖ υἱὸς εἰρήνης,</td><td><not implemented></td></tr>
+<tr><td>ἐπαναπαήσεται ἐπ’ αὐτὸν</td><td><not implemented></td></tr>
+<tr><td>ἡ εἰρήνη ὑμῶν·</td><td><not implemented></td></tr>
+<tr><td>δὲ εἰ</td><td><not implemented></td></tr>
+<tr><td>μήγε, ἐφ’ ὑμᾶς ἀνακάμψει.</td><td><not implemented></td></tr>
+</table>
+<hr>
+ἐν αὐτῇ δὲ τῇ οἰκίᾳ μένετε, ἔσθοντες καὶ πίνοντες τὰ παρ’ αὐτῶν· ἄξιος γὰρ ὁ ἐργάτης τοῦ μισθοῦ αὐτοῦ.<hr><b>luke 10:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐν αὐτῇ τῇ οἰκίᾳ</td><td><not implemented></td></tr>
+<tr><td>μένετε, ἔσθοντες καὶ πίνοντες</td><td><not implemented></td></tr>
+<tr><td>τὰ παρ’ αὐτῶν·</td><td><not implemented></td></tr>
+<tr><td>γὰρ ἄξιος ὁ ἐργάτης</td><td><not implemented></td></tr>
+<tr><td>τοῦ μισθοῦ αὐτοῦ.</td><td><not implemented></td></tr>
+<tr><td>μὴ μεταβαίνετε</td><td><not implemented></td></tr>
+<tr><td>ἐξ οἰκίας εἰς οἰκίαν.</td><td><not implemented></td></tr>
+</table>
+<hr>
+καὶ εἰς ἣν ἂν πόλιν εἰσέρχησθε καὶ δέχωνται ὑμᾶς, ἐσθίετε τὰ παρατιθέμενα ὑμῖν, καὶ θεραπεύετε τοὺς ἐν αὐτῇ ἀσθενεῖς, καὶ λέγετε αὐτοῖς Ἤγγικεν ἐφ’ ὑμᾶς ἡ βασιλεία τοῦ Θεοῦ.<hr><b>luke 10:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἂν εἰς ἣν πόλιν</td><td><not implemented></td></tr>
+<tr><td>εἰσέρχησθε καὶ δέχωνται ὑμᾶς,</td><td><not implemented></td></tr>
+<tr><td>ἐσθίετε τὰ παρατιθέμενα ὑμῖν,</td><td><not implemented></td></tr>
+</table>
+<hr><b>luke 10:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ θεραπεύετε</td><td><not implemented></td></tr>
+<tr><td>τοὺς ἐν αὐτῇ ἀσθενεῖς,</td><td><not implemented></td></tr>
+<tr><td>καὶ λέγετε αὐτοῖς</td><td><not implemented></td></tr>
+<tr><td>Ἤγγικεν ἐφ’ ὑμᾶς</td><td><not implemented></td></tr>
+<tr><td>ἡ βασιλεία τοῦ Θεοῦ.</td><td><not implemented></td></tr>
+</table>
+<hr>
+εἰς ἣν δ’ ἂν πόλιν εἰσέλθητε καὶ μὴ δέχωνται ὑμᾶς, ἐξελθόντες εἰς τὰς πλατείας αὐτῆς εἴπατε Καὶ τὸν κονιορτὸν τὸν κολληθέντα ἡμῖν ἐκ τῆς πόλεως ὑμῶν εἰς τοὺς πόδας ἀπομασσόμεθα ὑμῖν· πλὴν τοῦτο γινώσκετε, ὅτι ἤγγικεν ἡ βασιλεία τοῦ Θεοῦ.<hr><b>luke 10:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δ’ ἂν εἰς ἣν πόλιν</td><td><not implemented></td></tr>
+<tr><td>εἰσέλθητε καὶ μὴ δέχωνται ὑμᾶς,</td><td><not implemented></td></tr>
+<tr><td>ἐξελθόντες εἰς τὰς πλατείας αὐτῆς</td><td><not implemented></td></tr>
+<tr><td>εἴπατε Καὶ τὸν κονιορτὸν</td><td><not implemented></td></tr>
+</table>
+<hr><b>luke 10:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>τὸν κολληθέντα ἡμῖν</td><td><not implemented></td></tr>
+<tr><td>ἐκ τῆς πόλεως ὑμῶν</td><td><not implemented></td></tr>
+<tr><td>εἰς τοὺς πόδας</td><td><not implemented></td></tr>
+<tr><td>ἀπομασσόμεθα ὑμῖν· πλὴν τοῦτο γινώσκετε,</td><td><not implemented></td></tr>
+<tr><td>ὅτι ἤγγικεν</td><td><not implemented></td></tr>
+<tr><td>ἡ βασιλεία τοῦ Θεοῦ.</td><td><not implemented></td></tr>
+</table>
+<hr>
+λέγω ὑμῖν ὅτι Σοδόμοις ἐν τῇ ἡμέρᾳ ἐκείνῃ ἀνεκτότερον ἔσται ἢ τῇ πόλει ἐκείνῃ.<hr><b>luke 10:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>λέγω ὑμῖν</td><td><not implemented></td></tr>
+<tr><td>ὅτι Σοδόμοις</td><td><not implemented></td></tr>
+<tr><td>ἐν τῇ ἡμέρᾳ ἐκείνῃ</td><td><not implemented></td></tr>
+<tr><td>ἀνεκτότερον ἔσται</td><td><not implemented></td></tr>
+<tr><td>ἢ τῇ πόλει ἐκείνῃ.</td><td><not implemented></td></tr>
+</table>
+<hr>
+Οὐαί σοι, Χοραζείν, οὐαί σοι, Βηθσαϊδά· ὅτι εἰ ἐν Τύρῳ καὶ Σιδῶνι ἐγενήθησαν αἱ δυνάμεις αἱ γενόμεναι ἐν ὑμῖν, πάλαι ἂν ἐν σάκκῳ καὶ σποδῷ καθήμενοι μετενόησαν.<hr><b>luke 10:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Οὐαί σοι, Χοραζείν,</td><td><not implemented></td></tr>
+<tr><td>οὐαί σοι, Βηθσαϊδά·</td><td><not implemented></td></tr>
+<tr><td>ὅτι εἰ</td><td><not implemented></td></tr>
+<tr><td>ἐν Τύρῳ καὶ Σιδῶνι</td><td><not implemented></td></tr>
+<tr><td>ἐγενήθησαν αἱ δυνάμεις</td><td><not implemented></td></tr>
+<tr><td>αἱ γενόμεναι ἐν ὑμῖν,</td><td><not implemented></td></tr>
+<tr><td>ἂν πάλαι</td><td><not implemented></td></tr>
+<tr><td>ἐν σάκκῳ καὶ σποδῷ</td><td><not implemented></td></tr>
+<tr><td>καθήμενοι μετενόησαν.</td><td><not implemented></td></tr>
+</table>
+<hr>
+πλὴν Τύρῳ καὶ Σιδῶνι ἀνεκτότερον ἔσται ἐν τῇ κρίσει ἢ ὑμῖν.<hr><b>luke 10:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>πλὴν Τύρῳ καὶ Σιδῶνι</td><td><not implemented></td></tr>
+<tr><td>ἀνεκτότερον ἔσται ἐν τῇ κρίσει</td><td><not implemented></td></tr>
+<tr><td>ἢ ὑμῖν.</td><td><not implemented></td></tr>
+</table>
+<hr>
+καὶ σύ, Καφαρναούμ, μὴ ἕως οὐρανοῦ ὑψωθήσῃ;<hr><b>luke 10:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ Καφαρναούμ, μὴ</td><td><not implemented></td></tr>
+<tr><td>σύ, ἕως οὐρανοῦ ὑψωθήσῃ;</td><td><not implemented></td></tr>
+<tr><td>ἕως τοῦ Ἅιδου</td><td><not implemented></td></tr>
+<tr><td>καταβήσῃ.</td><td><not implemented></td></tr>
+</table>
+<hr>
+Ὁ ἀκούων ὑμῶν ἐμοῦ ἀκούει, καὶ ὁ ἀθετῶν ὑμᾶς ἐμὲ ἀθετεῖ·<hr><b>luke 10:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ὁ ἀκούων ὑμῶν</td><td><not implemented></td></tr>
+<tr><td>ἐμοῦ ἀκούει,</td><td><not implemented></td></tr>
+<tr><td>καὶ ὁ ἀθετῶν ὑμᾶς</td><td><not implemented></td></tr>
+<tr><td>ἐμὲ ἀθετεῖ·</td><td><not implemented></td></tr>
+<tr><td>δὲ ὁ ἐμὲ ἀθετῶν</td><td><not implemented></td></tr>
+<tr><td>ἀθετεῖ τὸν ἀποστείλαντά με.</td><td><not implemented></td></tr>
+</table>
+<hr>
+Ὑπέστρεψαν δὲ οἱ ἑβδομήκοντα μετὰ χαρᾶς λέγοντες Κύριε, καὶ τὰ δαιμόνια ὑποτάσσεται ἡμῖν ἐν τῷ ὀνόματί σου.<hr><b>luke 10:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ὑπέστρεψαν οἱ ἑβδομήκοντα</td><td><not implemented></td></tr>
+<tr><td>μετὰ χαρᾶς</td><td><not implemented></td></tr>
+<tr><td>λέγοντες Κύριε, καὶ τὰ δαιμόνια</td><td><not implemented></td></tr>
+<tr><td>ὑποτάσσεται ἡμῖν</td><td><not implemented></td></tr>
+<tr><td>ἐν τῷ ὀνόματί σου.</td><td><not implemented></td></tr>
+</table>
+<hr>
+εἶπεν δὲ αὐτοῖς Ἐθεώρουν τὸν Σατανᾶν ὡς ἀστραπὴν ἐκ τοῦ οὐρανοῦ πεσόντα.<hr><b>luke 10:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἶπεν αὐτοῖς</td><td><not implemented></td></tr>
+<tr><td>Ἐθεώρουν τὸν Σατανᾶν</td><td><not implemented></td></tr>
+<tr><td>ὡς ἀστραπὴν</td><td><not implemented></td></tr>
+<tr><td>ἐκ τοῦ οὐρανοῦ</td><td><not implemented></td></tr>
+<tr><td>πεσόντα.</td><td><not implemented></td></tr>
+</table>
+<hr>
+ἰδοὺ δέδωκα ὑμῖν τὴν ἐξουσίαν τοῦ πατεῖν ἐπάνω ὄφεων καὶ σκορπίων, καὶ ἐπὶ πᾶσαν τὴν δύναμιν τοῦ ἐχθροῦ, καὶ οὐδὲν ὑμᾶς οὐ μὴ ἀδικήσει.<hr><b>luke 10:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἰδοὺ δέδωκα ὑμῖν τὴν ἐξουσίαν</td><td><not implemented></td></tr>
+<tr><td>τοῦ πατεῖν</td><td><not implemented></td></tr>
+<tr><td>ἐπάνω ὄφεων καὶ σκορπίων,</td><td><not implemented></td></tr>
+<tr><td>καὶ ἐπὶ πᾶσαν</td><td><not implemented></td></tr>
+<tr><td>τὴν δύναμιν τοῦ ἐχθροῦ,</td><td><not implemented></td></tr>
+<tr><td>καὶ</td><td><not implemented></td></tr>
+<tr><td>οὐδὲν ὑμᾶς οὐ μὴ ἀδικήσει.</td><td><not implemented></td></tr>
+</table>
+<hr>
+πλὴν ἐν τούτῳ μὴ χαίρετε ὅτι τὰ πνεύματα ὑμῖν ὑποτάσσεται, χαίρετε δὲ ὅτι τὰ ὀνόματα ὑμῶν ἐνγέγραπται ἐν τοῖς οὐρανοῖς.<hr><b>luke 10:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>πλὴν ἐν τούτῳ μὴ χαίρετε</td><td><not implemented></td></tr>
+<tr><td>ὅτι τὰ πνεύματα ὑμῖν ὑποτάσσεται,</td><td><not implemented></td></tr>
+<tr><td>δὲ χαίρετε</td><td><not implemented></td></tr>
+<tr><td>ὅτι τὰ ὀνόματα ὑμῶν</td><td><not implemented></td></tr>
+<tr><td>ἐνγέγραπται ἐν τοῖς οὐρανοῖς.</td><td><not implemented></td></tr>
+</table>
+<hr>
+Ἐν αὐτῇ τῇ ὥρᾳ ἠγαλλιάσατο τῷ Πνεύματι τῷ Ἁγίῳ καὶ εἶπεν Ἐξομολογοῦμαί σοι, Πάτερ, Κύριε τοῦ οὐρανοῦ καὶ τῆς γῆς, ὅτι ἀπέκρυψας ταῦτα ἀπὸ σοφῶν καὶ συνετῶν, καὶ ἀπεκάλυψας αὐτὰ νηπίοις· ναί, ὁ Πατήρ, ὅτι οὕτως εὐδοκία ἐγένετο ἔμπροσθέν σου. πάντα μοι παρεδόθη ὑπὸ τοῦ Πατρός μου, καὶ οὐδεὶς γινώσκει τίς ἐστιν ὁ Υἱὸς εἰ μὴ ὁ Πατήρ, καὶ τίς ἐστιν ὁ Πατὴρ εἰ μὴ ὁ Υἱὸς καὶ ᾧ ἐὰν βούληται ὁ Υἱὸς ἀποκαλύψαι.<hr><b>luke 10:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἐν αὐτῇ τῇ ὥρᾳ</td><td><not implemented></td></tr>
+<tr><td>ἠγαλλιάσατο τῷ Πνεύματι τῷ Ἁγίῳ</td><td><not implemented></td></tr>
+<tr><td>καὶ εἶπεν Ἐξομολογοῦμαί σοι,</td><td><not implemented></td></tr>
+<tr><td>Πάτερ, Κύριε</td><td><not implemented></td></tr>
+<tr><td>τοῦ οὐρανοῦ καὶ τῆς γῆς,</td><td><not implemented></td></tr>
+<tr><td>ὅτι ἀπέκρυψας ταῦτα</td><td><not implemented></td></tr>
+<tr><td>ἀπὸ σοφῶν καὶ συνετῶν,</td><td><not implemented></td></tr>
+<tr><td>καὶ ἀπεκάλυψας αὐτὰ νηπίοις·</td><td><not implemented></td></tr>
+<tr><td>ναί, ὁ Πατήρ,</td><td><not implemented></td></tr>
+<tr><td>ὅτι</td><td><not implemented></td></tr>
+<tr><td>οὕτως εὐδοκία ἐγένετο ἔμπροσθέν σου.</td><td><not implemented></td></tr>
+</table>
+<hr><b>luke 10:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>πάντα μοι παρεδόθη</td><td><not implemented></td></tr>
+<tr><td>ὑπὸ τοῦ Πατρός μου,</td><td><not implemented></td></tr>
+<tr><td>καὶ οὐδεὶς γινώσκει</td><td><not implemented></td></tr>
+<tr><td>τίς ἐστιν ὁ Υἱὸς</td><td><not implemented></td></tr>
+<tr><td>εἰ μὴ ὁ Πατήρ,</td><td><not implemented></td></tr>
+<tr><td>καὶ τίς ἐστιν ὁ Πατὴρ</td><td><not implemented></td></tr>
+<tr><td>εἰ μὴ ὁ Υἱὸς</td><td><not implemented></td></tr>
+<tr><td>καὶ ἐὰν</td><td><not implemented></td></tr>
+<tr><td>ᾧ ἀποκαλύψαι. βούληται ὁ Υἱὸς</td><td><not implemented></td></tr>
+</table>
+<hr>
+Καὶ στραφεὶς πρὸς τοὺς μαθητὰς κατ’ ἰδίαν εἶπεν Μακάριοι οἱ ὀφθαλμοὶ οἱ βλέποντες ἃ βλέπετε. λέγω γὰρ ὑμῖν ὅτι πολλοὶ προφῆται καὶ βασιλεῖς ἠθέλησαν ἰδεῖν ἃ ὑμεῖς βλέπετε καὶ οὐκ εἶδαν, καὶ ἀκοῦσαι ἃ ἀκούετε καὶ οὐκ ἤκουσαν.<hr><b>luke 10:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ στραφεὶς πρὸς τοὺς μαθητὰς</td><td><not implemented></td></tr>
+<tr><td>κατ’ ἰδίαν</td><td><not implemented></td></tr>
+<tr><td>εἶπεν Μακάριοι οἱ ὀφθαλμοὶ</td><td><not implemented></td></tr>
+<tr><td>οἱ βλέποντες ἃ βλέπετε.</td><td><not implemented></td></tr>
+</table>
+<hr><b>luke 10:24</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ λέγω ὑμῖν</td><td><not implemented></td></tr>
+<tr><td>ὅτι πολλοὶ προφῆται καὶ βασιλεῖς</td><td><not implemented></td></tr>
+<tr><td>ἠθέλησαν ἰδεῖν ἃ ὑμεῖς βλέπετε</td><td><not implemented></td></tr>
+<tr><td>καὶ οὐκ εἶδαν,</td><td><not implemented></td></tr>
+<tr><td>καὶ ἀκοῦσαι ἃ ἀκούετε</td><td><not implemented></td></tr>
+<tr><td>καὶ οὐκ ἤκουσαν.</td><td><not implemented></td></tr>
+</table>
+<hr>
+Καὶ ἰδοὺ νομικός τις ἀνέστη ἐκπειράζων αὐτὸν λέγων Διδάσκαλε, τί ποιήσας ζωὴν αἰώνιον κληρονομήσω;<hr><b>luke 10:25</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ ἰδοὺ νομικός τις</td><td><not implemented></td></tr>
+<tr><td>ἀνέστη ἐκπειράζων αὐτὸν</td><td><not implemented></td></tr>
+<tr><td>λέγων Διδάσκαλε,</td><td><not implemented></td></tr>
+<tr><td>τί ποιήσας ζωὴν αἰώνιον κληρονομήσω;</td><td><not implemented></td></tr>
+</table>
+<hr>
+ὁ δὲ εἶπεν πρὸς αὐτόν Ἐν τῷ νόμῳ τί γέγραπται; πῶς ἀναγινώσκεις;<hr><b>luke 10:26</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ εἶπεν πρὸς αὐτόν</td><td><not implemented></td></tr>
+<tr><td>Ἐν τῷ νόμῳ</td><td><not implemented></td></tr>
+<tr><td>τί γέγραπται; πῶς ἀναγινώσκεις;</td><td><not implemented></td></tr>
+</table>
+<hr>
+ὁ δὲ ἀποκριθεὶς εἶπεν Ἀγαπήσεις Κύριον τὸν Θεόν σου ἐξ ὅλης τῆς καρδίας σου καὶ ἐν ὅλῃ τῇ ψυχῇ σου καὶ ἐν ὅλῃ τῇ ἰσχύϊ σου καὶ ἐν ὅλῃ τῇ διανοίᾳ σου, καὶ τὸν πλησίον σου ὡς σεαυτόν.<hr><b>luke 10:27</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ ἀποκριθεὶς εἶπεν</td><td><not implemented></td></tr>
+<tr><td>Ἀγαπήσεις Κύριον τὸν Θεόν σου</td><td><not implemented></td></tr>
+<tr><td>ἐξ ὅλης τῆς καρδίας σου</td><td><not implemented></td></tr>
+<tr><td>καὶ ἐν</td><td><not implemented></td></tr>
+<tr><td>ὅλῃ τῇ ψυχῇ σου</td><td><not implemented></td></tr>
+<tr><td>καὶ ἐν</td><td><not implemented></td></tr>
+<tr><td>ὅλῃ τῇ ἰσχύϊ σου</td><td><not implemented></td></tr>
+<tr><td>καὶ ἐν</td><td><not implemented></td></tr>
+<tr><td>ὅλῃ τῇ διανοίᾳ σου,</td><td><not implemented></td></tr>
+<tr><td>καὶ τὸν πλησίον σου</td><td><not implemented></td></tr>
+<tr><td>ὡς σεαυτόν.</td><td><not implemented></td></tr>
+</table>
+<hr>
+εἶπεν δὲ αὐτῷ Ὀρθῶς ἀπεκρίθης· τοῦτο ποίει καὶ ζήσῃ.<hr><b>luke 10:28</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἶπεν αὐτῷ</td><td><not implemented></td></tr>
+<tr><td>Ὀρθῶς ἀπεκρίθης·</td><td><not implemented></td></tr>
+<tr><td>τοῦτο ποίει καὶ ζήσῃ.</td><td><not implemented></td></tr>
+</table>
+<hr>
+ὁ δὲ θέλων δικαιῶσαι ἑαυτὸν εἶπεν πρὸς τὸν Ἰησοῦν Καὶ τίς ἐστίν μου πλησίον;<hr><b>luke 10:29</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ θέλων δικαιῶσαι ἑαυτὸν</td><td><not implemented></td></tr>
+<tr><td>εἶπεν πρὸς τὸν Ἰησοῦν</td><td><not implemented></td></tr>
+<tr><td>Καὶ τίς ἐστίν μου πλησίον;</td><td><not implemented></td></tr>
+</table>
+<hr>
+ὑπολαβὼν ὁ Ἰησοῦς εἶπεν Ἄνθρωπός τις κατέβαινεν ἀπὸ Ἱερουσαλὴμ εἰς Ἱερειχώ, καὶ λῃσταῖς περιέπεσεν, οἳ καὶ ἐκδύσαντες αὐτὸν καὶ πληγὰς ἐπιθέντες ἀπῆλθον ἀφέντες ἡμιθανῆ.<hr><b>luke 10:30</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὑπολαβὼν ὁ Ἰησοῦς εἶπεν</td><td><not implemented></td></tr>
+<tr><td>Ἄνθρωπός τις</td><td><not implemented></td></tr>
+<tr><td>κατέβαινεν ἀπὸ Ἱερουσαλὴμ εἰς Ἱερειχώ,</td><td><not implemented></td></tr>
+<tr><td>καὶ λῃσταῖς περιέπεσεν,</td><td><not implemented></td></tr>
+<tr><td>οἳ καὶ</td><td><not implemented></td></tr>
+<tr><td>ἐκδύσαντες αὐτὸν καὶ πληγὰς ἐπιθέντες</td><td><not implemented></td></tr>
+<tr><td>ἀπῆλθον ἀφέντες ἡμιθανῆ.</td><td><not implemented></td></tr>
+</table>
+<hr>
+κατὰ συγκυρίαν δὲ ἱερεύς τις κατέβαινεν ἐν τῇ ὁδῷ ἐκείνῃ, καὶ ἰδὼν αὐτὸν ἀντιπαρῆλθεν.<hr><b>luke 10:31</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ κατὰ συγκυρίαν</td><td><not implemented></td></tr>
+<tr><td>ἱερεύς τις</td><td><not implemented></td></tr>
+<tr><td>κατέβαινεν ἐν τῇ ὁδῷ ἐκείνῃ,</td><td><not implemented></td></tr>
+<tr><td>καὶ ἰδὼν αὐτὸν ἀντιπαρῆλθεν.</td><td><not implemented></td></tr>
+</table>
+<hr>
+ὁμοίως δὲ καὶ Λευείτης κατὰ τὸν τόπον ἐλθὼν καὶ ἰδὼν ἀντιπαρῆλθεν.<hr><b>luke 10:32</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁμοίως καὶ Λευείτης</td><td><not implemented></td></tr>
+<tr><td>κατὰ τὸν τόπον</td><td><not implemented></td></tr>
+<tr><td>ἐλθὼν καὶ ἰδὼν ἀντιπαρῆλθεν.</td><td><not implemented></td></tr>
+</table>
+<hr>
+Σαμαρείτης δέ τις ὁδεύων ἦλθεν κατ’ αὐτὸν καὶ ἰδὼν ἐσπλαγχνίσθη, καὶ προσελθὼν κατέδησεν τὰ τραύματα αὐτοῦ ἐπιχέων ἔλαιον καὶ οἶνον, ἐπιβιβάσας δὲ αὐτὸν ἐπὶ τὸ ἴδιον κτῆνος ἤγαγεν αὐτὸν εἰς πανδοχεῖον καὶ ἐπεμελήθη αὐτοῦ.<hr><b>luke 10:33</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δέ</td><td><not implemented></td></tr>
+<tr><td>Σαμαρείτης τις ὁδεύων ἦλθεν κατ’ αὐτὸν</td><td><not implemented></td></tr>
+<tr><td>καὶ ἰδὼν ἐσπλαγχνίσθη,</td><td><not implemented></td></tr>
+</table>
+<hr><b>luke 10:34</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ προσελθὼν</td><td><not implemented></td></tr>
+<tr><td>κατέδησεν τὰ τραύματα αὐτοῦ</td><td><not implemented></td></tr>
+<tr><td>ἐπιχέων ἔλαιον καὶ οἶνον,</td><td><not implemented></td></tr>
+<tr><td>δὲ ἐπιβιβάσας αὐτὸν</td><td><not implemented></td></tr>
+<tr><td>ἐπὶ τὸ ἴδιον κτῆνος</td><td><not implemented></td></tr>
+<tr><td>ἤγαγεν αὐτὸν εἰς πανδοχεῖον</td><td><not implemented></td></tr>
+<tr><td>καὶ ἐπεμελήθη αὐτοῦ.</td><td><not implemented></td></tr>
+</table>
+<hr>
+καὶ ἐπὶ τὴν αὔριον ἐκβαλὼν δύο δηνάρια ἔδωκεν τῷ πανδοχεῖ καὶ εἶπεν Ἐπιμελήθητι αὐτοῦ, καὶ ὅ τι ἂν προσδαπανήσῃς ἐγὼ ἐν τῷ ἐπανέρχεσθαί με ἀποδώσω σοι.<hr><b>luke 10:35</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐπὶ τὴν αὔριον</td><td><not implemented></td></tr>
+<tr><td>ἐκβαλὼν δύο δηνάρια</td><td><not implemented></td></tr>
+<tr><td>ἔδωκεν τῷ πανδοχεῖ</td><td><not implemented></td></tr>
+<tr><td>καὶ εἶπεν Ἐπιμελήθητι αὐτοῦ,</td><td><not implemented></td></tr>
+<tr><td>καὶ τι ἂν ὅ προσδαπανήσῃς</td><td><not implemented></td></tr>
+<tr><td>ἐγὼ ἐν τῷ ἐπανέρχεσθαί με</td><td><not implemented></td></tr>
+<tr><td>ἀποδώσω σοι.</td><td><not implemented></td></tr>
+</table>
+<hr>
+τίς τούτων τῶν τριῶν πλησίον δοκεῖ σοι γεγονέναι τοῦ ἐμπεσόντος εἰς τοὺς λῃστάς;<hr><b>luke 10:36</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δοκεῖ σοι</td><td><not implemented></td></tr>
+<tr><td>τίς τούτων τῶν τριῶν</td><td><not implemented></td></tr>
+<tr><td>γεγονέναι πλησίον τοῦ</td><td><not implemented></td></tr>
+<tr><td>ἐμπεσόντος εἰς τοὺς λῃστάς;</td><td><not implemented></td></tr>
+</table>
+<hr>
+ὁ δὲ εἶπεν Ὁ ποιήσας τὸ ἔλεος μετ’ αὐτοῦ.<hr><b>luke 10:37</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ εἶπεν</td><td><not implemented></td></tr>
+<tr><td>Ὁ</td><td><not implemented></td></tr>
+<tr><td>ποιήσας τὸ ἔλεος μετ’ αὐτοῦ.</td><td><not implemented></td></tr>
+<tr><td>δὲ εἶπεν αὐτῷ ὁ Ἰησοῦς</td><td><not implemented></td></tr>
+<tr><td>Πορεύου καὶ σὺ ποίει ὁμοίως.</td><td><not implemented></td></tr>
+</table>
+<hr>
+Ἐν δὲ τῷ πορεύεσθαι αὐτοὺς αὐτὸς εἰσῆλθεν εἰς κώμην τινά·<hr><b>luke 10:38</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἐν τῷ πορεύεσθαι αὐτοὺς</td><td><not implemented></td></tr>
+<tr><td>αὐτὸς εἰσῆλθεν εἰς κώμην τινά·</td><td><not implemented></td></tr>
+<tr><td>δέ γυνὴ τις ὀνόματι Μάρθα</td><td><not implemented></td></tr>
+<tr><td>ὑπεδέξατο αὐτὸν εἰς τὴν οἰκίαν.</td><td><not implemented></td></tr>
+</table>
+<hr>
+καὶ τῇδε ἦν ἀδελφὴ καλουμένη Μαριάμ, ἣ καὶ παρακαθεσθεῖσα πρὸς τοὺς πόδας τοῦ Κυρίου ἤκουεν τὸν λόγον αὐτοῦ.<hr><b>luke 10:39</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ τῇδε</td><td><not implemented></td></tr>
+<tr><td>ἦν ἀδελφὴ καλουμένη Μαριάμ,</td><td><not implemented></td></tr>
+<tr><td>ἣ καὶ παρακαθεσθεῖσα πρὸς</td><td><not implemented></td></tr>
+<tr><td>τοὺς πόδας τοῦ Κυρίου</td><td><not implemented></td></tr>
+<tr><td>ἤκουεν τὸν λόγον αὐτοῦ.</td><td><not implemented></td></tr>
+</table>
+<hr>
+ἡ δὲ Μάρθα περιεσπᾶτο περὶ πολλὴν διακονίαν·<hr><b>luke 10:40</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἡ Μάρθα</td><td><not implemented></td></tr>
+<tr><td>περιεσπᾶτο περὶ πολλὴν διακονίαν·</td><td><not implemented></td></tr>
+<tr><td>δὲ ἐπιστᾶσα εἶπεν</td><td><not implemented></td></tr>
+<tr><td>Κύριε, οὐ μέλει σοι</td><td><not implemented></td></tr>
+<tr><td>ὅτι ἡ ἀδελφή μου</td><td><not implemented></td></tr>
+<tr><td>μόνην με διακονεῖν;</td><td><not implemented></td></tr>
+<tr><td>κατέλειπεν οὖν εἰπὸν αὐτῇ</td><td><not implemented></td></tr>
+<tr><td>ἵνα μοι συναντιλάβηται.</td><td><not implemented></td></tr>
+</table>
+<hr>
+ἀποκριθεὶς δὲ εἶπεν αὐτῇ ὁ Κύριος Μάρθα Μάρθα, μεριμνᾷς καὶ θορυβάζῃ περὶ πολλά, ὀλίγων δέ ἐστιν χρεία ἢ ἑνός· Μαριὰμ γὰρ τὴν ἀγαθὴν μερίδα ἐξελέξατο, ἥτις οὐκ ἀφαιρεθήσεται αὐτῆς.<hr><b>luke 10:41</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td><not implemented></td></tr>
+<tr><td>ἀποκριθεὶς εἶπεν αὐτῇ ὁ Κύριος</td><td><not implemented></td></tr>
+<tr><td>Μάρθα Μάρθα,</td><td><not implemented></td></tr>
+<tr><td>μεριμνᾷς καὶ θορυβάζῃ</td><td><not implemented></td></tr>
+<tr><td>περὶ πολλά,</td><td><not implemented></td></tr>
+</table>
+<hr><b>luke 10:42</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δέ ὀλίγων χρεία ἐστιν</td><td><not implemented></td></tr>
+<tr><td>ἢ ἑνός· γὰρ</td><td><not implemented></td></tr>
+<tr><td>Μαριὰμ τὴν ἀγαθὴν μερίδα</td><td><not implemented></td></tr>
+<tr><td>ἐξελέξατο, ἥτις οὐκ ἀφαιρεθήσεται αὐτῆς.</td><td><not implemented></td></tr>
+</table>
+<div class="chapter-links">
+<a href="9.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="selected-chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="11.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>
