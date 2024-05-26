@@ -167,7 +167,9 @@ def filename_to_chunked_sentences( filename ):
         sorted_leaves = sort_nodes( leaves )
         text = get_text( sorted_leaves ) 
         #print_chunks( [leaves, sorted_leaves] )
-        chunked_sentence = clump_singles(harvest_at_floating_depth( sentence, trim_num_leaves ), string_num_leaves)
+        chunked_sentence = harvest_at_floating_depth( sentence, trim_num_leaves )
+        chunked_sentence = clump_singles(chunked_sentence, string_num_leaves)
+        chunked_sentence = clump_singles(chunked_sentence, string_num_leaves+1)
         chunked_sentence_object = {
             "text": text,
             "chunks": chunked_sentence
