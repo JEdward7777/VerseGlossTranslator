@@ -147,7 +147,7 @@ Morphology information:
 ```
 """
 
-    if not exclude_source_gloss:
+    if not exclude_source_gloss and chunk['gloss'] != "<not implemented>":
         result += f"""
 The gloss for this in French is:
 ```
@@ -176,12 +176,17 @@ def generate_gloss_for( data, verse_index, chunk_index, book_name, system_messag
         ]
 
     if not host_local:
-        response = client_or_pipe.chat.completions.create(
-            model=model_name,
-            messages=messages
-        )
-        #return response.choices[0].text,
-        return response.choices[0].message.content
+        while True:
+            try:
+                response = client_or_pipe.chat.completions.create(
+                    model=model_name,
+                    messages=messages
+                )
+                #return response.choices[0].text,
+                return response.choices[0].message.content
+            except Exception as e:
+                print( e )
+                time.sleep( 10 )
     else:
         response = client_or_pipe(messages, max_new_tokens=128, do_sample=True)
         return response[0]['generated_text'][-1]['content']
@@ -344,7 +349,8 @@ if __name__ == "__main__":
     if not _host_local:
         #_model_name = "gpt-3.5-turbo"
         #_model_name = "gpt-4"
-        _model_name = "gpt-4-1106-preview"
+        #_model_name = "gpt-4-1106-preview"
+        _model_name = "gpt-4o"
     else:
         _model_name = "teknium/OpenHermes-2.5-Mistral-7B"
 
@@ -356,6 +362,7 @@ if __name__ == "__main__":
     _extra_ChatGPT_instructions = ""
     _reference_bible_usfx_zip = ""
     _output_suffix = ""
+    _bcv_template = None
 
 
     # output_language = "Farsi"
@@ -379,12 +386,12 @@ if __name__ == "__main__":
     # reference_bible_usfx_zip = "./data/Farsi_pesOPV_usfx.zip/pesOPV_usfx.xml"
     # bcv_template = "PHP.{0}.{1}"
 
-    _output_language = "Arabic"
-    _input_data = "./data/php_21.01.2024.json"
-    _book_name = "Philippians"
-    _extra_ChatGPT_instructions = "\n\nUse Christian words such as in the provided Arabic version."
-    _reference_bible_usfx_zip = "./data/arb-vd_usfx.zip/arb-vd_usfx.xml"
-    _bcv_template = "PHP.{0}.{1}"
+    # _output_language = "Arabic"
+    # _input_data = "./data/php_21.01.2024.json"
+    # _book_name = "Philippians"
+    # _extra_ChatGPT_instructions = "\n\nUse Christian words such as in the provided Arabic version."
+    # _reference_bible_usfx_zip = "./data/arb-vd_usfx.zip/arb-vd_usfx.xml"
+    # _bcv_template = "PHP.{0}.{1}"
 
 
     # output_language = "French"
@@ -409,6 +416,10 @@ if __name__ == "__main__":
     # _bcv_template = "PHP.{0}.{1}"
     # _output_suffix = "_frasbl"
     # _extra_ChatGPT_instructions = "\n\nStick as close to the Greek as possible with a hyper literal translation."
+
+    _output_language = "English"
+    _input_data = "./data/auto_01-matthew.json"
+    _book_name = "Matthew"
 
 
     _data = get_data( _input_data )
