@@ -175,21 +175,9 @@ def generate_gloss_for( data, verse_index, chunk_index, book_name, system_messag
             {"role": "user", "content": prompt}
         ]
 
-    if not host_local:
-        while True:
-            try:
-                response = client_or_pipe.chat.completions.create(
-                    model=model_name,
-                    messages=messages
-                )
-                #return response.choices[0].text,
-                return response.choices[0].message.content
-            except Exception as e:
-                print( e )
-                time.sleep( 10 )
-    else:
-        response = client_or_pipe(messages, max_new_tokens=128, do_sample=True)
-        return response[0]['generated_text'][-1]['content']
+
+    response = client_or_pipe(messages)
+    return response
 
 # %%
 
@@ -235,19 +223,92 @@ def number_of_verses( _data ):
 def number_of_chunks( _data, verse_index ):
     return len(_data[verse_index]['chunks'])
 
+def strip_lines( text ):
+    return "\n".join( line.strip() for line in text.splitlines() ).strip()
+
+
+def create_cache_saver( client_or_pipe, cache_saver ):
+    """This takes the LLM and wraps it so that if the question is asked again that the same response is returned in the log provided."""
+
+    prompt_key = "Prompt string:"
+    answer_key = "Response:"
+    answer_end = "Answer:"
+
+    in_prompt = False
+    in_answer = False
+
+    collected_prompt = []
+    collected_answer = []
+
+    prompts_to_answer = {}
+
+
+
+    with open( cache_saver, "r" ) as fin:
+        for line in fin:
+            if line.strip() == prompt_key:
+                in_prompt = True
+                in_answer = False
+            elif line.strip() == answer_key:
+                in_answer = True
+                in_prompt = False
+            elif line.strip() == answer_end:
+                in_prompt = False
+                in_answer = False
+
+                if collected_prompt and collected_answer:
+                    prompt = "\n".join( collected_prompt ).strip()
+                    answer = "\n".join( collected_answer ).strip()
+                    prompts_to_answer[prompt] = answer
+
+                collected_prompt = []
+                collected_answer = []
+            else:
+                if in_prompt:
+                    collected_prompt.append( line.strip() )
+                elif in_answer:
+                    collected_answer.append( line.strip() )
+
+    def cache_thing( messages ):
+        prompt = strip_lines(messages[-1]['content'].strip())
+        if prompt in prompts_to_answer:
+            return prompts_to_answer[prompt]
+        else:
+            return client_or_pipe( messages ) 
+
+    return cache_thing
+            
 
 # %%
-def get_output_data( data, input_data_basename, book_name, bible_usfx, output_language, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model_name, openai_api_key, host_local, output_callback=None, gloss_output_callback=None ):
+def get_output_data( data, input_data_basename, book_name, bible_usfx, output_language, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model_name, openai_api_key, host_local, output_callback=None, gloss_output_callback=None, cache_saver=None ):
 
     if output_callback:
         output_callback( "Starting..." )
 
     if not host_local:
         from openai import OpenAI
-        client_or_pipe = OpenAI( api_key = openai_api_key )
+        open_ai = OpenAI( api_key = openai_api_key )
+        def client_or_pipe( messages ):
+            while True:
+                try:
+                    response = open_ai.chat.completions.create(
+                        model=model_name,
+                        messages=messages
+                    )
+                    #return response.choices[0].text,
+                    return response.choices[0].message.content
+                except Exception as e:
+                    print( e )
+                    time.sleep( 10 )
     else:
         from transformers import pipeline
-        client_or_pipe = pipeline("text-generation", model_name)
+        local_pipeline = pipeline("text-generation", model_name)
+        def client_or_pipe( messages ):
+            response = local_pipeline(messages, max_new_tokens=128, do_sample=True)
+            return response[0]['generated_text'][-1]['content']
+
+    if cache_saver:
+        client_or_pipe = create_cache_saver( client_or_pipe, cache_saver )
     
     system_message = get_system_message( output_language )
 
@@ -325,6 +386,13 @@ def write_output_data( output_data, output_filename ):
 
 # %%
 
+def do_it( input_data, book_name, output_language, output_suffix, reference_bible_usfx_zip, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model_name, openai_api_key, host_local, cache_saver ):
+    data = get_data( input_data )
+    input_data_basename = get_input_data_basename( input_data )
+    bible_usfx = get_bible_usfx( reference_bible_usfx_zip )
+    output_data = get_output_data( data, input_data_basename, book_name, bible_usfx, output_language, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model_name, openai_api_key, host_local, cache_saver=cache_saver )
+    output_filename = get_output_filename( input_data_basename, output_language, output_suffix )
+    write_output_data( output_data, output_filename )
 
 #Adding a main break so I can call this script from a web gui wrapper.
 if __name__ == "__main__":
@@ -417,21 +485,20 @@ if __name__ == "__main__":
     # _output_suffix = "_frasbl"
     # _extra_ChatGPT_instructions = "\n\nStick as close to the Greek as possible with a hyper literal translation."
 
+    # _output_language = "English"
+    # _input_data = "./data/auto_01-matthew.json"
+    # _book_name = "Matthew"
+
     _output_language = "English"
-    _input_data = "./data/auto_01-matthew.json"
-    _book_name = "Matthew"
+    _input_data = "./data/auto_02-mark.json"
+    _book_name = "Mark"
 
+    _cache_saver = "ChatGPT_cache.txt"
 
-    _data = get_data( _input_data )
+    do_it( input_data=_input_data, book_name=_book_name, output_language=_output_language, output_suffix=_output_suffix,
+        reference_bible_usfx_zip=_reference_bible_usfx_zip, bcv_template=_bcv_template, exclude_source_gloss=_exclude_source_gloss,
+        extra_ChatGPT_instructions=_extra_ChatGPT_instructions, model_name=_model_name, openai_api_key=_openai_api_key, host_local=_host_local,
+        cache_saver=_cache_saver )
 
-    _input_data_basename = get_input_data_basename( _input_data )
-
-    _bible_usfx = get_bible_usfx( _reference_bible_usfx_zip )
-
-    _output_data = get_output_data( _data, _input_data_basename, _book_name, _bible_usfx, _output_language, _bcv_template, _exclude_source_gloss, _extra_ChatGPT_instructions, _model_name, _openai_api_key, _host_local )
-
-    _output_filename = get_output_filename( _input_data_basename, _output_language, _output_suffix )
-
-    write_output_data( _output_data, _output_filename )
 
     print( "Done." )
