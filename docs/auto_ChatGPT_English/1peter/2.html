@@ -1,0 +1,440 @@
+<!DOCTYPE html><html><head><title>1peter 2</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="../matthew/1.html" class="">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../matthew/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../matthew/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../matthew/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../matthew/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../matthew/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../matthew/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../matthew/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../matthew/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../matthew/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../matthew/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../matthew/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../matthew/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../matthew/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../matthew/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../matthew/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../matthew/16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="../matthew/17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="../matthew/18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="../matthew/19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="../matthew/20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="../matthew/21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="../matthew/22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="../matthew/23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="../matthew/24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="../matthew/25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="../matthew/26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="../matthew/27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="../matthew/28.html" class="">28</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../mark/1.html" class="">mark</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../mark/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../mark/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../mark/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../mark/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../mark/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../mark/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../mark/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../mark/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../mark/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../mark/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../mark/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../mark/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../mark/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../mark/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../mark/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../mark/16.html" class="">16</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">1peter</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="current-book-chapter">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="1.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="selected-chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="3.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Ἀποθέμενοι οὖν πᾶσαν κακίαν καὶ πάντα δόλον καὶ ὑποκρίσεις καὶ φθόνους καὶ πάσας καταλαλιάς, ὡς ἀρτιγέννητα βρέφη τὸ λογικὸν ἄδολον γάλα ἐπιποθήσατε, ἵνα ἐν αὐτῷ αὐξηθῆτε εἰς σωτηρίαν, εἰ ἐγεύσασθε ὅτι χρηστὸς ὁ Κύριος.<hr><b>1peter 2:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν Ἀποθέμενοι</td><td>therefore, having laid aside</td></tr>
+<tr><td>πᾶσαν κακίαν καὶ πάντα δόλον καὶ ὑποκρίσεις καὶ φθόνους καὶ πάσας καταλαλιάς,</td><td>all malice and all deceit and hypocrisies and envies and all slanders</td></tr>
+</table>
+<hr><b>1peter 2:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὡς ἀρτιγέννητα βρέφη</td><td>as *newly* born babies</td></tr>
+<tr><td>τὸ λογικὸν ἄδολον γάλα</td><td>the *pure* spiritual *milk*</td></tr>
+<tr><td>ἐπιποθήσατε, ἵνα</td><td>long for, so that</td></tr>
+<tr><td>ἐν αὐτῷ αὐξηθῆτε εἰς σωτηρίαν,</td><td>*may* you grow up into salvation *through* him</td></tr>
+</table>
+<hr><b>1peter 2:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>εἰ ἐγεύσασθε</td><td>if you have *tasted*</td></tr>
+<tr><td>ὅτι χρηστὸς ὁ Κύριος.</td><td>because *the* Lord is good</td></tr>
+</table>
+<hr>
+πρὸς ὃν προσερχόμενοι, λίθον ζῶντα, ὑπὸ ἀνθρώπων μὲν ἀποδεδοκιμασμένον παρὰ δὲ Θεῷ ἐκλεκτὸν ἔντιμον, καὶ αὐτοὶ ὡς λίθοι ζῶντες οἰκοδομεῖσθε οἶκος πνευματικὸς εἰς ἱεράτευμα ἅγιον, ἀνενέγκαι πνευματικὰς θυσίας εὐπροσδέκτους Θεῷ διὰ Ἰησοῦ Χριστοῦ.<hr><b>1peter 2:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>προσερχόμενοι,</td><td>coming to*wards*</td></tr>
+<tr><td>πρὸς ὃν λίθον ζῶντα,</td><td>to *whom* [you come], *the* living stone,</td></tr>
+<tr><td>μὲν ὑπὸ ἀνθρώπων ἀποδεδοκιμασμένον</td><td>*indeed* rejected by men</td></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>παρὰ Θεῷ ἐκλεκτὸν ἔντιμον,</td><td>with *before* God chosen, precious</td></tr>
+</table>
+<hr><b>1peter 2:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ αὐτοὶ</td><td>and you yourselves</td></tr>
+<tr><td>ὡς λίθοι ζῶντες</td><td>as living stones</td></tr>
+<tr><td>οἰκοδομεῖσθε οἶκος πνευματικὸς</td><td>are being built *up as* a spiritual house</td></tr>
+<tr><td>εἰς ἱεράτευμα ἅγιον,</td><td>into a *holy* priesthood</td></tr>
+<tr><td>ἀνενέγκαι πνευματικὰς θυσίας εὐπροσδέκτους</td><td>to offer *up* spiritual sacrifices *that are* acceptable</td></tr>
+<tr><td>Θεῷ διὰ Ἰησοῦ Χριστοῦ.</td><td>to God *through* Jesus Christ</td></tr>
+</table>
+<hr>
+διότι περιέχει ἐν γραφῇ Ἰδοὺ τίθημι ἐν Σιὼν λίθον ἐκλεκτὸν ἀκρογωνιαῖον ἔντιμον, καὶ ὁ πιστεύων ἐπ’ αὐτῷ οὐ μὴ καταισχυνθῇ.<hr><b>1peter 2:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>διότι περιέχει ἐν γραφῇ</td><td>for it contains *in* Scripture</td></tr>
+<tr><td>Ἰδοὺ τίθημι ἐν Σιὼν</td><td>Behold, I am laying in *the* Zion</td></tr>
+<tr><td>λίθον ἐκλεκτὸν ἀκρογωνιαῖον</td><td>chosen stone *as* cornerstone</td></tr>
+<tr><td>ἔντιμον, καὶ</td><td>precious, and</td></tr>
+<tr><td>ὁ πιστεύων ἐπ’ αὐτῷ</td><td>he who believes *in* him</td></tr>
+<tr><td>οὐ μὴ</td><td>will *not* at all</td></tr>
+<tr><td>καταισχυνθῇ.</td><td>*will* not be *put to* shame</td></tr>
+</table>
+<hr>
+ὑμῖν οὖν ἡ τιμὴ τοῖς πιστεύουσιν·<hr><b>1peter 2:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν ἡ τιμὴ</td><td>therefore *the* honor</td></tr>
+<tr><td>ὑμῖν τοῖς πιστεύουσιν·</td><td>to you *who* believe</td></tr>
+<tr><td>δὲ ἀπιστοῦσιν λίθος</td><td>but for those who do not believe, the *stone*</td></tr>
+<tr><td>ὃν ἀπεδοκίμασαν οἱ οἰκοδομοῦντες,</td><td>the stone which *the* builders rejected</td></tr>
+<tr><td>οὗτος</td><td>*this*</td></tr>
+<tr><td>ἐγενήθη εἰς κεφαλὴν γωνίας</td><td>became the *chief cornerstone*</td></tr>
+</table>
+<hr>
+ἀπιστοῦσιν δὲ λίθος ὃν ἀπεδοκίμασαν οἱ οἰκοδομοῦντες, οὗτος ἐγενήθη εἰς κεφαλὴν γωνίας καὶ λίθος προσκόμματος καὶ πέτρα σκανδάλου· οἳ προσκόπτουσιν τῷ λόγῳ ἀπειθοῦντες, εἰς ὃ καὶ ἐτέθησαν·<hr><b>1peter 2:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ</td><td>and *also*</td></tr>
+<tr><td>λίθος προσκόμματος καὶ πέτρα σκανδάλου·</td><td>stone of stumbling and *the* rock of offense</td></tr>
+<tr><td>οἳ</td><td>those who</td></tr>
+<tr><td>προσκόπτουσιν τῷ λόγῳ ἀπειθοῦντες,</td><td>they stumble at the word being disobedient</td></tr>
+<tr><td>εἰς ὃ καὶ ἐτέθησαν·</td><td>to *which* they also were appointed</td></tr>
+</table>
+<hr>
+ὑμεῖς δὲ γένος ἐκλεκτόν, βασίλειον ἱεράτευμα, ἔθνος ἅγιον, λαὸς εἰς περιποίησιν, ὅπως τὰς ἀρετὰς ἐξαγγείλητε τοῦ ἐκ σκότους ὑμᾶς καλέσαντος εἰς τὸ θαυμαστὸν αὐτοῦ φῶς· οἵ ποτε οὐ λαὸς, νῦν δὲ λαὸς Θεοῦ, οἱ οὐκ ἠλεημένοι, νῦν δὲ ἐλεηθέντες.<hr><b>1peter 2:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὑμεῖς γένος ἐκλεκτόν,</td><td>but you *are* a chosen *race*,</td></tr>
+<tr><td>βασίλειον ἱεράτευμα,</td><td>*a* royal priesthood</td></tr>
+<tr><td>ἔθνος ἅγιον,</td><td>holy *nation*</td></tr>
+<tr><td>λαὸς εἰς περιποίησιν,</td><td>people for *a* possession</td></tr>
+<tr><td>ὅπως ἐξαγγείλητε τὰς</td><td>so that you may *proclaim* the</td></tr>
+<tr><td>ἀρετὰς τοῦ ἐκ σκότους</td><td>the excellences *of the one who* called you out of *the* darkness</td></tr>
+<tr><td>ὑμᾶς καλέσαντος εἰς</td><td>having called *you* to</td></tr>
+<tr><td>τὸ θαυμαστὸν αὐτοῦ φῶς·</td><td>the *marvelous* light of *Him*</td></tr>
+</table>
+<hr><b>1peter 2:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οἵ ποτε οὐ λαὸς,</td><td>*you* who once *were* not a people,</td></tr>
+<tr><td>δὲ νῦν λαὸς Θεοῦ,</td><td>but now *a* people of God</td></tr>
+<tr><td>οἱ οὐκ ἠλεημένοι,</td><td>those who had *not* received mercy</td></tr>
+<tr><td>δὲ νῦν ἐλεηθέντες.</td><td>but *you* now *have been* shown mercy</td></tr>
+</table>
+<hr>
+Ἀγαπητοί, παρακαλῶ ὡς παροίκους καὶ παρεπιδήμους ἀπέχεσθαι τῶν σαρκικῶν ἐπιθυμιῶν, αἵτινες στρατεύονται κατὰ τῆς ψυχῆς·<hr><b>1peter 2:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἀγαπητοί, παρακαλῶ</td><td>Beloved, I urge</td></tr>
+<tr><td>ὡς παροίκους καὶ παρεπιδήμους</td><td>as *temporary* residents and *foreigners*</td></tr>
+<tr><td>ἀπέχεσθαι τῶν σαρκικῶν ἐπιθυμιῶν,</td><td>to abstain from *the* fleshly desires</td></tr>
+<tr><td>αἵτινες</td><td>*those* which</td></tr>
+<tr><td>στρατεύονται κατὰ τῆς ψυχῆς·</td><td>*wage* war against the soul</td></tr>
+</table>
+<hr>
+τὴν ἀναστροφὴν ὑμῶν ἐν τοῖς ἔθνεσιν ἔχοντες καλήν, ἵνα ἐν ᾧ καταλαλοῦσιν ὑμῶν ὡς κακοποιῶν, ἐκ τῶν καλῶν ἔργων ἐποπτεύοντες δοξάσωσιν τὸν Θεὸν ἐν ἡμέρᾳ ἐπισκοπῆς.<hr><b>1peter 2:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>τὴν ἀναστροφὴν ὑμῶν</td><td>your *way of* life</td></tr>
+<tr><td>ἐν τοῖς ἔθνεσιν</td><td>among *the* nations</td></tr>
+<tr><td>ἔχοντες καλήν, ἵνα</td><td>having a good, so that</td></tr>
+<tr><td>ἐν ᾧ καταλαλοῦσιν ὑμῶν</td><td>in which *they* speak against you</td></tr>
+<tr><td>ὡς κακοποιῶν,</td><td>as *ones who do* evil</td></tr>
+<tr><td>ἐκ τῶν καλῶν ἔργων</td><td>from *the* good *deeds*</td></tr>
+<tr><td>ἐποπτεύοντες δοξάσωσιν τὸν Θεὸν</td><td>observing *that they* glorify *the* God</td></tr>
+<tr><td>ἐν ἡμέρᾳ ἐπισκοπῆς.</td><td>on *the* day *of* visitation</td></tr>
+</table>
+<hr>
+Ὑποτάγητε πάσῃ ἀνθρωπίνῃ κτίσει διὰ τὸν Κύριον· εἴτε βασιλεῖ ὡς ὑπερέχοντι, εἴτε ἡγεμόσιν ὡς δι’ αὐτοῦ πεμπομένοις εἰς ἐκδίκησιν κακοποιῶν ἔπαινον δὲ ἀγαθοποιῶν·<hr><b>1peter 2:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ὑποτάγητε διὰ τὸν Κύριον·</td><td>Submit *yourselves* *because of* the Lord</td></tr>
+<tr><td>πάσῃ ἀνθρωπίνῃ κτίσει</td><td>to every *human* institution</td></tr>
+<tr><td>εἴτε βασιλεῖ ὡς ὑπερέχοντι,</td><td>whether to the king as *one* who is superior,</td></tr>
+</table>
+<hr><b>1peter 2:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>εἴτε</td><td>whether</td></tr>
+<tr><td>ἡγεμόσιν ὡς δι’ αὐτοῦ</td><td>to governors as *being* sent by *him*</td></tr>
+<tr><td>πεμπομένοις εἰς</td><td>being sent *to*</td></tr>
+<tr><td>ἐκδίκησιν κακοποιῶν δὲ ἔπαινον ἀγαθοποιῶν·</td><td>punishment of wrongdoers and *praise* of those who do good</td></tr>
+</table>
+<hr>
+ὅτι οὕτως ἐστὶν τὸ θέλημα τοῦ Θεοῦ, ἀγαθοποιοῦντας φιμοῦν τὴν τῶν ἀφρόνων ἀνθρώπων ἀγνωσίαν·<hr><b>1peter 2:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅτι οὕτως ἐστὶν</td><td>because *it* is so</td></tr>
+<tr><td>τὸ θέλημα τοῦ Θεοῦ,</td><td>the will *of* God</td></tr>
+<tr><td>ἀγαθοποιοῦντας φιμοῦν</td><td>doing good *to* silence</td></tr>
+<tr><td>τὴν τῶν ἀφρόνων ἀνθρώπων</td><td>the ignorance of men *who are* foolish</td></tr>
+<tr><td>ἀγνωσίαν·</td><td>*the* ignorance</td></tr>
+</table>
+<hr>
+ὡς ἐλεύθεροι, καὶ μὴ ὡς ἐπικάλυμμα ἔχοντες τῆς κακίας τὴν ἐλευθερίαν, ἀλλ’ ὡς Θεοῦ δοῦλοι.<hr><b>1peter 2:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὡς ἐλεύθεροι,</td><td>as *being* free,</td></tr>
+<tr><td>καὶ μὴ ὡς</td><td>and *not* as</td></tr>
+<tr><td>ἔχοντες ἐπικάλυμμα τῆς κακίας</td><td>having a cover *over* evil</td></tr>
+<tr><td>τὴν ἐλευθερίαν,</td><td>the *freedom*</td></tr>
+<tr><td>ἀλλ’ ὡς Θεοῦ δοῦλοι.</td><td>but as *servants* of God</td></tr>
+</table>
+<hr>
+πάντας τιμήσατε, τὴν ἀδελφότητα ἀγαπᾶτε, τὸν Θεὸν φοβεῖσθε, τὸν βασιλέα τιμᾶτε.<hr><b>1peter 2:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>πάντας τιμήσατε,</td><td>honor *everyone*</td></tr>
+<tr><td>τὴν ἀδελφότητα ἀγαπᾶτε,</td><td>love *the* brotherhood</td></tr>
+<tr><td>τὸν Θεὸν φοβεῖσθε,</td><td>fear *the* God</td></tr>
+<tr><td>τὸν βασιλέα τιμᾶτε.</td><td>honor *the* king</td></tr>
+</table>
+<hr>
+Οἱ οἰκέται, ὑποτασσόμενοι ἐν παντὶ φόβῳ τοῖς δεσπόταις, οὐ μόνον τοῖς ἀγαθοῖς καὶ ἐπιεικέσιν ἀλλὰ καὶ τοῖς σκολιοῖς.<hr><b>1peter 2:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Οἱ οἰκέται,</td><td>The *servants*,</td></tr>
+<tr><td>ὑποτασσόμενοι ἐν παντὶ φόβῳ</td><td>submitting yourselves with all *kinds of* fear</td></tr>
+<tr><td>τοῖς δεσπόταις,</td><td>to the *masters*</td></tr>
+<tr><td>οὐ μόνον</td><td>not only</td></tr>
+<tr><td>τοῖς ἀγαθοῖς καὶ ἐπιεικέσιν</td><td>to the *masters* who are good and *considerate*</td></tr>
+<tr><td>ἀλλὰ καὶ τοῖς σκολιοῖς.</td><td>but also *to* those who are crooked</td></tr>
+</table>
+<hr>
+τοῦτο γὰρ χάρις εἰ διὰ συνείδησιν Θεοῦ ὑποφέρει τις λύπας πάσχων ἀδίκως.<hr><b>1peter 2:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ τοῦτο χάρις</td><td>for *this is* grace</td></tr>
+<tr><td>εἰ διὰ συνείδησιν Θεοῦ</td><td>if *it is* through God-consciousness</td></tr>
+<tr><td>ὑποφέρει</td><td>*he/she* endures</td></tr>
+<tr><td>τις λύπας πάσχων ἀδίκως.</td><td>someone suffering *from* pains unjustly</td></tr>
+</table>
+<hr>
+ποῖον γὰρ κλέος εἰ ἁμαρτάνοντες καὶ κολαφιζόμενοι ὑπομενεῖτε; ἀλλ’ εἰ ἀγαθοποιοῦντες καὶ πάσχοντες ὑπομενεῖτε, τοῦτο χάρις παρὰ Θεῷ.<hr><b>1peter 2:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ποῖον κλέος</td><td>for what *is the* glory</td></tr>
+<tr><td>εἰ ἁμαρτάνοντες καὶ κολαφιζόμενοι</td><td>if sinning and *being* beaten</td></tr>
+<tr><td>ὑπομενεῖτε; ἀλλ’</td><td>you endure; but</td></tr>
+<tr><td>εἰ ἀγαθοποιοῦντες καὶ πάσχοντες</td><td>if doing good and *suffering*</td></tr>
+<tr><td>ὑπομενεῖτε,</td><td>*you* endure</td></tr>
+<tr><td>τοῦτο χάρις παρὰ Θεῷ.</td><td>this *is* grace with *or from* God</td></tr>
+</table>
+<hr>
+εἰς τοῦτο γὰρ ἐκλήθητε, ὅτι καὶ Χριστὸς ἔπαθεν ὑπὲρ ὑμῶν, ὑμῖν ὑπολιμπάνων ὑπογραμμὸν ἵνα ἐπακολουθήσητε τοῖς ἴχνεσιν αὐτοῦ·<hr><b>1peter 2:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ εἰς τοῦτο ἐκλήθητε,</td><td>for *it is* to this you were called,</td></tr>
+<tr><td>ὅτι καὶ Χριστὸς</td><td>because *also* Christ</td></tr>
+<tr><td>ἔπαθεν ὑπὲρ ὑμῶν,</td><td>he suffered *for* you</td></tr>
+<tr><td>ὑμῖν ὑπολιμπάνων ὑπογραμμὸν</td><td>*for* you *he is* leaving *behind* an example</td></tr>
+<tr><td>ἵνα</td><td>so that* in order that*</td></tr>
+<tr><td>ἐπακολουθήσητε τοῖς ἴχνεσιν αὐτοῦ·</td><td>you may follow *in* his footsteps</td></tr>
+</table>
+<hr>
+ὃς ἁμαρτίαν οὐκ ἐποίησεν οὐδὲ εὑρέθη δόλος ἐν τῷ στόματι αὐτοῦ·<hr><b>1peter 2:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὃς ἁμαρτίαν οὐκ ἐποίησεν</td><td>who *a* sin did not commit</td></tr>
+<tr><td>οὐδὲ εὑρέθη δόλος</td><td>nor was *any* deceit found</td></tr>
+<tr><td>ἐν τῷ στόματι αὐτοῦ·</td><td>in *the* mouth *of* him</td></tr>
+</table>
+<hr>
+ὃς λοιδορούμενος οὐκ ἀντελοιδόρει, πάσχων οὐκ ἠπείλει, παρεδίδου δὲ τῷ κρίνοντι δικαίως·<hr><b>1peter 2:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὃς λοιδορούμενος οὐκ ἀντελοιδόρει,</td><td>who, when he was insulted, did not *insult* in return</td></tr>
+<tr><td>πάσχων οὐκ ἠπείλει,</td><td>suffering, he did not *threaten*</td></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>παρεδίδου τῷ κρίνοντι δικαίως·</td><td>he *entrusted himself* to the one who judges justly</td></tr>
+</table>
+<hr>
+ὃς τὰς ἁμαρτίας ἡμῶν αὐτὸς ἀνήνεγκεν ἐν τῷ σώματι αὐτοῦ ἐπὶ τὸ ξύλον, ἵνα ταῖς ἁμαρτίαις ἀπογενόμενοι τῇ δικαιοσύνῃ ζήσωμεν·<hr><b>1peter 2:24</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὃς αὐτὸς</td><td>who *himself*</td></tr>
+<tr><td>τὰς ἁμαρτίας ἡμῶν</td><td>the sins *of* us</td></tr>
+<tr><td>ἀνήνεγκεν</td><td>*He himself* bore</td></tr>
+<tr><td>ἐν τῷ σώματι αὐτοῦ</td><td>in *the* body *of* his</td></tr>
+<tr><td>ἐπὶ τὸ ξύλον,</td><td>on *the* wood</td></tr>
+<tr><td>ἵνα ταῖς ἁμαρτίαις ἀπογενόμενοι</td><td>so that, having *died* to sins</td></tr>
+<tr><td>τῇ δικαιοσύνῃ</td><td>to *the* righteousness</td></tr>
+<tr><td>ζήσωμεν·</td><td>*we* may live</td></tr>
+<tr><td>οὗ τῷ μώλωπι</td><td>by *his* wounds</td></tr>
+<tr><td>ἰάθητε.</td><td>*you were* healed</td></tr>
+</table>
+<hr>
+ἦτε γὰρ ὡς πρόβατα πλανώμενοι, ἀλλὰ ἐπεστράφητε νῦν ἐπὶ τὸν Ποιμένα καὶ Ἐπίσκοπον τῶν ψυχῶν ὑμῶν.<hr><b>1peter 2:25</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ</td><td>for</td></tr>
+<tr><td>ἦτε ὡς πρόβατα πλανώμενοι,</td><td>you were like sheep *being* led astray</td></tr>
+<tr><td>ἀλλὰ ἐπεστράφητε νῦν ἐπὶ</td><td>but you have now returned to</td></tr>
+<tr><td>τὸν Ποιμένα καὶ Ἐπίσκοπον</td><td>the Shepherd and *the* Bishop</td></tr>
+<tr><td>τῶν ψυχῶν ὑμῶν.</td><td>of your *souls*</td></tr>
+</table>
+<div class="chapter-links">
+<a href="1.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="selected-chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="3.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>

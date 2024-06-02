@@ -1,0 +1,420 @@
+<!DOCTYPE html><html><head><title>matthew 3</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="current-book-chapter">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="28.html" class="">28</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../mark/1.html" class="">mark</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../mark/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../mark/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../mark/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../mark/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../mark/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../mark/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../mark/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../mark/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../mark/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../mark/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../mark/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../mark/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../mark/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../mark/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../mark/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../mark/16.html" class="">16</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../1peter/1.html" class="">1peter</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../1peter/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../1peter/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../1peter/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../1peter/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../1peter/5.html" class="">5</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="2.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="selected-chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="4.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Ἐν δὲ ταῖς ἡμέραις ἐκείναις παραγίνεται Ἰωάνης ὁ βαπτιστὴς κηρύσσων ἐν τῇ ἐρήμῳ τῆς Ἰουδαίας, λέγων Μετανοεῖτε· ἤγγικεν γὰρ ἡ βασιλεία τῶν οὐρανῶν.<hr><b>matthew 3:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἐν ταῖς ἡμέραις ἐκείναις</td><td>Now *in* those days</td></tr>
+<tr><td>παραγίνεται Ἰωάνης ὁ βαπτιστὴς</td><td>comes John the Baptist</td></tr>
+<tr><td>κηρύσσων ἐν</td><td>preaching *in*</td></tr>
+<tr><td>τῇ ἐρήμῳ τῆς Ἰουδαίας,</td><td>the wilderness *of* Judea</td></tr>
+</table>
+<hr><b>matthew 3:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>λέγων Μετανοεῖτε· γὰρ ἤγγικεν</td><td>saying *Repent, for* *has come near*</td></tr>
+<tr><td>ἡ βασιλεία τῶν οὐρανῶν.</td><td>the kingdom *of* the heavens</td></tr>
+</table>
+<hr>
+οὗτος γάρ ἐστιν ὁ ῥηθεὶς διὰ Ἠσαΐου τοῦ προφήτου λέγοντος Φωνὴ βοῶντος ἐν τῇ ἐρήμῳ Ἑτοιμάσατε τὴν ὁδὸν Κυρίου, εὐθείας ποιεῖτε τὰς τρίβους αὐτοῦ.<hr><b>matthew 3:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γάρ οὗτος ἐστιν ὁ ῥηθεὶς</td><td>for *this* is *the* spoken</td></tr>
+<tr><td>διὰ Ἠσαΐου τοῦ προφήτου</td><td>through Isaiah the *prophet*</td></tr>
+<tr><td>λέγοντος Φωνὴ</td><td>saying *the* voice</td></tr>
+<tr><td>βοῶντος ἐν τῇ ἐρήμῳ</td><td>crying *out* in the *wilderness*</td></tr>
+<tr><td>Ἑτοιμάσατε τὴν ὁδὸν Κυρίου,</td><td>Prepare the way *of the* Lord,</td></tr>
+<tr><td>εὐθείας ποιεῖτε τὰς τρίβους αὐτοῦ.</td><td>make straight *the* paths *of Him*</td></tr>
+</table>
+<hr>
+Αὐτὸς δὲ ὁ Ἰωάνης εἶχεν τὸ ἔνδυμα αὐτοῦ ἀπὸ τριχῶν καμήλου καὶ ζώνην δερματίνην περὶ τὴν ὀσφὺν αὐτοῦ· ἡ δὲ τροφὴ ἦν αὐτοῦ ἀκρίδες καὶ μέλι ἄγριον.<hr><b>matthew 3:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Αὐτὸς ὁ Ἰωάνης</td><td>now *himself* John *the*</td></tr>
+<tr><td>εἶχεν τὸ ἔνδυμα αὐτοῦ</td><td>he had *the* clothing *of him*</td></tr>
+<tr><td>ἀπὸ τριχῶν καμήλου</td><td>from *camel* hairs</td></tr>
+<tr><td>καὶ ζώνην δερματίνην</td><td>and a leather belt</td></tr>
+<tr><td>περὶ τὴν ὀσφὺν αὐτοῦ·</td><td>around *his* waist</td></tr>
+<tr><td>δὲ ἡ τροφὴ αὐτοῦ</td><td>but *the* food *of* him</td></tr>
+<tr><td>ἦν ἀκρίδες καὶ μέλι ἄγριον.</td><td>*was* locusts and wild honey</td></tr>
+</table>
+<hr>
+Τότε ἐξεπορεύετο πρὸς αὐτὸν Ἱεροσόλυμα καὶ πᾶσα ἡ Ἰουδαία καὶ πᾶσα ἡ περίχωρος τοῦ Ἰορδάνου, καὶ ἐβαπτίζοντο ἐν τῷ Ἰορδάνῃ ποταμῷ ὑπ’ αὐτοῦ ἐξομολογούμενοι τὰς ἁμαρτίας αὐτῶν.<hr><b>matthew 3:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Τότε ἐξεπορεύετο πρὸς αὐτὸν</td><td>Then *they/were* going out to him</td></tr>
+<tr><td>Ἱεροσόλυμα καὶ πᾶσα ἡ Ἰουδαία</td><td>Jerusalem and all *the* Judea</td></tr>
+<tr><td>καὶ πᾶσα</td><td>and *all*</td></tr>
+<tr><td>ἡ περίχωρος τοῦ Ἰορδάνου,</td><td>the region *of* the Jordan</td></tr>
+</table>
+<hr><b>matthew 3:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐβαπτίζοντο</td><td>and they were being baptized</td></tr>
+<tr><td>ἐν τῷ Ἰορδάνῃ ποταμῷ</td><td>in *the* Jordan river</td></tr>
+<tr><td>ὑπ’ αὐτοῦ</td><td>by *him*</td></tr>
+<tr><td>ἐξομολογούμενοι τὰς ἁμαρτίας αὐτῶν.</td><td>confessing *their* sins</td></tr>
+</table>
+<hr>
+Ἰδὼν δὲ πολλοὺς τῶν Φαρισαίων καὶ Σαδδουκαίων ἐρχομένους ἐπὶ τὸ βάπτισμα εἶπεν αὐτοῖς Γεννήματα ἐχιδνῶν, τίς ὑπέδειξεν ὑμῖν φυγεῖν ἀπὸ τῆς μελλούσης ὀργῆς;<hr><b>matthew 3:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἰδὼν πολλοὺς</td><td>but *having seen* many</td></tr>
+<tr><td>τῶν Φαρισαίων καὶ Σαδδουκαίων</td><td>the Pharisees and Sadducees</td></tr>
+<tr><td>ἐρχομένους ἐπὶ τὸ βάπτισμα</td><td>coming *to* the baptism</td></tr>
+<tr><td>εἶπεν αὐτοῖς Γεννήματα ἐχιδνῶν,</td><td>said *to* them Offspring *of* vipers,</td></tr>
+<tr><td>τίς ὑπέδειξεν ὑμῖν φυγεῖν</td><td>who *has* shown *to* you *to* flee</td></tr>
+<tr><td>ἀπὸ τῆς μελλούσης ὀργῆς;</td><td>from *the* coming wrath</td></tr>
+</table>
+<hr>
+ποιήσατε οὖν καρπὸν ἄξιον τῆς μετανοίας·<hr><b>matthew 3:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν ποιήσατε</td><td>therefore *you* produce</td></tr>
+<tr><td>καρπὸν ἄξιον τῆς μετανοίας·</td><td>fruit *worthy of* repentance</td></tr>
+</table>
+<hr>
+καὶ μὴ δόξητε λέγειν ἐν ἑαυτοῖς Πατέρα ἔχομεν τὸν Ἀβραάμ· λέγω γὰρ ὑμῖν ὅτι δύναται ὁ Θεὸς ἐκ τῶν λίθων τούτων ἐγεῖραι τέκνα τῷ Ἀβραάμ.<hr><b>matthew 3:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ μὴ</td><td>and *do* not</td></tr>
+<tr><td>δόξητε λέγειν ἐν ἑαυτοῖς</td><td>you-think *to* say *in* yourselves</td></tr>
+<tr><td>Πατέρα ἔχομεν τὸν Ἀβραάμ·</td><td>we have *as* father Abraham</td></tr>
+<tr><td>γὰρ λέγω ὑμῖν</td><td>for *I* say *to* you</td></tr>
+<tr><td>ὅτι δύναται ὁ Θεὸς</td><td>for *He (God)* is able</td></tr>
+<tr><td>ἐκ τῶν λίθων τούτων</td><td>*from* the *these* stones</td></tr>
+<tr><td>ἐγεῖραι τέκνα τῷ Ἀβραάμ.</td><td>raise up children *to* Abraham</td></tr>
+</table>
+<hr>
+ἤδη δὲ ἡ ἀξίνη πρὸς τὴν ῥίζαν τῶν δένδρων κεῖται·<hr><b>matthew 3:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἤδη ἡ ἀξίνη</td><td>but already the axe</td></tr>
+<tr><td>πρὸς τὴν ῥίζαν τῶν δένδρων</td><td>at *the* root of *the* trees</td></tr>
+<tr><td>κεῖται·</td><td>is laid *at the*</td></tr>
+<tr><td>οὖν πᾶν δένδρον</td><td>therefore *every* tree</td></tr>
+<tr><td>μὴ ποιοῦν καρπὸν καλὸν</td><td>*not* producing good fruit</td></tr>
+<tr><td>ἐκκόπτεται καὶ εἰς πῦρ βάλλεται.</td><td>is cut down and *is* thrown into *the* fire</td></tr>
+</table>
+<hr>
+ἐγὼ μὲν ὑμᾶς βαπτίζω ἐν ὕδατι εἰς μετάνοιαν· ὁ δὲ ὀπίσω μου ἐρχόμενος ἰσχυρότερός μού ἐστιν, οὗ οὐκ εἰμὶ ἱκανὸς τὰ ὑποδήματα βαστάσαι·<hr><b>matthew 3:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μὲν</td><td>*indeed*</td></tr>
+<tr><td>ἐγὼ ὑμᾶς βαπτίζω ἐν ὕδατι εἰς μετάνοιαν·</td><td>I *am* baptizing you in *the* water *for* repentance</td></tr>
+<tr><td>δὲ ὁ ὀπίσω μου ἐρχόμενος</td><td>but *the one* coming after me</td></tr>
+<tr><td>ἰσχυρότερός μού</td><td>stronger *than* me</td></tr>
+<tr><td>ἐστιν, οὗ οὐκ εἰμὶ</td><td>he *is*, of whom *I* *am* *not*</td></tr>
+<tr><td>ἱκανὸς τὰ ὑποδήματα βαστάσαι·</td><td>worthy *to* carry *the* sandals</td></tr>
+<tr><td>αὐτὸς ὑμᾶς βαπτίσει ἐν</td><td>he *will* baptize you *in*</td></tr>
+<tr><td>Πνεύματι Ἁγίῳ καὶ πυρί·</td><td>Holy Spirit and *with* fire</td></tr>
+</table>
+<hr>
+οὗ τὸ πτύον ἐν τῇ χειρὶ αὐτοῦ, καὶ διακαθαριεῖ τὴν ἅλωνα αὐτοῦ, καὶ συνάξει τὸν σῖτον αὐτοῦ εἰς τὴν ἀποθήκην, τὸ δὲ ἄχυρον κατακαύσει πυρὶ ἀσβέστῳ.<hr><b>matthew 3:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὗ τὸ πτύον</td><td>whose *winnowing fork*</td></tr>
+<tr><td>ἐν τῇ χειρὶ αὐτοῦ,</td><td>in *the* hand *of* him</td></tr>
+<tr><td>καὶ διακαθαριεῖ τὴν ἅλωνα αὐτοῦ,</td><td>and *he will* thoroughly clean *his* threshing floor</td></tr>
+<tr><td>καὶ συνάξει τὸν σῖτον αὐτοῦ</td><td>and *he will* gather *his* wheat</td></tr>
+<tr><td>εἰς τὴν ἀποθήκην,</td><td>into *the* storehouse</td></tr>
+<tr><td>δὲ</td><td>but *the*</td></tr>
+<tr><td>τὸ ἄχυρον κατακαύσει πυρὶ ἀσβέστῳ.</td><td>the chaff *he will burn* with unquenchable fire</td></tr>
+</table>
+<hr>
+Τότε παραγίνεται ὁ Ἰησοῦς ἀπὸ τῆς Γαλιλαίας ἐπὶ τὸν Ἰορδάνην πρὸς τὸν Ἰωάνην τοῦ βαπτισθῆναι ὑπ’ αὐτοῦ.<hr><b>matthew 3:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Τότε παραγίνεται ὁ Ἰησοῦς</td><td>*Then* comes Jesus</td></tr>
+<tr><td>ἀπὸ τῆς Γαλιλαίας</td><td>from *the* Galilee</td></tr>
+<tr><td>ἐπὶ τὸν Ἰορδάνην</td><td>to *the* Jordan</td></tr>
+<tr><td>πρὸς τὸν Ἰωάνην</td><td>to *the* John</td></tr>
+<tr><td>τοῦ βαπτισθῆναι ὑπ’ αὐτοῦ.</td><td>to be baptized by *him*</td></tr>
+</table>
+<hr>
+ὁ δὲ διεκώλυεν αὐτὸν λέγων Ἐγὼ χρείαν ἔχω ὑπὸ σοῦ βαπτισθῆναι, καὶ σὺ ἔρχῃ πρός με;<hr><b>matthew 3:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ διεκώλυεν</td><td>*but* he *was preventing*</td></tr>
+<tr><td>αὐτὸν λέγων Ἐγὼ χρείαν</td><td>*him* saying *I* need</td></tr>
+<tr><td>ἔχω ὑπὸ σοῦ βαπτισθῆναι,</td><td>*I* have *need* *to be* baptized *by* you,</td></tr>
+<tr><td>καὶ σὺ ἔρχῃ πρός με;</td><td>and you come to me?</td></tr>
+</table>
+<hr>
+ἀποκριθεὶς δὲ ὁ Ἰησοῦς εἶπεν αὐτῷ Ἄφες ἄρτι· οὕτως γὰρ πρέπον ἐστὶν ἡμῖν πληρῶσαι πᾶσαν δικαιοσύνην.<hr><b>matthew 3:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>but *implicit words*</td></tr>
+<tr><td>ἀποκριθεὶς ὁ Ἰησοῦς εἶπεν αὐτῷ</td><td>Jesus replied and *said* to him</td></tr>
+<tr><td>Ἄφες ἄρτι·</td><td>Allow *it* *now*</td></tr>
+<tr><td>γὰρ οὕτως πρέπον ἐστὶν</td><td>for thus it *is* fitting</td></tr>
+<tr><td>ἡμῖν πληρῶσαι πᾶσαν δικαιοσύνην.</td><td>for *us* to fulfill all righteousness</td></tr>
+<tr><td>τότε ἀφίησιν αὐτόν.</td><td>then he allows *him*</td></tr>
+</table>
+<hr>
+βαπτισθεὶς δὲ ὁ Ἰησοῦς εὐθὺς ἀνέβη ἀπὸ τοῦ ὕδατος·<hr><b>matthew 3:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ βαπτισθεὶς ὁ Ἰησοῦς</td><td>but having been baptized *the* Jesus</td></tr>
+<tr><td>εὐθὺς ἀνέβη ἀπὸ τοῦ ὕδατος·</td><td>immediately rose up *from the water*</td></tr>
+<tr><td>καὶ ἰδοὺ ἠνεῴχθησαν οἱ οὐρανοί,</td><td>and *behold*, *the* heavens were opened</td></tr>
+<tr><td>καὶ εἶδεν Πνεῦμα Θεοῦ</td><td>and *he* saw Spirit of God</td></tr>
+<tr><td>καταβαῖνον ὡσεὶ περιστερὰν</td><td>descending *like a* dove</td></tr>
+<tr><td>ἐρχόμενον ἐπ’ αὐτόν·</td><td>coming upon *him*</td></tr>
+</table>
+<hr>
+καὶ ἰδοὺ φωνὴ ἐκ τῶν οὐρανῶν λέγουσα Οὗτός ἐστιν ὁ Υἱός μου ὁ ἀγαπητός, ἐν ᾧ εὐδόκησα.<hr><b>matthew 3:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἰδοὺ</td><td>and *behold*</td></tr>
+<tr><td>φωνὴ ἐκ τῶν οὐρανῶν</td><td>voice *from the* heavens</td></tr>
+<tr><td>λέγουσα Οὗτός</td><td>saying *this one*</td></tr>
+<tr><td>ἐστιν ὁ Υἱός μου</td><td>is *the* Son *of* me</td></tr>
+<tr><td>ὁ ἀγαπητός,</td><td>the *beloved*</td></tr>
+<tr><td>ἐν ᾧ εὐδόκησα.</td><td>in *whom* I am well pleased</td></tr>
+</table>
+<div class="chapter-links">
+<a href="2.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="selected-chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="4.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>

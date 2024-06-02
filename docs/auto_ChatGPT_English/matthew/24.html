@@ -1,0 +1,688 @@
+<!DOCTYPE html><html><head><title>matthew 24</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="24.html" class="current-book-chapter">24</a></li>
+   <li class="submenu_item"><a href="25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="28.html" class="">28</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../mark/1.html" class="">mark</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../mark/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../mark/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../mark/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../mark/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../mark/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../mark/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../mark/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../mark/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../mark/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../mark/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../mark/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../mark/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../mark/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../mark/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../mark/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../mark/16.html" class="">16</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../1peter/1.html" class="">1peter</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../1peter/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../1peter/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../1peter/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../1peter/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../1peter/5.html" class="">5</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="23.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="selected-chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="25.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Καὶ ἐξελθὼν ὁ Ἰησοῦς ἀπὸ τοῦ ἱεροῦ ἐπορεύετο, καὶ προσῆλθον οἱ μαθηταὶ αὐτοῦ ἐπιδεῖξαι αὐτῷ τὰς οἰκοδομὰς τοῦ ἱεροῦ.<hr><b>matthew 24:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ ὁ Ἰησοῦς</td><td>And *the* Jesus</td></tr>
+<tr><td>ἐξελθὼν ἀπὸ τοῦ ἱεροῦ</td><td>having-gone-out *from* the temple</td></tr>
+<tr><td>ἐπορεύετο, καὶ</td><td>he went, and</td></tr>
+<tr><td>προσῆλθον οἱ μαθηταὶ αὐτοῦ</td><td>his *the* disciples approached</td></tr>
+<tr><td>ἐπιδεῖξαι αὐτῷ</td><td>to show *him*</td></tr>
+<tr><td>τὰς οἰκοδομὰς τοῦ ἱεροῦ.</td><td>the buildings *of the* temple</td></tr>
+</table>
+<hr>
+ὁ δὲ ἀποκριθεὶς εἶπεν αὐτοῖς Οὐ βλέπετε ταῦτα πάντα; ἀμὴν λέγω ὑμῖν, οὐ μὴ ἀφεθῇ ὧδε λίθος ἐπὶ λίθον ὃς οὐ καταλυθήσεται.<hr><b>matthew 24:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ ἀποκριθεὶς εἶπεν αὐτοῖς</td><td>but *the* answering *one* said to them</td></tr>
+<tr><td>Οὐ βλέπετε ταῦτα πάντα;</td><td>Do you *not* see *all* these things?</td></tr>
+<tr><td>ἀμὴν λέγω ὑμῖν,</td><td>Truly *I* say *to* you,</td></tr>
+<tr><td>οὐ μὴ</td><td>not *at all*</td></tr>
+<tr><td>ἀφεθῇ ὧδε ἐπὶ λίθον</td><td>*be* left *here* *upon* stone</td></tr>
+<tr><td>λίθος ὃς οὐ καταλυθήσεται.</td><td>stone which not *will* be thrown-down</td></tr>
+</table>
+<hr>
+Καθημένου δὲ αὐτοῦ ἐπὶ τοῦ ὄρους τῶν Ἐλαιῶν προσῆλθον αὐτῷ οἱ μαθηταὶ κατ’ ἰδίαν λέγοντες Εἰπὲ ἡμῖν, πότε ταῦτα ἔσται, καὶ τί τὸ σημεῖον τῆς σῆς παρουσίας καὶ συντελείας τοῦ αἰῶνος;<hr><b>matthew 24:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Καθημένου αὐτοῦ ἐπὶ</td><td>but *as* he *was* sitting *on*</td></tr>
+<tr><td>τοῦ ὄρους τῶν Ἐλαιῶν</td><td>the mountain *of* the Olives</td></tr>
+<tr><td>προσῆλθον αὐτῷ οἱ μαθηταὶ</td><td>approached *him* the disciples</td></tr>
+<tr><td>κατ’ ἰδίαν</td><td>privately and *in a secluded manner*</td></tr>
+<tr><td>λέγοντες Εἰπὲ ἡμῖν,</td><td>saying *Tell* us,</td></tr>
+<tr><td>πότε ταῦτα ἔσται,</td><td>when will *these* things *be*</td></tr>
+<tr><td>καὶ τί τὸ</td><td>and *what* the</td></tr>
+<tr><td>σημεῖον τῆς σῆς παρουσίας</td><td>sign of *your* presence</td></tr>
+<tr><td>καὶ συντελείας τοῦ αἰῶνος;</td><td>and *of the* end of the age</td></tr>
+</table>
+<hr>
+καὶ ἀποκριθεὶς ὁ Ἰησοῦς εἶπεν αὐτοῖς Βλέπετε μή τις ὑμᾶς πλανήσῃ.<hr><b>matthew 24:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>ἀποκριθεὶς ὁ Ἰησοῦς εἶπεν αὐτοῖς</td><td>answering *Jesus* said to them</td></tr>
+<tr><td>Βλέπετε μή τις ὑμᾶς πλανήσῃ.</td><td>See *that* no one *should* deceive you</td></tr>
+</table>
+<hr>
+πολλοὶ γὰρ ἐλεύσονται ἐπὶ τῷ ὀνόματί μου λέγοντες Ἐγώ εἰμι ὁ Χριστός, καὶ πολλοὺς πλανήσουσιν.<hr><b>matthew 24:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ πολλοὶ ἐλεύσονται</td><td>for *many* will come</td></tr>
+<tr><td>ἐπὶ τῷ ὀνόματί μου</td><td>in *the* name of *me*</td></tr>
+<tr><td>λέγοντες Ἐγώ εἰμι ὁ Χριστός,</td><td>saying *I* am the Christ,</td></tr>
+<tr><td>καὶ πολλοὺς πλανήσουσιν.</td><td>and *they will* mislead many</td></tr>
+</table>
+<hr>
+μελλήσετε δὲ ἀκούειν πολέμους καὶ ἀκοὰς πολέμων·<hr><b>matthew 24:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ μελλήσετε ἀκούειν</td><td>but you will *begin* to hear</td></tr>
+<tr><td>πολέμους καὶ ἀκοὰς πολέμων·</td><td>wars and *rumors of* wars</td></tr>
+<tr><td>ὁρᾶτε, μὴ θροεῖσθε·</td><td>See *to it*, do not be troubled</td></tr>
+<tr><td>γὰρ δεῖ γενέσθαι,</td><td>for it must *come to pass*</td></tr>
+<tr><td>ἀλλ’ οὔπω ἐστὶν τὸ τέλος.</td><td>but *it is* not yet the end</td></tr>
+</table>
+<hr>
+ἐγερθήσεται γὰρ ἔθνος ἐπὶ ἔθνος καὶ βασιλεία ἐπὶ βασιλείαν, καὶ ἔσονται λιμοὶ καὶ σεισμοὶ κατὰ τόπους·<hr><b>matthew 24:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ἐγερθήσεται ἔθνος ἐπὶ ἔθνος</td><td>for *there will be* nation against nation</td></tr>
+<tr><td>καὶ βασιλεία ἐπὶ βασιλείαν,</td><td>and *kingdom will rise* against kingdom</td></tr>
+<tr><td>καὶ ἔσονται λιμοὶ καὶ σεισμοὶ</td><td>and *there will be* famines and earthquakes</td></tr>
+<tr><td>κατὰ τόπους·</td><td>in various *places*</td></tr>
+</table>
+<hr>
+πάντα δὲ ταῦτα ἀρχὴ ὠδίνων.<hr><b>matthew 24:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ πάντα ταῦτα ἀρχὴ ὠδίνων.</td><td>but all these *are* the beginning of birth pains</td></tr>
+</table>
+<hr>
+τότε παραδώσουσιν ὑμᾶς εἰς θλῖψιν καὶ ἀποκτενοῦσιν ὑμᾶς, καὶ ἔσεσθε μισούμενοι ὑπὸ πάντων τῶν ἐθνῶν διὰ τὸ ὄνομά μου.<hr><b>matthew 24:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>τότε παραδώσουσιν ὑμᾶς εἰς θλῖψιν</td><td>then they will deliver you *to* tribulation</td></tr>
+<tr><td>καὶ ἀποκτενοῦσιν ὑμᾶς,</td><td>and they will kill *you*</td></tr>
+<tr><td>καὶ ἔσεσθε μισούμενοι</td><td>and *you will be* hated</td></tr>
+<tr><td>ὑπὸ πάντων τῶν ἐθνῶν</td><td>by all the nations</td></tr>
+<tr><td>διὰ τὸ ὄνομά μου.</td><td>because of *the* name *of* me</td></tr>
+</table>
+<hr>
+καὶ τότε σκανδαλισθήσονται πολλοὶ καὶ ἀλλήλους παραδώσουσιν καὶ μισήσουσιν ἀλλήλους·<hr><b>matthew 24:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ τότε σκανδαλισθήσονται πολλοὶ</td><td>and *then* many will be offended</td></tr>
+<tr><td>καὶ ἀλλήλους παραδώσουσιν</td><td>and *they will* betray each other</td></tr>
+<tr><td>καὶ μισήσουσιν ἀλλήλους·</td><td>and they will hate *one another*</td></tr>
+</table>
+<hr>
+καὶ πολλοὶ ψευδοπροφῆται ἐγερθήσονται καὶ πλανήσουσιν πολλούς·<hr><b>matthew 24:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ πολλοὶ ψευδοπροφῆται ἐγερθήσονται</td><td>and *many* false prophets *will arise*</td></tr>
+<tr><td>καὶ πλανήσουσιν πολλούς·</td><td>and they will lead many astray</td></tr>
+</table>
+<hr>
+καὶ διὰ τὸ πληθυνθῆναι τὴν ἀνομίαν ψυγήσεται ἡ ἀγάπη τῶν πολλῶν.<hr><b>matthew 24:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ διὰ</td><td>and *because of*</td></tr>
+<tr><td>τὸ πληθυνθῆναι τὴν ἀνομίαν</td><td>*the* increase *of* lawlessness</td></tr>
+<tr><td>ψυγήσεται ἡ ἀγάπη τῶν πολλῶν.</td><td>the love *of* the many *will grow cold*</td></tr>
+</table>
+<hr>
+ὁ δὲ ὑπομείνας εἰς τέλος, οὗτος σωθήσεται.<hr><b>matthew 24:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ ὑπομείνας εἰς τέλος,</td><td>but the one who endures to the *end*</td></tr>
+<tr><td>οὗτος σωθήσεται.</td><td>this one *will be* saved</td></tr>
+</table>
+<hr>
+καὶ κηρυχθήσεται τοῦτο τὸ εὐαγγέλιον τῆς βασιλείας ἐν ὅλῃ τῇ οἰκουμένῃ εἰς μαρτύριον πᾶσιν τοῖς ἔθνεσιν, καὶ τότε ἥξει τὸ τέλος.<hr><b>matthew 24:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ κηρυχθήσεται τοῦτο</td><td>and *it* will be preached</td></tr>
+<tr><td>τὸ εὐαγγέλιον τῆς βασιλείας</td><td>the gospel *of the* kingdom</td></tr>
+<tr><td>ἐν ὅλῃ τῇ οἰκουμένῃ</td><td>in *the* whole *inhabited* world</td></tr>
+<tr><td>εἰς μαρτύριον</td><td>as *a* testimony</td></tr>
+<tr><td>πᾶσιν τοῖς ἔθνεσιν,</td><td>to *all* the nations</td></tr>
+<tr><td>καὶ τότε ἥξει τὸ τέλος.</td><td>and then will come *the* end</td></tr>
+</table>
+<hr>
+Ὅταν οὖν ἴδητε τὸ βδέλυγμα τῆς ἐρημώσεως τὸ ῥηθὲν διὰ Δανιὴλ τοῦ προφήτου ἑστὸς ἐν τόπῳ ἁγίῳ, ὁ ἀναγινώσκων νοείτω, τότε οἱ ἐν τῇ Ἰουδαίᾳ φευγέτωσαν εἰς τὰ ὄρη, ὁ ἐπὶ τοῦ δώματος μὴ καταβάτω ἆραι τὰ ἐκ τῆς οἰκίας αὐτοῦ, καὶ ὁ ἐν τῷ ἀγρῷ μὴ ἐπιστρεψάτω ὀπίσω ἆραι τὸ ἱμάτιον αὐτοῦ.<hr><b>matthew 24:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν Ὅταν ἴδητε</td><td>therefore *when* you *all* see</td></tr>
+<tr><td>τὸ βδέλυγμα τῆς ἐρημώσεως</td><td>the abomination *of* desolation</td></tr>
+<tr><td>τὸ ῥηθὲν</td><td>the *one* *having been* spoken</td></tr>
+<tr><td>διὰ Δανιὴλ τοῦ προφήτου</td><td>through Daniel *the* prophet</td></tr>
+<tr><td>ἑστὸς ἐν τόπῳ ἁγίῳ,</td><td>standing in *the* holy place</td></tr>
+<tr><td>ὁ ἀναγινώσκων νοείτω,</td><td>the *one* reading *it* let him understand</td></tr>
+</table>
+<hr><b>matthew 24:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>τότε οἱ ἐν τῇ Ἰουδαίᾳ</td><td>then those *in the* Judea</td></tr>
+<tr><td>φευγέτωσαν εἰς τὰ ὄρη,</td><td>let-them-flee into the *mountains*</td></tr>
+</table>
+<hr><b>matthew 24:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὁ ἐπὶ τοῦ δώματος</td><td>the one *upon* the housetop</td></tr>
+<tr><td>μὴ καταβάτω ἆραι τὰ</td><td>let him not *(come) down* *to take* the</td></tr>
+<tr><td>ἐκ τῆς οἰκίας αὐτοῦ,</td><td>from *the* house *of* him</td></tr>
+</table>
+<hr><b>matthew 24:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ὁ ἐν τῷ ἀγρῷ</td><td>and he *who is* in the field</td></tr>
+<tr><td>μὴ ἐπιστρεψάτω ὀπίσω</td><td>let him not turn *back*</td></tr>
+<tr><td>ἆραι τὸ ἱμάτιον αὐτοῦ.</td><td>to take *the* cloak *of* him</td></tr>
+</table>
+<hr>
+οὐαὶ δὲ ταῖς ἐν γαστρὶ ἐχούσαις καὶ ταῖς θηλαζούσαις ἐν ἐκείναις ταῖς ἡμέραις.<hr><b>matthew 24:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οὐαὶ</td><td>but *woe*</td></tr>
+<tr><td>ταῖς ἐν γαστρὶ ἐχούσαις</td><td>those who *are* pregnant</td></tr>
+<tr><td>καὶ ταῖς θηλαζούσαις</td><td>and *to those* nursing</td></tr>
+<tr><td>ἐν ἐκείναις ταῖς ἡμέραις.</td><td>in *those* the days</td></tr>
+</table>
+<hr>
+προσεύχεσθε δὲ ἵνα μὴ γένηται ἡ φυγὴ ὑμῶν χειμῶνος μηδὲ σαββάτῳ·<hr><b>matthew 24:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ προσεύχεσθε ἵνα μὴ</td><td>but *you* pray that *it* not</td></tr>
+<tr><td>γένηται ἡ φυγὴ ὑμῶν</td><td>*may* *the* flight *of you*</td></tr>
+<tr><td>χειμῶνος μηδὲ σαββάτῳ·</td><td>in *the* winter nor on *the* Sabbath</td></tr>
+</table>
+<hr>
+ἔσται γὰρ τότε θλῖψις μεγάλη, οἵα οὐ γέγονεν ἀπ’ ἀρχῆς κόσμου ἕως τοῦ νῦν οὐδ’ οὐ μὴ γένηται.<hr><b>matthew 24:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ἔσται τότε θλῖψις μεγάλη,</td><td>for *there* will be then great tribulation,</td></tr>
+<tr><td>οἵα οὐ</td><td>such as *has* not</td></tr>
+<tr><td>γέγονεν ἀπ’ ἀρχῆς κόσμου</td><td>has *been* from *the* beginning of *the* world</td></tr>
+<tr><td>ἕως τοῦ νῦν</td><td>until *the* now</td></tr>
+<tr><td>οὐδ’ οὐ μὴ γένηται.</td><td>nor, by no means *will* *happen*</td></tr>
+</table>
+<hr>
+καὶ εἰ μὴ ἐκολοβώθησαν αἱ ἡμέραι ἐκεῖναι, οὐκ ἂν ἐσώθη πᾶσα σάρξ·<hr><b>matthew 24:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ εἰ μὴ</td><td>and *if* not</td></tr>
+<tr><td>ἐκολοβώθησαν αἱ ἡμέραι ἐκεῖναι,</td><td>those *days* were shortened,</td></tr>
+<tr><td>ἂν οὐκ ἐσώθη πᾶσα σάρξ·</td><td>would *not* be saved all flesh</td></tr>
+<tr><td>δὲ διὰ τοὺς ἐκλεκτοὺς</td><td>but for the sake of *the* elect</td></tr>
+<tr><td>κολοβωθήσονται αἱ ἡμέραι ἐκεῖναι.</td><td>those *will be* shortened days.</td></tr>
+</table>
+<hr>
+τότε ἐάν τις ὑμῖν εἴπῃ Ἰδοὺ ὧδε ὁ Χριστός, ἤ Ὧδε, μὴ πιστεύσητε·<hr><b>matthew 24:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἐάν τότε τις ὑμῖν εἴπῃ</td><td>then *if* anyone *to* you says</td></tr>
+<tr><td>Ἰδοὺ ὧδε ὁ Χριστός,</td><td>Behold, *here* the Christ,</td></tr>
+<tr><td>ἤ Ὧδε, μὴ πιστεύσητε·</td><td>or *here*, do not *believe*</td></tr>
+</table>
+<hr>
+ἐγερθήσονται γὰρ ψευδόχριστοι καὶ ψευδοπροφῆται, καὶ δώσουσιν σημεῖα μεγάλα καὶ τέρατα ὥστε πλανῆσαι, εἰ δυνατὸν, καὶ τοὺς ἐκλεκτούς.<hr><b>matthew 24:24</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ἐγερθήσονται ψευδόχριστοι καὶ ψευδοπροφῆται,</td><td>*for* false-christs and false-prophets *will arise*</td></tr>
+<tr><td>καὶ δώσουσιν</td><td>and *they will* give</td></tr>
+<tr><td>σημεῖα μεγάλα καὶ τέρατα</td><td>great signs and *wonders*</td></tr>
+<tr><td>ὥστε πλανῆσαι, εἰ δυνατὸν,</td><td>so as to deceive, if *it is* possible,</td></tr>
+<tr><td>καὶ τοὺς ἐκλεκτούς.</td><td>and *even* the elect</td></tr>
+</table>
+<hr>
+ἰδοὺ προείρηκα ὑμῖν.<hr><b>matthew 24:25</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἰδοὺ προείρηκα ὑμῖν.</td><td>Behold, I have told *it* to *you*.</td></tr>
+</table>
+<hr>
+ἐὰν οὖν εἴπωσιν ὑμῖν Ἰδοὺ ἐν τῇ ἐρήμῳ ἐστίν, μὴ ἐξέλθητε· Ἰδοὺ ἐν τοῖς ταμείοις, μὴ πιστεύσητε· ὥσπερ γὰρ ἡ ἀστραπὴ ἐξέρχεται ἀπὸ ἀνατολῶν καὶ φαίνεται ἕως δυσμῶν, οὕτως ἔσται ἡ παρουσία τοῦ Υἱοῦ τοῦ ἀνθρώπου· ὅπου ἐὰν ᾖ τὸ πτῶμα, ἐκεῖ συναχθήσονται οἱ ἀετοί.<hr><b>matthew 24:26</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν ἐὰν εἴπωσιν ὑμῖν</td><td>*Therefore* if *they* say to *you*</td></tr>
+<tr><td>Ἰδοὺ ἐν τῇ ἐρήμῳ</td><td>Behold *in* the desert</td></tr>
+<tr><td>ἐστίν, μὴ ἐξέλθητε·</td><td>*he* is, do not go out</td></tr>
+<tr><td>Ἰδοὺ ἐν τοῖς ταμείοις,</td><td>Behold *in* the inner rooms</td></tr>
+<tr><td>μὴ πιστεύσητε·</td><td>do *not* believe</td></tr>
+</table>
+<hr><b>matthew 24:27</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ὥσπερ</td><td>*for* just as</td></tr>
+<tr><td>ἡ ἀστραπὴ ἐξέρχεται ἀπὸ ἀνατολῶν</td><td>the lightning comes *out* *from* *the* east</td></tr>
+<tr><td>καὶ φαίνεται ἕως δυσμῶν,</td><td>and *it* is visible as far as the west</td></tr>
+<tr><td>οὕτως ἔσται ἡ παρουσία</td><td>so *will be* the coming</td></tr>
+<tr><td>τοῦ Υἱοῦ τοῦ ἀνθρώπου·</td><td>the Son *of* Man</td></tr>
+</table>
+<hr><b>matthew 24:28</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἐὰν ὅπου ᾖ τὸ πτῶμα,</td><td>*wherever* the corpse *is*</td></tr>
+<tr><td>ἐκεῖ συναχθήσονται οἱ ἀετοί.</td><td>there *will be gathered* the eagles</td></tr>
+</table>
+<hr>
+Εὐθέως δὲ μετὰ τὴν θλῖψιν τῶν ἡμερῶν ἐκείνων ὁ ἥλιος σκοτισθήσεται, καὶ ἡ σελήνη οὐ δώσει τὸ φέγγος αὐτῆς, καὶ οἱ ἀστέρες πεσοῦνται ἀπὸ τοῦ οὐρανοῦ, καὶ αἱ δυνάμεις τῶν οὐρανῶν σαλευθήσονται.<hr><b>matthew 24:29</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Εὐθέως μετὰ τὴν</td><td>but *immediately* after *the*</td></tr>
+<tr><td>θλῖψιν τῶν ἡμερῶν ἐκείνων</td><td>tribulation *of* those days</td></tr>
+<tr><td>ὁ ἥλιος</td><td>the *sun*</td></tr>
+<tr><td>σκοτισθήσεται, καὶ ἡ σελήνη</td><td>will be darkened, and *the* moon</td></tr>
+<tr><td>οὐ δώσει τὸ φέγγος αὐτῆς,</td><td>not will-give *the* light of-her</td></tr>
+<tr><td>καὶ οἱ ἀστέρες</td><td>and *the* stars</td></tr>
+<tr><td>πεσοῦνται ἀπὸ τοῦ οὐρανοῦ,</td><td>will-fall from *the* sky,</td></tr>
+<tr><td>καὶ αἱ δυνάμεις τῶν οὐρανῶν</td><td>and *the* powers *of* the heavens</td></tr>
+<tr><td>σαλευθήσονται.</td><td>they will be shaken</td></tr>
+</table>
+<hr>
+καὶ τότε φανήσεται τὸ σημεῖον τοῦ Υἱοῦ τοῦ ἀνθρώπου ἐν οὐρανῷ, καὶ τότε κόψονται πᾶσαι αἱ φυλαὶ τῆς γῆς καὶ ὄψονται τὸν Υἱὸν τοῦ ἀνθρώπου ἐρχόμενον ἐπὶ τῶν νεφελῶν τοῦ οὐρανοῦ μετὰ δυνάμεως καὶ δόξης πολλῆς·<hr><b>matthew 24:30</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ τότε φανήσεται τὸ σημεῖον</td><td>and *then* the sign *will appear*</td></tr>
+<tr><td>τοῦ Υἱοῦ τοῦ ἀνθρώπου</td><td>*of the* Son *of* Man</td></tr>
+<tr><td>ἐν οὐρανῷ,</td><td>in *the* heaven,</td></tr>
+<tr><td>καὶ τότε κόψονται πᾶσαι</td><td>and then *they* will mourn all</td></tr>
+<tr><td>αἱ φυλαὶ τῆς γῆς</td><td>the tribes *of* the earth</td></tr>
+<tr><td>καὶ ὄψονται</td><td>and *they* will see</td></tr>
+<tr><td>τὸν Υἱὸν τοῦ ἀνθρώπου</td><td>the Son *of* Man</td></tr>
+<tr><td>ἐρχόμενον ἐπὶ</td><td>coming upon</td></tr>
+<tr><td>τῶν νεφελῶν τοῦ οὐρανοῦ</td><td>the clouds *of the* heaven</td></tr>
+<tr><td>μετὰ δυνάμεως καὶ δόξης</td><td>with power and *great* glory</td></tr>
+<tr><td>πολλῆς·</td><td>much *many*</td></tr>
+</table>
+<hr>
+καὶ ἀποστελεῖ τοὺς ἀγγέλους αὐτοῦ μετὰ σάλπιγγος μεγάλης, καὶ ἐπισυνάξουσιν τοὺς ἐκλεκτοὺς αὐτοῦ ἐκ τῶν τεσσάρων ἀνέμων ἀπ’ ἄκρων οὐρανῶν ἕως ἄκρων αὐτῶν.<hr><b>matthew 24:31</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἀποστελεῖ τοὺς ἀγγέλους αὐτοῦ</td><td>and *he will send his* angels</td></tr>
+<tr><td>μετὰ σάλπιγγος μεγάλης,</td><td>with *a* great trumpet</td></tr>
+<tr><td>καὶ ἐπισυνάξουσιν τοὺς ἐκλεκτοὺς αὐτοῦ</td><td>and they will gather *his* elect</td></tr>
+<tr><td>ἐκ τῶν τεσσάρων ἀνέμων</td><td>from the four winds</td></tr>
+<tr><td>ἀπ’ ἄκρων οὐρανῶν</td><td>from *the* ends *of the* heavens</td></tr>
+<tr><td>ἕως ἄκρων αὐτῶν.</td><td>up to *the* ends *of* them</td></tr>
+</table>
+<hr>
+Ἀπὸ δὲ τῆς συκῆς μάθετε τὴν παραβολήν·<hr><b>matthew 24:32</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἀπὸ τῆς συκῆς</td><td>but *from the* fig tree</td></tr>
+<tr><td>μάθετε τὴν παραβολήν·</td><td>learn *the* parable</td></tr>
+<tr><td>ὅταν ἤδη ὁ κλάδος αὐτῆς</td><td>when already *the* branch of it</td></tr>
+<tr><td>γένηται ἁπαλὸς</td><td>becomes tender</td></tr>
+<tr><td>καὶ τὰ φύλλα ἐκφύῃ,</td><td>and *the* leaves *have come forth*</td></tr>
+<tr><td>γινώσκετε ὅτι ἐγγὺς τὸ θέρος·</td><td>you know* that *it is* near* the summer*</td></tr>
+</table>
+<hr>
+οὕτως καὶ ὑμεῖς ὅταν ἴδητε πάντα ταῦτα, γινώσκετε ὅτι ἐγγύς ἐστιν ἐπὶ θύραις.<hr><b>matthew 24:33</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὕτως καὶ ὑμεῖς</td><td>in-the-same-way also *you*</td></tr>
+<tr><td>ὅταν ἴδητε πάντα ταῦτα,</td><td>when *you* see all these *things*</td></tr>
+<tr><td>γινώσκετε ὅτι</td><td>you know that</td></tr>
+<tr><td>ἐγγύς ἐστιν ἐπὶ θύραις.</td><td>it is near *at* the doors</td></tr>
+</table>
+<hr>
+ἀμὴν λέγω ὑμῖν ὅτι οὐ μὴ παρέλθῃ ἡ γενεὰ αὕτη ἕως ἂν πάντα ταῦτα γένηται.<hr><b>matthew 24:34</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἀμὴν λέγω ὑμῖν</td><td>Truly, I *say* to you</td></tr>
+<tr><td>ὅτι οὐ μὴ</td><td>that not *at all*</td></tr>
+<tr><td>παρέλθῃ ἡ γενεὰ αὕτη</td><td>this generation passes away</td></tr>
+<tr><td>ἕως ἂν πάντα ταῦτα γένηται.</td><td>until *all these things* happen</td></tr>
+</table>
+<hr>
+ὁ οὐρανὸς καὶ ἡ γῆ παρελεύσεται, οἱ δὲ λόγοι μου οὐ μὴ παρέλθωσιν.<hr><b>matthew 24:35</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὁ οὐρανὸς καὶ ἡ γῆ</td><td>the heaven and *the* earth</td></tr>
+<tr><td>παρελεύσεται, δὲ οἱ λόγοι μου</td><td>will pass away, but *my* words *will*</td></tr>
+<tr><td>οὐ μὴ</td><td>not *at all*</td></tr>
+<tr><td>παρέλθωσιν.</td><td>may pass away</td></tr>
+</table>
+<hr>
+Περὶ δὲ τῆς ἡμέρας ἐκείνης καὶ ὥρας οὐδεὶς οἶδεν, οὐδὲ οἱ ἄγγελοι τῶν οὐρανῶν οὐδὲ ὁ Υἱός, εἰ μὴ ὁ Πατὴρ μόνος.<hr><b>matthew 24:36</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Περὶ</td><td>But *concerning*</td></tr>
+<tr><td>τῆς ἡμέρας καὶ ὥρας</td><td>the *day* and *hour*</td></tr>
+<tr><td>ἐκείνης οὐδεὶς οἶδεν, οὐδὲ</td><td>that *day and hour* no one knows, not</td></tr>
+<tr><td>οἱ ἄγγελοι τῶν οὐρανῶν</td><td>the angels *of the* heavens</td></tr>
+<tr><td>οὐδὲ ὁ Υἱός,</td><td>nor *the* Son,</td></tr>
+<tr><td>εἰ μὴ ὁ Πατὴρ μόνος.</td><td>if not the Father *alone*</td></tr>
+</table>
+<hr>
+ὥσπερ γὰρ αἱ ἡμέραι τοῦ Νῶε, οὕτως ἔσται ἡ παρουσία τοῦ Υἱοῦ τοῦ ἀνθρώπου.<hr><b>matthew 24:37</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ὥσπερ</td><td>for just *as*</td></tr>
+<tr><td>αἱ ἡμέραι τοῦ Νῶε,</td><td>the days *of* Noah</td></tr>
+<tr><td>οὕτως ἔσται ἡ παρουσία</td><td>so *will be* the coming</td></tr>
+<tr><td>τοῦ Υἱοῦ τοῦ ἀνθρώπου.</td><td>the Son *of* the Man</td></tr>
+</table>
+<hr>
+ὡς γὰρ ἦσαν ἐν ταῖς ἡμέραις ἐκείναις ταῖς πρὸ τοῦ κατακλυσμοῦ τρώγοντες καὶ πίνοντες, γαμοῦντες καὶ γαμίζοντες, ἄχρι ἧς ἡμέρας εἰσῆλθεν Νῶε εἰς τὴν κιβωτόν, καὶ οὐκ ἔγνωσαν ἕως ἦλθεν ὁ κατακλυσμὸς καὶ ἦρεν ἅπαντας, οὕτως ἔσται καὶ ἡ παρουσία τοῦ Υἱοῦ τοῦ ἀνθρώπου.<hr><b>matthew 24:38</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ὡς</td><td>for *just as*</td></tr>
+<tr><td>ἐν ταῖς ἡμέραις ἐκείναις</td><td>in *the* those days</td></tr>
+<tr><td>ταῖς πρὸ τοῦ κατακλυσμοῦ</td><td>the days *before* the *flood*</td></tr>
+<tr><td>ἦσαν τρώγοντες καὶ πίνοντες,</td><td>they-were eating and drinking</td></tr>
+<tr><td>γαμοῦντες καὶ γαμίζοντες,</td><td>marrying and giving *in marriage*</td></tr>
+<tr><td>ἄχρι ἧς ἡμέρας</td><td>until *the* day</td></tr>
+<tr><td>εἰσῆλθεν Νῶε εἰς τὴν κιβωτόν,</td><td>entered Noah into the *ark*</td></tr>
+</table>
+<hr><b>matthew 24:39</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ οὐκ ἔγνωσαν</td><td>and they *did* not know</td></tr>
+<tr><td>ἕως ἦλθεν ὁ κατακλυσμὸς</td><td>*until* came the flood</td></tr>
+<tr><td>καὶ ἦρεν ἅπαντας,</td><td>and *it* swept away *them all*</td></tr>
+<tr><td>οὕτως ἔσται καὶ ἡ παρουσία</td><td>thus *it will be* also the presence</td></tr>
+<tr><td>τοῦ Υἱοῦ τοῦ ἀνθρώπου.</td><td>the *Son* of *Man*</td></tr>
+</table>
+<hr>
+τότε ἔσονται δύο ἐν τῷ ἀγρῷ, εἷς παραλαμβάνεται καὶ εἷς ἀφίεται·<hr><b>matthew 24:40</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>τότε ἔσονται</td><td>then *they* will be</td></tr>
+<tr><td>δύο ἐν τῷ ἀγρῷ,</td><td>two *being* in the *field*</td></tr>
+<tr><td>εἷς παραλαμβάνεται καὶ εἷς ἀφίεται·</td><td>one is taken and *one* is left</td></tr>
+</table>
+<hr>
+δύο ἀλήθουσαι ἐν τῷ μύλῳ, μία παραλαμβάνεται καὶ μία ἀφίεται.<hr><b>matthew 24:41</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δύο ἀλήθουσαι ἐν τῷ μύλῳ,</td><td>two grinding *at* the mill</td></tr>
+<tr><td>μία παραλαμβάνεται καὶ μία ἀφίεται.</td><td>one *is taken* and one *is left*</td></tr>
+</table>
+<hr>
+γρηγορεῖτε οὖν, ὅτι οὐκ οἴδατε ποίᾳ ἡμέρᾳ ὁ κύριος ὑμῶν ἔρχεται.<hr><b>matthew 24:42</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν, γρηγορεῖτε ὅτι οὐκ οἴδατε</td><td>therefore, stay awake *because* you do not know</td></tr>
+<tr><td>ποίᾳ ἡμέρᾳ</td><td>which day</td></tr>
+<tr><td>ὁ κύριος ὑμῶν</td><td>the lord *of* you</td></tr>
+<tr><td>ἔρχεται.</td><td>he comes</td></tr>
+</table>
+<hr>
+ἐκεῖνο δὲ γινώσκετε ὅτι εἰ ᾔδει ὁ οἰκοδεσπότης ποίᾳ φυλακῇ ὁ κλέπτης ἔρχεται, ἐγρηγόρησεν ἂν καὶ οὐκ ἂν εἴασεν διορυχθῆναι τὴν οἰκίαν αὐτοῦ.<hr><b>matthew 24:43</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐκεῖνο γινώσκετε</td><td>but *this* you-know</td></tr>
+<tr><td>ὅτι εἰ ᾔδει ὁ οἰκοδεσπότης</td><td>that if *had known* the householder</td></tr>
+<tr><td>ποίᾳ φυλακῇ ὁ κλέπτης ἔρχεται,</td><td>*in* what watch *the* thief *is* coming</td></tr>
+<tr><td>ἂν ἐγρηγόρησεν</td><td>*he* would have been on guard</td></tr>
+<tr><td>καὶ ἂν οὐκ εἴασεν</td><td>and *he would not* have allowed</td></tr>
+<tr><td>διορυχθῆναι τὴν οἰκίαν αὐτοῦ.</td><td>be broken into the *house* of *him*</td></tr>
+</table>
+<hr>
+διὰ τοῦτο καὶ ὑμεῖς γίνεσθε ἕτοιμοι, ὅτι ᾗ οὐ δοκεῖτε ὥρᾳ ὁ Υἱὸς τοῦ ἀνθρώπου ἔρχεται.<hr><b>matthew 24:44</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>διὰ τοῦτο καὶ ὑμεῖς γίνεσθε ἕτοιμοι,</td><td>for this reason *also* you *become* ready</td></tr>
+<tr><td>ὅτι ᾗ οὐ δοκεῖτε</td><td>because *at* *an* hour *you* do not think</td></tr>
+<tr><td>ὥρᾳ ὁ Υἱὸς τοῦ ἀνθρώπου</td><td>hour *the* Son of *Man*</td></tr>
+<tr><td>ἔρχεται.</td><td>comes</td></tr>
+</table>
+<hr>
+Τίς ἄρα ἐστὶν ὁ πιστὸς δοῦλος καὶ φρόνιμος ὃν κατέστησεν ὁ κύριος ἐπὶ τῆς οἰκετείας αὐτοῦ τοῦ δοῦναι αὐτοῖς τὴν τροφὴν ἐν καιρῷ;<hr><b>matthew 24:45</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἄρα Τίς ἐστὶν</td><td>then Who *is*</td></tr>
+<tr><td>ὁ πιστὸς καὶ φρόνιμος</td><td>the faithful and *wise*</td></tr>
+<tr><td>δοῦλος ὃν κατέστησεν ὁ κύριος</td><td>servant *whom* *the* master *has* appointed</td></tr>
+<tr><td>ἐπὶ τῆς οἰκετείας αὐτοῦ</td><td>over *his* household</td></tr>
+<tr><td>τοῦ</td><td>*of*</td></tr>
+<tr><td>δοῦναι αὐτοῖς τὴν τροφὴν ἐν καιρῷ;</td><td>to give *to them* the food *at the proper* time</td></tr>
+</table>
+<hr>
+μακάριος ὁ δοῦλος ἐκεῖνος ὃν ἐλθὼν ὁ κύριος αὐτοῦ εὑρήσει οὕτως ποιοῦντα·<hr><b>matthew 24:46</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μακάριος ὁ δοῦλος ἐκεῖνος</td><td>blessed *is* that servant</td></tr>
+<tr><td>ὃν οὕτως ποιοῦντα·</td><td>whom *in such a manner* doing</td></tr>
+<tr><td>ἐλθὼν ὁ κύριος αὐτοῦ</td><td>coming *the* lord *of him*</td></tr>
+<tr><td>εὑρήσει</td><td>will find</td></tr>
+</table>
+<hr>
+ἀμὴν λέγω ὑμῖν ὅτι ἐπὶ πᾶσιν τοῖς ὑπάρχουσιν αὐτοῦ καταστήσει αὐτόν.<hr><b>matthew 24:47</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἀμὴν λέγω ὑμῖν</td><td>Truly *I* say *to* you</td></tr>
+<tr><td>ὅτι ἐπὶ</td><td>that *over*</td></tr>
+<tr><td>πᾶσιν τοῖς ὑπάρχουσιν αὐτοῦ</td><td>all *that* belongs *to* him</td></tr>
+<tr><td>καταστήσει αὐτόν.</td><td>he will appoint *him*</td></tr>
+</table>
+<hr>
+ἐὰν δὲ εἴπῃ ὁ κακὸς δοῦλος ἐκεῖνος ἐν τῇ καρδίᾳ αὐτοῦ Χρονίζει μου ὁ κύριος, καὶ ἄρξηται τύπτειν τοὺς συνδούλους αὐτοῦ, ἐσθίῃ δὲ καὶ πίνῃ μετὰ τῶν μεθυόντων, ἥξει ὁ κύριος τοῦ δούλου ἐκείνου ἐν ἡμέρᾳ ᾗ οὐ προσδοκᾷ καὶ ἐν ὥρᾳ ᾗ οὐ γινώσκει, καὶ διχοτομήσει αὐτὸν καὶ τὸ μέρος αὐτοῦ μετὰ τῶν ὑποκριτῶν θήσει·<hr><b>matthew 24:48</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐὰν</td><td>but *if*</td></tr>
+<tr><td>εἴπῃ ὁ κακὸς δοῦλος</td><td>shall say the wicked servant</td></tr>
+<tr><td>ἐκεῖνος ἐν τῇ καρδίᾳ αὐτοῦ</td><td>that one in *the* heart *of him*</td></tr>
+<tr><td>Χρονίζει μου ὁ κύριος,</td><td>my *master* delays</td></tr>
+</table>
+<hr><b>matthew 24:49</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἄρξηται</td><td>and *he or she* begins</td></tr>
+<tr><td>τύπτειν τοὺς συνδούλους αὐτοῦ,</td><td>to beat *his* fellow servants</td></tr>
+<tr><td>δὲ ἐσθίῃ καὶ πίνῃ</td><td>but *he/they* eats and drinks</td></tr>
+<tr><td>μετὰ τῶν μεθυόντων,</td><td>with the *drunken ones*</td></tr>
+</table>
+<hr><b>matthew 24:50</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἥξει ὁ</td><td>he *will come*</td></tr>
+<tr><td>κύριος τοῦ δούλου ἐκείνου</td><td>lord *of* that servant</td></tr>
+<tr><td>ἐν ἡμέρᾳ ᾗ οὐ προσδοκᾷ</td><td>on *a* day *that* he does not expect</td></tr>
+<tr><td>καὶ ἐν</td><td>and *in*</td></tr>
+<tr><td>ὥρᾳ ᾗ οὐ γινώσκει,</td><td>hour *in which* not he knows</td></tr>
+</table>
+<hr><b>matthew 24:51</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ διχοτομήσει αὐτὸν</td><td>and *he will* cut him in two</td></tr>
+<tr><td>καὶ τὸ μέρος αὐτοῦ</td><td>and *his* portion</td></tr>
+<tr><td>μετὰ τῶν ὑποκριτῶν</td><td>with *the* hypocrites</td></tr>
+<tr><td>θήσει·</td><td>he will put *him*</td></tr>
+<tr><td>ἐκεῖ ἔσται ὁ κλαυθμὸς</td><td>there *will be* the weeping</td></tr>
+<tr><td>καὶ ὁ βρυγμὸς τῶν ὀδόντων.</td><td>and the gnashing *of* teeth</td></tr>
+</table>
+<div class="chapter-links">
+<a href="23.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="selected-chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="25.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>

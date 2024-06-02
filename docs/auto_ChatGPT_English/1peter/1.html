@@ -1,0 +1,432 @@
+<!DOCTYPE html><html><head><title>1peter 1</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="../matthew/1.html" class="">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../matthew/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../matthew/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../matthew/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../matthew/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../matthew/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../matthew/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../matthew/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../matthew/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../matthew/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../matthew/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../matthew/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../matthew/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../matthew/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../matthew/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../matthew/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../matthew/16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="../matthew/17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="../matthew/18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="../matthew/19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="../matthew/20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="../matthew/21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="../matthew/22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="../matthew/23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="../matthew/24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="../matthew/25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="../matthew/26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="../matthew/27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="../matthew/28.html" class="">28</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../mark/1.html" class="">mark</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../mark/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../mark/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../mark/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../mark/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../mark/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../mark/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../mark/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../mark/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../mark/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../mark/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../mark/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../mark/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../mark/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../mark/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../mark/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../mark/16.html" class="">16</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">1peter</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="current-book-chapter">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="../mark/16.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="selected-chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="2.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Πέτρος ἀπόστολος Ἰησοῦ Χριστοῦ ἐκλεκτοῖς παρεπιδήμοις Διασπορᾶς Πόντου, Γαλατίας, Καππαδοκίας, Ἀσίας, καὶ Βιθυνίας, κατὰ πρόγνωσιν Θεοῦ Πατρός, ἐν ἁγιασμῷ Πνεύματος, εἰς ὑπακοὴν καὶ ῥαντισμὸν αἵματος Ἰησοῦ Χριστοῦ·<hr><b>1peter 1:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Πέτρος ἀπόστολος Ἰησοῦ Χριστοῦ</td><td>Peter, *the* apostle of Jesus Christ</td></tr>
+<tr><td>ἐκλεκτοῖς παρεπιδήμοις Διασπορᾶς</td><td>to the *chosen* exiles of the Dispersion</td></tr>
+<tr><td>Πόντου, Γαλατίας, Καππαδοκίας, Ἀσίας, καὶ Βιθυνίας,</td><td>of *the* Pontus, of *the* Galatia, of *the* Cappadocia, of *the* Asia, and of *the* Bithynia</td></tr>
+</table>
+<hr><b>1peter 1:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>κατὰ πρόγνωσιν Θεοῦ Πατρός,</td><td>according to the *foreknowledge* of God the Father,</td></tr>
+<tr><td>ἐν ἁγιασμῷ Πνεύματος,</td><td>in *the* sanctification of *the* Spirit</td></tr>
+<tr><td>εἰς ὑπακοὴν καὶ</td><td>for *the* obedience and</td></tr>
+<tr><td>ῥαντισμὸν αἵματος Ἰησοῦ Χριστοῦ·</td><td>the sprinkling *of the* blood of Jesus Christ</td></tr>
+<tr><td>χάρις καὶ εἰρήνη</td><td>grace and *the* peace</td></tr>
+<tr><td>ὑμῖν πληθυνθείη.</td><td>*to* you *be* multiplied</td></tr>
+</table>
+<hr>
+Εὐλογητὸς ὁ Θεὸς καὶ Πατὴρ τοῦ Κυρίου ἡμῶν Ἰησοῦ Χριστοῦ, ὁ κατὰ τὸ πολὺ αὐτοῦ ἔλεος ἀναγεννήσας ἡμᾶς εἰς ἐλπίδα ζῶσαν δι’ ἀναστάσεως Ἰησοῦ Χριστοῦ ἐκ νεκρῶν, εἰς κληρονομίαν ἄφθαρτον καὶ ἀμίαντον καὶ ἀμάραντον, τετηρημένην ἐν οὐρανοῖς εἰς ὑμᾶς τοὺς ἐν δυνάμει Θεοῦ φρουρουμένους διὰ πίστεως εἰς σωτηρίαν ἑτοίμην ἀποκαλυφθῆναι ἐν καιρῷ ἐσχάτῳ.<hr><b>1peter 1:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Εὐλογητὸς</td><td>*Blessed be*</td></tr>
+<tr><td>ὁ Θεὸς καὶ Πατὴρ</td><td>the God and *the* Father</td></tr>
+<tr><td>τοῦ Κυρίου ἡμῶν</td><td>of the Lord *of* us</td></tr>
+<tr><td>Ἰησοῦ Χριστοῦ,</td><td>of *Jesus* Christ</td></tr>
+<tr><td>ὁ κατὰ</td><td>the one who according to</td></tr>
+<tr><td>τὸ πολὺ αὐτοῦ ἔλεος</td><td>his *great* mercy</td></tr>
+<tr><td>ἀναγεννήσας</td><td>having *us* regenerated</td></tr>
+<tr><td>ἡμᾶς εἰς ἐλπίδα ζῶσαν</td><td>*has given* us a living hope</td></tr>
+<tr><td>δι’ ἀναστάσεως Ἰησοῦ Χριστοῦ</td><td>through the resurrection of Jesus Christ</td></tr>
+<tr><td>ἐκ νεκρῶν,</td><td>from *among* the dead</td></tr>
+</table>
+<hr><b>1peter 1:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>εἰς κληρονομίαν</td><td>into *an* inheritance</td></tr>
+<tr><td>ἄφθαρτον καὶ ἀμίαντον καὶ ἀμάραντον,</td><td>imperishable and *undefiled* and unfading,</td></tr>
+<tr><td>τετηρημένην ἐν οὐρανοῖς</td><td>kept *in* heaven</td></tr>
+<tr><td>εἰς ὑμᾶς</td><td>for *you*</td></tr>
+</table>
+<hr><b>1peter 1:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>τοὺς ἐν δυνάμει Θεοῦ</td><td>those *who are* in the power of God</td></tr>
+<tr><td>φρουρουμένους διὰ πίστεως</td><td>being guarded *through* faith</td></tr>
+<tr><td>εἰς σωτηρίαν ἑτοίμην</td><td>for *the* salvation ready</td></tr>
+<tr><td>ἀποκαλυφθῆναι ἐν καιρῷ ἐσχάτῳ.</td><td>to be revealed *in the* last time</td></tr>
+</table>
+<hr>
+ἐν ᾧ ἀγαλλιᾶσθε, ὀλίγον ἄρτι εἰ δέον λυπηθέντες ἐν ποικίλοις πειρασμοῖς, ἵνα τὸ δοκίμιον ὑμῶν τῆς πίστεως πολυτιμότερον χρυσίου τοῦ ἀπολλυμένου, διὰ πυρὸς δὲ δοκιμαζομένου, εὑρεθῇ εἰς ἔπαινον καὶ δόξαν καὶ τιμὴν ἐν ἀποκαλύψει Ἰησοῦ Χριστοῦ·<hr><b>1peter 1:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἐν ᾧ ἀγαλλιᾶσθε,</td><td>in which you greatly rejoice</td></tr>
+<tr><td>εἰ ὀλίγον ἄρτι δέον</td><td>if *it is* necessary for a *little* while now</td></tr>
+<tr><td>λυπηθέντες ἐν ποικίλοις πειρασμοῖς,</td><td>having been grieved by various trials</td></tr>
+</table>
+<hr><b>1peter 1:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἵνα τὸ</td><td>so that the</td></tr>
+<tr><td>δοκίμιον ὑμῶν τῆς πίστεως</td><td>the testing *of* your faith</td></tr>
+<tr><td>πολυτιμότερον χρυσίου τοῦ ἀπολλυμένου,</td><td>more precious than gold that *is* perishable</td></tr>
+<tr><td>δὲ διὰ πυρὸς δοκιμαζομένου,</td><td>but *being* tested *by* fire</td></tr>
+<tr><td>εὑρεθῇ εἰς</td><td>may be found to *result in*</td></tr>
+<tr><td>ἔπαινον καὶ δόξαν καὶ τιμὴν</td><td>praise and glory and honor</td></tr>
+<tr><td>ἐν ἀποκαλύψει Ἰησοῦ Χριστοῦ·</td><td>at the *time of* revelation of Jesus Christ</td></tr>
+</table>
+<hr>
+ὃν οὐκ ἰδόντες ἀγαπᾶτε, εἰς ὃν ἄρτι μὴ ὁρῶντες πιστεύοντες δὲ ἀγαλλιᾶσθε χαρᾷ ἀνεκλαλήτῳ καὶ δεδοξασμένῃ, κομιζόμενοι τὸ τέλος τῆς πίστεως σωτηρίαν ψυχῶν.<hr><b>1peter 1:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὃν οὐκ ἰδόντες ἀγαπᾶτε,</td><td>whom having not seen, you *do* love</td></tr>
+<tr><td>δὲ εἰς ὃν</td><td>but *regarding* whom</td></tr>
+<tr><td>ἄρτι μὴ ὁρῶντες</td><td>now *though* not seeing</td></tr>
+<tr><td>πιστεύοντες ἀγαλλιᾶσθε</td><td>believing, you *do* rejoice</td></tr>
+<tr><td>χαρᾷ ἀνεκλαλήτῳ καὶ δεδοξασμένῃ,</td><td>with joy inexpressible and *filled with* glory</td></tr>
+</table>
+<hr><b>1peter 1:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>κομιζόμενοι</td><td>receiving or *obtaining*</td></tr>
+<tr><td>τὸ τέλος τῆς πίστεως</td><td>the end of *the* faith</td></tr>
+<tr><td>σωτηρίαν ψυχῶν.</td><td>salvation *of* souls</td></tr>
+</table>
+<hr>
+περὶ ἧς σωτηρίας ἐξεζήτησαν καὶ ἐξηραύνησαν προφῆται οἱ περὶ τῆς εἰς ὑμᾶς χάριτος προφητεύσαντες, ἐραυνῶντες εἰς τίνα ἢ ποῖον καιρὸν ἐδήλου τὸ ἐν αὐτοῖς Πνεῦμα Χριστοῦ προμαρτυρόμενον τὰ εἰς Χριστὸν παθήματα καὶ τὰς μετὰ ταῦτα δόξας·<hr><b>1peter 1:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>περὶ ἧς σωτηρίας</td><td>concerning the *salvation* of which</td></tr>
+<tr><td>ἐξεζήτησαν καὶ ἐξηραύνησαν</td><td>*searched* and *investigated thoroughly*</td></tr>
+<tr><td>προφῆται οἱ περὶ</td><td>prophets *who* concerning</td></tr>
+<tr><td>τῆς εἰς ὑμᾶς χάριτος</td><td>of the *grace* that is *to* you</td></tr>
+<tr><td>προφητεύσαντες, ἐραυνῶντες εἰς</td><td>having prophesied, searching *into*</td></tr>
+</table>
+<hr><b>1peter 1:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>τίνα ἢ ποῖον καιρὸν</td><td>*to* what or *to* what type *of* time</td></tr>
+<tr><td>ἐδήλου τὸ</td><td>was making clear *the*</td></tr>
+<tr><td>ἐν αὐτοῖς Πνεῦμα Χριστοῦ</td><td>the *Spirit* of Christ *which was* in them</td></tr>
+<tr><td>προμαρτυρόμενον</td><td>*foretelling*</td></tr>
+<tr><td>τὰ εἰς Χριστὸν παθήματα</td><td>the *sufferings* destined for Christ</td></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>τὰς μετὰ ταῦτα δόξας·</td><td>the *subsequent* glories</td></tr>
+</table>
+<hr>
+οἷς ἀπεκαλύφθη ὅτι οὐχ ἑαυτοῖς ὑμῖν δὲ διηκόνουν αὐτά, ἃ νῦν ἀνηγγέλη ὑμῖν διὰ τῶν εὐαγγελισαμένων ὑμᾶς ἐν Πνεύματι Ἁγίῳ ἀποσταλέντι ἀπ’ οὐρανοῦ, εἰς ἃ ἐπιθυμοῦσιν ἄγγελοι παρακύψαι.<hr><b>1peter 1:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οἷς ἀπεκαλύφθη</td><td>to whom it *has* been revealed</td></tr>
+<tr><td>ὅτι</td><td>that</td></tr>
+<tr><td>οὐχ ἑαυτοῖς δὲ ὑμῖν</td><td>not for themselves, but for you</td></tr>
+<tr><td>διηκόνουν</td><td>they *were* serving</td></tr>
+<tr><td>αὐτά, ἃ νῦν ἀνηγγέλη</td><td>these things, which now have been *announced*</td></tr>
+<tr><td>ὑμῖν διὰ τῶν εὐαγγελισαμένων</td><td>to you through those who have preached *the* good news</td></tr>
+<tr><td>ὑμᾶς ἐν Πνεύματι Ἁγίῳ</td><td>to you *through the* Holy Spirit</td></tr>
+<tr><td>ἀποσταλέντι ἀπ’ οὐρανοῦ,</td><td>sent *from* heaven</td></tr>
+<tr><td>εἰς ἃ παρακύψαι.</td><td>into *which* to *stoop* down</td></tr>
+<tr><td>ἐπιθυμοῦσιν ἄγγελοι</td><td>*the* angels *desire*</td></tr>
+</table>
+<hr>
+Διὸ ἀναζωσάμενοι τὰς ὀσφύας τῆς διανοίας ὑμῶν, νήφοντες, τελείως, ἐλπίσατε ἐπὶ τὴν φερομένην ὑμῖν χάριν ἐν ἀποκαλύψει Ἰησοῦ Χριστοῦ.<hr><b>1peter 1:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Διὸ ἀναζωσάμενοι τὰς</td><td>Therefore, *having girded up* the</td></tr>
+<tr><td>ὀσφύας τῆς διανοίας ὑμῶν,</td><td>loins *of* the mind *of* you</td></tr>
+<tr><td>νήφοντες, τελείως, ἐλπίσατε ἐπὶ</td><td>be sober, completely, *place your* hope in</td></tr>
+<tr><td>τὴν φερομένην ὑμῖν χάριν</td><td>the grace that is being *brought* to you</td></tr>
+<tr><td>ἐν ἀποκαλύψει Ἰησοῦ Χριστοῦ.</td><td>at the *time of the* revelation of Jesus Christ</td></tr>
+</table>
+<hr>
+ὡς τέκνα ὑπακοῆς, μὴ συσχηματιζόμενοι ταῖς πρότερον ἐν τῇ ἀγνοίᾳ ὑμῶν ἐπιθυμίαις, ἀλλὰ κατὰ τὸν καλέσαντα ὑμᾶς ἅγιον καὶ αὐτοὶ ἅγιοι ἐν πάσῃ ἀναστροφῇ γενήθητε, διότι γέγραπται Ἅγιοι ἔσεσθε, ὅτι ἐγὼ ἅγιος.<hr><b>1peter 1:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὡς τέκνα ὑπακοῆς,</td><td>as *children* of obedience,</td></tr>
+<tr><td>μὴ συσχηματιζόμενοι ταῖς πρότερον</td><td>not conforming to the *desires of your* former</td></tr>
+<tr><td>ἐν τῇ ἀγνοίᾳ ὑμῶν</td><td>in *the* ignorance *of* you</td></tr>
+<tr><td>ἐπιθυμίαις, ἀλλὰ κατὰ</td><td>desires, but according to</td></tr>
+</table>
+<hr><b>1peter 1:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>τὸν καλέσαντα ὑμᾶς ἅγιον</td><td>the one who *has* called you *to be* holy</td></tr>
+<tr><td>καὶ αὐτοὶ</td><td>and *you* also</td></tr>
+<tr><td>ἅγιοι ἐν πάσῃ ἀναστροφῇ</td><td>holy in *all* behavior</td></tr>
+<tr><td>γενήθητε,</td><td>*become*</td></tr>
+</table>
+<hr><b>1peter 1:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>διότι γέγραπται Ἅγιοι ἔσεσθε,</td><td>because it is written *You* shall be holy</td></tr>
+<tr><td>ὅτι ἐγὼ ἅγιος.</td><td>because *I am* holy</td></tr>
+</table>
+<hr>
+καὶ εἰ Πατέρα ἐπικαλεῖσθε τὸν ἀπροσωπολήμπτως κρίνοντα κατὰ τὸ ἑκάστου ἔργον, ἐν φόβῳ τὸν τῆς παροικίας ὑμῶν χρόνον ἀναστράφητε, εἰδότες ὅτι οὐ φθαρτοῖς, ἀργυρίῳ ἢ χρυσίῳ, ἐλυτρώθητε ἐκ τῆς ματαίας ὑμῶν ἀναστροφῆς πατροπαραδότου, ἀλλὰ τιμίῳ αἵματι ὡς ἀμνοῦ ἀμώμου καὶ ἀσπίλου Χριστοῦ, προεγνωσμένου μὲν πρὸ καταβολῆς κόσμου, φανερωθέντος δὲ ἐπ’ ἐσχάτου τῶν χρόνων δι’ ὑμᾶς τοὺς δι’ αὐτοῦ πιστοὺς εἰς Θεὸν τὸν ἐγείραντα αὐτὸν ἐκ νεκρῶν καὶ δόξαν αὐτῷ δόντα, ὥστε τὴν πίστιν ὑμῶν καὶ ἐλπίδα εἶναι εἰς Θεόν.<hr><b>1peter 1:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ εἰ Πατέρα</td><td>and if *you call on the* Father</td></tr>
+<tr><td>ἐπικαλεῖσθε τὸν ἀπροσωπολήμπτως κρίνοντα</td><td>call on *the* Father who judges *without partiality*</td></tr>
+<tr><td>κατὰ τὸ ἑκάστου ἔργον,</td><td>according to *the* each one's work</td></tr>
+<tr><td>ἐν φόβῳ</td><td>in *with* fear</td></tr>
+<tr><td>τὸν τῆς παροικίας ὑμῶν</td><td>the time *of* your *temporary* residence</td></tr>
+<tr><td>χρόνον</td><td>*the* time</td></tr>
+<tr><td>ἀναστράφητε, εἰδότες ὅτι οὐ</td><td>conduct yourselves, knowing that *you were not*</td></tr>
+</table>
+<hr><b>1peter 1:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>φθαρτοῖς, ἀργυρίῳ ἢ χρυσίῳ,</td><td>perishable, with *silver or* gold</td></tr>
+<tr><td>ἐλυτρώθητε ἐκ τῆς</td><td>you have been redeemed *from* the</td></tr>
+<tr><td>ματαίας ὑμῶν ἀναστροφῆς πατροπαραδότου,</td><td>of your *futile* way of life *inherited* from your *forefathers*</td></tr>
+</table>
+<hr><b>1peter 1:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἀλλὰ τιμίῳ αἵματι</td><td>but with *the* precious blood</td></tr>
+<tr><td>ὡς</td><td>as</td></tr>
+<tr><td>ἀμνοῦ ἀμώμου καὶ ἀσπίλου</td><td>of a lamb *that is* without blemish and without spot</td></tr>
+<tr><td>Χριστοῦ, μὲν</td><td>Christ, *indeed*</td></tr>
+</table>
+<hr><b>1peter 1:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>προεγνωσμένου πρὸ καταβολῆς κόσμου,</td><td>foreknown before the *foundation of the* world</td></tr>
+<tr><td>δὲ φανερωθέντος</td><td>but *having been* revealed</td></tr>
+<tr><td>ἐπ’ ἐσχάτου τῶν χρόνων</td><td>at the *end* of times</td></tr>
+<tr><td>δι’</td><td>through *the agency of*</td></tr>
+<tr><td>ὑμᾶς τοὺς δι’ αὐτοῦ</td><td>you who through *him*</td></tr>
+</table>
+<hr><b>1peter 1:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>πιστοὺς εἰς Θεὸν τὸν</td><td>faithful to *the* God *who is the*</td></tr>
+<tr><td>ἐγείραντα αὐτὸν ἐκ νεκρῶν</td><td>having *Him* raised *Him* from *the* dead</td></tr>
+<tr><td>καὶ δόξαν</td><td>and *the* glory</td></tr>
+<tr><td>αὐτῷ δόντα, ὥστε τὴν</td><td>having given to him, so that your</td></tr>
+<tr><td>πίστιν ὑμῶν καὶ ἐλπίδα</td><td>faith *of* you and hope</td></tr>
+<tr><td>εἶναι εἰς Θεόν.</td><td>to be *toward* God</td></tr>
+</table>
+<hr>
+Τὰς ψυχὰς ὑμῶν ἡγνικότες ἐν τῇ ὑπακοῇ τῆς ἀληθείας εἰς φιλαδελφίαν ἀνυπόκριτον, ἐκ καρδίας ἀλλήλους ἀγαπήσατε ἐκτενῶς, ἀναγεγεννημένοι οὐκ ἐκ σπορᾶς φθαρτῆς ἀλλὰ ἀφθάρτου, διὰ λόγου ζῶντος Θεοῦ καὶ μένοντος.<hr><b>1peter 1:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Τὰς ψυχὰς ὑμῶν</td><td>your *souls*</td></tr>
+<tr><td>ἡγνικότες ἐν</td><td>having purified *your* *souls* in</td></tr>
+<tr><td>τῇ ὑπακοῇ τῆς ἀληθείας</td><td>in *the* obedience of truth</td></tr>
+<tr><td>εἰς φιλαδελφίαν ἀνυπόκριτον,</td><td>into *a* brotherly love *that is* unfeigned</td></tr>
+<tr><td>ἐκ καρδίας</td><td>from *the* heart</td></tr>
+<tr><td>ἀλλήλους ἀγαπήσατε ἐκτενῶς, ἀναγεγεννημένοι</td><td>love one another deeply, *having been* born again</td></tr>
+</table>
+<hr><b>1peter 1:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὐκ ἐκ σπορᾶς φθαρτῆς</td><td>not *born* of *a* perishable seed</td></tr>
+<tr><td>ἀλλὰ</td><td>but</td></tr>
+<tr><td>ἀφθάρτου, διὰ λόγου Θεοῦ</td><td>incorruptible, through the word *of* God</td></tr>
+<tr><td>ζῶντος καὶ μένοντος.</td><td>living and *who* remains</td></tr>
+</table>
+<hr>
+διότι πᾶσα σὰρξ ὡς χόρτος, καὶ πᾶσα δόξα αὐτῆς ὡς ἄνθος χόρτου· ἐξηράνθη ὁ χόρτος, καὶ τὸ ἄνθος ἐξέπεσεν· τὸ δὲ ῥῆμα Κυρίου μένει εἰς τὸν αἰῶνα.<hr><b>1peter 1:24</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>διότι</td><td>because</td></tr>
+<tr><td>πᾶσα σὰρξ ὡς χόρτος,</td><td>all *the* flesh *is* as *the* grass</td></tr>
+<tr><td>καὶ πᾶσα δόξα αὐτῆς</td><td>and all *the* glory of it</td></tr>
+<tr><td>ὡς ἄνθος χόρτου·</td><td>like *the* flower *of the* grass</td></tr>
+<tr><td>ἐξηράνθη ὁ χόρτος,</td><td>the grass *has* withered</td></tr>
+<tr><td>καὶ τὸ ἄνθος ἐξέπεσεν·</td><td>and the flower *has* fallen</td></tr>
+</table>
+<hr><b>1peter 1:25</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ τὸ ῥῆμα Κυρίου</td><td>but the *word* of the Lord</td></tr>
+<tr><td>μένει εἰς τὸν αἰῶνα.</td><td>remains *for* the *age*</td></tr>
+<tr><td>δέ</td><td>but, *also*, *now*, or *yet*</td></tr>
+<tr><td>τοῦτο ἐστιν τὸ ῥῆμα</td><td>this is the *word*</td></tr>
+<tr><td>τὸ εὐαγγελισθὲν εἰς ὑμᾶς.</td><td>the good news that was preached *to* you</td></tr>
+</table>
+<div class="chapter-links">
+<a href="../mark/16.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="selected-chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="2.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>

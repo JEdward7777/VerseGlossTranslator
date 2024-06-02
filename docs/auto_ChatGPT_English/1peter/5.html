@@ -1,0 +1,341 @@
+<!DOCTYPE html><html><head><title>1peter 5</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="../matthew/1.html" class="">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../matthew/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../matthew/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../matthew/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../matthew/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../matthew/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../matthew/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../matthew/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../matthew/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../matthew/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../matthew/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../matthew/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../matthew/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../matthew/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../matthew/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../matthew/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../matthew/16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="../matthew/17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="../matthew/18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="../matthew/19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="../matthew/20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="../matthew/21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="../matthew/22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="../matthew/23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="../matthew/24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="../matthew/25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="../matthew/26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="../matthew/27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="../matthew/28.html" class="">28</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../mark/1.html" class="">mark</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../mark/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../mark/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../mark/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../mark/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../mark/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../mark/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../mark/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../mark/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../mark/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../mark/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../mark/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../mark/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../mark/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../mark/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../mark/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../mark/16.html" class="">16</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">1peter</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="current-book-chapter">5</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="4.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="selected-chapter-link">5</a>
+<a class="chapter-link" href="#">-&gt;</a>
+</div>
+<hr>
+Πρεσβυτέρους οὖν ἐν ὑμῖν παρακαλῶ ὁ συνπρεσβύτερος καὶ μάρτυς τῶν τοῦ Χριστοῦ παθημάτων, ὁ καὶ τῆς μελλούσης ἀποκαλύπτεσθαι δόξης κοινωνός,<hr><b>1peter 5:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν Πρεσβυτέρους ἐν ὑμῖν</td><td>therefore *the* elders among you</td></tr>
+<tr><td>παρακαλῶ</td><td>I *do* exhort</td></tr>
+<tr><td>ὁ συνπρεσβύτερος καὶ μάρτυς</td><td>the *fellow* elder and *witness*</td></tr>
+<tr><td>τῶν τοῦ Χριστοῦ παθημάτων,</td><td>of the *of* Christ sufferings</td></tr>
+<tr><td>καὶ ὁ</td><td>and *the*</td></tr>
+<tr><td>τῆς μελλούσης ἀποκαλύπτεσθαι δόξης</td><td>of the *glory that is* to be revealed</td></tr>
+<tr><td>κοινωνός,</td><td>*one who is* a partaker</td></tr>
+</table>
+<hr>
+ποιμάνατε τὸ ἐν ὑμῖν ποίμνιον τοῦ Θεοῦ, μὴ ἀναγκαστῶς ἀλλὰ ἑκουσίως κατὰ Θεόν, μηδὲ αἰσχροκερδῶς ἀλλὰ προθύμως, μηδ’ ὡς κατακυριεύοντες τῶν κλήρων ἀλλὰ τύποι γινόμενοι τοῦ ποιμνίου·<hr><b>1peter 5:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ποιμάνατε τὸ ἐν ὑμῖν</td><td>shepherd the flock that is *among* you</td></tr>
+<tr><td>ποίμνιον τοῦ Θεοῦ,</td><td>flock *of* God</td></tr>
+<tr><td>μὴ ἀναγκαστῶς ἀλλὰ ἑκουσίως</td><td>not under compulsion, but *of your own* will</td></tr>
+<tr><td>κατὰ Θεόν,</td><td>according *to the will of* God</td></tr>
+<tr><td>μηδὲ αἰσχροκερδῶς ἀλλὰ προθύμως,</td><td>not for *sordid* gain, but eagerly</td></tr>
+</table>
+<hr><b>1peter 5:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μηδ’</td><td>nor</td></tr>
+<tr><td>ὡς κατακυριεύοντες τῶν κλήρων</td><td>as *those who* lord it over *your* charges</td></tr>
+<tr><td>ἀλλὰ</td><td>but</td></tr>
+<tr><td>γινόμενοι τύποι τοῦ ποιμνίου·</td><td>becoming *examples* to the flock</td></tr>
+</table>
+<hr>
+καὶ φανερωθέντος τοῦ Ἀρχιποίμενος κομιεῖσθε τὸν ἀμαράντινον τῆς δόξης στέφανον.<hr><b>1peter 5:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ φανερωθέντος τοῦ Ἀρχιποίμενος</td><td>and *when* the Chief Shepherd appears</td></tr>
+<tr><td>κομιεῖσθε τὸν</td><td>you will *receive* the</td></tr>
+<tr><td>ἀμαράντινον τῆς δόξης στέφανον.</td><td>the *imperishable* crown *of* glory</td></tr>
+</table>
+<hr>
+Ὁμοίως, νεώτεροι, ὑποτάγητε πρεσβυτέροις·<hr><b>1peter 5:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>νεώτεροι, Ὁμοίως, ὑποτάγητε πρεσβυτέροις·</td><td>Likewise, younger *ones*, submit *yourselves* to *the* elder</td></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>πάντες ἀλλήλοις τὴν ταπεινοφροσύνην ἐγκομβώσασθε,</td><td>all of you *clothe yourselves* with humility toward one another</td></tr>
+<tr><td>ὅτι</td><td>because</td></tr>
+<tr><td>ὁ Θεὸς ὑπερηφάνοις ἀντιτάσσεται,</td><td>God *opposes* *the* proud</td></tr>
+<tr><td>δὲ ταπεινοῖς δίδωσιν χάριν.</td><td>but to the humble *He* gives grace</td></tr>
+</table>
+<hr>
+Ταπεινώθητε οὖν ὑπὸ τὴν κραταιὰν χεῖρα τοῦ Θεοῦ, ἵνα ὑμᾶς ὑψώσῃ ἐν καιρῷ, πᾶσαν τὴν μέριμναν ὑμῶν ἐπιρίψαντες ἐπ’ αὐτόν, ὅτι αὐτῷ μέλει περὶ ὑμῶν.<hr><b>1peter 5:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν Ταπεινώθητε ὑπὸ τὴν</td><td>therefore *Humble yourselves* under the</td></tr>
+<tr><td>κραταιὰν χεῖρα τοῦ Θεοῦ,</td><td>the *mighty* hand of *God*</td></tr>
+<tr><td>ἵνα</td><td>so that</td></tr>
+<tr><td>ὑμᾶς ὑψώσῃ ἐν καιρῷ,</td><td>you *whom* He may exalt in due time,</td></tr>
+</table>
+<hr><b>1peter 5:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>πᾶσαν τὴν μέριμναν ὑμῶν</td><td>*cast* all your *anxiety*</td></tr>
+<tr><td>ἐπιρίψαντες ἐπ’ αὐτόν,</td><td>casting *all your* anxieties *on* him,</td></tr>
+<tr><td>ὅτι</td><td>because *he*</td></tr>
+<tr><td>αὐτῷ μέλει περὶ ὑμῶν.</td><td>*He* cares about you</td></tr>
+</table>
+<hr>
+Νήψατε, γρηγορήσατε.<hr><b>1peter 5:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Νήψατε, γρηγορήσατε.</td><td>Be sober, *be* watchful</td></tr>
+<tr><td>ὁ ἀντίδικος ὑμῶν</td><td>your *adversary*</td></tr>
+<tr><td>διάβολος ὡς λέων ὠρυόμενος</td><td>devil as *a* roaring lion</td></tr>
+<tr><td>περιπατεῖ ζητῶν τινα καταπιεῖν·</td><td>he *is* prowling around seeking *someone* to devour</td></tr>
+</table>
+<hr>
+ὁ ἀντίδικος ὑμῶν διάβολος ὡς λέων ὠρυόμενος περιπατεῖ ζητῶν τινα καταπιεῖν· ᾧ ἀντίστητε στερεοὶ τῇ πίστει, εἰδότες τὰ αὐτὰ τῶν παθημάτων τῇ ἐν τῷ κόσμῳ ὑμῶν ἀδελφότητι ἐπιτελεῖσθαι.<hr><b>1peter 5:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ᾧ</td><td>*to* whom</td></tr>
+<tr><td>ἀντίστητε στερεοὶ τῇ πίστει,</td><td>resist steadfast *in* the faith,</td></tr>
+<tr><td>εἰδότες</td><td>knowing</td></tr>
+<tr><td>τὰ αὐτὰ τῶν παθημάτων</td><td>the same *kinds of* sufferings</td></tr>
+<tr><td>τῇ ἐν τῷ κόσμῳ</td><td>*in* the world</td></tr>
+<tr><td>ὑμῶν ἀδελφότητι</td><td>your *brotherhood*</td></tr>
+<tr><td>ἐπιτελεῖσθαι.</td><td>*to be* accomplished</td></tr>
+</table>
+<hr>
+Ὁ δὲ Θεὸς πάσης χάριτος, ὁ καλέσας ὑμᾶς εἰς τὴν αἰώνιον αὐτοῦ δόξαν ἐν Χριστῷ, ὀλίγον παθόντας αὐτὸς καταρτίσει, στηρίξει, σθενώσει, θεμελιώσει. αὐτῷ τὸ κράτος εἰς τοὺς αἰῶνας τῶν αἰώνων· ἀμήν.<hr><b>1peter 5:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>Ὁ Θεὸς πάσης χάριτος,</td><td>The God of all *the* grace</td></tr>
+<tr><td>ὁ καλέσας ὑμᾶς εἰς</td><td>the one who called you to*wards*</td></tr>
+<tr><td>τὴν αἰώνιον αὐτοῦ δόξαν</td><td>his *eternal* glory</td></tr>
+<tr><td>ἐν Χριστῷ,</td><td>in *Christ*</td></tr>
+<tr><td>ὀλίγον παθόντας αὐτὸς καταρτίσει,</td><td>after *having* suffered *a* little, *He* Himself will *restore* you</td></tr>
+<tr><td>στηρίξει, σθενώσει,</td><td>establish, *will* strengthen</td></tr>
+<tr><td>θεμελιώσει. αὐτῷ τὸ κράτος</td><td>he will *Himself* establish *you*. To him *is* the power</td></tr>
+</table>
+<hr><b>1peter 5:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>εἰς</td><td>to *the*</td></tr>
+<tr><td>τοὺς αἰῶνας τῶν αἰώνων·</td><td>the *ages* of ages</td></tr>
+<tr><td>ἀμήν.</td><td>*so be it*</td></tr>
+</table>
+<hr>
+Διὰ Σιλουανοῦ ὑμῖν τοῦ πιστοῦ ἀδελφοῦ, ὡς λογίζομαι, δι’ ὀλίγων ἔγραψα, παρακαλῶν καὶ ἐπιμαρτυρῶν ταύτην εἶναι ἀληθῆ χάριν τοῦ Θεοῦ, εἰς ἣν στῆτε.<hr><b>1peter 5:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὑμῖν Διὰ Σιλουανοῦ τοῦ</td><td>to you *through* Silvanus, *the*</td></tr>
+<tr><td>πιστοῦ ἀδελφοῦ, ὡς λογίζομαι,</td><td>faithful brother, as I *do* consider *him*,</td></tr>
+<tr><td>δι’ ὀλίγων</td><td>in *a few* words</td></tr>
+<tr><td>ἔγραψα, παρακαλῶν</td><td>I wrote, *by* exhorting</td></tr>
+<tr><td>καὶ ἐπιμαρτυρῶν ταύτην εἶναι</td><td>and *testifying* that this *is*</td></tr>
+<tr><td>ἀληθῆ χάριν τοῦ Θεοῦ,</td><td>the *true* grace of God</td></tr>
+<tr><td>εἰς ἣν στῆτε.</td><td>in *which* you *stand* firm</td></tr>
+</table>
+<hr>
+Ἀσπάζεται ὑμᾶς ἡ ἐν Βαβυλῶνι συνεκλεκτὴ καὶ Μάρκος ὁ υἱός μου.<hr><b>1peter 5:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἀσπάζεται ὑμᾶς</td><td>*sends* you greetings</td></tr>
+<tr><td>ἡ ἐν Βαβυλῶνι συνεκλεκτὴ</td><td>she who is *the* elect together with [others] at Babylon</td></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>Μάρκος ὁ υἱός μου.</td><td>Mark *the* son *of* me</td></tr>
+</table>
+<hr>
+ἀσπάσασθε ἀλλήλους ἐν φιλήματι ἀγάπης.<hr><b>1peter 5:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἀσπάσασθε</td><td>greet *one another*</td></tr>
+<tr><td>ἀλλήλους ἐν φιλήματι ἀγάπης.</td><td>*each* other with a kiss of *agape* love</td></tr>
+<tr><td>Εἰρήνη ὑμῖν</td><td>Peace *be* *to* you</td></tr>
+<tr><td>πᾶσιν τοῖς ἐν Χριστῷ.</td><td>*to* all those who are in Christ</td></tr>
+</table>
+<div class="chapter-links">
+<a href="4.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="selected-chapter-link">5</a>
+<a class="chapter-link" href="#">-&gt;</a>
+</div>
+</div>
+</body></html>

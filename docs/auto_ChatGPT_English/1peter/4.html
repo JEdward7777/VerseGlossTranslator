@@ -1,0 +1,391 @@
+<!DOCTYPE html><html><head><title>1peter 4</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="../matthew/1.html" class="">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../matthew/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../matthew/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../matthew/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../matthew/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../matthew/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../matthew/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../matthew/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../matthew/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../matthew/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../matthew/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../matthew/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../matthew/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../matthew/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../matthew/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../matthew/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../matthew/16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="../matthew/17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="../matthew/18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="../matthew/19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="../matthew/20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="../matthew/21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="../matthew/22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="../matthew/23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="../matthew/24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="../matthew/25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="../matthew/26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="../matthew/27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="../matthew/28.html" class="">28</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../mark/1.html" class="">mark</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../mark/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../mark/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../mark/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../mark/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../mark/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../mark/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../mark/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../mark/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../mark/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../mark/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../mark/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../mark/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../mark/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../mark/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../mark/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../mark/16.html" class="">16</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">1peter</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="current-book-chapter">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="3.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="selected-chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="5.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Χριστοῦ οὖν παθόντος σαρκὶ καὶ ὑμεῖς τὴν αὐτὴν ἔννοιαν ὁπλίσασθε, ὅτι ὁ παθὼν σαρκὶ πέπαυται ἁμαρτίας, εἰς τὸ μηκέτι ἀνθρώπων ἐπιθυμίαις ἀλλὰ θελήματι Θεοῦ τὸν ἐπίλοιπον ἐν σαρκὶ βιῶσαι χρόνον.<hr><b>1peter 4:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν Χριστοῦ παθόντος σαρκὶ</td><td>therefore *of* Christ having suffered in *the* flesh</td></tr>
+<tr><td>καὶ ὑμεῖς</td><td>and *you*</td></tr>
+<tr><td>τὴν αὐτὴν ἔννοιαν</td><td>the same *mindset*</td></tr>
+<tr><td>ὁπλίσασθε, εἰς τὸ</td><td>arm yourselves, with *the purpose of*</td></tr>
+</table>
+<hr><b>1peter 4:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μηκέτι ἀνθρώπων ἐπιθυμίαις ἀλλὰ θελήματι Θεοῦ</td><td>no longer *according to* human desires but *according to* the will of God</td></tr>
+<tr><td>τὸν</td><td>the, *that which*</td></tr>
+<tr><td>ἐπίλοιπον ἐν σαρκὶ χρόνον.</td><td>the *remaining* time *in the flesh*</td></tr>
+<tr><td>βιῶσαι</td><td>to live</td></tr>
+</table>
+<hr><b>1peter 4:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅτι ὁ παθὼν σαρκὶ</td><td>because *he* who has suffered in the flesh</td></tr>
+<tr><td>πέπαυται ἁμαρτίας,</td><td>he *has* ceased *from* *committing* sins</td></tr>
+</table>
+<hr>
+ἀρκετὸς γὰρ ὁ παρεληλυθὼς χρόνος τὸ βούλημα τῶν ἐθνῶν κατειργάσθαι, πεπορευμένους ἐν ἀσελγείαις, ἐπιθυμίαις, οἰνοφλυγίαις, κώμοις, πότοις, καὶ ἀθεμίτοις εἰδωλολατρείαις. ἐν ᾧ ξενίζονται μὴ συντρεχόντων ὑμῶν εἰς τὴν αὐτὴν τῆς ἀσωτίας ἀνάχυσιν, βλασφημοῦντες· οἳ ἀποδώσουσιν λόγον τῷ ἑτοίμως ἔχοντι κρῖναι ζῶντας καὶ νεκρούς.<hr><b>1peter 4:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ</td><td>for</td></tr>
+<tr><td>ἀρκετὸς ὁ παρεληλυθὼς χρόνος</td><td>*It is* sufficient the time *that has* passed</td></tr>
+<tr><td>τὸ βούλημα τῶν ἐθνῶν</td><td>the *will* of the *Gentiles*</td></tr>
+<tr><td>κατειργάσθαι, πεπορευμένους ἐν</td><td>to have carried out, having walked *in*</td></tr>
+<tr><td>ἀσελγείαις, ἐπιθυμίαις, οἰνοφλυγίαις, κώμοις, πότοις,</td><td>licentiousness, lustful desires, drunkenness, carousings, drinking parties</td></tr>
+<tr><td>καὶ ἀθεμίτοις εἰδωλολατρείαις.</td><td>and *to* unlawful idolatries</td></tr>
+</table>
+<hr><b>1peter 4:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἐν ᾧ</td><td>in *which*</td></tr>
+<tr><td>ξενίζονται μὴ</td><td>are surprised *that* *you do* not</td></tr>
+<tr><td>συντρεχόντων ὑμῶν εἰς τὴν</td><td>of *you* joining in the</td></tr>
+<tr><td>αὐτὴν τῆς ἀσωτίας ἀνάχυσιν,</td><td>the same *flood of* dissipation</td></tr>
+<tr><td>βλασφημοῦντες· οἳ ἀποδώσουσιν</td><td>blaspheming; those who *will* give</td></tr>
+</table>
+<hr><b>1peter 4:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>λόγον τῷ ἑτοίμως ἔχοντι</td><td>an account to the one who is *ready* to</td></tr>
+<tr><td>κρῖναι ζῶντας καὶ νεκρούς.</td><td>to judge the living and the dead</td></tr>
+</table>
+<hr>
+εἰς τοῦτο γὰρ καὶ νεκροῖς εὐηγγελίσθη, ἵνα κριθῶσι μὲν κατὰ ἀνθρώπους σαρκί, ζῶσι δὲ κατὰ Θεὸν πνεύματι.<hr><b>1peter 4:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ</td><td>for</td></tr>
+<tr><td>εἰς τοῦτο καὶ νεκροῖς εὐηγγελίσθη,</td><td>for this reason *the* gospel was preached also *to* the dead,</td></tr>
+<tr><td>ἵνα μὲν</td><td>so that *on the one hand*</td></tr>
+<tr><td>κριθῶσι κατὰ ἀνθρώπους σαρκί,</td><td>may be judged according to *the standards of* men in the flesh</td></tr>
+<tr><td>δὲ</td><td>*but*</td></tr>
+<tr><td>ζῶσι κατὰ Θεὸν πνεύματι.</td><td>live according to *the will of* God in spirit</td></tr>
+</table>
+<hr>
+Πάντων δὲ τὸ τέλος ἤγγικεν.<hr><b>1peter 4:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Πάντων τὸ τέλος</td><td>but of *all things* the end</td></tr>
+<tr><td>ἤγγικεν.</td><td>has *drawn* near</td></tr>
+<tr><td>οὖν σωφρονήσατε καὶ νήψατε</td><td>therefore be sober and *remain* watchful</td></tr>
+<tr><td>εἰς προσευχάς·</td><td>toward *the* prayers</td></tr>
+</table>
+<hr>
+πρὸ πάντων τὴν εἰς ἑαυτοὺς ἀγάπην ἐκτενῆ ἔχοντες, ὅτι ἀγάπη καλύπτει πλῆθος ἁμαρτιῶν·<hr><b>1peter 4:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>πρὸ πάντων</td><td>above *all*</td></tr>
+<tr><td>τὴν</td><td>the</td></tr>
+<tr><td>εἰς ἑαυτοὺς ἀγάπην ἐκτενῆ</td><td>intense love *for* *yourselves*</td></tr>
+<tr><td>ἔχοντες, ὅτι</td><td>having, because</td></tr>
+<tr><td>ἀγάπη καλύπτει πλῆθος ἁμαρτιῶν·</td><td>love covers *a* multitude of sins</td></tr>
+</table>
+<hr>
+φιλόξενοι εἰς ἀλλήλους ἄνευ γογγυσμοῦ·<hr><b>1peter 4:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>φιλόξενοι εἰς ἀλλήλους ἄνευ γογγυσμοῦ·</td><td>hospitable *to* one another without *any* grumbling</td></tr>
+</table>
+<hr>
+ἕκαστος καθὼς ἔλαβεν χάρισμα, εἰς ἑαυτοὺς αὐτὸ διακονοῦντες ὡς καλοὶ οἰκονόμοι ποικίλης χάριτος Θεοῦ· εἴ τις λαλεῖ, ὡς λόγια Θεοῦ· εἴ τις διακονεῖ, ὡς ἐξ ἰσχύος ἧς χορηγεῖ ὁ Θεός· ἵνα ἐν πᾶσιν δοξάζηται ὁ Θεὸς διὰ Ἰησοῦ Χριστοῦ, ᾧ ἐστιν ἡ δόξα καὶ τὸ κράτος εἰς τοὺς αἰῶνας τῶν αἰώνων· ἀμήν.<hr><b>1peter 4:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἕκαστος καθὼς ἔλαβεν χάρισμα,</td><td>each one as *he* has received a *gift*,</td></tr>
+<tr><td>εἰς ἑαυτοὺς</td><td>*to* one another</td></tr>
+<tr><td>αὐτὸ διακονοῦντες ὡς καλοὶ</td><td>*serving* it as *being* good</td></tr>
+<tr><td>οἰκονόμοι ποικίλης χάριτος Θεοῦ·</td><td>stewards of *the* manifold grace of God</td></tr>
+</table>
+<hr><b>1peter 4:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>εἴ τις λαλεῖ,</td><td>if anyone speaks,</td></tr>
+<tr><td>ὡς λόγια Θεοῦ·</td><td>as *the utterances* of God</td></tr>
+<tr><td>εἴ τις διακονεῖ,</td><td>if anyone *is* serving,</td></tr>
+<tr><td>ὡς ἐξ ἰσχύος</td><td>as *by* strength</td></tr>
+<tr><td>ἧς χορηγεῖ ὁ Θεός·</td><td>which *is* supplied by God</td></tr>
+<tr><td>ἵνα ἐν πᾶσιν</td><td>so that *in* all *things*</td></tr>
+<tr><td>δοξάζηται ὁ Θεὸς</td><td>be glorified *the* God</td></tr>
+<tr><td>διὰ Ἰησοῦ Χριστοῦ,</td><td>through *Jesus* Christ</td></tr>
+<tr><td>ᾧ ἐστιν</td><td>to *whom* is</td></tr>
+<tr><td>ἡ δόξα καὶ τὸ κράτος</td><td>the glory and *the* power</td></tr>
+<tr><td>εἰς</td><td>into, toward, to, for, *in order to*</td></tr>
+<tr><td>τοὺς αἰῶνας τῶν αἰώνων·</td><td>the *ages* of the *ages*</td></tr>
+<tr><td>ἀμήν.</td><td>*so be it*</td></tr>
+</table>
+<hr>
+Ἀγαπητοί, μὴ ξενίζεσθε τῇ ἐν ὑμῖν πυρώσει πρὸς πειρασμὸν ὑμῖν γινομένῃ, ὡς ξένου ὑμῖν συμβαίνοντος, ἀλλὰ καθὸ κοινωνεῖτε τοῖς τοῦ Χριστοῦ παθήμασιν χαίρετε, ἵνα καὶ ἐν τῇ ἀποκαλύψει τῆς δόξης αὐτοῦ χαρῆτε ἀγαλλιώμενοι.<hr><b>1peter 4:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἀγαπητοί, μὴ ξενίζεσθε</td><td>Beloved, do not *be* surprised</td></tr>
+<tr><td>τῇ ἐν ὑμῖν πυρώσει</td><td>the *fiery ordeal* that is taking place among you</td></tr>
+<tr><td>πρὸς πειρασμὸν ὑμῖν γινομένῃ,</td><td>as a *trial* that is happening to you</td></tr>
+<tr><td>ὡς ξένου ὑμῖν συμβαίνοντος,</td><td>as *something* *strange* happening *to* you</td></tr>
+</table>
+<hr><b>1peter 4:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἀλλὰ καθὸ κοινωνεῖτε</td><td>but to the extent that *you* share</td></tr>
+<tr><td>τοῖς τοῦ Χριστοῦ παθήμασιν</td><td>the *of* Christ *sufferings*</td></tr>
+<tr><td>χαίρετε,</td><td>rejoice</td></tr>
+<tr><td>ἵνα καὶ ἐν τῇ</td><td>so that and in *the*</td></tr>
+<tr><td>ἀποκαλύψει τῆς δόξης αὐτοῦ</td><td>the revelation *of* His glory</td></tr>
+<tr><td>χαρῆτε ἀγαλλιώμενοι.</td><td>rejoice *and* be exceeding glad</td></tr>
+</table>
+<hr>
+εἰ ὀνειδίζεσθε ἐν ὀνόματι Χριστοῦ, μακάριοι, ὅτι τὸ τῆς δόξης καὶ τὸ τοῦ Θεοῦ Πνεῦμα ἐφ’ ὑμᾶς ἀναπαύεται.<hr><b>1peter 4:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>εἰ</td><td>if</td></tr>
+<tr><td>ὀνειδίζεσθε ἐν ὀνόματι Χριστοῦ,</td><td>if you are insulted *in the name* of Christ,</td></tr>
+<tr><td>μακάριοι,</td><td>blessed</td></tr>
+<tr><td>ὅτι τὸ τῆς δόξης</td><td>because the *spirit* of glory</td></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>τὸ τοῦ Θεοῦ Πνεῦμα</td><td>the *Spirit* of God</td></tr>
+<tr><td>ἐφ’ ὑμᾶς</td><td>*upon* you</td></tr>
+<tr><td>ἀναπαύεται.</td><td>*is* resting</td></tr>
+</table>
+<hr>
+μὴ γάρ τις ὑμῶν πασχέτω ὡς φονεὺς ἢ κλέπτης ἢ κακοποιὸς ἢ ὡς ἀλλοτριεπίσκοπος· εἰ δὲ ὡς Χριστιανός, μὴ αἰσχυνέσθω, δοξαζέτω δὲ τὸν Θεὸν ἐν τῷ ὀνόματι τούτῳ. ὅτι ὁ καιρὸς τοῦ ἄρξασθαι τὸ κρίμα ἀπὸ τοῦ οἴκου τοῦ Θεοῦ·<hr><b>1peter 4:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γάρ μὴ τις ὑμῶν</td><td>for *let* none *of* you</td></tr>
+<tr><td>πασχέτω ὡς</td><td>suffer as</td></tr>
+<tr><td>φονεὺς ἢ κλέπτης ἢ κακοποιὸς</td><td>murderer or thief or *evildoer*</td></tr>
+<tr><td>ἢ ὡς ἀλλοτριεπίσκοπος·</td><td>or as a *meddler* in other people's affairs</td></tr>
+</table>
+<hr><b>1peter 4:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἰ ὡς Χριστιανός,</td><td>but if *it is* as a Christian,</td></tr>
+<tr><td>μὴ αἰσχυνέσθω,</td><td>let *him* not *be* ashamed</td></tr>
+<tr><td>δὲ δοξαζέτω τὸν Θεὸν</td><td>but let *him* glorify God</td></tr>
+<tr><td>ἐν τῷ ὀνόματι τούτῳ.</td><td>in *the* name of this *one*</td></tr>
+</table>
+<hr><b>1peter 4:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅτι ὁ καιρὸς</td><td>because the *time*</td></tr>
+<tr><td>τοῦ ἄρξασθαι τὸ κρίμα</td><td>to *begin* the judgment</td></tr>
+<tr><td>ἀπὸ</td><td>from</td></tr>
+<tr><td>τοῦ οἴκου τοῦ Θεοῦ·</td><td>of the house of *the* God</td></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>εἰ πρῶτον ἀφ’ ἡμῶν,</td><td>if *it is* first *to begin* from us</td></tr>
+<tr><td>τί</td><td>what</td></tr>
+<tr><td>τὸ τέλος τῶν ἀπειθούντων</td><td>the end of those who disobey</td></tr>
+<tr><td>τῷ τοῦ Θεοῦ εὐαγγελίῳ;</td><td>to the *gospel* of God</td></tr>
+</table>
+<hr>
+καὶ εἰ ὁ δίκαιος μόλις σώζεται, ὁ ἀσεβὴς καὶ ἁμαρτωλὸς ποῦ φανεῖται;<hr><b>1peter 4:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ εἰ</td><td>and if</td></tr>
+<tr><td>ὁ δίκαιος μόλις σώζεται,</td><td>the righteous *one* is scarcely *saved*</td></tr>
+<tr><td>ὁ ἀσεβὴς καὶ ἁμαρτωλὸς</td><td>the ungodly and *the* sinner</td></tr>
+<tr><td>ποῦ φανεῖται;</td><td>where *will* appear?</td></tr>
+</table>
+<hr>
+ὥστε καὶ οἱ πάσχοντες κατὰ τὸ θέλημα τοῦ Θεοῦ πιστῷ Κτίστῃ παρατιθέσθωσαν τὰς ψυχὰς αὐτῶν ἐν ἀγαθοποιΐᾳ.<hr><b>1peter 4:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὥστε</td><td>therefore *so*</td></tr>
+<tr><td>καὶ οἱ πάσχοντες κατὰ</td><td>and those who suffer according to</td></tr>
+<tr><td>τὸ θέλημα τοῦ Θεοῦ</td><td>the will of *God*</td></tr>
+<tr><td>πιστῷ Κτίστῃ</td><td>to the *a* Creator *who is* faithful</td></tr>
+<tr><td>παρατιθέσθωσαν τὰς ψυχὰς αὐτῶν</td><td>let them *entrust* their souls</td></tr>
+<tr><td>ἐν ἀγαθοποιΐᾳ.</td><td>in *doing* good</td></tr>
+</table>
+<div class="chapter-links">
+<a href="3.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="selected-chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="5.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>
