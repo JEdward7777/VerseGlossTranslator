@@ -8,8 +8,11 @@ from collections import defaultdict
 
 # %%
 
-input_file_filter = "auto_\\d+-([^_]+).json"
-directory_template = "/data/auto_just_greek/{book}/{chapter}.html"
+# input_file_filter = "auto_\\d+-([^_]+).json"
+# directory_template = "/data/auto_just_greek/{book}/{chapter}.html"
+
+input_file_filter = "auto_\\d+-([^_]+)_ChatGPT_English.json"
+directory_template = "/docs/auto_ChatGPT_English/{book}/{chapter}.html"
 
 
 def relative_link( other_book, other_chapter, current_book, current_chapter ):

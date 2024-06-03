@@ -1,0 +1,588 @@
+<!DOCTYPE html><html><head><title>luke 14</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="../matthew/1.html" class="">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../matthew/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../matthew/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../matthew/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../matthew/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../matthew/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../matthew/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../matthew/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../matthew/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../matthew/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../matthew/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../matthew/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../matthew/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../matthew/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../matthew/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../matthew/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../matthew/16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="../matthew/17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="../matthew/18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="../matthew/19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="../matthew/20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="../matthew/21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="../matthew/22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="../matthew/23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="../matthew/24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="../matthew/25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="../matthew/26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="../matthew/27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="../matthew/28.html" class="">28</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../mark/1.html" class="">mark</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../mark/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../mark/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../mark/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../mark/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../mark/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../mark/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../mark/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../mark/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../mark/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../mark/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../mark/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../mark/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../mark/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../mark/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../mark/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../mark/16.html" class="">16</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">luke</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="14.html" class="current-book-chapter">14</a></li>
+   <li class="submenu_item"><a href="15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="24.html" class="">24</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../1peter/1.html" class="">1peter</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../1peter/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../1peter/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../1peter/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../1peter/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../1peter/5.html" class="">5</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="13.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="selected-chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="15.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Καὶ ἐγένετο ἐν τῷ ἐλθεῖν αὐτὸν εἰς οἶκόν τινος τῶν ἀρχόντων τῶν Φαρισαίων σαββάτῳ φαγεῖν ἄρτον, καὶ αὐτοὶ ἦσαν παρατηρούμενοι αὐτόν.<hr><b>luke 14:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ ἐγένετο ἐν τῷ ἐλθεῖν</td><td>And *it happened* in the coming</td></tr>
+<tr><td>αὐτὸν εἰς οἶκόν τινος</td><td>him *into the* house *of someone*</td></tr>
+<tr><td>τῶν ἀρχόντων τῶν Φαρισαίων</td><td>of *the* leaders of *the* Pharisees</td></tr>
+<tr><td>σαββάτῳ φαγεῖν ἄρτον,</td><td>on the Sabbath to eat bread</td></tr>
+<tr><td>καὶ αὐτοὶ ἦσαν παρατηρούμενοι αὐτόν.</td><td>and they were observing him</td></tr>
+</table>
+<hr>
+καὶ ἰδοὺ ἄνθρωπός τις ἦν ὑδρωπικὸς ἔμπροσθεν αὐτοῦ.<hr><b>luke 14:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἰδοὺ ἄνθρωπός τις ὑδρωπικὸς</td><td>and *behold*, a certain man *was* suffering from dropsy</td></tr>
+<tr><td>ἦν ἔμπροσθεν αὐτοῦ.</td><td>there *was* before him</td></tr>
+</table>
+<hr>
+καὶ ἀποκριθεὶς ὁ Ἰησοῦς εἶπεν πρὸς τοὺς νομικοὺς καὶ Φαρισαίους λέγων Ἔξεστιν τῷ σαββάτῳ θεραπεῦσαι ἢ οὔ;<hr><b>luke 14:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἀποκριθεὶς ὁ Ἰησοῦς</td><td>and *answering* Jesus</td></tr>
+<tr><td>εἶπεν πρὸς</td><td>said *unto*</td></tr>
+<tr><td>τοὺς νομικοὺς καὶ Φαρισαίους</td><td>the *experts in the law* and Pharisees</td></tr>
+<tr><td>λέγων Ἔξεστιν τῷ σαββάτῳ θεραπεῦσαι</td><td>saying It-is-lawful on the Sabbath to-heal</td></tr>
+<tr><td>ἢ οὔ;</td><td>or not;</td></tr>
+</table>
+<hr>
+οἱ δὲ ἡσύχασαν.<hr><b>luke 14:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ ἡσύχασαν.</td><td>but *they* were silent</td></tr>
+<tr><td>καὶ ἐπιλαβόμενος ἰάσατο αὐτὸν</td><td>and having taken hold *of him* healed *him*</td></tr>
+<tr><td>καὶ ἀπέλυσεν.</td><td>and *he released*</td></tr>
+</table>
+<hr>
+καὶ πρὸς αὐτοὺς εἶπεν Τίνος ὑμῶν υἱὸς ἢ βοῦς εἰς φρέαρ πεσεῖται, καὶ οὐκ εὐθέως ἀνασπάσει αὐτὸν ἐν ἡμέρᾳ τοῦ σαββάτου;<hr><b>luke 14:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ πρὸς αὐτοὺς εἶπεν</td><td>and *he* said to them</td></tr>
+<tr><td>Τίνος ὑμῶν</td><td>*Which* of you</td></tr>
+<tr><td>υἱὸς ἢ βοῦς</td><td>son or ox</td></tr>
+<tr><td>εἰς φρέαρ</td><td>into *a* well</td></tr>
+<tr><td>πεσεῖται, καὶ</td><td>*will* fall, and</td></tr>
+<tr><td>οὐκ εὐθέως ἀνασπάσει αὐτὸν</td><td>not immediately he will pull *him* out</td></tr>
+<tr><td>ἐν ἡμέρᾳ τοῦ σαββάτου;</td><td>on *the* day *of* the Sabbath</td></tr>
+</table>
+<hr>
+καὶ οὐκ ἴσχυσαν ἀνταποκριθῆναι πρὸς ταῦτα.<hr><b>luke 14:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ οὐκ</td><td>and not</td></tr>
+<tr><td>ἴσχυσαν ἀνταποκριθῆναι πρὸς ταῦτα.</td><td>they were able to answer *against these things*</td></tr>
+</table>
+<hr>
+Ἔλεγεν δὲ πρὸς τοὺς κεκλημένους παραβολήν, ἐπέχων πῶς τὰς πρωτοκλισίας ἐξελέγοντο, λέγων πρὸς αὐτούς Ὅταν κληθῇς ὑπό τινος εἰς γάμους, μὴ κατακλιθῇς εἰς τὴν πρωτοκλισίαν, μή ποτε ἐντιμότερός σου ᾖ κεκλημένος ὑπ’ αὐτοῦ, καὶ ἐλθὼν ὁ σὲ καὶ αὐτὸν καλέσας ἐρεῖ σοι Δὸς τούτῳ τόπον, καὶ τότε ἄρξῃ μετὰ αἰσχύνης τὸν ἔσχατον τόπον κατέχειν.<hr><b>luke 14:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἔλεγεν πρὸς τοὺς κεκλημένους</td><td>But he was saying *to* those called</td></tr>
+<tr><td>παραβολήν, ἐπέχων</td><td>parable, *holding in mind*</td></tr>
+<tr><td>πῶς τὰς πρωτοκλισίας ἐξελέγοντο,</td><td>how *they* were choosing the best places</td></tr>
+<tr><td>λέγων πρὸς αὐτούς</td><td>saying *to* them</td></tr>
+</table>
+<hr><b>luke 14:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ὅταν</td><td>When</td></tr>
+<tr><td>κληθῇς ὑπό τινος εἰς γάμους,</td><td>you are called by someone *to a* wedding</td></tr>
+<tr><td>μὴ κατακλιθῇς εἰς τὴν πρωτοκλισίαν,</td><td>not *sit down* in the place of honor</td></tr>
+<tr><td>μή ποτε ἐντιμότερός σου ᾖ κεκλημένος ὑπ’ αὐτοῦ,</td><td>lest *a* more-honored than you *might* be invited by him</td></tr>
+</table>
+<hr><b>luke 14:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐλθὼν</td><td>and *having come*</td></tr>
+<tr><td>ὁ σὲ καὶ αὐτὸν</td><td>the one who *invited* both you and him</td></tr>
+<tr><td>καλέσας ἐρεῖ</td><td>invited *will say*</td></tr>
+<tr><td>σοι Δὸς τούτῳ τόπον,</td><td>*give* *to* *this* *one* *a* place</td></tr>
+<tr><td>καὶ τότε ἄρξῃ μετὰ αἰσχύνης</td><td>and then you will begin with *shame*</td></tr>
+<tr><td>τὸν ἔσχατον τόπον</td><td>the *lowest* place</td></tr>
+<tr><td>κατέχειν.</td><td>to occupy/hold</td></tr>
+</table>
+<hr>
+ἀλλ’ ὅταν κληθῇς, πορευθεὶς ἀνάπεσε εἰς τὸν ἔσχατον τόπον, ἵνα ὅταν ἔλθῃ ὁ κεκληκώς σε ἐρεῖ σοι Φίλε, προσανάβηθι ἀνώτερον· τότε ἔσται σοι δόξα ἐνώπιον πάντων τῶν συνανακειμένων σοι.<hr><b>luke 14:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἀλλ’ ὅταν κληθῇς,</td><td>but *when you are* invited</td></tr>
+<tr><td>πορευθεὶς ἀνάπεσε</td><td>*having* gone *to the place*, lie down</td></tr>
+<tr><td>εἰς τὸν ἔσχατον τόπον,</td><td>to *the* last place</td></tr>
+<tr><td>ἵνα ὅταν</td><td>so that *whenever*</td></tr>
+<tr><td>ἔλθῃ ὁ κεκληκώς σε</td><td>comes/how *the one* having called you</td></tr>
+<tr><td>ἐρεῖ σοι</td><td>he_will_say *to* you</td></tr>
+<tr><td>Φίλε, προσανάβηθι ἀνώτερον·</td><td>Friend, move *up* higher</td></tr>
+<tr><td>τότε ἔσται σοι δόξα ἐνώπιον</td><td>then *there* will be *for* you glory *before*</td></tr>
+<tr><td>πάντων τῶν συνανακειμένων σοι.</td><td>of all the ones reclining with *you*</td></tr>
+</table>
+<hr>
+ὅτι πᾶς ὁ ὑψῶν ἑαυτὸν ταπεινωθήσεται, καὶ ὁ ταπεινῶν ἑαυτὸν ὑψωθήσεται.<hr><b>luke 14:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅτι πᾶς ὁ ὑψῶν ἑαυτὸν</td><td>*because* everyone *who* exalts himself</td></tr>
+<tr><td>ταπεινωθήσεται, καὶ ὁ ταπεινῶν ἑαυτὸν</td><td>will be humbled, and *the one* humbling himself</td></tr>
+<tr><td>ὑψωθήσεται.</td><td>will be *exalted*</td></tr>
+</table>
+<hr>
+Ἔλεγεν δὲ καὶ τῷ κεκληκότι αὐτόν Ὅταν ποιῇς ἄριστον ἢ δεῖπνον, μὴ φώνει τοὺς φίλους σου μηδὲ τοὺς ἀδελφούς σου μηδὲ τοὺς συγγενεῖς σου μηδὲ γείτονας πλουσίους, μή ποτε καὶ αὐτοὶ ἀντικαλέσωσίν σε καὶ γένηται ἀνταπόδομά σοι.<hr><b>luke 14:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἔλεγεν</td><td>but *he* was saying</td></tr>
+<tr><td>καὶ τῷ κεκληκότι αὐτόν</td><td>and *to* the one who had invited him</td></tr>
+<tr><td>Ὅταν ποιῇς ἄριστον ἢ δεῖπνον,</td><td>When *you* give a banquet or dinner,</td></tr>
+<tr><td>μὴ φώνει τοὺς φίλους σου</td><td>do not call *your* friends</td></tr>
+<tr><td>μηδὲ τοὺς ἀδελφούς σου</td><td>nor *your* brothers</td></tr>
+<tr><td>μηδὲ τοὺς συγγενεῖς σου</td><td>nor *your* relatives</td></tr>
+<tr><td>μηδὲ γείτονας πλουσίους,</td><td>nor *your* wealthy neighbors</td></tr>
+<tr><td>μή ποτε καὶ αὐτοὶ ἀντικαλέσωσίν σε</td><td>lest also *they* invite you back</td></tr>
+<tr><td>καὶ γένηται ἀνταπόδομά σοι.</td><td>and *it will become* repayment to you</td></tr>
+</table>
+<hr>
+ἀλλ’ ὅταν δοχὴν ποιῇς, κάλει πτωχούς, ἀναπήρους, χωλούς, τυφλούς·<hr><b>luke 14:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἀλλ’ ὅταν δοχὴν ποιῇς,</td><td>but whenever *you* make a banquet,</td></tr>
+<tr><td>κάλει πτωχούς, ἀναπήρους, χωλούς, τυφλούς·</td><td>invite *the* poor, *the* crippled, *the* lame, *the* blind</td></tr>
+</table>
+<hr>
+καὶ μακάριος ἔσῃ, ὅτι οὐκ ἔχουσιν ἀνταποδοῦναί σοι· ἀνταποδοθήσεται γάρ σοι ἐν τῇ ἀναστάσει τῶν δικαίων.<hr><b>luke 14:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ μακάριος ἔσῃ,</td><td>and *you will be* blessed</td></tr>
+<tr><td>ὅτι οὐκ ἔχουσιν ἀνταποδοῦναί σοι·</td><td>because they do not have *anything* to repay *you*</td></tr>
+<tr><td>γάρ ἀνταποδοθήσεται σοι ἐν</td><td>for *it will be* repaid to you *in*</td></tr>
+<tr><td>τῇ ἀναστάσει τῶν δικαίων.</td><td>the resurrection *of* the righteous</td></tr>
+</table>
+<hr>
+Ἀκούσας δέ τις τῶν συνανακειμένων ταῦτα εἶπεν αὐτῷ Μακάριος ὅστις φάγεται ἄρτον ἐν τῇ βασιλείᾳ τοῦ Θεοῦ.<hr><b>luke 14:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δέ τις τῶν συνανακειμένων</td><td>but *someone* of *those* reclining *at the table*</td></tr>
+<tr><td>Ἀκούσας ταῦτα</td><td>hearing *these things*</td></tr>
+<tr><td>εἶπεν αὐτῷ Μακάριος</td><td>said to-him Blessed</td></tr>
+<tr><td>ὅστις φάγεται ἄρτον ἐν</td><td>whoever will eat bread *in*</td></tr>
+<tr><td>τῇ βασιλείᾳ τοῦ Θεοῦ.</td><td>the kingdom *of* God</td></tr>
+</table>
+<hr>
+ὁ δὲ εἶπεν αὐτῷ Ἄνθρωπός τις ἐποίει δεῖπνον μέγα, καὶ ἐκάλεσεν πολλούς, καὶ ἀπέστειλεν τὸν δοῦλον αὐτοῦ τῇ ὥρᾳ τοῦ δείπνου εἰπεῖν τοῖς κεκλημένοις Ἔρχεσθε, ὅτι ἤδη ἕτοιμά ἐστιν.<hr><b>luke 14:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ εἶπεν αὐτῷ</td><td>but *he* said to *him*</td></tr>
+<tr><td>Ἄνθρωπός τις ἐποίει δεῖπνον μέγα,</td><td>A *certain* man prepared a *great* dinner</td></tr>
+<tr><td>καὶ ἐκάλεσεν πολλούς,</td><td>and *he* called many</td></tr>
+</table>
+<hr><b>luke 14:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἀπέστειλεν τὸν δοῦλον αὐτοῦ</td><td>and *he* sent his servant</td></tr>
+<tr><td>τῇ ὥρᾳ τοῦ δείπνου</td><td>the *hour* of the dinner</td></tr>
+<tr><td>εἰπεῖν τοῖς κεκλημένοις</td><td>to say *to* the invited *ones*</td></tr>
+<tr><td>Ἔρχεσθε, ὅτι ἤδη ἕτοιμά ἐστιν.</td><td>Come, *for* it *is already* ready</td></tr>
+</table>
+<hr>
+καὶ ἤρξαντο ἀπὸ μιᾶς πάντες παραιτεῖσθαι.<hr><b>luke 14:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>ἤρξαντο ἀπὸ μιᾶς πάντες παραιτεῖσθαι.</td><td>they began one by one all to say to *him*</td></tr>
+<tr><td>ὁ πρῶτος εἶπεν αὐτῷ</td><td>*the first* said *to him*</td></tr>
+<tr><td>Ἀγρὸν ἠγόρασα,</td><td>I bought *a* field</td></tr>
+<tr><td>καὶ ἔχω</td><td>and *I* have</td></tr>
+<tr><td>ἀνάγκην ἐξελθὼν ἰδεῖν αὐτόν·</td><td>I *have* a necessity *to* go out *and* see it</td></tr>
+<tr><td>ἐρωτῶ σε,</td><td>I *beg* you</td></tr>
+<tr><td>ἔχε με παρῃτημένον.</td><td>consider *me* excused</td></tr>
+</table>
+<hr>
+καὶ ἕτερος εἶπεν Ζεύγη βοῶν ἠγόρασα πέντε, καὶ πορεύομαι δοκιμάσαι αὐτά· ἐρωτῶ σε, ἔχε με παρῃτημένον.<hr><b>luke 14:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἕτερος εἶπεν</td><td>and another *one* said</td></tr>
+<tr><td>Ζεύγη βοῶν πέντε,</td><td>five pairs of oxen</td></tr>
+<tr><td>ἠγόρασα καὶ πορεύομαι δοκιμάσαι αὐτά·</td><td>I *have bought* and I *am going* to test them</td></tr>
+<tr><td>ἐρωτῶ σε,</td><td>I *beg* you</td></tr>
+<tr><td>ἔχε με παρῃτημένον.</td><td>consider me *excused*</td></tr>
+</table>
+<hr>
+καὶ ἕτερος εἶπεν Γυναῖκα ἔγημα, καὶ διὰ τοῦτο οὐ δύναμαι ἐλθεῖν.<hr><b>luke 14:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἕτερος εἶπεν</td><td>and another said</td></tr>
+<tr><td>Γυναῖκα ἔγημα,</td><td>married *a* woman</td></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>διὰ τοῦτο οὐ δύναμαι ἐλθεῖν.</td><td>because of this I am *not* able to come</td></tr>
+</table>
+<hr>
+καὶ παραγενόμενος ὁ δοῦλος ἀπήγγειλεν τῷ κυρίῳ αὐτοῦ ταῦτα.<hr><b>luke 14:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ παραγενόμενος ὁ δοῦλος</td><td>and *having come* the servant</td></tr>
+<tr><td>ἀπήγγειλεν τῷ κυρίῳ αὐτοῦ</td><td>reported to *his* lord</td></tr>
+<tr><td>ταῦτα.</td><td>*these things*</td></tr>
+<tr><td>τότε ὀργισθεὶς ὁ οἰκοδεσπότης</td><td>then *being* angry *the* master of the house</td></tr>
+<tr><td>εἶπεν τῷ δούλῳ αὐτοῦ</td><td>he said to *his* servant</td></tr>
+<tr><td>Ἔξελθε ταχέως εἰς</td><td>Go out quickly *into*</td></tr>
+<tr><td>τὰς πλατείας καὶ ῥύμας</td><td>the streets and *alleys*</td></tr>
+<tr><td>τῆς πόλεως,</td><td>of the city</td></tr>
+<tr><td>καὶ τοὺς</td><td>and *the*</td></tr>
+<tr><td>πτωχοὺς καὶ ἀναπήρους καὶ τυφλοὺς καὶ χωλοὺς</td><td>poor and *disabled* and blind and lame</td></tr>
+<tr><td>εἰσάγαγε ὧδε.</td><td>bring *them* here</td></tr>
+</table>
+<hr>
+καὶ εἶπεν ὁ δοῦλος Κύριε, γέγονεν ὃ ἐπέταξας, καὶ ἔτι τόπος ἐστίν.<hr><b>luke 14:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ εἶπεν ὁ δοῦλος</td><td>and *the* servant *said*</td></tr>
+<tr><td>Κύριε, γέγονεν ὃ ἐπέταξας,</td><td>Lord, *it has been* done *that* you commanded</td></tr>
+<tr><td>καὶ ἔτι τόπος ἐστίν.</td><td>and *there* is still *room*</td></tr>
+</table>
+<hr>
+καὶ εἶπεν ὁ κύριος πρὸς τὸν δοῦλον Ἔξελθε εἰς τὰς ὁδοὺς καὶ φραγμοὺς καὶ ἀνάγκασον εἰσελθεῖν, ἵνα γεμισθῇ μου ὁ οἶκος·<hr><b>luke 14:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ εἶπεν ὁ κύριος</td><td>and *the* Lord said</td></tr>
+<tr><td>πρὸς τὸν δοῦλον</td><td>to *the* servant</td></tr>
+<tr><td>Ἔξελθε εἰς</td><td>Go out *into*</td></tr>
+<tr><td>τὰς ὁδοὺς καὶ φραγμοὺς</td><td>the *roads* and *hedges*</td></tr>
+<tr><td>καὶ ἀνάγκασον εἰσελθεῖν,</td><td>and *compel* to enter</td></tr>
+<tr><td>ἵνα γεμισθῇ μου ὁ οἶκος·</td><td>that *may be* filled *of* my house</td></tr>
+</table>
+<hr>
+λέγω γὰρ ὑμῖν ὅτι οὐδεὶς τῶν ἀνδρῶν ἐκείνων τῶν κεκλημένων γεύσεταί μου τοῦ δείπνου.<hr><b>luke 14:24</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ λέγω ὑμῖν</td><td>for *I* say *to* you</td></tr>
+<tr><td>ὅτι οὐδεὶς τῶν ἀνδρῶν ἐκείνων</td><td>that none of *those* men</td></tr>
+<tr><td>τῶν κεκλημένων</td><td>of *the* invited *ones*</td></tr>
+<tr><td>γεύσεταί μου τοῦ δείπνου.</td><td>will taste *of* my *dinner*</td></tr>
+</table>
+<hr>
+Συνεπορεύοντο δὲ αὐτῷ ὄχλοι πολλοί, καὶ στραφεὶς εἶπεν πρὸς αὐτούς Εἴ τις ἔρχεται πρός με καὶ οὐ μισεῖ τὸν πατέρα αὐτοῦ καὶ τὴν μητέρα καὶ τὴν γυναῖκα καὶ τὰ τέκνα καὶ τοὺς ἀδελφοὺς καὶ τὰς ἀδελφάς, ἔτι τε καὶ τὴν ψυχὴν ἑαυτοῦ, οὐ δύναται εἶναί μου μαθητής.<hr><b>luke 14:25</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Συνεπορεύοντο αὐτῷ ὄχλοι πολλοί,</td><td>and *they were traveling together* with him crowds many</td></tr>
+<tr><td>καὶ στραφεὶς εἶπεν πρὸς αὐτούς</td><td>and turning *he* said to them</td></tr>
+</table>
+<hr><b>luke 14:26</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Εἴ τις ἔρχεται πρός με</td><td>If *anyone* comes *to* me</td></tr>
+<tr><td>καὶ οὐ</td><td>and not</td></tr>
+<tr><td>μισεῖ τὸν πατέρα αὐτοῦ</td><td>hates *the* father of *him*</td></tr>
+<tr><td>καὶ τὴν μητέρα</td><td>and *the* mother</td></tr>
+<tr><td>καὶ τὴν γυναῖκα</td><td>and *the* wife</td></tr>
+<tr><td>καὶ τὰ τέκνα</td><td>and *the* children</td></tr>
+<tr><td>καὶ τοὺς ἀδελφοὺς</td><td>and *the* brothers</td></tr>
+<tr><td>καὶ τὰς ἀδελφάς,</td><td>and *the* sisters</td></tr>
+<tr><td>τε ἔτι</td><td>both *and* still</td></tr>
+<tr><td>καὶ τὴν ψυχὴν ἑαυτοῦ,</td><td>and *even one's* own life,</td></tr>
+<tr><td>οὐ δύναται εἶναί μου μαθητής.</td><td>is not able to be *my* *disciple*.</td></tr>
+</table>
+<hr>
+ὅστις οὐ βαστάζει τὸν σταυρὸν ἑαυτοῦ καὶ ἔρχεται ὀπίσω μου, οὐ δύναται εἶναί μου μαθητής.<hr><b>luke 14:27</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅστις οὐ</td><td>whoever does *not*</td></tr>
+<tr><td>βαστάζει τὸν σταυρὸν ἑαυτοῦ</td><td>carries *the* cross *of* his own</td></tr>
+<tr><td>καὶ ἔρχεται ὀπίσω μου,</td><td>and *he/she* comes after me</td></tr>
+<tr><td>οὐ δύναται εἶναί μου μαθητής.</td><td>he cannot *be* my disciple</td></tr>
+</table>
+<hr>
+Τίς γὰρ ἐξ ὑμῶν θέλων πύργον οἰκοδομῆσαι οὐχὶ πρῶτον καθίσας ψηφίζει τὴν δαπάνην, εἰ ἔχει εἰς ἀπαρτισμόν; ἵνα μή ποτε θέντος αὐτοῦ θεμέλιον καὶ μὴ ἰσχύοντος ἐκτελέσαι πάντες οἱ θεωροῦντες ἄρξωνται αὐτῷ ἐμπαίζειν λέγοντες ὅτι Οὗτος ὁ ἄνθρωπος ἤρξατο οἰκοδομεῖν καὶ οὐκ ἴσχυσεν ἐκτελέσαι.<hr><b>luke 14:28</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ οὐχὶ Τίς ἐξ ὑμῶν</td><td>for not Who among *you*</td></tr>
+<tr><td>θέλων πύργον οἰκοδομῆσαι</td><td>wanting *to* build a tower</td></tr>
+<tr><td>πρῶτον καθίσας ψηφίζει τὴν δαπάνην,</td><td>first *having sat down* calculates the *cost*</td></tr>
+<tr><td>εἰ ἔχει εἰς ἀπαρτισμόν;</td><td>if he has *to* completion</td></tr>
+</table>
+<hr><b>luke 14:29</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἵνα</td><td>so *that*</td></tr>
+<tr><td>μή ποτε θέντος αὐτοῦ θεμέλιον</td><td>lest *ever* having laid *his* foundation</td></tr>
+<tr><td>καὶ μὴ ἰσχύοντος ἐκτελέσαι</td><td>and not being able *to* finish</td></tr>
+<tr><td>πάντες οἱ θεωροῦντες</td><td>all *the ones* watching</td></tr>
+<tr><td>ἄρξωνται αὐτῷ ἐμπαίζειν λέγοντες</td><td>they may begin to mock *him* saying</td></tr>
+</table>
+<hr><b>luke 14:30</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅτι Οὗτος ὁ ἄνθρωπος</td><td>because *this* man</td></tr>
+<tr><td>ἤρξατο οἰκοδομεῖν</td><td>began *to* build</td></tr>
+<tr><td>καὶ οὐκ ἴσχυσεν ἐκτελέσαι.</td><td>and *has not* been able to finish</td></tr>
+</table>
+<hr>
+Ἢ τίς βασιλεὺς πορευόμενος ἑτέρῳ βασιλεῖ συμβαλεῖν εἰς πόλεμον οὐχὶ καθίσας πρῶτον βουλεύσεται εἰ δυνατός ἐστιν ἐν δέκα χιλιάσιν ὑπαντῆσαι τῷ μετὰ εἴκοσι χιλιάδων ἐρχομένῳ ἐπ’ αὐτόν;<hr><b>luke 14:31</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἢ οὐχὶ τίς βασιλεὺς</td><td>*Or* which *king*</td></tr>
+<tr><td>πορευόμενος</td><td>going</td></tr>
+<tr><td>ἑτέρῳ βασιλεῖ συμβαλεῖν εἰς πόλεμον</td><td>to engage in war with *another* king</td></tr>
+<tr><td>καθίσας πρῶτον βουλεύσεται εἰ δυνατός</td><td>having sat *down* first he will deliberate if *he is* able</td></tr>
+<tr><td>ἐστιν ἐν δέκα χιλιάσιν</td><td>is *with* ten thousand</td></tr>
+<tr><td>ὑπαντῆσαι τῷ μετὰ εἴκοσι χιλιάδων</td><td>to encounter *the one coming* with twenty thousand</td></tr>
+<tr><td>ἐρχομένῳ ἐπ’ αὐτόν;</td><td>coming *against* him</td></tr>
+</table>
+<hr>
+εἰ δὲ μήγε, ἔτι αὐτοῦ πόρρω ὄντος πρεσβείαν ἀποστείλας ἐρωτᾷ τὰ πρὸς εἰρήνην.<hr><b>luke 14:32</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἰ μήγε,</td><td>but *if* not,</td></tr>
+<tr><td>ἔτι αὐτοῦ πόρρω ὄντος</td><td>while he *was still* far *off*</td></tr>
+<tr><td>πρεσβείαν ἀποστείλας</td><td>having sent an *embassy*</td></tr>
+<tr><td>ἐρωτᾷ τὰ πρὸς εἰρήνην.</td><td>he asks *for* the things *pertaining to* peace</td></tr>
+</table>
+<hr>
+οὕτως οὖν πᾶς ἐξ ὑμῶν ὃς οὐκ ἀποτάσσεται πᾶσιν τοῖς ἑαυτοῦ ὑπάρχουσιν οὐ δύναται εἶναί μου μαθητής.<hr><b>luke 14:33</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν οὕτως πᾶς ἐξ ὑμῶν</td><td>therefore thus every one of *you*</td></tr>
+<tr><td>ὃς οὐκ ἀποτάσσεται</td><td>who does *not* renounce</td></tr>
+<tr><td>πᾶσιν τοῖς ἑαυτοῦ ὑπάρχουσιν</td><td>all *his* own possessions</td></tr>
+<tr><td>οὐ δύναται εἶναί μου μαθητής.</td><td>he cannot be *my* disciple</td></tr>
+</table>
+<hr>
+Καλὸν οὖν τὸ ἅλας·<hr><b>luke 14:34</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν Καλὸν τὸ ἅλας·</td><td>then good the salt</td></tr>
+<tr><td>δὲ ἐὰν καὶ τὸ ἅλας</td><td>but *if* even the salt</td></tr>
+<tr><td>μωρανθῇ, ἐν τίνι ἀρτυθήσεται;</td><td>becomes foolish, *with* what *will* it (be) salted?</td></tr>
+</table>
+<hr>
+οὔτε εἰς γῆν οὔτε εἰς κοπρίαν εὔθετόν ἐστιν·<hr><b>luke 14:35</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὔτε εἰς γῆν οὔτε εἰς κοπρίαν</td><td>neither *into* the earth nor *into* manure</td></tr>
+<tr><td>εὔθετόν ἐστιν·</td><td>it is *fit*</td></tr>
+<tr><td>ἔξω βάλλουσιν αὐτό.</td><td>out they-throw *it*</td></tr>
+<tr><td>ὁ ἔχων ὦτα ἀκούειν</td><td>he who has ears *to hear*</td></tr>
+<tr><td>ἀκουέτω.</td><td>*let him* listen</td></tr>
+</table>
+<div class="chapter-links">
+<a href="13.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="selected-chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="15.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>

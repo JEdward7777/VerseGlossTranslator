@@ -1,0 +1,799 @@
+<!DOCTYPE html><html><head><title>luke 8</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="../matthew/1.html" class="">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../matthew/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../matthew/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../matthew/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../matthew/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../matthew/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../matthew/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../matthew/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../matthew/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../matthew/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../matthew/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../matthew/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../matthew/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../matthew/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../matthew/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../matthew/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../matthew/16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="../matthew/17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="../matthew/18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="../matthew/19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="../matthew/20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="../matthew/21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="../matthew/22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="../matthew/23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="../matthew/24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="../matthew/25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="../matthew/26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="../matthew/27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="../matthew/28.html" class="">28</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../mark/1.html" class="">mark</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../mark/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../mark/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../mark/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../mark/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../mark/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../mark/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../mark/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../mark/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../mark/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../mark/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../mark/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../mark/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../mark/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../mark/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../mark/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../mark/16.html" class="">16</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">luke</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="8.html" class="current-book-chapter">8</a></li>
+   <li class="submenu_item"><a href="9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="24.html" class="">24</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../1peter/1.html" class="">1peter</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../1peter/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../1peter/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../1peter/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../1peter/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../1peter/5.html" class="">5</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="7.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="selected-chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="9.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Καὶ ἐγένετο ἐν τῷ καθεξῆς καὶ αὐτὸς διώδευεν κατὰ πόλιν καὶ κώμην κηρύσσων καὶ εὐαγγελιζόμενος τὴν βασιλείαν τοῦ Θεοῦ, καὶ οἱ δώδεκα σὺν αὐτῷ, καὶ γυναῖκές τινες αἳ ἦσαν τεθεραπευμέναι ἀπὸ πνευμάτων πονηρῶν καὶ ἀσθενειῶν, Μαρία ἡ καλουμένη Μαγδαληνή, ἀφ’ ἧς δαιμόνια ἑπτὰ ἐξεληλύθει, καὶ Ἰωάνα γυνὴ Χουζᾶ ἐπιτρόπου Ἠρῴδου καὶ Σουσάννα καὶ ἕτεραι πολλαί, αἵτινες διηκόνουν αὐτοῖς ἐκ τῶν ὑπαρχόντων αὐταῖς.<hr><b>luke 8:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ ἐγένετο ἐν τῷ καθεξῆς</td><td>and *it came to pass* in the following days</td></tr>
+<tr><td>καὶ αὐτὸς διώδευεν</td><td>and *he* was going through</td></tr>
+<tr><td>κατὰ πόλιν καὶ κώμην</td><td>through *every* city and village</td></tr>
+<tr><td>κηρύσσων καὶ εὐαγγελιζόμενος</td><td>preaching and *proclaiming the* good news</td></tr>
+<tr><td>τὴν βασιλείαν τοῦ Θεοῦ,</td><td>the kingdom *of* God</td></tr>
+<tr><td>καὶ σὺν αὐτῷ,</td><td>and *with* him</td></tr>
+<tr><td>οἱ δώδεκα</td><td>the *twelve*</td></tr>
+</table>
+<hr><b>luke 8:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ γυναῖκές τινες</td><td>and some women</td></tr>
+<tr><td>αἳ ἦσαν τεθεραπευμέναι</td><td>who had-been-healed</td></tr>
+<tr><td>ἀπὸ πνευμάτων πονηρῶν καὶ ἀσθενειῶν,</td><td>from evil spirits and *diseases*</td></tr>
+<tr><td>Μαρία ἡ καλουμένη Μαγδαληνή,</td><td>Mary *(the one)* called Magdalene</td></tr>
+<tr><td>ἀφ’ ἧς δαιμόνια ἑπτὰ ἐξεληλύθει,</td><td>from *whom* demons seven had-gone-out</td></tr>
+</table>
+<hr><b>luke 8:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ Ἰωάνα</td><td>and Joanna</td></tr>
+<tr><td>γυνὴ Χουζᾶ ἐπιτρόπου Ἠρῴδου</td><td>wife *of* Chuza *the* steward *of* Herod</td></tr>
+<tr><td>καὶ Σουσάννα καὶ ἕτεραι πολλαί,</td><td>and Susanna and *many* others</td></tr>
+<tr><td>αἵτινες διηκόνουν αὐτοῖς</td><td>who *were* ministering to *them*</td></tr>
+<tr><td>ἐκ τῶν ὑπαρχόντων αὐταῖς.</td><td>from the *resources* *belonging to* them</td></tr>
+</table>
+<hr>
+Συνιόντος δὲ ὄχλου πολλοῦ καὶ τῶν κατὰ πόλιν ἐπιπορευομένων πρὸς αὐτὸν εἶπεν διὰ παραβολῆς Ἐξῆλθεν ὁ σπείρων τοῦ σπεῖραι τὸν σπόρον αὐτοῦ.<hr><b>luke 8:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Συνιόντος ὄχλου πολλοῦ</td><td>now *while* gathering *of* crowd large</td></tr>
+<tr><td>καὶ τῶν κατὰ πόλιν</td><td>and *the ones* throughout *the* city</td></tr>
+<tr><td>ἐπιπορευομένων πρὸς αὐτὸν</td><td>approaching *toward* him</td></tr>
+<tr><td>εἶπεν διὰ παραβολῆς</td><td>he said through *a* parable</td></tr>
+</table>
+<hr><b>luke 8:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἐξῆλθεν ὁ σπείρων</td><td>The sower *went* *out*</td></tr>
+<tr><td>τοῦ σπεῖραι τὸν σπόρον αὐτοῦ.</td><td>to sow *the* seed *of him*</td></tr>
+<tr><td>καὶ ἐν τῷ σπείρειν αὐτὸν</td><td>and *in* the* sowing* him</td></tr>
+<tr><td>ὃ μὲν</td><td>*some* fell</td></tr>
+<tr><td>ἔπεσεν παρὰ τὴν ὁδόν,</td><td>it fell by *the* roadside,</td></tr>
+<tr><td>καὶ κατεπατήθη, καὶ</td><td>and it was trampled, and</td></tr>
+<tr><td>τὰ πετεινὰ τοῦ οὐρανοῦ</td><td>the birds of *the* heaven*</td></tr>
+<tr><td>κατέφαγεν αὐτό.</td><td>devoured it</td></tr>
+</table>
+<hr>
+καὶ ἕτερον κατέπεσεν ἐπὶ τὴν πέτραν, καὶ φυὲν ἐξηράνθη διὰ τὸ μὴ ἔχειν ἰκμάδα.<hr><b>luke 8:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἕτερον</td><td>and another</td></tr>
+<tr><td>κατέπεσεν ἐπὶ τὴν πέτραν,</td><td>fell upon the rock</td></tr>
+<tr><td>καὶ φυὲν ἐξηράνθη διὰ</td><td>and having grown it withered through *not having*</td></tr>
+<tr><td>τὸ μὴ ἔχειν ἰκμάδα.</td><td>the *not* having *moisture*</td></tr>
+</table>
+<hr>
+καὶ ἕτερον ἔπεσεν ἐν μέσῳ τῶν ἀκανθῶν, καὶ συνφυεῖσαι αἱ ἄκανθαι ἀπέπνιξαν αὐτό.<hr><b>luke 8:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἕτερον ἔπεσεν</td><td>and *another* fell</td></tr>
+<tr><td>ἐν μέσῳ τῶν ἀκανθῶν,</td><td>in the midst *of* the thorns</td></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>συνφυεῖσαι αἱ ἄκανθαι ἀπέπνιξαν αὐτό.</td><td>the *thorns* grew together *and* choked it</td></tr>
+</table>
+<hr>
+καὶ ἕτερον ἔπεσεν εἰς τὴν γῆν τὴν ἀγαθήν, καὶ φυὲν ἐποίησεν καρπὸν ἑκατονταπλασίονα.<hr><b>luke 8:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἕτερον ἔπεσεν εἰς</td><td>and *other fell into*</td></tr>
+<tr><td>τὴν γῆν τὴν ἀγαθήν,</td><td>the *good* soil</td></tr>
+<tr><td>καὶ φυὲν ἐποίησεν καρπὸν ἑκατονταπλασίονα.</td><td>and *having grown* produced fruit a hundredfold</td></tr>
+<tr><td>ταῦτα λέγων ἐφώνει</td><td>saying these words *he* called out</td></tr>
+<tr><td>Ὁ ἔχων ὦτα ἀκούειν</td><td>The one having ears *to* hear</td></tr>
+<tr><td>ἀκουέτω.</td><td>let him hear</td></tr>
+</table>
+<hr>
+Ἐπηρώτων δὲ αὐτὸν οἱ μαθηταὶ αὐτοῦ τίς αὕτη εἴη ἡ παραβολή.<hr><b>luke 8:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἐπηρώτων</td><td>but *they* were asking</td></tr>
+<tr><td>αὐτὸν οἱ μαθηταὶ αὐτοῦ</td><td>him *the* disciples *of* him</td></tr>
+<tr><td>τίς εἴη αὕτη ἡ παραβολή.</td><td>*what* would be *this* parable</td></tr>
+</table>
+<hr>
+ὁ δὲ εἶπεν Ὑμῖν δέδοται γνῶναι τὰ μυστήρια τῆς βασιλείας τοῦ Θεοῦ, τοῖς δὲ λοιποῖς ἐν παραβολαῖς, ἵνα βλέποντες μὴ βλέπωσιν καὶ ἀκούοντες μὴ συνιῶσιν.<hr><b>luke 8:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ εἶπεν</td><td>but he *said*</td></tr>
+<tr><td>Ὑμῖν δέδοται γνῶναι τὰ μυστήρια</td><td>To-*you* it-*has been given* to know the mysteries</td></tr>
+<tr><td>τῆς βασιλείας τοῦ Θεοῦ,</td><td>the kingdom *of* God</td></tr>
+<tr><td>δὲ τοῖς λοιποῖς ἐν παραβολαῖς,</td><td>but *for* the others *it is* in parables</td></tr>
+<tr><td>ἵνα βλέποντες μὴ βλέπωσιν</td><td>so that seeing *they* may not see</td></tr>
+<tr><td>καὶ ἀκούοντες μὴ συνιῶσιν.</td><td>and hearing *they may not understand*</td></tr>
+</table>
+<hr>
+ἔστιν δὲ αὕτη ἡ παραβολή.<hr><b>luke 8:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἔστιν αὕτη ἡ παραβολή.</td><td>But *there is* this the parable.</td></tr>
+<tr><td>ὁ σπόρος</td><td>the seed</td></tr>
+<tr><td>ἐστὶν ὁ λόγος τοῦ Θεοῦ.</td><td>*is* the word of God.</td></tr>
+</table>
+<hr>
+οἱ δὲ παρὰ τὴν ὁδόν εἰσιν οἱ ἀκούσαντες, εἶτα ἔρχεται ὁ διάβολος καὶ αἴρει τὸν λόγον ἀπὸ τῆς καρδίας αὐτῶν, ἵνα μὴ πιστεύσαντες σωθῶσιν.<hr><b>luke 8:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ παρὰ τὴν ὁδόν</td><td>but those *beside the road*</td></tr>
+<tr><td>εἰσιν οἱ ἀκούσαντες,</td><td>are *those who* (have) heard</td></tr>
+<tr><td>εἶτα ἔρχεται ὁ διάβολος</td><td>*then* comes the devil</td></tr>
+<tr><td>καὶ αἴρει τὸν λόγον</td><td>and *he* takes away the word</td></tr>
+<tr><td>ἀπὸ τῆς καρδίας αὐτῶν,</td><td>from the *hearts* of them</td></tr>
+<tr><td>ἵνα μὴ πιστεύσαντες σωθῶσιν.</td><td>in order that *they* not believe and *be* saved</td></tr>
+</table>
+<hr>
+οἱ δὲ ἐπὶ τῆς πέτρας οἳ ὅταν ἀκούσωσιν μετὰ χαρᾶς δέχονται τὸν λόγον, καὶ οὗτοι ῥίζαν οὐκ ἔχουσιν, οἳ πρὸς καιρὸν πιστεύουσιν καὶ ἐν καιρῷ πειρασμοῦ ἀφίστανται.<hr><b>luke 8:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ ἐπὶ τῆς πέτρας</td><td>but *those* on the rock</td></tr>
+<tr><td>οἳ ὅταν ἀκούσωσιν μετὰ χαρᾶς δέχονται τὸν λόγον,</td><td>who when they hear *the word* with joy receive *it*</td></tr>
+<tr><td>καὶ οὗτοι ῥίζαν οὐκ ἔχουσιν,</td><td>and these *people* not have root</td></tr>
+<tr><td>οἳ πρὸς καιρὸν πιστεύουσιν</td><td>who *for a time* believe</td></tr>
+<tr><td>καὶ ἐν καιρῷ πειρασμοῦ</td><td>and *in* time *of* temptation</td></tr>
+<tr><td>ἀφίστανται.</td><td>they fall away</td></tr>
+</table>
+<hr>
+τὸ δὲ εἰς τὰς ἀκάνθας πεσόν, οὗτοί εἰσιν οἱ ἀκούσαντες, καὶ ὑπὸ μεριμνῶν καὶ πλούτου καὶ ἡδονῶν τοῦ βίου πορευόμενοι συνπνίγονται καὶ οὐ τελεσφοροῦσιν.<hr><b>luke 8:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ τὸ εἰς τὰς ἀκάνθας</td><td>*and* that *which fell* among the thorns</td></tr>
+<tr><td>πεσόν, οὗτοί εἰσιν οἱ ἀκούσαντες,</td><td>having-fallen, *these* are the ones *having* heard</td></tr>
+<tr><td>καὶ ὑπὸ μεριμνῶν καὶ πλούτου</td><td>and *by* worries and *by* wealth</td></tr>
+<tr><td>καὶ ἡδονῶν τοῦ βίου</td><td>and *the* pleasures of *this* life</td></tr>
+<tr><td>πορευόμενοι συνπνίγονται καὶ οὐ τελεσφοροῦσιν.</td><td>going along they are choked and *they do not bring fruit*</td></tr>
+</table>
+<hr>
+τὸ δὲ ἐν τῇ καλῇ γῇ, οὗτοί εἰσιν οἵτινες ἐν καρδίᾳ καλῇ καὶ ἀγαθῇ ἀκούσαντες τὸν λόγον κατέχουσιν καὶ καρποφοροῦσιν ἐν ὑπομονῇ.<hr><b>luke 8:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ τὸ</td><td>but *the*</td></tr>
+<tr><td>ἐν τῇ καλῇ γῇ,</td><td>*in* the good *soil*</td></tr>
+<tr><td>οὗτοί εἰσιν οἵτινες ἐν</td><td>these *are* those who *in*</td></tr>
+<tr><td>καρδίᾳ καλῇ καὶ ἀγαθῇ</td><td>a good and *noble* heart</td></tr>
+<tr><td>ἀκούσαντες τὸν λόγον</td><td>having heard *the* word</td></tr>
+<tr><td>κατέχουσιν καὶ καρποφοροῦσιν ἐν ὑπομονῇ.</td><td>they hold fast and bear fruit with *patients*</td></tr>
+</table>
+<hr>
+Οὐδεὶς δὲ λύχνον ἅψας καλύπτει αὐτὸν σκεύει ἢ ὑποκάτω κλίνης τίθησιν, ἀλλ’ ἐπὶ λυχνίας τίθησιν, ἵνα οἱ εἰσπορευόμενοι βλέπωσιν τὸ φῶς.<hr><b>luke 8:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>Οὐδεὶς λύχνον ἅψας καλύπτει αὐτὸν σκεύει</td><td>no one *after* lighting a lamp covers it with a *vessel*</td></tr>
+<tr><td>ἢ ὑποκάτω κλίνης τίθησιν,</td><td>or *under* a bed *puts*</td></tr>
+<tr><td>ἀλλ’ ἐπὶ λυχνίας τίθησιν,</td><td>but *on* a lampstand *puts it*</td></tr>
+<tr><td>ἵνα</td><td>in order that</td></tr>
+<tr><td>οἱ εἰσπορευόμενοι βλέπωσιν τὸ φῶς.</td><td>those entering might see *the* light</td></tr>
+</table>
+<hr>
+οὐ γάρ ἐστιν κρυπτὸν ὃ οὐ φανερὸν γενήσεται, οὐδὲ ἀπόκρυφον ὃ οὐ μὴ γνωσθῇ καὶ εἰς φανερὸν ἔλθῃ.<hr><b>luke 8:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γάρ οὐ ἐστιν κρυπτὸν</td><td>for *there* is *nothing* hidden</td></tr>
+<tr><td>ὃ οὐ φανερὸν γενήσεται,</td><td>which not *will become* manifest</td></tr>
+<tr><td>οὐδὲ ἀπόκρυφον</td><td>nor *any* hidden thing</td></tr>
+<tr><td>ὃ οὐ μὴ γνωσθῇ</td><td>which not *might not be* known</td></tr>
+<tr><td>καὶ εἰς φανερὸν ἔλθῃ.</td><td>and *come to* light</td></tr>
+</table>
+<hr>
+βλέπετε οὖν πῶς ἀκούετε·<hr><b>luke 8:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν βλέπετε πῶς ἀκούετε·</td><td>therefore *you* see how *you* hear</td></tr>
+<tr><td>γὰρ ἂν ὃς ἔχῃ,</td><td>for whoever *might* have</td></tr>
+<tr><td>δοθήσεται αὐτῷ,</td><td>will-be-given to *him*</td></tr>
+<tr><td>καὶ ἂν ὃς μὴ ἔχῃ,</td><td>and if *anyone* does not have</td></tr>
+<tr><td>καὶ ὃ ἔχειν δοκεῖ</td><td>and *what* he seems *to* have</td></tr>
+<tr><td>ἀρθήσεται ἀπ’ αὐτοῦ.</td><td>will be taken *away* from him</td></tr>
+</table>
+<hr>
+Παρεγένετο δὲ πρὸς αὐτὸν ἡ μήτηρ καὶ οἱ ἀδελφοὶ αὐτοῦ, καὶ οὐκ ἠδύναντο συντυχεῖν αὐτῷ διὰ τὸν ὄχλον.<hr><b>luke 8:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Παρεγένετο πρὸς αὐτὸν</td><td>but *it/he/she* came to him</td></tr>
+<tr><td>ἡ μήτηρ</td><td>the mother</td></tr>
+<tr><td>καὶ οἱ ἀδελφοὶ αὐτοῦ,</td><td>and *his* brothers</td></tr>
+<tr><td>καὶ οὐκ ἠδύναντο συντυχεῖν αὐτῷ</td><td>and they were not able *to* speak with him</td></tr>
+<tr><td>διὰ τὸν ὄχλον.</td><td>because of *the* crowd</td></tr>
+</table>
+<hr>
+ἀπηγγέλη δὲ αὐτῷ Ἠ μήτηρ σου καὶ οἱ ἀδελφοί σου ἑστήκασιν ἔξω ἰδεῖν θέλοντές σε.<hr><b>luke 8:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἀπηγγέλη αὐτῷ</td><td>but it was reported *to* him</td></tr>
+<tr><td>Ἠ μήτηρ σου</td><td>your mother</td></tr>
+<tr><td>καὶ οἱ ἀδελφοί σου</td><td>and *the* your brothers</td></tr>
+<tr><td>ἑστήκασιν ἔξω ἰδεῖν σε. θέλοντές</td><td>standing outside *wanting to* see *you*</td></tr>
+</table>
+<hr>
+ὁ δὲ ἀποκριθεὶς εἶπεν πρὸς αὐτούς Μήτηρ μου καὶ ἀδελφοί μου οὗτοί εἰσιν οἱ τὸν λόγον τοῦ Θεοῦ ἀκούοντες καὶ ποιοῦντες.<hr><b>luke 8:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>ὁ ἀποκριθεὶς εἶπεν πρὸς αὐτούς</td><td>the *one who* answered *said* to them</td></tr>
+<tr><td>Μήτηρ μου καὶ ἀδελφοί μου</td><td>Mother *of me* and brothers *of me*</td></tr>
+<tr><td>οὗτοί εἰσιν οἱ</td><td>these *are the ones who*</td></tr>
+<tr><td>τὸν λόγον τοῦ Θεοῦ</td><td>the word *of* God</td></tr>
+<tr><td>ἀκούοντες καὶ ποιοῦντες.</td><td>hearing and doing</td></tr>
+</table>
+<hr>
+Ἐγένετο δὲ ἐν μιᾷ τῶν ἡμερῶν καὶ αὐτὸς ἐνέβη εἰς πλοῖον καὶ οἱ μαθηταὶ αὐτοῦ, καὶ εἶπεν πρὸς αὐτούς Διέλθωμεν εἰς τὸ πέραν τῆς λίμνης·<hr><b>luke 8:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἐγένετο</td><td>and *it* happened</td></tr>
+<tr><td>ἐν μιᾷ τῶν ἡμερῶν</td><td>on *one* of the days</td></tr>
+<tr><td>καὶ αὐτὸς ἐνέβη εἰς πλοῖον</td><td>and *he* boarded *a* boat</td></tr>
+<tr><td>καὶ οἱ μαθηταὶ αὐτοῦ,</td><td>and *his* disciples</td></tr>
+<tr><td>καὶ εἶπεν πρὸς αὐτούς</td><td>and *he* said to *them*</td></tr>
+<tr><td>Διέλθωμεν εἰς</td><td>let us go *over* into</td></tr>
+<tr><td>τὸ πέραν τῆς λίμνης·</td><td>the other side *of* the lake</td></tr>
+<tr><td>καὶ ἀνήχθησαν.</td><td>and *they came*</td></tr>
+</table>
+<hr>
+πλεόντων δὲ αὐτῶν ἀφύπνωσεν.<hr><b>luke 8:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ πλεόντων αὐτῶν ἀφύπνωσεν.</td><td>*then* journeying of-them *he* awoke</td></tr>
+<tr><td>καὶ κατέβη λαῖλαψ ἀνέμου</td><td>and *there came* a storm of wind</td></tr>
+<tr><td>εἰς τὴν λίμνην,</td><td>into the* lake*</td></tr>
+<tr><td>καὶ συνεπληροῦντο καὶ ἐκινδύνευον.</td><td>and were filled *with water* and were in danger</td></tr>
+</table>
+<hr>
+προσελθόντες δὲ διήγειραν αὐτὸν λέγοντες Ἐπιστάτα ἐπιστάτα, ἀπολλύμεθα.<hr><b>luke 8:24</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ προσελθόντες διήγειραν αὐτὸν</td><td>then *coming forward* they aroused him</td></tr>
+<tr><td>λέγοντες Ἐπιστάτα ἐπιστάτα, ἀπολλύμεθα.</td><td>saying *Master, Master*, we are perishing.</td></tr>
+<tr><td>δὲ ὁ</td><td>but *he*</td></tr>
+<tr><td>διεγερθεὶς ἐπετίμησεν τῷ ἀνέμῳ</td><td>having been awakened *he* rebuked the wind</td></tr>
+<tr><td>καὶ τῷ κλύδωνι τοῦ ὕδατος·</td><td>and *the* wave *of the* water</td></tr>
+<tr><td>καὶ ἐπαύσαντο, καὶ ἐγένετο γαλήνη.</td><td>and they ceased, and there was a calm</td></tr>
+</table>
+<hr>
+εἶπεν δὲ αὐτοῖς Ποῦ ἡ πίστις ὑμῶν;<hr><b>luke 8:25</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἶπεν αὐτοῖς</td><td>But *he* said to *them*</td></tr>
+<tr><td>Ποῦ ἡ πίστις ὑμῶν;</td><td>Where *is* your faith?</td></tr>
+<tr><td>δὲ φοβηθέντες</td><td>but *having been* afraid</td></tr>
+<tr><td>ἐθαύμασαν, λέγοντες πρὸς ἀλλήλους</td><td>they marveled, saying *to* each *other*</td></tr>
+<tr><td>ἄρα Τίς οὗτός ἐστιν,</td><td>then *who* *is* this</td></tr>
+<tr><td>ὅτι</td><td>because</td></tr>
+<tr><td>καὶ τοῖς ἀνέμοις καὶ τῷ ὕδατι,</td><td>and to *the* winds and to *the* water</td></tr>
+<tr><td>ἐπιτάσσει καὶ ὑπακούουσιν αὐτῷ;</td><td>he commands and they obey him;</td></tr>
+</table>
+<hr>
+Καὶ κατέπλευσαν εἰς τὴν χώραν τῶν Γερασηνῶν, ἥτις ἐστὶν ἀντιπέρα τῆς Γαλιλαίας.<hr><b>luke 8:26</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ κατέπλευσαν εἰς</td><td>And *they* sailed to</td></tr>
+<tr><td>τὴν χώραν τῶν Γερασηνῶν,</td><td>the region of the *Gerasenes*</td></tr>
+<tr><td>ἥτις ἐστὶν ἀντιπέρα τῆς Γαλιλαίας.</td><td>which is *opposite* Galilee</td></tr>
+</table>
+<hr>
+ἐξελθόντι δὲ αὐτῷ ἐπὶ τὴν γῆν ὑπήντησεν ἀνήρ τις ἐκ τῆς πόλεως ἔχων δαιμόνια,<hr><b>luke 8:27</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ αὐτῷ</td><td>but *with* him</td></tr>
+<tr><td>ἐξελθόντι ἐπὶ τὴν γῆν</td><td>having-gone-out *unto the* land</td></tr>
+<tr><td>ὑπήντησεν ἀνήρ τις</td><td>a man *met*</td></tr>
+<tr><td>ἐκ τῆς πόλεως</td><td>from the city</td></tr>
+<tr><td>ἔχων δαιμόνια,</td><td>having demons</td></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>χρόνῳ ἱκανῷ οὐκ ἐνεδύσατο ἱμάτιον,</td><td>for a long *time* he had not dressed *himself* in a *garment*</td></tr>
+<tr><td>καὶ ἐν οἰκίᾳ οὐκ ἔμενεν</td><td>and *in a* house he did not remain</td></tr>
+<tr><td>ἀλλ’ ἐν τοῖς μνήμασιν.</td><td>but *in* the tombs</td></tr>
+</table>
+<hr>
+ἰδὼν δὲ τὸν Ἰησοῦν ἀνακράξας προσέπεσεν αὐτῷ καὶ φωνῇ μεγάλῃ εἶπεν Τί ἐμοὶ καὶ σοί, Ἰησοῦ Υἱὲ τοῦ Θεοῦ τοῦ Ὑψίστου; δέομαί σου, μή με βασανίσῃς.<hr><b>luke 8:28</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἰδὼν τὸν Ἰησοῦν</td><td>but seeing *the* Jesus</td></tr>
+<tr><td>ἀνακράξας προσέπεσεν αὐτῷ</td><td>crying out, he fell *down* before him</td></tr>
+<tr><td>καὶ φωνῇ μεγάλῃ εἶπεν</td><td>and with a loud voice, he said</td></tr>
+<tr><td>Τί ἐμοὶ καὶ σοί,</td><td>What *is there* to *do with* me and you,</td></tr>
+<tr><td>Ἰησοῦ Υἱὲ</td><td>Jesus *Son*</td></tr>
+<tr><td>τοῦ Θεοῦ τοῦ Ὑψίστου;</td><td>the*God*of*the*Most High;</td></tr>
+<tr><td>δέομαί σου,</td><td>I beg *of* you</td></tr>
+<tr><td>μή με βασανίσῃς.</td><td>do not *torment* me</td></tr>
+</table>
+<hr>
+παρήγγελλεν γὰρ τῷ πνεύματι τῷ ἀκαθάρτῳ ἐξελθεῖν ἀπὸ τοῦ ἀνθρώπου.<hr><b>luke 8:29</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ παρήγγελλεν</td><td>for he *was commanding*</td></tr>
+<tr><td>τῷ πνεύματι τῷ ἀκαθάρτῳ</td><td>the *unclean* spirit</td></tr>
+<tr><td>ἐξελθεῖν ἀπὸ τοῦ ἀνθρώπου.</td><td>come out *of* the man</td></tr>
+<tr><td>γὰρ πολλοῖς χρόνοις συνηρπάκει αὐτόν,</td><td>for *many* years *it had* seized him</td></tr>
+<tr><td>καὶ ἐδεσμεύετο ἁλύσεσιν καὶ πέδαις</td><td>and *he was* bound with chains and shackles</td></tr>
+<tr><td>φυλασσόμενος, καὶ διαρήσσων τὰ δεσμὰ</td><td>being-guarded *or* kept, and tearing *or* breaking through the bonds</td></tr>
+<tr><td>ἠλαύνετο ἀπὸ τοῦ δαιμονίου</td><td>was driven away *by* the demon</td></tr>
+<tr><td>εἰς τὰς ἐρήμους.</td><td>into *the* deserts</td></tr>
+</table>
+<hr>
+ἐπηρώτησεν δὲ αὐτὸν ὁ Ἰησοῦς Τί σοι ὄνομά ἐστιν;<hr><b>luke 8:30</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐπηρώτησεν αὐτὸν ὁ Ἰησοῦς</td><td>but *asked* him Jesus</td></tr>
+<tr><td>Τί σοι ὄνομά ἐστιν;</td><td>What *is* your name?</td></tr>
+<tr><td>δὲ ὁ εἶπεν Λεγιών,</td><td>but *he* said Legion,</td></tr>
+<tr><td>ὅτι</td><td>because</td></tr>
+<tr><td>εἰσῆλθεν δαιμόνια πολλὰ εἰς αὐτόν.</td><td>many demons entered *into him*</td></tr>
+</table>
+<hr>
+καὶ παρεκάλουν αὐτὸν ἵνα μὴ ἐπιτάξῃ αὐτοῖς εἰς τὴν ἄβυσσον ἀπελθεῖν.<hr><b>luke 8:31</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ παρεκάλουν αὐτὸν</td><td>and *they* begged *him*</td></tr>
+<tr><td>ἵνα μὴ ἐπιτάξῃ</td><td>that *he may not* command</td></tr>
+<tr><td>αὐτοῖς εἰς τὴν ἄβυσσον</td><td>them into the abyss</td></tr>
+<tr><td>ἀπελθεῖν.</td><td>to *go* away</td></tr>
+</table>
+<hr>
+ἦν δὲ ἐκεῖ ἀγέλη χοίρων ἱκανῶν βοσκομένη ἐν τῷ ὄρει·<hr><b>luke 8:32</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἦν</td><td>now *there* was</td></tr>
+<tr><td>ἐκεῖ ἀγέλη χοίρων ἱκανῶν</td><td>there *was* a herd *of* many pigs</td></tr>
+<tr><td>βοσκομένη ἐν τῷ ὄρει·</td><td>feeding *on the* mountain</td></tr>
+<tr><td>καὶ παρεκάλεσαν αὐτὸν</td><td>and they *implored* him</td></tr>
+<tr><td>ἵνα ἐπιτρέψῃ</td><td>that *he may* allow</td></tr>
+<tr><td>αὐτοῖς εἰς ἐκείνους εἰσελθεῖν·</td><td>them *into* those *swine* to enter</td></tr>
+<tr><td>καὶ ἐπέτρεψεν αὐτοῖς.</td><td>and he permitted *them*</td></tr>
+</table>
+<hr>
+ἐξελθόντα δὲ τὰ δαιμόνια ἀπὸ τοῦ ἀνθρώπου εἰσῆλθον εἰς τοὺς χοίρους, καὶ ὥρμησεν ἡ ἀγέλη κατὰ τοῦ κρημνοῦ εἰς τὴν λίμνην καὶ ἀπεπνίγη.<hr><b>luke 8:33</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ τὰ δαιμόνια</td><td>but *the* demons</td></tr>
+<tr><td>ἐξελθόντα ἀπὸ τοῦ ἀνθρώπου</td><td>having come out *from* the man</td></tr>
+<tr><td>εἰσῆλθον εἰς τοὺς χοίρους,</td><td>they entered *into* the pigs</td></tr>
+<tr><td>καὶ ὥρμησεν ἡ ἀγέλη</td><td>and *rushed* the herd</td></tr>
+<tr><td>κατὰ τοῦ κρημνοῦ</td><td>over *the* cliff</td></tr>
+<tr><td>εἰς τὴν λίμνην</td><td>into *the* lake</td></tr>
+<tr><td>καὶ ἀπεπνίγη.</td><td>and *it* drowned</td></tr>
+</table>
+<hr>
+ἰδόντες δὲ οἱ βόσκοντες τὸ γεγονὸς ἔφυγον καὶ ἀπήγγειλαν εἰς τὴν πόλιν καὶ εἰς τοὺς ἀγρούς.<hr><b>luke 8:34</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ βόσκοντες</td><td>but the ones *who were* feeding</td></tr>
+<tr><td>ἰδόντες τὸ γεγονὸς</td><td>seeing *the* event</td></tr>
+<tr><td>ἔφυγον καὶ</td><td>they fled and</td></tr>
+<tr><td>ἀπήγγειλαν εἰς τὴν πόλιν</td><td>they reported *it* to the city</td></tr>
+<tr><td>καὶ εἰς τοὺς ἀγρούς.</td><td>and *to the* fields</td></tr>
+</table>
+<hr>
+ἐξῆλθον δὲ ἰδεῖν τὸ γεγονὸς, καὶ ἦλθον πρὸς τὸν Ἰησοῦν, καὶ εὗρον καθήμενον τὸν ἄνθρωπον ἀφ’ οὗ τὰ δαιμόνια ἐξῆλθεν ἱματισμένον καὶ σωφρονοῦντα παρὰ τοὺς πόδας τοῦ Ἰησοῦ, καὶ ἐφοβήθησαν.<hr><b>luke 8:35</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐξῆλθον ἰδεῖν τὸ γεγονὸς,</td><td>but they went out to see the *thing that* had happened,</td></tr>
+<tr><td>καὶ ἦλθον πρὸς τὸν Ἰησοῦν,</td><td>and *they* came to Jesus</td></tr>
+<tr><td>καὶ εὗρον καθήμενον τὸν ἄνθρωπον</td><td>and they found *the man* sitting</td></tr>
+<tr><td>ἀφ’ οὗ τὰ δαιμόνια ἐξῆλθεν</td><td>from *whom* the demons *had* departed</td></tr>
+<tr><td>ἱματισμένον καὶ σωφρονοῦντα</td><td>clothed and *in his* right mind</td></tr>
+<tr><td>παρὰ τοὺς πόδας τοῦ Ἰησοῦ,</td><td>at *the* feet *of* Jesus</td></tr>
+<tr><td>καὶ ἐφοβήθησαν.</td><td>and *they* were afraid</td></tr>
+</table>
+<hr>
+ἀπήγγειλαν δὲ αὐτοῖς οἱ ἰδόντες πῶς ἐσώθη ὁ δαιμονισθείς.<hr><b>luke 8:36</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἀπήγγειλαν αὐτοῖς οἱ ἰδόντες</td><td>but *they* reported to them *those* having seen</td></tr>
+<tr><td>πῶς ἐσώθη ὁ δαιμονισθείς.</td><td>how *was* *saved* the demon-possessed [man]</td></tr>
+</table>
+<hr>
+καὶ ἠρώτησεν αὐτὸν ἅπαν τὸ πλῆθος τῆς περιχώρου τῶν Γερασηνῶν ἀπελθεῖν ἀπ’ αὐτῶν, ὅτι φόβῳ μεγάλῳ συνείχοντο·<hr><b>luke 8:37</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἠρώτησεν ἅπαν τὸ πλῆθος</td><td>and *asked* the whole *crowd*</td></tr>
+<tr><td>τῆς περιχώρου τῶν Γερασηνῶν</td><td>the region *of* the Gerasenes</td></tr>
+<tr><td>αὐτὸν ἀπελθεῖν ἀπ’ αὐτῶν,</td><td>him to depart from *them*</td></tr>
+<tr><td>ὅτι φόβῳ μεγάλῳ συνείχοντο·</td><td>because *they were* held with great fear</td></tr>
+<tr><td>δὲ αὐτὸς ἐμβὰς εἰς πλοῖον</td><td>but *he* having entered into a boat</td></tr>
+<tr><td>ὑπέστρεψεν.</td><td>he *returned*</td></tr>
+</table>
+<hr>
+ἐδεῖτο δὲ αὐτοῦ ὁ ἀνὴρ ἀφ’ οὗ ἐξεληλύθει τὰ δαιμόνια εἶναι σὺν αὐτῷ·<hr><b>luke 8:38</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐδεῖτο αὐτοῦ ὁ ἀνὴρ</td><td>but *he* begged him, the man</td></tr>
+<tr><td>ἀφ’ οὗ ἐξεληλύθει τὰ δαιμόνια</td><td>from *whom* the demons had gone out</td></tr>
+<tr><td>εἶναι σὺν αὐτῷ·</td><td>to be *with him*</td></tr>
+<tr><td>δὲ ἀπέλυσεν αὐτὸν λέγων Ὑπόστρεφε</td><td>but *he* released him saying *Return*</td></tr>
+</table>
+<hr>
+ἀπέλυσεν δὲ αὐτὸν λέγων Ὑπόστρεφε εἰς τὸν οἶκόν σου, καὶ διηγοῦ ὅσα σοι ἐποίησεν ὁ Θεός.<hr><b>luke 8:39</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>εἰς τὸν οἶκόν σου,</td><td>into the house *of you*</td></tr>
+<tr><td>καὶ διηγοῦ</td><td>and *keep* recounting</td></tr>
+<tr><td>ὅσα σοι ἐποίησεν ὁ Θεός.</td><td>as much as *for you* God *has done*</td></tr>
+<tr><td>καὶ ἀπῆλθεν</td><td>and *he went away*</td></tr>
+<tr><td>καθ’ ὅλην τὴν πόλιν</td><td>throughout *the entire* city</td></tr>
+<tr><td>κηρύσσων</td><td>preaching</td></tr>
+<tr><td>ὅσα ἐποίησεν αὐτῷ ὁ Ἰησοῦς.</td><td>as many things *as* Jesus did *for* him</td></tr>
+</table>
+<hr>
+Ἐν δὲ τῷ ὑποστρέφειν τὸν Ἰησοῦν ἀπεδέξατο αὐτὸν ὁ ὄχλος· ἦσαν γὰρ πάντες προσδοκῶντες αὐτόν.<hr><b>luke 8:40</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἐν</td><td>in *the*</td></tr>
+<tr><td>τῷ ὑποστρέφειν τὸν Ἰησοῦν</td><td>in the *returning* Jesus</td></tr>
+<tr><td>ἀπεδέξατο αὐτὸν ὁ ὄχλος·</td><td>the crowd *welcomed* him</td></tr>
+<tr><td>γὰρ πάντες ἦσαν προσδοκῶντες αὐτόν.</td><td>for *they* all were waiting-for *him*</td></tr>
+</table>
+<hr>
+καὶ ἰδοὺ ἦλθεν ἀνὴρ ᾧ ὄνομα Ἰάειρος, καὶ οὗτος ἄρχων τῆς συναγωγῆς ὑπῆρχεν· καὶ πεσὼν παρὰ τοὺς πόδας Ἰησοῦ παρεκάλει αὐτὸν εἰσελθεῖν εἰς τὸν οἶκον αὐτοῦ, ὅτι θυγάτηρ μονογενὴς ἦν αὐτῷ ὡς ἐτῶν δώδεκα καὶ αὐτὴ ἀπέθνῃσκεν.<hr><b>luke 8:41</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἰδοὺ ἦλθεν</td><td>and *behold*, he came</td></tr>
+<tr><td>ἀνὴρ ᾧ ὄνομα Ἰάειρος,</td><td>a man *whose* name *was* Jairus</td></tr>
+<tr><td>καὶ οὗτος ἄρχων τῆς συναγωγῆς</td><td>and he *was* a leader of the synagogue</td></tr>
+<tr><td>ὑπῆρχεν· καὶ πεσὼν</td><td>was *there* and falling</td></tr>
+<tr><td>παρὰ τοὺς πόδας Ἰησοῦ</td><td>at *the* feet *of* Jesus</td></tr>
+<tr><td>παρεκάλει αὐτὸν εἰσελθεῖν</td><td>he urged *him* to enter</td></tr>
+<tr><td>εἰς τὸν οἶκον αὐτοῦ,</td><td>into *the* house *of him*</td></tr>
+</table>
+<hr><b>luke 8:42</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅτι θυγάτηρ μονογενὴς</td><td>because *a* only-begotten daughter</td></tr>
+<tr><td>ὡς ἐτῶν δώδεκα</td><td>*about* twelve *years old*</td></tr>
+<tr><td>ἦν αὐτῷ καὶ αὐτὴ ἀπέθνῃσκεν.</td><td>was *to him* and she was dying.</td></tr>
+<tr><td>δὲ Ἐν τῷ ὑπάγειν αὐτὸν</td><td>but *as* *he* was going</td></tr>
+<tr><td>οἱ ὄχλοι</td><td>the *crowds*</td></tr>
+<tr><td>συνέπνιγον αὐτόν.</td><td>they were crowding *him*</td></tr>
+</table>
+<hr>
+καὶ γυνὴ οὖσα ἐν ῥύσει αἵματος ἀπὸ ἐτῶν δώδεκα, ἥτις οὐκ ἴσχυσεν ἀπ’ οὐδενὸς θεραπευθῆναι, προσελθοῦσα ὄπισθεν ἥψατο τοῦ κρασπέδου τοῦ ἱματίου αὐτοῦ, καὶ παραχρῆμα ἔστη ἡ ῥύσις τοῦ αἵματος αὐτῆς.<hr><b>luke 8:43</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ γυνὴ</td><td>and a woman</td></tr>
+<tr><td>οὖσα ἐν ῥύσει αἵματος</td><td>being in *a* flow *of* blood</td></tr>
+<tr><td>ἀπὸ ἐτῶν δώδεκα,</td><td>for *a duration of* twelve years</td></tr>
+<tr><td>ἥτις οὐκ</td><td>who *could* not</td></tr>
+<tr><td>ἴσχυσεν ἀπ’ οὐδενὸς θεραπευθῆναι,</td><td>was able from *no one* to be healed</td></tr>
+</table>
+<hr><b>luke 8:44</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>προσελθοῦσα ὄπισθεν</td><td>coming-up *from* behind</td></tr>
+<tr><td>ἥψατο τοῦ</td><td>touched *the*</td></tr>
+<tr><td>κρασπέδου τοῦ ἱματίου αὐτοῦ,</td><td>*the* hem *of the* garment *of him*,</td></tr>
+<tr><td>καὶ παραχρῆμα ἔστη ἡ</td><td>and *immediately* stopped the</td></tr>
+<tr><td>ῥύσις τοῦ αἵματος αὐτῆς.</td><td>flow *of her* blood</td></tr>
+</table>
+<hr>
+καὶ εἶπεν ὁ Ἰησοῦς Τίς ὁ ἁψάμενός μου;<hr><b>luke 8:45</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ εἶπεν ὁ Ἰησοῦς</td><td>and *he said*, Jesus</td></tr>
+<tr><td>Τίς ὁ ἁψάμενός μου;</td><td>Who *is* the one who touched me?</td></tr>
+<tr><td>δὲ ἀρνουμένων πάντων</td><td>but *of* all denying</td></tr>
+<tr><td>εἶπεν ὁ Πέτρος</td><td>Peter *said*</td></tr>
+<tr><td>Ἐπιστάτα, οἱ ὄχλοι συνέχουσίν σε</td><td>Master, the crowds *are pressing* you</td></tr>
+<tr><td>καὶ ἀποθλίβουσιν.</td><td>and *they* are pressing</td></tr>
+</table>
+<hr>
+ὁ δὲ Ἰησοῦς εἶπεν Ἥψατό μού τις· ἐγὼ γὰρ ἔγνων δύναμιν ἐξεληλυθυῖαν ἀπ’ ἐμοῦ.<hr><b>luke 8:46</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ Ἰησοῦς εἶπεν</td><td>But *Jesus* said</td></tr>
+<tr><td>Ἥψατό μού τις·</td><td>someone *touched* me</td></tr>
+<tr><td>γὰρ ἐγὼ ἔγνων</td><td>for *I* knew</td></tr>
+<tr><td>δύναμιν ἐξεληλυθυῖαν ἀπ’ ἐμοῦ.</td><td>power *had gone out* from *me*</td></tr>
+</table>
+<hr>
+ἰδοῦσα δὲ ἡ γυνὴ ὅτι οὐκ ἔλαθεν, τρέμουσα ἦλθεν καὶ προσπεσοῦσα αὐτῷ δι’ ἣν αἰτίαν ἥψατο αὐτοῦ ἀπήγγειλεν ἐνώπιον παντὸς τοῦ λαοῦ, καὶ ὡς ἰάθη παραχρῆμα.<hr><b>luke 8:47</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἡ γυνὴ</td><td>but *the* woman</td></tr>
+<tr><td>ἰδοῦσα ὅτι οὐκ ἔλαθεν,</td><td>seeing *that* she was not hidden</td></tr>
+<tr><td>τρέμουσα ἦλθεν καὶ προσπεσοῦσα αὐτῷ</td><td>trembling *she* came and falling before him</td></tr>
+<tr><td>δι’ ἣν αἰτίαν</td><td>for *the* reason</td></tr>
+<tr><td>ἥψατο αὐτοῦ ἀπήγγειλεν</td><td>she touched *him* and *she* declared</td></tr>
+<tr><td>ἐνώπιον παντὸς τοῦ λαοῦ,</td><td>in the presence *of* all the people</td></tr>
+<tr><td>καὶ ὡς ἰάθη παραχρῆμα.</td><td>and *how* she was healed immediately</td></tr>
+</table>
+<hr>
+ὁ δὲ εἶπεν αὐτῇ Θυγάτηρ, ἡ πίστις σου σέσωκέν σε· πορεύου εἰς εἰρήνην.<hr><b>luke 8:48</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ εἶπεν αὐτῇ</td><td>*But* he said to her</td></tr>
+<tr><td>Θυγάτηρ, ἡ πίστις σου</td><td>Daughter, *the* faith *of* you</td></tr>
+<tr><td>σέσωκέν σε· πορεύου εἰς εἰρήνην.</td><td>has saved you; go in *peace*</td></tr>
+</table>
+<hr>
+Ἔτι αὐτοῦ λαλοῦντος ἔρχεταί τις παρὰ τοῦ ἀρχισυναγώγου λέγων ὅτι Τέθνηκεν ἡ θυγάτηρ σου, μηκέτι σκύλλε τὸν Διδάσκαλον.<hr><b>luke 8:49</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἔτι αὐτοῦ λαλοῦντος</td><td>*While* he *was* speaking</td></tr>
+<tr><td>ἔρχεταί τις παρὰ τοῦ ἀρχισυναγώγου</td><td>*there comes* someone from *the ruler of the synagogue*</td></tr>
+<tr><td>λέγων ὅτι</td><td>saying *that*</td></tr>
+<tr><td>Τέθνηκεν ἡ θυγάτηρ σου,</td><td>The daughter *your* has died,</td></tr>
+<tr><td>μηκέτι σκύλλε τὸν Διδάσκαλον.</td><td>no longer trouble *the* Teacher</td></tr>
+</table>
+<hr>
+ὁ δὲ Ἰησοῦς ἀκούσας ἀπεκρίθη αὐτῷ Μὴ φοβοῦ· μόνον πίστευσον, καὶ σωθήσεται.<hr><b>luke 8:50</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>and *Jesus*</td></tr>
+<tr><td>ὁ Ἰησοῦς ἀκούσας ἀπεκρίθη αὐτῷ</td><td>Jesus *having heard* responded *to him*</td></tr>
+<tr><td>Μὴ φοβοῦ·</td><td>Do not *be* afraid</td></tr>
+<tr><td>μόνον πίστευσον, καὶ σωθήσεται.</td><td>only believe, and *he/she/it* will be saved</td></tr>
+</table>
+<hr>
+ἐλθὼν δὲ εἰς τὴν οἰκίαν οὐκ ἀφῆκεν εἰσελθεῖν τινα σὺν αὐτῷ εἰ μὴ Πέτρον καὶ Ἰωάνην καὶ Ἰάκωβον καὶ τὸν πατέρα τῆς παιδὸς καὶ τὴν μητέρα.<hr><b>luke 8:51</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐλθὼν εἰς τὴν οἰκίαν</td><td>but *when* entering into the house</td></tr>
+<tr><td>οὐκ ἀφῆκεν</td><td>he *did* not allow</td></tr>
+<tr><td>εἰσελθεῖν τινα σὺν αὐτῷ</td><td>enter anyone with *him*</td></tr>
+<tr><td>εἰ μὴ Πέτρον καὶ</td><td>except *for* Peter and</td></tr>
+<tr><td>Ἰωάνην καὶ Ἰάκωβον καὶ</td><td>John and James and</td></tr>
+<tr><td>τὸν πατέρα τῆς παιδὸς</td><td>the father *of* the child</td></tr>
+<tr><td>καὶ τὴν μητέρα.</td><td>and the mother</td></tr>
+</table>
+<hr>
+ἔκλαιον δὲ πάντες καὶ ἐκόπτοντο αὐτήν.<hr><b>luke 8:52</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ πάντες ἔκλαιον καὶ ἐκόπτοντο</td><td>but *all* were weeping and *they* were mourning</td></tr>
+<tr><td>αὐτήν.</td><td>her</td></tr>
+<tr><td>δὲ ὁ εἶπεν</td><td>*But* he *said*</td></tr>
+<tr><td>Μὴ κλαίετε·</td><td>Do not weep*</td></tr>
+<tr><td>οὐκ ἀπέθανεν ἀλλὰ καθεύδει.</td><td>not *has died* but *is* sleeping</td></tr>
+</table>
+<hr>
+καὶ κατεγέλων αὐτοῦ, εἰδότες ὅτι ἀπέθανεν.<hr><b>luke 8:53</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ κατεγέλων</td><td>and *they* laughed *at him*</td></tr>
+<tr><td>αὐτοῦ, εἰδότες ὅτι ἀπέθανεν.</td><td>him, knowing that *she* died.</td></tr>
+</table>
+<hr>
+αὐτὸς δὲ κρατήσας τῆς χειρὸς αὐτῆς ἐφώνησεν λέγων Ἠ παῖς, ἔγειρε.<hr><b>luke 8:54</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ αὐτὸς</td><td>but *he*</td></tr>
+<tr><td>κρατήσας τῆς χειρὸς αὐτῆς</td><td>having taken* her hand</td></tr>
+<tr><td>ἐφώνησεν λέγων Ἠ παῖς, ἔγειρε.</td><td>he-called saying *The* girl, arise</td></tr>
+</table>
+<hr>
+καὶ ἐπέστρεψεν τὸ πνεῦμα αὐτῆς, καὶ ἀνέστη παραχρῆμα, καὶ διέταξεν αὐτῇ δοθῆναι φαγεῖν.<hr><b>luke 8:55</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐπέστρεψεν τὸ πνεῦμα αὐτῆς,</td><td>and *her* spirit returned</td></tr>
+<tr><td>καὶ ἀνέστη παραχρῆμα,</td><td>and she arose immediately</td></tr>
+<tr><td>καὶ διέταξεν αὐτῇ δοθῆναι φαγεῖν.</td><td>and *he commanded* to be given *her* to eat</td></tr>
+</table>
+<hr>
+καὶ ἐξέστησαν οἱ γονεῖς αὐτῆς·<hr><b>luke 8:56</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐξέστησαν οἱ γονεῖς αὐτῆς·</td><td>and *were amazed* her parents</td></tr>
+<tr><td>δὲ ὁ παρήγγειλεν αὐτοῖς</td><td>but he *ordered* them</td></tr>
+<tr><td>μηδενὶ εἰπεῖν τὸ γεγονός.</td><td>to anyone not to *tell* the *thing* which had *happened*</td></tr>
+</table>
+<div class="chapter-links">
+<a href="7.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="selected-chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="9.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,847 @@
+<!DOCTYPE html><html><head><title>luke 9</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="../matthew/1.html" class="">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../matthew/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../matthew/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../matthew/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../matthew/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../matthew/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../matthew/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../matthew/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../matthew/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../matthew/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../matthew/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../matthew/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../matthew/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../matthew/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../matthew/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../matthew/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../matthew/16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="../matthew/17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="../matthew/18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="../matthew/19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="../matthew/20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="../matthew/21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="../matthew/22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="../matthew/23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="../matthew/24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="../matthew/25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="../matthew/26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="../matthew/27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="../matthew/28.html" class="">28</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../mark/1.html" class="">mark</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../mark/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../mark/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../mark/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../mark/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../mark/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../mark/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../mark/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../mark/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../mark/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../mark/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../mark/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../mark/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../mark/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../mark/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../mark/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../mark/16.html" class="">16</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">luke</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="9.html" class="current-book-chapter">9</a></li>
+   <li class="submenu_item"><a href="10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="24.html" class="">24</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../1peter/1.html" class="">1peter</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../1peter/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../1peter/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../1peter/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../1peter/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../1peter/5.html" class="">5</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="8.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="selected-chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="10.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Συνκαλεσάμενος δὲ τοὺς δώδεκα ἔδωκεν αὐτοῖς δύναμιν καὶ ἐξουσίαν ἐπὶ πάντα τὰ δαιμόνια καὶ νόσους θεραπεύειν· καὶ ἀπέστειλεν αὐτοὺς κηρύσσειν τὴν βασιλείαν τοῦ Θεοῦ καὶ ἰᾶσθαι,<hr><b>luke 9:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Συνκαλεσάμενος τοὺς δώδεκα</td><td>then *having summoned* the twelve</td></tr>
+<tr><td>ἔδωκεν αὐτοῖς δύναμιν καὶ ἐξουσίαν</td><td>he gave *them* power and authority</td></tr>
+<tr><td>ἐπὶ πάντα τὰ δαιμόνια</td><td>over all the demons</td></tr>
+<tr><td>καὶ νόσους θεραπεύειν·</td><td>and *to* heal diseases</td></tr>
+</table>
+<hr><b>luke 9:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἀπέστειλεν αὐτοὺς κηρύσσειν</td><td>and *He* sent them to proclaim</td></tr>
+<tr><td>τὴν βασιλείαν τοῦ Θεοῦ</td><td>the kingdom *of* God</td></tr>
+<tr><td>καὶ ἰᾶσθαι,</td><td>and *to heal*</td></tr>
+</table>
+<hr>
+καὶ εἶπεν πρὸς αὐτούς Μηδὲν αἴρετε εἰς τὴν ὁδόν, μήτε ῥάβδον μήτε πήραν μήτε ἄρτον μήτε ἀργύριον μήτε ἀνὰ δύο χιτῶνας ἔχειν. καὶ εἰς ἣν ἂν οἰκίαν εἰσέλθητε, ἐκεῖ μένετε καὶ ἐκεῖθεν ἐξέρχεσθε. καὶ ὅσοι ἂν μὴ δέχωνται ὑμᾶς, ἐξερχόμενοι ἀπὸ τῆς πόλεως ἐκείνης τὸν κονιορτὸν ἀπὸ τῶν ποδῶν ὑμῶν ἀποτινάσσετε εἰς μαρτύριον ἐπ’ αὐτούς.<hr><b>luke 9:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ εἶπεν πρὸς αὐτούς</td><td>and *he* said to them</td></tr>
+<tr><td>Μηδὲν αἴρετε εἰς τὴν ὁδόν,</td><td>nothing *take* into the way</td></tr>
+<tr><td>μήτε ῥάβδον μήτε πήραν μήτε ἄρτον μήτε ἀργύριον</td><td>neither staff *nor* bag *nor* bread *nor* money</td></tr>
+<tr><td>μήτε ἀνὰ δύο χιτῶνας</td><td>nor *an additional* two tunics</td></tr>
+<tr><td>ἔχειν. καὶ</td><td>to have. and</td></tr>
+</table>
+<hr><b>luke 9:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἂν εἰς ἣν οἰκίαν</td><td>if *into* whatever house</td></tr>
+<tr><td>εἰσέλθητε,</td><td>you *may* enter</td></tr>
+<tr><td>ἐκεῖ μένετε καὶ ἐκεῖθεν ἐξέρχεσθε.</td><td>there stay and *from* there leave</td></tr>
+</table>
+<hr><b>luke 9:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἂν</td><td>and *if*</td></tr>
+<tr><td>ὅσοι μὴ δέχωνται ὑμᾶς,</td><td>*whoever* *does not receive* you,</td></tr>
+<tr><td>ἐξερχόμενοι ἀπὸ τῆς πόλεως ἐκείνης</td><td>leaving *from* the city *that*</td></tr>
+<tr><td>τὸν κονιορτὸν</td><td>the *dust*</td></tr>
+<tr><td>ἀπὸ τῶν ποδῶν ὑμῶν</td><td>from *the* feet *of* you</td></tr>
+<tr><td>ἀποτινάσσετε εἰς μαρτύριον ἐπ’ αὐτούς.</td><td>shake off *the dust* as a testimony against *them*</td></tr>
+</table>
+<hr>
+ἐξερχόμενοι δὲ διήρχοντο κατὰ τὰς κώμας εὐαγγελιζόμενοι καὶ θεραπεύοντες πανταχοῦ.<hr><b>luke 9:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐξερχόμενοι</td><td>but *they were* going out</td></tr>
+<tr><td>διήρχοντο κατὰ τὰς κώμας</td><td>they-went through *the* villages</td></tr>
+<tr><td>εὐαγγελιζόμενοι καὶ θεραπεύοντες</td><td>preaching the gospel and healing</td></tr>
+<tr><td>πανταχοῦ.</td><td>everywhere</td></tr>
+</table>
+<hr>
+Ἤκουσεν δὲ Ἠρῴδης ὁ τετραάρχης τὰ γινόμενα πάντα, καὶ διηπόρει διὰ τὸ λέγεσθαι ὑπό τινων ὅτι Ἰωάνης ἠγέρθη ἐκ νεκρῶν, ὑπό τινων δὲ ὅτι Ἠλείας ἐφάνη, ἄλλων δὲ ὅτι προφήτης τις τῶν ἀρχαίων ἀνέστη.<hr><b>luke 9:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἤκουσεν Ἠρῴδης ὁ τετραάρχης</td><td>but *he* heard Herod the tetrarch</td></tr>
+<tr><td>τὰ γινόμενα πάντα,</td><td>all *the things* happening</td></tr>
+<tr><td>καὶ διηπόρει διὰ</td><td>and *he* was greatly perplexed *because of*</td></tr>
+<tr><td>τὸ λέγεσθαι ὑπό τινων</td><td>*the* being-said by *some*</td></tr>
+<tr><td>ὅτι Ἰωάνης ἠγέρθη ἐκ νεκρῶν,</td><td>that John *was raised* from *the* dead</td></tr>
+</table>
+<hr><b>luke 9:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὑπό τινων</td><td>but by *some*</td></tr>
+<tr><td>ὅτι Ἠλείας ἐφάνη,</td><td>that Elijah appeared</td></tr>
+<tr><td>δὲ ἄλλων ὅτι</td><td>but others that</td></tr>
+<tr><td>προφήτης τις τῶν ἀρχαίων</td><td>a *certain* prophet *of* the ancient *ones*</td></tr>
+<tr><td>ἀνέστη.</td><td>*he/she/it* rose</td></tr>
+</table>
+<hr>
+εἶπεν δὲ Ἠρῴδης Ἰωάνην ἐγὼ ἀπεκεφάλισα· τίς δέ ἐστιν οὗτος περὶ οὗ ἀκούω τοιαῦτα;<hr><b>luke 9:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἶπεν Ἠρῴδης</td><td>and *he* said Herod</td></tr>
+<tr><td>Ἰωάνην ἐγὼ ἀπεκεφάλισα·</td><td>John *I* beheaded</td></tr>
+<tr><td>δέ τίς ἐστιν οὗτος</td><td>*but* who is this</td></tr>
+<tr><td>περὶ οὗ ἀκούω τοιαῦτα;</td><td>about whom *I hear* such things *as these*</td></tr>
+<tr><td>καὶ ἐζήτει ἰδεῖν αὐτόν.</td><td>and *he* sought to see him</td></tr>
+</table>
+<hr>
+Καὶ ὑποστρέψαντες οἱ ἀπόστολοι διηγήσαντο αὐτῷ ὅσα ἐποίησαν.<hr><b>luke 9:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ</td><td>and</td></tr>
+<tr><td>ὑποστρέψαντες οἱ ἀπόστολοι διηγήσαντο αὐτῷ ὅσα ἐποίησαν.</td><td>having returned the apostles reported to him *all* that *they had done*</td></tr>
+<tr><td>Καὶ παραλαβὼν αὐτοὺς</td><td>and *having taken* them</td></tr>
+<tr><td>ὑπεχώρησεν κατ’ ἰδίαν</td><td>withdrew by *themselves*</td></tr>
+<tr><td>εἰς πόλιν καλουμένην Βηθσαϊδά.</td><td>into a city called Bethsaida</td></tr>
+</table>
+<hr>
+οἱ δὲ ὄχλοι γνόντες ἠκολούθησαν αὐτῷ·<hr><b>luke 9:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>οἱ ὄχλοι γνόντες ἠκολούθησαν αὐτῷ·</td><td>the crowds having known *this* followed him</td></tr>
+<tr><td>καὶ ἀποδεξάμενος αὐτοὺς</td><td>and having welcomed *them*</td></tr>
+<tr><td>ἐλάλει αὐτοῖς περὶ</td><td>he was speaking *to them* about</td></tr>
+<tr><td>τῆς βασιλείας τοῦ Θεοῦ,</td><td>the kingdom *of* God</td></tr>
+<tr><td>καὶ τοὺς χρείαν θεραπείας ἔχοντας</td><td>and *those having* need of healing</td></tr>
+<tr><td>ἰᾶτο.</td><td>healed</td></tr>
+</table>
+<hr>
+Ἠ δὲ ἡμέρα ἤρξατο κλίνειν·<hr><b>luke 9:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἠ ἡμέρα ἤρξατο κλίνειν·</td><td>But *the* day *began* to decline</td></tr>
+<tr><td>δὲ</td><td>but*</td></tr>
+<tr><td>προσελθόντες οἱ δώδεκα εἶπαν αὐτῷ</td><td>*having come* the twelve *said* to him</td></tr>
+<tr><td>Ἀπόλυσον τὸν ὄχλον,</td><td>Release *the* crowd</td></tr>
+<tr><td>ἵνα πορευθέντες εἰς τὰς</td><td>in order that *having gone* into the</td></tr>
+<tr><td>κύκλῳ κώμας καὶ ἀγροὺς</td><td>surrounding villages and *the* fields</td></tr>
+<tr><td>καταλύσωσιν καὶ εὕρωσιν ἐπισιτισμόν,</td><td>they-might-stay and find provisions</td></tr>
+<tr><td>ὅτι ὧδε ἐν ἐρήμῳ τόπῳ</td><td>because *here* in a desert place</td></tr>
+<tr><td>ἐσμέν.</td><td>we *are*</td></tr>
+</table>
+<hr>
+εἶπεν δὲ πρὸς αὐτούς Δότε αὐτοῖς φαγεῖν ὑμεῖς.<hr><b>luke 9:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἶπεν πρὸς αὐτούς</td><td>But *he* said to them</td></tr>
+<tr><td>Δότε αὐτοῖς φαγεῖν ὑμεῖς.</td><td>Give *them* to eat *you*.</td></tr>
+<tr><td>δὲ οἱ εἶπαν</td><td>but *they* said</td></tr>
+<tr><td>Οὐκ εἰσὶν ἡμῖν πλεῖον</td><td>There are not *to* us more</td></tr>
+<tr><td>ἢ</td><td>or</td></tr>
+<tr><td>ἄρτοι πέντε καὶ ἰχθύες δύο,</td><td>five loaves and two fish</td></tr>
+<tr><td>εἰ μήτι πορευθέντες ἡμεῖς ἀγοράσωμεν</td><td>unless *we* having gone *we should* buy</td></tr>
+<tr><td>εἰς πάντα τὸν λαὸν</td><td>for *all* the people</td></tr>
+<tr><td>τοῦτον βρώματα.</td><td>this *people* food</td></tr>
+</table>
+<hr>
+ἦσαν γὰρ ὡσεὶ ἄνδρες πεντακισχίλιοι.<hr><b>luke 9:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ἦσαν ὡσεὶ πεντακισχίλιοι. ἄνδρες</td><td>for they were about five thousand *men*</td></tr>
+<tr><td>δὲ εἶπεν</td><td>and *he* said</td></tr>
+<tr><td>πρὸς τοὺς μαθητὰς αὐτοῦ</td><td>to *the* his disciples</td></tr>
+<tr><td>Κατακλίνατε αὐτοὺς</td><td>have *them* recline</td></tr>
+<tr><td>κλισίας ὡσεὶ ἀνὰ πεντήκοντα.</td><td>groups *of* about fifty</td></tr>
+</table>
+<hr>
+καὶ ἐποίησαν οὕτως καὶ κατέκλιναν ἅπαντας.<hr><b>luke 9:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>ἐποίησαν οὕτως καὶ κατέκλιναν ἅπαντας.</td><td>they did so and *reclined* everyone</td></tr>
+</table>
+<hr>
+λαβὼν δὲ τοὺς πέντε ἄρτους καὶ τοὺς δύο ἰχθύας, ἀναβλέψας εἰς τὸν οὐρανὸν εὐλόγησεν αὐτοὺς καὶ κατέκλασεν, καὶ ἐδίδου τοῖς μαθηταῖς παραθεῖναι τῷ ὄχλῳ.<hr><b>luke 9:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ λαβὼν τοὺς πέντε ἄρτους</td><td>and *having taken* the five loaves</td></tr>
+<tr><td>καὶ τοὺς δύο ἰχθύας,</td><td>and the two fish</td></tr>
+<tr><td>ἀναβλέψας εἰς τὸν οὐρανὸν</td><td>looking up *to the* heaven</td></tr>
+<tr><td>εὐλόγησεν αὐτοὺς καὶ κατέκλασεν,</td><td>he blessed *them* and broke *them*</td></tr>
+<tr><td>καὶ ἐδίδου τοῖς μαθηταῖς</td><td>and he gave *to* the disciples</td></tr>
+<tr><td>παραθεῖναι τῷ ὄχλῳ.</td><td>to serve *to* the crowd</td></tr>
+</table>
+<hr>
+καὶ ἔφαγον καὶ ἐχορτάσθησαν πάντες, καὶ ἤρθη τὸ περισσεῦσαν αὐτοῖς κλασμάτων κόφινοι δώδεκα.<hr><b>luke 9:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἔφαγον καὶ ἐχορτάσθησαν πάντες,</td><td>and they ate and they were satisfied *all*</td></tr>
+<tr><td>καὶ ἤρθη τὸ περισσεῦσαν αὐτοῖς</td><td>and *the* leftover portions *were* picked up *by them*</td></tr>
+<tr><td>κλασμάτων κόφινοι δώδεκα.</td><td>twelve *baskets* of fragments</td></tr>
+</table>
+<hr>
+Καὶ ἐγένετο ἐν τῷ εἶναι αὐτὸν προσευχόμενον κατὰ μόνας συνῆσαν αὐτῷ οἱ μαθηταί, καὶ ἐπηρώτησεν αὐτοὺς λέγων Τίνα με οἱ ὄχλοι λέγουσιν εἶναι;<hr><b>luke 9:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ ἐγένετο ἐν τῷ</td><td>And *it came to pass* in the</td></tr>
+<tr><td>εἶναι προσευχόμενον αὐτὸν κατὰ μόνας</td><td>being *while* praying *alone*</td></tr>
+<tr><td>συνῆσαν αὐτῷ οἱ μαθηταί,</td><td>the disciples were together *with him*</td></tr>
+<tr><td>καὶ ἐπηρώτησεν αὐτοὺς</td><td>and *he* asked *them*</td></tr>
+<tr><td>λέγων Τίνα με εἶναι;</td><td>saying *Who* me *to be*?</td></tr>
+<tr><td>οἱ ὄχλοι</td><td>the crowds</td></tr>
+<tr><td>λέγουσιν</td><td>they say</td></tr>
+</table>
+<hr>
+οἱ δὲ ἀποκριθέντες εἶπαν Ἰωάνην τὸν Βαπτιστήν, ἄλλοι δὲ Ἠλείαν, ἄλλοι δὲ ὅτι προφήτης τις τῶν ἀρχαίων ἀνέστη.<hr><b>luke 9:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ ἀποκριθέντες εἶπαν</td><td>but *they* having answered said</td></tr>
+<tr><td>Ἰωάνην τὸν Βαπτιστήν,</td><td>John the Baptist</td></tr>
+<tr><td>δὲ ἄλλοι Ἠλείαν,</td><td>but *others* Elijah</td></tr>
+<tr><td>δὲ ἄλλοι ὅτι</td><td>but others *said that*</td></tr>
+<tr><td>προφήτης τις τῶν ἀρχαίων</td><td>a certain prophet *of the* ancient *ones*</td></tr>
+<tr><td>ἀνέστη.</td><td>he *has* risen</td></tr>
+</table>
+<hr>
+εἶπεν δὲ αὐτοῖς Ὑμεῖς δὲ τίνα με λέγετε εἶναι;<hr><b>luke 9:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἶπεν αὐτοῖς</td><td>But he said *to* them</td></tr>
+<tr><td>δὲ Ὑμεῖς τίνα με εἶναι;</td><td>but *you* who *do* *you* say *me* to be</td></tr>
+<tr><td>λέγετε</td><td>you *do* say</td></tr>
+<tr><td>δὲ Πέτρος ἀποκριθεὶς εἶπεν</td><td>*but* Peter *having answered* said</td></tr>
+<tr><td>Τὸν Χριστὸν τοῦ Θεοῦ.</td><td>the Christ of *the* God</td></tr>
+</table>
+<hr>
+ὁ δὲ ἐπιτιμήσας αὐτοῖς παρήγγειλεν μηδενὶ λέγειν τοῦτο, εἰπὼν ὅτι Δεῖ τὸν Υἱὸν τοῦ ἀνθρώπου πολλὰ παθεῖν καὶ ἀποδοκιμασθῆναι ἀπὸ τῶν πρεσβυτέρων καὶ ἀρχιερέων καὶ γραμματέων καὶ ἀποκτανθῆναι καὶ τῇ τρίτῃ ἡμέρᾳ ἐγερθῆναι.<hr><b>luke 9:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ ἐπιτιμήσας αὐτοῖς</td><td>but *the* rebuking *him*</td></tr>
+<tr><td>παρήγγειλεν μηδενὶ λέγειν τοῦτο,</td><td>*he* commanded *them* to tell no one *about* this</td></tr>
+</table>
+<hr><b>luke 9:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>εἰπὼν ὅτι Δεῖ</td><td>having said *that* *it is* necessary</td></tr>
+<tr><td>τὸν Υἱὸν τοῦ ἀνθρώπου</td><td>the Son of *Man*</td></tr>
+<tr><td>πολλὰ παθεῖν</td><td>to suffer *many* things</td></tr>
+<tr><td>καὶ ἀποδοκιμασθῆναι ἀπὸ τῶν</td><td>and to be rejected by *the*</td></tr>
+<tr><td>πρεσβυτέρων καὶ ἀρχιερέων καὶ γραμματέων</td><td>elders and chief priests and scribes</td></tr>
+<tr><td>καὶ ἀποκτανθῆναι</td><td>and to be killed</td></tr>
+<tr><td>καὶ τῇ τρίτῃ ἡμέρᾳ</td><td>and *on* the third day</td></tr>
+<tr><td>ἐγερθῆναι.</td><td>to be *raised*</td></tr>
+</table>
+<hr>
+Ἔλεγεν δὲ πρὸς πάντας Εἴ τις θέλει ὀπίσω μου ἔρχεσθαι, ἀρνησάσθω ἑαυτὸν καὶ ἀράτω τὸν σταυρὸν αὐτοῦ καθ’ ἡμέραν, καὶ ἀκολουθείτω μοι.<hr><b>luke 9:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἔλεγεν πρὸς πάντας</td><td>then *he* was saying to *them* all</td></tr>
+<tr><td>Εἴ τις</td><td>if *anyone*</td></tr>
+<tr><td>θέλει ὀπίσω μου ἔρχεσθαι,</td><td>wants *to* follow *after* me</td></tr>
+<tr><td>ἀρνησάσθω ἑαυτὸν</td><td>let him deny *himself*</td></tr>
+<tr><td>καὶ ἀράτω τὸν σταυρὸν αὐτοῦ</td><td>and *let him* take up *his* cross</td></tr>
+<tr><td>καθ’ ἡμέραν,</td><td>daily</td></tr>
+<tr><td>καὶ ἀκολουθείτω μοι.</td><td>and let him follow *me*</td></tr>
+</table>
+<hr>
+ὃς γὰρ ἐὰν θέλῃ τὴν ψυχὴν αὐτοῦ σῶσαι, ἀπολέσει αὐτήν·<hr><b>luke 9:24</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ἐὰν ὃς</td><td>*for if* who</td></tr>
+<tr><td>θέλῃ τὴν ψυχὴν αὐτοῦ</td><td>wants *to save* his life</td></tr>
+<tr><td>σῶσαι, ἀπολέσει αὐτήν·</td><td>to save, he will lose *it*</td></tr>
+<tr><td>δ’ ἂν ὃς</td><td>but *whoever*</td></tr>
+<tr><td>ἀπολέσῃ τὴν ψυχὴν αὐτοῦ</td><td>loses *his* life</td></tr>
+<tr><td>ἕνεκεν ἐμοῦ,</td><td>because *of* me</td></tr>
+<tr><td>οὗτος σώσει αὐτήν.</td><td>this *one* will save *it*</td></tr>
+</table>
+<hr>
+τί γὰρ ὠφελεῖται ἄνθρωπος κερδήσας τὸν κόσμον ὅλον ἑαυτὸν δὲ ἀπολέσας ἢ ζημιωθείς;<hr><b>luke 9:25</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ τί ὠφελεῖται ἄνθρωπος</td><td>for *what* does it profit a man</td></tr>
+<tr><td>κερδήσας τὸν κόσμον ὅλον</td><td>gained the *whole* world</td></tr>
+<tr><td>δὲ ἑαυτὸν ἀπολέσας ἢ ζημιωθείς;</td><td>*but* losing himself or suffering damage?</td></tr>
+</table>
+<hr>
+ὃς γὰρ ἂν ἐπαισχυνθῇ με καὶ τοὺς ἐμοὺς λόγους, τοῦτον ὁ Υἱὸς τοῦ ἀνθρώπου ἐπαισχυνθήσεται, ὅταν ἔλθῃ ἐν τῇ δόξῃ αὐτοῦ καὶ τοῦ Πατρὸς καὶ τῶν ἁγίων ἀγγέλων.<hr><b>luke 9:26</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ἂν ὃς ἐπαισχυνθῇ με</td><td>for whoever *might* be ashamed *of* me</td></tr>
+<tr><td>καὶ τοὺς ἐμοὺς λόγους,</td><td>and *my* words</td></tr>
+<tr><td>τοῦτον ὁ Υἱὸς τοῦ ἀνθρώπου</td><td>this *one* the Son of Man</td></tr>
+<tr><td>ἐπαισχυνθήσεται, ὅταν</td><td>will be ashamed, when</td></tr>
+<tr><td>ἔλθῃ ἐν τῇ δόξῃ</td><td>he comes in *the* glory</td></tr>
+<tr><td>αὐτοῦ καὶ τοῦ Πατρὸς</td><td>His and *the* Father's</td></tr>
+<tr><td>καὶ τῶν ἁγίων ἀγγέλων.</td><td>and *the* holy angels</td></tr>
+</table>
+<hr>
+λέγω δὲ ὑμῖν ἀληθῶς, εἰσίν τινες τῶν αὐτοῦ ἑστηκότων οἳ οὐ μὴ γεύσωνται θανάτου ἕως ἂν ἴδωσιν τὴν βασιλείαν τοῦ Θεοῦ.<hr><b>luke 9:27</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ λέγω ὑμῖν ἀληθῶς,</td><td>but I *truly* say to you,</td></tr>
+<tr><td>εἰσίν τινες τῶν αὐτοῦ ἑστηκότων</td><td>*there are* some *of those* standing *here*</td></tr>
+<tr><td>οἳ οὐ μὴ γεύσωνται θανάτου</td><td>who *(will) not *(at all) taste (of) death</td></tr>
+<tr><td>ἕως ἂν ἴδωσιν</td><td>until *they* see</td></tr>
+<tr><td>τὴν βασιλείαν τοῦ Θεοῦ.</td><td>the kingdom *of* God</td></tr>
+</table>
+<hr>
+Ἐγένετο δὲ μετὰ τοὺς λόγους τούτους ὡσεὶ ἡμέραι ὀκτὼ, καὶ παραλαβὼν Πέτρον καὶ Ἰωάνην καὶ Ἰάκωβον ἀνέβη εἰς τὸ ὄρος προσεύξασθαι.<hr><b>luke 9:28</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἐγένετο</td><td>It *came to pass*</td></tr>
+<tr><td>μετὰ τοὺς λόγους τούτους</td><td>after *these* words</td></tr>
+<tr><td>ὡσεὶ ἡμέραι ὀκτὼ,</td><td>about *eight days*</td></tr>
+<tr><td>καὶ παραλαβὼν</td><td>and *having taken*</td></tr>
+<tr><td>Πέτρον καὶ Ἰωάνην καὶ Ἰάκωβον</td><td>Peter and John and James</td></tr>
+<tr><td>ἀνέβη εἰς τὸ ὄρος</td><td>went up *into* the mountain</td></tr>
+<tr><td>προσεύξασθαι.</td><td>to pray</td></tr>
+</table>
+<hr>
+καὶ ἐγένετο ἐν τῷ προσεύχεσθαι αὐτὸν τὸ εἶδος τοῦ προσώπου αὐτοῦ ἕτερον καὶ ὁ ἱματισμὸς αὐτοῦ λευκὸς ἐξαστράπτων.<hr><b>luke 9:29</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐγένετο</td><td>and *it* happened</td></tr>
+<tr><td>ἐν τῷ προσεύχεσθαι αὐτὸν</td><td>in the *act of* praying *by him*</td></tr>
+<tr><td>τὸ εἶδος τοῦ προσώπου αὐτοῦ</td><td>the appearance of *his* face</td></tr>
+<tr><td>ἕτερον καὶ ὁ ἱματισμὸς αὐτοῦ</td><td>different and *his clothing*</td></tr>
+<tr><td>λευκὸς ἐξαστράπτων.</td><td>white *and* dazzling</td></tr>
+</table>
+<hr>
+καὶ ἰδοὺ ἄνδρες δύο συνελάλουν αὐτῷ, οἵτινες ἦσαν Μωϋσῆς καὶ Ἠλείας, οἳ ὀφθέντες ἐν δόξῃ ἔλεγον τὴν ἔξοδον αὐτοῦ, ἣν ἤμελλεν πληροῦν ἐν Ἱερουσαλήμ.<hr><b>luke 9:30</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἰδοὺ</td><td>and *behold*</td></tr>
+<tr><td>ἄνδρες δύο συνελάλουν αὐτῷ,</td><td>two men *were* talking *with* him</td></tr>
+<tr><td>οἵτινες ἦσαν Μωϋσῆς καὶ Ἠλείας,</td><td>who were Moses and Elijah,</td></tr>
+</table>
+<hr><b>luke 9:31</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οἳ ὀφθέντες ἐν δόξῃ</td><td>who appeared *in* glory</td></tr>
+<tr><td>ἔλεγον τὴν ἔξοδον αὐτοῦ,</td><td>they were discussing *his* departure</td></tr>
+<tr><td>ἣν πληροῦν ἐν Ἱερουσαλήμ.</td><td>which *he was going to* fulfill in Jerusalem</td></tr>
+<tr><td>ἤμελλεν</td><td>was about *to*</td></tr>
+</table>
+<hr>
+ὁ δὲ Πέτρος καὶ οἱ σὺν αὐτῷ ἦσαν βεβαρημένοι ὕπνῳ·<hr><b>luke 9:32</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ Πέτρος</td><td>*but* *the* Peter</td></tr>
+<tr><td>καὶ οἱ σὺν αὐτῷ</td><td>and *those* with him</td></tr>
+<tr><td>ἦσαν βεβαρημένοι</td><td>*they* were weighed down</td></tr>
+<tr><td>ὕπνῳ·</td><td>sleep</td></tr>
+<tr><td>δὲ διαγρηγορήσαντες</td><td>*But* having remained awake</td></tr>
+<tr><td>εἶδαν τὴν δόξαν αὐτοῦ</td><td>they-saw the glory *of* him</td></tr>
+<tr><td>καὶ τοὺς δύο ἄνδρας</td><td>and *the* two men</td></tr>
+<tr><td>τοὺς συνεστῶτας αὐτῷ.</td><td>those standing-with *him*</td></tr>
+</table>
+<hr>
+καὶ ἐγένετο ἐν τῷ διαχωρίζεσθαι αὐτοὺς ἀπ’ αὐτοῦ εἶπεν ὁ Πέτρος πρὸς τὸν Ἰησοῦν Ἐπιστάτα, καλόν ἐστιν ἡμᾶς ὧδε εἶναι, καὶ ποιήσωμεν σκηνὰς τρεῖς, μίαν σοὶ καὶ μίαν Μωϋσεῖ καὶ μίαν Ἠλείᾳ, μὴ εἰδὼς ὃ λέγει.<hr><b>luke 9:33</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐγένετο ἐν τῷ</td><td>and it happened *in* the</td></tr>
+<tr><td>διαχωρίζεσθαι αὐτοὺς ἀπ’ αὐτοῦ</td><td>separate themselves *from* him</td></tr>
+<tr><td>εἶπεν ὁ Πέτρος</td><td>Peter said</td></tr>
+<tr><td>πρὸς τὸν Ἰησοῦν</td><td>to *the* Jesus</td></tr>
+<tr><td>Ἐπιστάτα, καλόν</td><td>Master, it is *good*</td></tr>
+<tr><td>ἐστιν ἡμᾶς ὧδε εἶναι,</td><td>it is *for* us *to be* here</td></tr>
+<tr><td>καὶ ποιήσωμεν σκηνὰς τρεῖς,</td><td>and *let us make* tents three,</td></tr>
+<tr><td>μίαν σοὶ καὶ μίαν Μωϋσεῖ καὶ μίαν Ἠλείᾳ,</td><td>one *for* you and one *for* Moses and one *for* Elijah</td></tr>
+<tr><td>μὴ εἰδὼς ὃ λέγει.</td><td>not knowing *what* he says</td></tr>
+</table>
+<hr>
+ταῦτα δὲ αὐτοῦ λέγοντος ἐγένετο νεφέλη καὶ ἐπεσκίαζεν αὐτούς·<hr><b>luke 9:34</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ταῦτα αὐτοῦ λέγοντος</td><td>*and* these *his* *speaking*</td></tr>
+<tr><td>ἐγένετο νεφέλη καὶ ἐπεσκίαζεν αὐτούς·</td><td>there-became a-cloud and it-was-overshadowing *them*</td></tr>
+<tr><td>δὲ ἐφοβήθησαν ἐν τῷ εἰσελθεῖν</td><td>but they were afraid *when* entering</td></tr>
+<tr><td>αὐτοὺς εἰς τὴν νεφέλην.</td><td>them into the *cloud*</td></tr>
+</table>
+<hr>
+καὶ φωνὴ ἐγένετο ἐκ τῆς νεφέλης λέγουσα Οὗτός ἐστιν ὁ Υἱός μου ὁ ἐκλελεγμένος, αὐτοῦ ἀκούετε.<hr><b>luke 9:35</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ φωνὴ</td><td>and *a* voice</td></tr>
+<tr><td>ἐγένετο ἐκ τῆς νεφέλης</td><td>came *out of* the cloud</td></tr>
+<tr><td>λέγουσα Οὗτός</td><td>saying *this*</td></tr>
+<tr><td>ἐστιν ὁ Υἱός μου</td><td>is *the* Son *of* me</td></tr>
+<tr><td>ὁ ἐκλελεγμένος,</td><td>the *chosen*</td></tr>
+<tr><td>αὐτοῦ ἀκούετε.</td><td>listen to *him*</td></tr>
+</table>
+<hr>
+καὶ ἐν τῷ γενέσθαι τὴν φωνὴν εὑρέθη Ἰησοῦς μόνος.<hr><b>luke 9:36</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐν</td><td>and *in*</td></tr>
+<tr><td>τῷ γενέσθαι τὴν φωνὴν</td><td>the *having happened* voice</td></tr>
+<tr><td>εὑρέθη Ἰησοῦς μόνος.</td><td>Jesus was found *to be* alone</td></tr>
+<tr><td>καὶ αὐτοὶ ἐσίγησαν</td><td>and *they* were silent</td></tr>
+<tr><td>καὶ οὐδενὶ ἀπήγγειλαν</td><td>and *to* no one they reported</td></tr>
+<tr><td>ἐν ἐκείναις ταῖς ἡμέραις</td><td>in *those* *the* days</td></tr>
+<tr><td>οὐδὲν ὧν ἑώρακαν.</td><td>nothing *of* what they had seen</td></tr>
+</table>
+<hr>
+Ἐγένετο δὲ τῇ ἑξῆς ἡμέρᾳ κατελθόντων αὐτῶν ἀπὸ τοῦ ὄρους συνήντησεν αὐτῷ ὄχλος πολύς.<hr><b>luke 9:37</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἐγένετο τῇ ἑξῆς ἡμέρᾳ</td><td>and it *happened* on the next *day*</td></tr>
+<tr><td>κατελθόντων αὐτῶν ἀπὸ τοῦ ὄρους</td><td>as-they-came-down *from* the *mountain*</td></tr>
+<tr><td>συνήντησεν αὐτῷ ὄχλος πολύς.</td><td>a large *crowd* met him</td></tr>
+</table>
+<hr>
+καὶ ἰδοὺ ἀνὴρ ἀπὸ τοῦ ὄχλου ἐβόησεν λέγων Διδάσκαλε, δέομαί σου ἐπιβλέψαι ἐπὶ τὸν υἱόν μου, ὅτι μονογενής μοί ἐστιν, καὶ ἰδοὺ πνεῦμα λαμβάνει αὐτόν, καὶ ἐξαίφνης κράζει καὶ σπαράσσει αὐτὸν μετὰ ἀφροῦ, καὶ μόλις ἀποχωρεῖ ἀπ’ αὐτοῦ συντρῖβον αὐτόν·<hr><b>luke 9:38</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἰδοὺ</td><td>and *behold*</td></tr>
+<tr><td>ἀνὴρ ἀπὸ τοῦ ὄχλου</td><td>a man *from the* crowd</td></tr>
+<tr><td>ἐβόησεν λέγων</td><td>cried out saying</td></tr>
+<tr><td>Διδάσκαλε, δέομαί σου ἐπιβλέψαι</td><td>Teacher, I beg *you* to look upon</td></tr>
+<tr><td>ἐπὶ τὸν υἱόν μου,</td><td>*upon* my son,</td></tr>
+<tr><td>ὅτι μονογενής μοί ἐστιν,</td><td>for *he is* my only-begotten</td></tr>
+</table>
+<hr><b>luke 9:39</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἰδοὺ πνεῦμα λαμβάνει αὐτόν,</td><td>and *behold* a spirit seizes him</td></tr>
+<tr><td>καὶ ἐξαίφνης κράζει</td><td>and suddenly *he* cries out</td></tr>
+<tr><td>καὶ σπαράσσει αὐτὸν μετὰ ἀφροῦ,</td><td>and convulses him *with* foam</td></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>μόλις ἀποχωρεῖ ἀπ’ αὐτοῦ συντρῖβον αὐτόν·</td><td>barely *leaves* him *injuring* him</td></tr>
+</table>
+<hr>
+καὶ ἐδεήθην τῶν μαθητῶν σου ἵνα ἐκβάλωσιν αὐτό, καὶ οὐκ ἠδυνήθησαν.<hr><b>luke 9:40</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐδεήθην τῶν μαθητῶν σου</td><td>and I begged *of* your disciples</td></tr>
+<tr><td>ἵνα ἐκβάλωσιν αὐτό,</td><td>that *they might* cast *it* out</td></tr>
+<tr><td>καὶ οὐκ ἠδυνήθησαν.</td><td>and they *were* not able</td></tr>
+</table>
+<hr>
+ἀποκριθεὶς δὲ ὁ Ἰησοῦς εἶπεν Ὦ γενεὰ ἄπιστος καὶ διεστραμμένη, ἕως πότε ἔσομαι πρὸς ὑμᾶς καὶ ἀνέξομαι ὑμῶν; προσάγαγε ὧδε τὸν υἱόν σου.<hr><b>luke 9:41</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἀποκριθεὶς ὁ Ἰησοῦς εἶπεν</td><td>but *having answered* Jesus said</td></tr>
+<tr><td>Ὦ γενεὰ ἄπιστος καὶ διεστραμμένη,</td><td>Oh *you* generation unbelieving and perverse</td></tr>
+<tr><td>ἕως πότε ἔσομαι πρὸς ὑμᾶς</td><td>How long *will* I be *with* you</td></tr>
+<tr><td>καὶ ἀνέξομαι ὑμῶν;</td><td>and *shall I endure* you?</td></tr>
+<tr><td>προσάγαγε ὧδε τὸν υἱόν σου.</td><td>bring here *your* son</td></tr>
+</table>
+<hr>
+ἔτι δὲ προσερχομένου αὐτοῦ ἔρρηξεν αὐτὸν τὸ δαιμόνιον καὶ συνεσπάραξεν·<hr><b>luke 9:42</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἔτι προσερχομένου αὐτοῦ</td><td>but *while* he *was* approaching</td></tr>
+<tr><td>ἔρρηξεν αὐτὸν τὸ δαιμόνιον</td><td>the *demon* threw *him* down</td></tr>
+<tr><td>καὶ συνεσπάραξεν·</td><td>and *it* convulsed *him*</td></tr>
+<tr><td>δὲ ἐπετίμησεν ὁ Ἰησοῦς</td><td>but *Jesus* rebuked</td></tr>
+<tr><td>τῷ πνεύματι τῷ ἀκαθάρτῳ,</td><td>the *unclean* spirit</td></tr>
+<tr><td>καὶ ἰάσατο τὸν παῖδα</td><td>and *he healed* the boy</td></tr>
+<tr><td>καὶ ἀπέδωκεν</td><td>and *he* restored</td></tr>
+<tr><td>αὐτὸν τῷ πατρὶ αὐτοῦ.</td><td>him *to the* father *of him*</td></tr>
+</table>
+<hr>
+ἐξεπλήσσοντο δὲ πάντες ἐπὶ τῇ μεγαλειότητι τοῦ Θεοῦ.<hr><b>luke 9:43</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐξεπλήσσοντο πάντες ἐπὶ</td><td>but *they all* were amazed *at*</td></tr>
+<tr><td>τῇ μεγαλειότητι τοῦ Θεοῦ.</td><td>*the* majesty *of* God</td></tr>
+<tr><td>δὲ Πάντων θαυμαζόντων</td><td>*and* of all *people* marveling</td></tr>
+<tr><td>ἐπὶ πᾶσιν οἷς ἐποίει</td><td>at *all* the things *he* did</td></tr>
+<tr><td>εἶπεν πρὸς τοὺς μαθητὰς αὐτοῦ</td><td>he said *to* his disciples</td></tr>
+</table>
+<hr>
+Πάντων δὲ θαυμαζόντων ἐπὶ πᾶσιν οἷς ἐποίει εἶπεν πρὸς τοὺς μαθητὰς αὐτοῦ Θέσθε ὑμεῖς εἰς τὰ ὦτα ὑμῶν τοὺς λόγους τούτους· ὁ γὰρ Υἱὸς τοῦ ἀνθρώπου μέλλει παραδίδοσθαι εἰς χεῖρας ἀνθρώπων.<hr><b>luke 9:44</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Θέσθε ὑμεῖς</td><td>you *put*</td></tr>
+<tr><td>εἰς τὰ ὦτα ὑμῶν</td><td>into *your* ears</td></tr>
+<tr><td>τοὺς λόγους τούτους·</td><td>these words</td></tr>
+<tr><td>γὰρ ὁ Υἱὸς τοῦ ἀνθρώπου</td><td>for the Son of *Man*</td></tr>
+<tr><td>μέλλει παραδίδοσθαι εἰς χεῖρας ἀνθρώπων.</td><td>is about to be delivered into *the* hands of men</td></tr>
+</table>
+<hr>
+οἱ δὲ ἠγνόουν τὸ ῥῆμα τοῦτο, καὶ ἦν παρακεκαλυμμένον ἀπ’ αὐτῶν ἵνα μὴ αἴσθωνται αὐτό, καὶ ἐφοβοῦντο ἐρωτῆσαι αὐτὸν περὶ τοῦ ῥήματος τούτου.<hr><b>luke 9:45</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ</td><td>but *they*</td></tr>
+<tr><td>ἠγνόουν τὸ ῥῆμα τοῦτο,</td><td>they-did-not-understand *the* saying *this*,</td></tr>
+<tr><td>καὶ ἦν παρακεκαλυμμένον ἀπ’ αὐτῶν</td><td>and it was hidden *from* them</td></tr>
+<tr><td>ἵνα μὴ αἴσθωνται αὐτό,</td><td>that not *they might perceive* it</td></tr>
+<tr><td>καὶ ἐφοβοῦντο ἐρωτῆσαι αὐτὸν</td><td>and *they* were afraid to ask *him*</td></tr>
+<tr><td>περὶ τοῦ ῥήματος τούτου.</td><td>about *the* word *this*</td></tr>
+</table>
+<hr>
+Εἰσῆλθεν δὲ διαλογισμὸς ἐν αὐτοῖς, τὸ τίς ἂν εἴη μείζων αὐτῶν.<hr><b>luke 9:46</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Εἰσῆλθεν ἐν αὐτοῖς,</td><td>but entered in *among* them,</td></tr>
+<tr><td>διαλογισμὸς τὸ ἂν</td><td>reasoning *or* what *might*</td></tr>
+<tr><td>τίς αὐτῶν. εἴη μείζων</td><td>who *of them* would be greater</td></tr>
+</table>
+<hr>
+ὁ δὲ Ἰησοῦς εἰδὼς τὸν διαλογισμὸν τῆς καρδίας αὐτῶν, ἐπιλαβόμενος παιδίον ἔστησεν αὐτὸ παρ’ ἑαυτῷ, καὶ εἶπεν αὐτοῖς Ὃς ἐὰν δέξηται τοῦτο τὸ παιδίον ἐπὶ τῷ ὀνόματί μου, ἐμὲ δέχεται· καὶ ὃς ἂν ἐμὲ δέξηται, δέχεται τὸν ἀποστείλαντά με· ὁ γὰρ μικρότερος ἐν πᾶσιν ὑμῖν ὑπάρχων οὗτός ἐστιν μέγας.<hr><b>luke 9:47</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ Ἰησοῦς</td><td>But *Jesus*</td></tr>
+<tr><td>εἰδὼς τὸν</td><td>knowing the</td></tr>
+<tr><td>διαλογισμὸν τῆς καρδίας αὐτῶν,</td><td>thoughts *of* *their* hearts</td></tr>
+<tr><td>ἐπιλαβόμενος παιδίον</td><td>taking *a* child</td></tr>
+<tr><td>ἔστησεν αὐτὸ παρ’ ἑαυτῷ,</td><td>set it beside *himself*</td></tr>
+</table>
+<hr><b>luke 9:48</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ εἶπεν αὐτοῖς</td><td>and *he* said to *them*</td></tr>
+<tr><td>ἐὰν Ὃς</td><td>whoever *if*</td></tr>
+<tr><td>δέξηται τοῦτο τὸ παιδίον</td><td>shall receive *this* *child*</td></tr>
+<tr><td>ἐπὶ τῷ ὀνόματί μου,</td><td>in *the* name *of* me</td></tr>
+<tr><td>ἐμὲ δέχεται· καὶ</td><td>receives *me*; and</td></tr>
+<tr><td>ἂν ὃς ἐμὲ δέξηται,</td><td>whoever *might* receive me</td></tr>
+<tr><td>δέχεται τὸν ἀποστείλαντά με·</td><td>receives *the one who* sent me</td></tr>
+<tr><td>γὰρ ὁ</td><td>for *the*</td></tr>
+<tr><td>μικρότερος ἐν πᾶσιν ὑμῖν</td><td>least *among* you all</td></tr>
+<tr><td>ὑπάρχων οὗτός ἐστιν μέγας.</td><td>being *he* is great</td></tr>
+</table>
+<hr>
+Ἀποκριθεὶς δὲ ὁ Ἰωάνης εἶπεν Ἐπιστάτα, εἴδομέν τινα ἐν τῷ ὀνόματί σου ἐκβάλλοντα δαιμόνια, καὶ ἐκωλύομεν αὐτὸν, ὅτι οὐκ ἀκολουθεῖ μεθ’ ἡμῶν.<hr><b>luke 9:49</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἀποκριθεὶς ὁ Ἰωάνης εἶπεν</td><td>but *responding*, John said</td></tr>
+<tr><td>Ἐπιστάτα, εἴδομέν τινα</td><td>Master, *we* saw someone</td></tr>
+<tr><td>ἐν τῷ ὀνόματί σου</td><td>in *the* name *of* you</td></tr>
+<tr><td>ἐκβάλλοντα δαιμόνια, καὶ ἐκωλύομεν αὐτὸν,</td><td>casting out demons, and we *were* preventing him,</td></tr>
+<tr><td>ὅτι οὐκ ἀκολουθεῖ μεθ’ ἡμῶν.</td><td>because (he) does not follow *with* us</td></tr>
+</table>
+<hr>
+εἶπεν δὲ πρὸς αὐτὸν Ἰησοῦς Μὴ κωλύετε· ὃς γὰρ οὐκ ἔστιν καθ’ ὑμῶν, ὑπὲρ ὑμῶν ἐστιν.<hr><b>luke 9:50</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἶπεν πρὸς αὐτὸν Ἰησοῦς</td><td>and *he* said to *him* Jesus</td></tr>
+<tr><td>Μὴ κωλύετε·</td><td>Do *not* hinder</td></tr>
+<tr><td>γὰρ</td><td>for</td></tr>
+<tr><td>ὃς οὐκ ἔστιν καθ’ ὑμῶν,</td><td>who *is* not *against* you,</td></tr>
+<tr><td>ὑπὲρ ὑμῶν</td><td>on behalf *of you*</td></tr>
+<tr><td>ἐστιν.</td><td>he-is/it-is/there-is/exists</td></tr>
+</table>
+<hr>
+Ἐγένετο δὲ ἐν τῷ συμπληροῦσθαι τὰς ἡμέρας τῆς ἀναλήμψεως αὐτοῦ καὶ αὐτὸς τὸ πρόσωπον ἐστήρισεν τοῦ πορεύεσθαι εἰς Ἱερουσαλήμ, καὶ ἀπέστειλεν ἀγγέλους πρὸ προσώπου αὐτοῦ.<hr><b>luke 9:51</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἐγένετο</td><td>Now it *came to pass*</td></tr>
+<tr><td>ἐν τῷ συμπληροῦσθαι τὰς</td><td>in *the* completing *of the*</td></tr>
+<tr><td>ἡμέρας τῆς ἀναλήμψεως αὐτοῦ</td><td>days *of* *his* ascension</td></tr>
+<tr><td>καὶ αὐτὸς τὸ πρόσωπον</td><td>and *he* the face</td></tr>
+<tr><td>ἐστήρισεν τοῦ πορεύεσθαι εἰς Ἱερουσαλήμ,</td><td>he set *his face* to go to Jerusalem</td></tr>
+</table>
+<hr><b>luke 9:52</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἀπέστειλεν</td><td>and he sent</td></tr>
+<tr><td>ἀγγέλους πρὸ προσώπου αὐτοῦ.</td><td>angels before *his* presence</td></tr>
+<tr><td>καὶ πορευθέντες</td><td>and having gone</td></tr>
+<tr><td>εἰσῆλθον εἰς κώμην Σαμαρειτῶν,</td><td>they entered into *a* village of the Samaritans,</td></tr>
+<tr><td>ὥστε ἑτοιμάσαι αὐτῷ·</td><td>so as to prepare *for* him</td></tr>
+</table>
+<hr>
+καὶ οὐκ ἐδέξαντο αὐτόν, ὅτι τὸ πρόσωπον αὐτοῦ ἦν πορευόμενον εἰς Ἱερουσαλήμ.<hr><b>luke 9:53</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ οὐκ ἐδέξαντο αὐτόν,</td><td>and *they* did not receive *him*</td></tr>
+<tr><td>ὅτι τὸ πρόσωπον αὐτοῦ</td><td>because *the* face *of him*</td></tr>
+<tr><td>ἦν πορευόμενον</td><td>he *was* going</td></tr>
+<tr><td>εἰς Ἱερουσαλήμ.</td><td>to *the* Jerusalem</td></tr>
+</table>
+<hr>
+ἰδόντες δὲ οἱ μαθηταὶ Ἰάκωβος καὶ Ἰωάνης εἶπαν Κύριε, θέλεις εἴπωμεν πῦρ καταβῆναι ἀπὸ τοῦ οὐρανοῦ καὶ ἀναλῶσαι αὐτούς;<hr><b>luke 9:54</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἰδόντες οἱ μαθηταὶ</td><td>and *when* the disciples</td></tr>
+<tr><td>Ἰάκωβος καὶ Ἰωάνης</td><td>James and *John*</td></tr>
+<tr><td>εἶπαν Κύριε, θέλεις εἴπωμεν πῦρ</td><td>they said *Lord*, do you want *us* to say *let* fire</td></tr>
+<tr><td>καταβῆναι ἀπὸ τοῦ οὐρανοῦ</td><td>to come down *from* heaven</td></tr>
+<tr><td>καὶ ἀναλῶσαι αὐτούς;</td><td>and *to* consume *them*</td></tr>
+</table>
+<hr>
+στραφεὶς δὲ ἐπετίμησεν αὐτοῖς.<hr><b>luke 9:55</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ στραφεὶς ἐπετίμησεν αὐτοῖς.</td><td>but *he*, having turned, rebuked them</td></tr>
+</table>
+<hr>
+καὶ ἐπορεύθησαν εἰς ἑτέραν κώμην.<hr><b>luke 9:56</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐπορεύθησαν εἰς ἑτέραν κώμην.</td><td>and they went *to* another village</td></tr>
+</table>
+<hr>
+Καὶ πορευομένων αὐτῶν ἐν τῇ ὁδῷ εἶπέν τις πρὸς αὐτόν Ἀκολουθήσω σοι ὅπου ἐὰν ἀπέρχῃ.<hr><b>luke 9:57</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ πορευομένων</td><td>And *while they were* going</td></tr>
+<tr><td>αὐτῶν ἐν τῇ ὁδῷ</td><td>of them *on the* road</td></tr>
+<tr><td>εἶπέν τις πρὸς αὐτόν</td><td>said someone *to* him</td></tr>
+<tr><td>Ἀκολουθήσω σοι ἐὰν ὅπου ἀπέρχῃ.</td><td>I will follow you *wherever* *you* go</td></tr>
+</table>
+<hr>
+καὶ εἶπεν αὐτῷ ὁ Ἰησοῦς Αἱ ἀλώπεκες φωλεοὺς ἔχουσιν καὶ τὰ πετεινὰ τοῦ οὐρανοῦ κατασκηνώσεις, ὁ δὲ Υἱὸς τοῦ ἀνθρώπου οὐκ ἔχει ποῦ τὴν κεφαλὴν κλίνῃ.<hr><b>luke 9:58</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ εἶπεν αὐτῷ ὁ Ἰησοῦς</td><td>and *to him* said *the* Jesus</td></tr>
+<tr><td>Αἱ ἀλώπεκες φωλεοὺς ἔχουσιν</td><td>The foxes *have* dens</td></tr>
+<tr><td>καὶ τὰ πετεινὰ τοῦ οὐρανοῦ</td><td>and *the* birds *of* the sky</td></tr>
+<tr><td>κατασκηνώσεις, δὲ</td><td>nests, however</td></tr>
+<tr><td>ὁ Υἱὸς τοῦ ἀνθρώπου</td><td>the Son *of* Man</td></tr>
+<tr><td>οὐκ ἔχει</td><td>does *not* have</td></tr>
+<tr><td>ποῦ τὴν κεφαλὴν κλίνῃ.</td><td>where *to* *his* head *to lay down*</td></tr>
+</table>
+<hr>
+Εἶπεν δὲ πρὸς ἕτερον Ἀκολούθει μοι.<hr><b>luke 9:59</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Εἶπεν πρὸς ἕτερον</td><td>and he said to *another*</td></tr>
+<tr><td>Ἀκολούθει μοι.</td><td>Follow *me*</td></tr>
+<tr><td>δὲ ὁ εἶπεν</td><td>But *he* said</td></tr>
+<tr><td>Ἐπίτρεψόν μοι πρῶτον ἀπελθόντι</td><td>Allow me first *to go*</td></tr>
+<tr><td>θάψαι τὸν πατέρα μου.</td><td>to bury *the* father *of* me</td></tr>
+</table>
+<hr>
+εἶπεν δὲ αὐτῷ Ἄφες τοὺς νεκροὺς θάψαι τοὺς ἑαυτῶν νεκρούς, σὺ δὲ ἀπελθὼν διάγγελλε τὴν βασιλείαν τοῦ Θεοῦ.<hr><b>luke 9:60</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἶπεν αὐτῷ</td><td>but he *has* said to him</td></tr>
+<tr><td>Ἄφες τοὺς νεκροὺς</td><td>allow the dead</td></tr>
+<tr><td>θάψαι τοὺς ἑαυτῶν νεκρούς,</td><td>to bury *their* dead</td></tr>
+<tr><td>δὲ σὺ ἀπελθὼν διάγγελλε</td><td>but *you* go *and* proclaim</td></tr>
+<tr><td>τὴν βασιλείαν τοῦ Θεοῦ.</td><td>the kingdom *of* God</td></tr>
+</table>
+<hr>
+Εἶπεν δὲ καὶ ἕτερος Ἀκολουθήσω σοι, Κύριε· πρῶτον δὲ ἐπίτρεψόν μοι ἀποτάξασθαι τοῖς εἰς τὸν οἶκόν μου.<hr><b>luke 9:61</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Εἶπεν καὶ ἕτερος</td><td>and *another/other* said</td></tr>
+<tr><td>Ἀκολουθήσω σοι, Κύριε·</td><td>I will follow you, Lord*.*</td></tr>
+<tr><td>δὲ πρῶτον</td><td>but *first*</td></tr>
+<tr><td>ἐπίτρεψόν μοι ἀποτάξασθαι τοῖς</td><td>permit me *to bid farewell* *to the*</td></tr>
+<tr><td>εἰς τὸν οἶκόν μου.</td><td>to *the* house *of* me</td></tr>
+</table>
+<hr>
+εἶπεν δὲ πρὸς αὐτὸν ὁ Ἰησοῦς Οὐδεὶς ἐπιβαλὼν τὴν χεῖρα ἐπ’ ἄροτρον καὶ βλέπων εἰς τὰ ὀπίσω εὔθετός ἐστιν τῇ βασιλείᾳ τοῦ Θεοῦ.<hr><b>luke 9:62</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>and *implicit words*</td></tr>
+<tr><td>εἶπεν πρὸς αὐτὸν ὁ Ἰησοῦς</td><td>Jesus said *to* him</td></tr>
+<tr><td>Οὐδεὶς</td><td>No one</td></tr>
+<tr><td>ἐπιβαλὼν τὴν χεῖρα ἐπ’ ἄροτρον</td><td>putting *the* hand upon *the* plow</td></tr>
+<tr><td>καὶ βλέπων εἰς τὰ ὀπίσω</td><td>and looking *back*</td></tr>
+<tr><td>εὔθετός ἐστιν</td><td>fit *for*</td></tr>
+<tr><td>τῇ βασιλείᾳ τοῦ Θεοῦ.</td><td>the kingdom *of* God</td></tr>
+</table>
+<div class="chapter-links">
+<a href="8.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="selected-chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="10.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>

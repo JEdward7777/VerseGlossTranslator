@@ -431,6 +431,7 @@ if __name__ == "__main__":
     _reference_bible_usfx_zip = ""
     _output_suffix = ""
     _bcv_template = None
+    _cache_saver = None
 
 
     # output_language = "Farsi"
@@ -489,11 +490,14 @@ if __name__ == "__main__":
     # _input_data = "./data/auto_01-matthew.json"
     # _book_name = "Matthew"
 
-    _output_language = "English"
-    _input_data = "./data/auto_02-mark.json"
-    _book_name = "Mark"
+    # _output_language = "English"
+    # _input_data = "./data/auto_02-mark.json"
+    # _book_name = "Mark"
+    # _cache_saver = "ChatGPT_cache.txt"
 
-    _cache_saver = "ChatGPT_cache.txt"
+    _output_language = "English"
+    _input_data = "./data/auto_03-luke.json"
+    _book_name = "Mark"
 
     do_it( input_data=_input_data, book_name=_book_name, output_language=_output_language, output_suffix=_output_suffix,
         reference_bible_usfx_zip=_reference_bible_usfx_zip, bcv_template=_bcv_template, exclude_source_gloss=_exclude_source_gloss,

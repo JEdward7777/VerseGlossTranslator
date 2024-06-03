@@ -1,0 +1,730 @@
+<!DOCTYPE html><html><head><title>luke 23</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="../matthew/1.html" class="">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../matthew/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../matthew/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../matthew/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../matthew/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../matthew/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../matthew/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../matthew/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../matthew/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../matthew/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../matthew/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../matthew/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../matthew/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../matthew/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../matthew/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../matthew/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../matthew/16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="../matthew/17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="../matthew/18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="../matthew/19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="../matthew/20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="../matthew/21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="../matthew/22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="../matthew/23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="../matthew/24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="../matthew/25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="../matthew/26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="../matthew/27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="../matthew/28.html" class="">28</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../mark/1.html" class="">mark</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../mark/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../mark/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../mark/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../mark/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../mark/5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="../mark/6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="../mark/7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="../mark/8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="../mark/9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="../mark/10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="../mark/11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="../mark/12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="../mark/13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="../mark/14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="../mark/15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="../mark/16.html" class="">16</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">luke</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="23.html" class="current-book-chapter">23</a></li>
+   <li class="submenu_item"><a href="24.html" class="">24</a></li>
+  </ul></li>
+ <li class="menu_item"><a href="../1peter/1.html" class="">1peter</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="../1peter/1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="../1peter/2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="../1peter/3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="../1peter/4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="../1peter/5.html" class="">5</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="22.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="selected-chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="24.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Καὶ ἀναστὰν ἅπαν τὸ πλῆθος αὐτῶν ἤγαγον αὐτὸν ἐπὶ τὸν Πειλᾶτον.<hr><b>luke 23:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ ἀναστὰν</td><td>And *having arisen*</td></tr>
+<tr><td>ἅπαν τὸ πλῆθος αὐτῶν</td><td>the *whole* multitude of *them*</td></tr>
+<tr><td>ἤγαγον αὐτὸν ἐπὶ τὸν Πειλᾶτον.</td><td>they led him *to* Pilate</td></tr>
+</table>
+<hr>
+ἤρξαντο δὲ κατηγορεῖν αὐτοῦ λέγοντες Τοῦτον εὕραμεν διαστρέφοντα τὸ ἔθνος ἡμῶν καὶ κωλύοντα φόρους Καίσαρι διδόναι, καὶ λέγοντα ἑαυτὸν Χριστὸν βασιλέα εἶναι.<hr><b>luke 23:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἤρξαντο κατηγορεῖν αὐτοῦ</td><td>but they *began to* accuse him</td></tr>
+<tr><td>λέγοντες εὕραμεν Τοῦτον</td><td>saying *we* found *this man*</td></tr>
+<tr><td>διαστρέφοντα τὸ ἔθνος ἡμῶν</td><td>corrupting *our* nation</td></tr>
+<tr><td>καὶ κωλύοντα φόρους Καίσαρι διδόναι,</td><td>and *preventing* taxes to *Caesar* to give</td></tr>
+<tr><td>καὶ λέγοντα</td><td>and *saying*</td></tr>
+<tr><td>ἑαυτὸν Χριστὸν βασιλέα εἶναι.</td><td>[he] *himself* [to be] Christ [a] king</td></tr>
+</table>
+<hr>
+ὁ δὲ Πειλᾶτος ἠρώτησεν αὐτὸν λέγων Σὺ εἶ ὁ Βασιλεὺς τῶν Ἰουδαίων;<hr><b>luke 23:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ Πειλᾶτος</td><td>and *the* Pilate</td></tr>
+<tr><td>ἠρώτησεν αὐτὸν λέγων Σὺ εἶ</td><td>he asked him saying *Are* you</td></tr>
+<tr><td>ὁ Βασιλεὺς τῶν Ἰουδαίων;</td><td>the King of the *Jews*</td></tr>
+<tr><td>δὲ ὁ ἀποκριθεὶς αὐτῷ ἔφη</td><td>but the answering him he said</td></tr>
+<tr><td>Σὺ λέγεις.</td><td>You *say*</td></tr>
+</table>
+<hr>
+ὁ δὲ Πειλᾶτος εἶπεν πρὸς τοὺς ἀρχιερεῖς καὶ τοὺς ὄχλους Οὐδὲν εὑρίσκω αἴτιον ἐν τῷ ἀνθρώπῳ τούτῳ.<hr><b>luke 23:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ Πειλᾶτος</td><td>*And* Pilate</td></tr>
+<tr><td>εἶπεν πρὸς</td><td>said *to*</td></tr>
+<tr><td>τοὺς ἀρχιερεῖς καὶ τοὺς ὄχλους</td><td>the chief priests and the crowds</td></tr>
+<tr><td>Οὐδὲν εὑρίσκω αἴτιον</td><td>I find no *cause*</td></tr>
+<tr><td>ἐν τῷ ἀνθρώπῳ τούτῳ.</td><td>in *the* man this</td></tr>
+</table>
+<hr>
+οἱ δὲ ἐπίσχυον λέγοντες ὅτι Ἀνασείει τὸν λαὸν, διδάσκων καθ’ ὅλης τῆς Ἰουδαίας, καὶ ἀρξάμενος ἀπὸ τῆς Γαλιλαίας ἕως ὧδε.<hr><b>luke 23:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ ἐπίσχυον λέγοντες</td><td>but they *kept insisting*, saying</td></tr>
+<tr><td>ὅτι Ἀνασείει τὸν λαὸν,</td><td>because he-stirs-up the people,</td></tr>
+<tr><td>διδάσκων καθ’ ὅλης τῆς Ἰουδαίας,</td><td>teaching throughout *all* *of* Judea</td></tr>
+<tr><td>καὶ ἀρξάμενος ἀπὸ τῆς Γαλιλαίας</td><td>and having begun from *the region of* Galilee</td></tr>
+<tr><td>ἕως ὧδε.</td><td>up *to* here</td></tr>
+</table>
+<hr>
+Πειλᾶτος δὲ ἀκούσας ἐπηρώτησεν εἰ ὁ ἄνθρωπος Γαλιλαῖός ἐστιν,<hr><b>luke 23:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Πειλᾶτος ἀκούσας ἐπηρώτησεν</td><td>but Pilate having heard *he* asked</td></tr>
+<tr><td>εἰ ὁ ἄνθρωπος Γαλιλαῖός ἐστιν,</td><td>if the man *is* Galilean</td></tr>
+</table>
+<hr>
+καὶ ἐπιγνοὺς ὅτι ἐκ τῆς ἐξουσίας Ἠρῴδου ἐστὶν, ἀνέπεμψεν αὐτὸν πρὸς Ἠρῴδην, ὄντα καὶ αὐτὸν ἐν Ἱεροσολύμοις ἐν ταύταις ταῖς ἡμέραις.<hr><b>luke 23:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐπιγνοὺς ὅτι</td><td>and having known that</td></tr>
+<tr><td>ἐκ τῆς ἐξουσίας Ἠρῴδου</td><td>under *the* authority *of* Herod</td></tr>
+<tr><td>ἐστὶν, ἀνέπεμψεν αὐτὸν πρὸς</td><td>is, sent him *back* to</td></tr>
+<tr><td>Ἠρῴδην, ὄντα καὶ αὐτὸν</td><td>Herod, *being* also himself</td></tr>
+<tr><td>ἐν Ἱεροσολύμοις</td><td>in *the city of* Jerusalem</td></tr>
+<tr><td>ἐν ταύταις ταῖς ἡμέραις.</td><td>in *these* days</td></tr>
+</table>
+<hr>
+ὁ δὲ Ἠρῴδης ἰδὼν τὸν Ἰησοῦν ἐχάρη λίαν· ἦν γὰρ ἐξ ἱκανῶν χρόνων θέλων ἰδεῖν αὐτὸν διὰ τὸ ἀκούειν περὶ αὐτοῦ, καὶ ἤλπιζέν τι σημεῖον ἰδεῖν ὑπ’ αὐτοῦ γινόμενον.<hr><b>luke 23:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ Ἠρῴδης</td><td>but *the* Herod</td></tr>
+<tr><td>ἰδὼν τὸν Ἰησοῦν</td><td>seeing *the* Jesus</td></tr>
+<tr><td>ἐχάρη λίαν· γὰρ ἦν θέλων</td><td>he-was *greatly* glad *for* he was wishing</td></tr>
+<tr><td>ἐξ ἱκανῶν χρόνων</td><td>for *many* years</td></tr>
+<tr><td>ἰδεῖν αὐτὸν</td><td>to see *him*</td></tr>
+<tr><td>διὰ τὸ ἀκούειν περὶ αὐτοῦ,</td><td>because *of* hearing *about* him</td></tr>
+<tr><td>καὶ ἤλπιζέν ἰδεῖν</td><td>and *he* hoped to see</td></tr>
+<tr><td>τι σημεῖον ὑπ’ αὐτοῦ γινόμενον.</td><td>some sign *by* him *being done*</td></tr>
+</table>
+<hr>
+ἐπηρώτα δὲ αὐτὸν ἐν λόγοις ἱκανοῖς·<hr><b>luke 23:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐπηρώτα</td><td>but he *was* asking</td></tr>
+<tr><td>αὐτὸν ἐν λόγοις ἱκανοῖς·</td><td>him *in* sufficient words</td></tr>
+<tr><td>δὲ αὐτὸς οὐδὲν ἀπεκρίνατο αὐτῷ.</td><td>but *he* answered nothing to *him*</td></tr>
+</table>
+<hr>
+εἱστήκεισαν δὲ οἱ ἀρχιερεῖς καὶ οἱ γραμματεῖς εὐτόνως κατηγοροῦντες αὐτοῦ.<hr><b>luke 23:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἱστήκεισαν</td><td>but *they* *were* standing</td></tr>
+<tr><td>οἱ ἀρχιερεῖς καὶ οἱ γραμματεῖς</td><td>the chief priests and the scribes</td></tr>
+<tr><td>εὐτόνως κατηγοροῦντες αὐτοῦ.</td><td>vigorously accusing *him*</td></tr>
+</table>
+<hr>
+ἐξουθενήσας δὲ αὐτὸν ὁ Ἠρῴδης σὺν τοῖς στρατεύμασιν αὐτοῦ καὶ ἐμπαίξας, περιβαλὼν ἐσθῆτα λαμπρὰν ἀνέπεμψεν αὐτὸν τῷ Πειλάτῳ.<hr><b>luke 23:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ Ἠρῴδης</td><td>but *the* Herod</td></tr>
+<tr><td>ἐξουθενήσας αὐτὸν</td><td>having-despised *him*</td></tr>
+<tr><td>σὺν τοῖς στρατεύμασιν αὐτοῦ</td><td>with *his* soldiers</td></tr>
+<tr><td>καὶ ἐμπαίξας, περιβαλὼν ἐσθῆτα λαμπρὰν</td><td>and having mocked, *clothed in* a splendid robe</td></tr>
+<tr><td>ἀνέπεμψεν αὐτὸν τῷ Πειλάτῳ.</td><td>sent him back *to* Pilate</td></tr>
+</table>
+<hr>
+ἐγένοντο δὲ φίλοι ὅ τε Ἠρῴδης καὶ ὁ Πειλᾶτος ἐν αὐτῇ τῇ ἡμέρᾳ μετ’ ἀλλήλων· προϋπῆρχον γὰρ ἐν ἔχθρᾳ ὄντες πρὸς αὑτούς.<hr><b>luke 23:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐγένοντο φίλοι</td><td>but they became friends</td></tr>
+<tr><td>τε ὅ Ἠρῴδης καὶ ὁ Πειλᾶτος</td><td>both *the* Herod and *the* Pilate</td></tr>
+<tr><td>ἐν αὐτῇ τῇ ἡμέρᾳ</td><td>on *that* day</td></tr>
+<tr><td>μετ’ ἀλλήλων·</td><td>with *each* *other*</td></tr>
+<tr><td>γὰρ προϋπῆρχον</td><td>for *they* had been</td></tr>
+<tr><td>ἐν ἔχθρᾳ ὄντες πρὸς αὑτούς.</td><td>being in *a state of* enmity towards *each other*</td></tr>
+</table>
+<hr>
+Πειλᾶτος δὲ συνκαλεσάμενος τοὺς ἀρχιερεῖς καὶ τοὺς ἄρχοντας καὶ τὸν λαὸν εἶπεν πρὸς αὐτούς Προσηνέγκατέ μοι τὸν ἄνθρωπον τοῦτον ὡς ἀποστρέφοντα τὸν λαόν, καὶ ἰδοὺ ἐγὼ ἐνώπιον ὑμῶν ἀνακρίνας οὐθὲν εὗρον ἐν τῷ ἀνθρώπῳ τούτῳ αἴτιον ὧν κατηγορεῖτε κατ’ αὐτοῦ. ἀλλ’ οὐδὲ Ἠρῴδης· ἀνέπεμψεν γὰρ αὐτὸν πρὸς ἡμᾶς·<hr><b>luke 23:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Πειλᾶτος συνκαλεσάμενος</td><td>but Pilate *having* summoned</td></tr>
+<tr><td>τοὺς ἀρχιερεῖς καὶ τοὺς ἄρχοντας καὶ τὸν λαὸν</td><td>the priests and *the* rulers and the people</td></tr>
+</table>
+<hr><b>luke 23:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>εἶπεν πρὸς αὐτούς</td><td>said *to* them</td></tr>
+<tr><td>Προσηνέγκατέ μοι τὸν ἄνθρωπον τοῦτον</td><td>You brought *to me* this man</td></tr>
+<tr><td>ὡς ἀποστρέφοντα τὸν λαόν,</td><td>as turning away *the* people</td></tr>
+<tr><td>καὶ ἰδοὺ</td><td>and *behold*</td></tr>
+<tr><td>ἐγὼ ἐνώπιον ὑμῶν ἀνακρίνας</td><td>I *in front of* you *having examined*</td></tr>
+<tr><td>οὐθὲν εὗρον</td><td>nothing *have* found</td></tr>
+<tr><td>ἐν τῷ ἀνθρώπῳ τούτῳ</td><td>in *the* man this</td></tr>
+<tr><td>αἴτιον ὧν κατηγορεῖτε κατ’ αὐτοῦ.</td><td>cause *of* which you-accuse *against* him</td></tr>
+</table>
+<hr><b>luke 23:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἀλλ’ οὐδὲ Ἠρῴδης·</td><td>but *neither does* Herod</td></tr>
+<tr><td>γὰρ ἀνέπεμψεν αὐτὸν πρὸς ἡμᾶς·</td><td>for he sent him back *to* us</td></tr>
+<tr><td>καὶ ἰδοὺ οὐδὲν ἄξιον θανάτου</td><td>and *behold* *there is* nothing worthy of death</td></tr>
+<tr><td>ἐστὶν πεπραγμένον</td><td>is *having been* done</td></tr>
+<tr><td>αὐτῷ·</td><td>him</td></tr>
+</table>
+<hr>
+παιδεύσας οὖν αὐτὸν ἀπολύσω.<hr><b>luke 23:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν παιδεύσας αὐτὸν ἀπολύσω.</td><td>therefore having-beaten him I-will-release *him*</td></tr>
+</table>
+<hr>
+ἀνέκραγον δὲ πανπληθεὶ λέγοντες Αἶρε τοῦτον, ἀπόλυσον δὲ ἡμῖν τὸν Βαραββᾶν· ὅστις ἦν διὰ στάσιν τινὰ γενομένην ἐν τῇ πόλει καὶ φόνον βληθεὶς ἐν τῇ φυλακῇ.<hr><b>luke 23:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἀνέκραγον</td><td>but they cried out</td></tr>
+<tr><td>πανπληθεὶ λέγοντες Αἶρε τοῦτον,</td><td>the whole multitude *started* saying, *'Take away* this *man!*'</td></tr>
+<tr><td>δὲ ἀπόλυσον ἡμῖν τὸν Βαραββᾶν·</td><td>but release *to us* the Barabbas</td></tr>
+</table>
+<hr><b>luke 23:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅστις ἦν βληθεὶς</td><td>who *had* been thrown</td></tr>
+<tr><td>διὰ στάσιν τινὰ</td><td>because of *a* certain uprising</td></tr>
+<tr><td>γενομένην ἐν τῇ πόλει</td><td>happened *in* the city</td></tr>
+<tr><td>καὶ φόνον ἐν τῇ φυλακῇ.</td><td>and murder *in* the prison</td></tr>
+</table>
+<hr>
+πάλιν δὲ ὁ Πειλᾶτος προσεφώνησεν αὐτοῖς, θέλων ἀπολῦσαι τὸν Ἰησοῦν.<hr><b>luke 23:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ πάλιν ὁ Πειλᾶτος</td><td>but *again* Pilate</td></tr>
+<tr><td>προσεφώνησεν αὐτοῖς,</td><td>addressed *them*</td></tr>
+<tr><td>θέλων ἀπολῦσαι τὸν Ἰησοῦν.</td><td>wishing to release *the* Jesus</td></tr>
+</table>
+<hr>
+οἱ δὲ ἐπεφώνουν λέγοντες Σταύρου σταύρου αὐτόν.<hr><b>luke 23:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ ἐπεφώνουν</td><td>but *the ones who* shouted</td></tr>
+<tr><td>λέγοντες Σταύρου σταύρου αὐτόν.</td><td>saying Crucify crucify *him*</td></tr>
+</table>
+<hr>
+ὁ δὲ τρίτον εἶπεν πρὸς αὐτούς Τί γὰρ κακὸν ἐποίησεν οὗτος; οὐδὲν αἴτιον θανάτου εὗρον ἐν αὐτῷ· παιδεύσας οὖν αὐτὸν ἀπολύσω.<hr><b>luke 23:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>*but*</td></tr>
+<tr><td>ὁ τρίτον εἶπεν πρὸς αὐτούς</td><td>the *one* third said to them</td></tr>
+<tr><td>γὰρ Τί κακὸν ἐποίησεν οὗτος;</td><td>*For* what *evil* has this *man* done?</td></tr>
+<tr><td>οὐδὲν αἴτιον θανάτου</td><td>nothing *worthy of* death</td></tr>
+<tr><td>εὗρον ἐν αὐτῷ·</td><td>I found *in* him</td></tr>
+<tr><td>οὖν παιδεύσας αὐτὸν ἀπολύσω.</td><td>therefore having disciplined *him*, I will release *him*.</td></tr>
+</table>
+<hr>
+οἱ δὲ ἐπέκειντο φωναῖς μεγάλαις αἰτούμενοι αὐτὸν σταυρωθῆναι, καὶ κατίσχυον αἱ φωναὶ αὐτῶν.<hr><b>luke 23:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ ἐπέκειντο φωναῖς μεγάλαις</td><td>but *the ones* were pressing with loud voices</td></tr>
+<tr><td>αἰτούμενοι αὐτὸν σταυρωθῆναι,</td><td>asking *for* him *to be* crucified</td></tr>
+<tr><td>καὶ κατίσχυον αἱ φωναὶ αὐτῶν.</td><td>and *prevailed* their voices</td></tr>
+</table>
+<hr>
+καὶ Πειλᾶτος ἐπέκρινεν γενέσθαι τὸ αἴτημα αὐτῶν·<hr><b>luke 23:24</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ Πειλᾶτος ἐπέκρινεν</td><td>and Pilate *decided*</td></tr>
+<tr><td>γενέσθαι τὸ αἴτημα αὐτῶν·</td><td>to become the request *of them*</td></tr>
+</table>
+<hr>
+ἀπέλυσεν δὲ τὸν διὰ στάσιν καὶ φόνον βεβλημένον εἰς φυλακὴν, ὃν ᾐτοῦντο, τὸν δὲ Ἰησοῦν παρέδωκεν τῷ θελήματι αὐτῶν.<hr><b>luke 23:25</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἀπέλυσεν τὸν</td><td>but *he* released the</td></tr>
+<tr><td>διὰ στάσιν καὶ φόνον</td><td>because of rebellion and murder</td></tr>
+<tr><td>βεβλημένον εἰς φυλακὴν,</td><td>thrown into prison</td></tr>
+<tr><td>ὃν ᾐτοῦντο,</td><td>whom they *had requested*</td></tr>
+<tr><td>δὲ τὸν Ἰησοῦν</td><td>but *the* Jesus</td></tr>
+<tr><td>παρέδωκεν τῷ θελήματι αὐτῶν.</td><td>he handed over *to* their will</td></tr>
+</table>
+<hr>
+Καὶ ὡς ἀπήγαγον αὐτόν, ἐπιλαβόμενοι Σίμωνά τινα Κυρηναῖον ἐρχόμενον ἀπ’ ἀγροῦ ἐπέθηκαν αὐτῷ τὸν σταυρὸν φέρειν ὄπισθεν τοῦ Ἰησοῦ.<hr><b>luke 23:26</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ ὡς ἀπήγαγον αὐτόν,</td><td>And as they led *him* away,</td></tr>
+<tr><td>ἐπιλαβόμενοι Σίμωνά τινα Κυρηναῖον</td><td>seizing *a certain* Simon *of* Cyrene</td></tr>
+<tr><td>ἐρχόμενον ἀπ’ ἀγροῦ</td><td>coming *from* *the* field</td></tr>
+<tr><td>ἐπέθηκαν αὐτῷ τὸν σταυρὸν</td><td>they *put* on him the cross</td></tr>
+<tr><td>φέρειν ὄπισθεν τοῦ Ἰησοῦ.</td><td>to carry behind *the* Jesus</td></tr>
+</table>
+<hr>
+Ἠκολούθει δὲ αὐτῷ πολὺ πλῆθος τοῦ λαοῦ καὶ γυναικῶν αἳ ἐκόπτοντο καὶ ἐθρήνουν αὐτόν.<hr><b>luke 23:27</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἠκολούθει αὐτῷ</td><td>but *he* followed *him*</td></tr>
+<tr><td>πολὺ πλῆθος τοῦ λαοῦ</td><td>a great *multitude* of the people</td></tr>
+<tr><td>καὶ γυναικῶν</td><td>and *of* women</td></tr>
+<tr><td>αἳ ἐκόπτοντο καὶ ἐθρήνουν</td><td>who *were mourning* and lamenting</td></tr>
+<tr><td>αὐτόν.</td><td>him</td></tr>
+</table>
+<hr>
+στραφεὶς δὲ πρὸς αὐτὰς Ἰησοῦς εἶπεν Θυγατέρες Ἱερουσαλήμ, μὴ κλαίετε ἐπ’ ἐμέ·<hr><b>luke 23:28</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ στραφεὶς πρὸς αὐτὰς</td><td>but *having turned* to them</td></tr>
+<tr><td>Ἰησοῦς εἶπεν Θυγατέρες Ἱερουσαλήμ,</td><td>Jesus said *to* daughters *of* Jerusalem</td></tr>
+<tr><td>μὴ κλαίετε ἐπ’ ἐμέ·</td><td>do not weep *for* me</td></tr>
+<tr><td>πλὴν ἐφ’ ἑαυτὰς κλαίετε</td><td>but *for* yourselves *weep*</td></tr>
+<tr><td>καὶ ἐπὶ τὰ τέκνα ὑμῶν,</td><td>and for *the* children *of you*</td></tr>
+</table>
+<hr>
+πλὴν ἐφ’ ἑαυτὰς κλαίετε καὶ ἐπὶ τὰ τέκνα ὑμῶν, ὅτι ἰδοὺ ἔρχονται ἡμέραι ἐν αἷς ἐροῦσιν Μακάριαι αἱ στεῖραι, καὶ αἱ κοιλίαι αἳ οὐκ ἐγέννησαν, καὶ μαστοὶ οἳ οὐκ ἔθρεψαν.<hr><b>luke 23:29</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅτι ἰδοὺ ἔρχονται</td><td>because behold *there are* coming</td></tr>
+<tr><td>ἡμέραι ἐν αἷς ἐροῦσιν</td><td>*days* in *which* they-will-say</td></tr>
+<tr><td>Μακάριαι αἱ στεῖραι,</td><td>Blessed *are* the barren,</td></tr>
+<tr><td>καὶ αἱ</td><td>and the</td></tr>
+<tr><td>κοιλίαι αἳ οὐκ ἐγέννησαν,</td><td>wombs which/that *did not* bear</td></tr>
+<tr><td>καὶ μαστοὶ οἳ οὐκ ἔθρεψαν.</td><td>and breasts which *have not nourished*</td></tr>
+</table>
+<hr>
+τότε ἄρξονται λέγειν τοῖς ὄρεσιν Πέσατε ἐφ’ ἡμᾶς, καὶ τοῖς βουνοῖς Καλύψατε ἡμᾶς·<hr><b>luke 23:30</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>τότε ἄρξονται λέγειν τοῖς ὄρεσιν</td><td>then they-will-begin to-say *to* the-mountains</td></tr>
+<tr><td>Πέσατε ἐφ’ ἡμᾶς,</td><td>Fall *upon* us</td></tr>
+<tr><td>καὶ τοῖς βουνοῖς Καλύψατε ἡμᾶς·</td><td>and *to the* hills Cover us</td></tr>
+</table>
+<hr>
+ὅτι εἰ ἐν ὑγρῷ ξύλῳ ταῦτα ποιοῦσιν, ἐν τῷ ξηρῷ τί γένηται;<hr><b>luke 23:31</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅτι εἰ ἐν ὑγρῷ ξύλῳ</td><td>because if *these things happen* in *the* green wood</td></tr>
+<tr><td>ταῦτα ποιοῦσιν, ἐν τῷ ξηρῷ</td><td>these things *they do*, in the dry *wood*</td></tr>
+<tr><td>τί γένηται;</td><td>what *will* happen</td></tr>
+</table>
+<hr>
+Ἤγοντο δὲ καὶ ἕτεροι κακοῦργοι δύο σὺν αὐτῷ ἀναιρεθῆναι.<hr><b>luke 23:32</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἤγοντο</td><td>*but/and* they were being led</td></tr>
+<tr><td>καὶ ἕτεροι κακοῦργοι δύο</td><td>also two other malefactors</td></tr>
+<tr><td>σὺν αὐτῷ</td><td>with*him*</td></tr>
+<tr><td>ἀναιρεθῆναι.</td><td>to be executed</td></tr>
+</table>
+<hr>
+Καὶ ὅτε ἦλθον ἐπὶ τὸν τόπον τὸν καλούμενον Κρανίον, ἐκεῖ ἐσταύρωσαν αὐτὸν καὶ τοὺς κακούργους, ὃν μὲν ἐκ δεξιῶν ὃν δὲ ἐξ ἀριστερῶν.<hr><b>luke 23:33</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ ὅτε</td><td>And *when*</td></tr>
+<tr><td>ἦλθον ἐπὶ τὸν τόπον</td><td>they *came* to the place</td></tr>
+<tr><td>τὸν καλούμενον Κρανίον,</td><td>called *the* Skull,</td></tr>
+<tr><td>ἐκεῖ ἐσταύρωσαν</td><td>there *they* crucified</td></tr>
+<tr><td>αὐτὸν καὶ τοὺς κακούργους,</td><td>him and the criminals,</td></tr>
+<tr><td>μὲν ὃν ἐκ δεξιῶν</td><td>on *the* right</td></tr>
+<tr><td>δὲ ὃν ἐξ ἀριστερῶν.</td><td>but *the one* on *the* left</td></tr>
+</table>
+<hr>
+ὁ δὲ Ἰησοῦς ἔλεγεν Πάτερ, ἄφες αὐτοῖς· οὐ γὰρ οἴδασιν τί ποιοῦσιν.<hr><b>luke 23:34</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ Ἰησοῦς ἔλεγεν</td><td>But *the* Jesus *was saying*</td></tr>
+<tr><td>Πάτερ, ἄφες αὐτοῖς·</td><td>Father, forgive *them*;</td></tr>
+<tr><td>γὰρ οὐ οἴδασιν τί ποιοῦσιν.</td><td>for they do *not* know *what* they are doing</td></tr>
+<tr><td>δὲ διαμεριζόμενοι τὰ ἱμάτια αὐτοῦ</td><td>but dividing *the* garments *of him*</td></tr>
+<tr><td>ἔβαλον κλήρους.</td><td>they cast *lots*</td></tr>
+</table>
+<hr>
+καὶ εἱστήκει ὁ λαὸς θεωρῶν.<hr><b>luke 23:35</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ εἱστήκει ὁ λαὸς θεωρῶν.</td><td>and *there stood* the people watching</td></tr>
+<tr><td>δὲ ἐξεμυκτήριζον καὶ οἱ ἄρχοντες</td><td>but *they* jeered and the rulers</td></tr>
+<tr><td>λέγοντες Ἄλλους ἔσωσεν,</td><td>saying He saved *others*</td></tr>
+<tr><td>σωσάτω ἑαυτόν,</td><td>let him save *himself*</td></tr>
+<tr><td>εἰ οὗτός ἐστιν</td><td>*if* this *one* is</td></tr>
+<tr><td>ὁ Χριστὸς τοῦ Θεοῦ</td><td>the Christ *of* God</td></tr>
+<tr><td>ὁ ἐκλεκτός.</td><td>the chosen *one*</td></tr>
+</table>
+<hr>
+ἐνέπαιξαν δὲ αὐτῷ καὶ οἱ στρατιῶται προσερχόμενοι, ὄξος προσφέροντες αὐτῷ καὶ λέγοντες Εἰ σὺ εἶ ὁ Βασιλεὺς τῶν Ἰουδαίων, σῶσον σεαυτόν.<hr><b>luke 23:36</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐνέπαιξαν</td><td>and *they* mocked</td></tr>
+<tr><td>αὐτῷ καὶ οἱ στρατιῶται</td><td>him and the soldiers</td></tr>
+<tr><td>προσερχόμενοι, ὄξος προσφέροντες αὐτῷ</td><td>coming, offering *him* vinegar</td></tr>
+</table>
+<hr><b>luke 23:37</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ λέγοντες Εἰ σὺ εἶ</td><td>and saying *If you* are</td></tr>
+<tr><td>ὁ Βασιλεὺς τῶν Ἰουδαίων,</td><td>the King of the Jews</td></tr>
+<tr><td>σῶσον σεαυτόν.</td><td>save *yourself*</td></tr>
+</table>
+<hr>
+ἦν δὲ καὶ ἐπιγραφὴ ἐπ’ αὐτῷ Ο ΒΑΣΙΛΕΥΣ ΤΩΝ ΙΟΥΔΑΙΩΝ ΟΥΤΟΣ.<hr><b>luke 23:38</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>ἦν καὶ ἐπιγραφὴ ἐπ’ αὐτῷ</td><td>there was also an *inscription* on him</td></tr>
+<tr><td>Ο ΒΑΣΙΛΕΥΣ ΤΩΝ ΙΟΥΔΑΙΩΝ</td><td>The KING of *the* JEWS</td></tr>
+<tr><td>ΟΥΤΟΣ.</td><td>*This one*</td></tr>
+</table>
+<hr>
+Εἷς δὲ τῶν κρεμασθέντων κακούργων ἐβλασφήμει αὐτόν Οὐχὶ σὺ εἶ ὁ Χριστός; σῶσον σεαυτὸν καὶ ἡμᾶς.<hr><b>luke 23:39</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Εἷς τῶν κρεμασθέντων κακούργων</td><td>But one *of the* criminals hanged</td></tr>
+<tr><td>ἐβλασφήμει αὐτόν Οὐχὶ</td><td>was-blaspheming *him* Not</td></tr>
+<tr><td>σὺ εἶ ὁ Χριστός;</td><td>you are *the* Christ;</td></tr>
+<tr><td>σῶσον σεαυτὸν καὶ ἡμᾶς.</td><td>save yourself and us</td></tr>
+</table>
+<hr>
+ἀποκριθεὶς δὲ ὁ ἕτερος ἐπιτιμῶν αὐτῷ ἔφη Οὐδὲ φοβῇ σὺ τὸν Θεόν, ὅτι ἐν τῷ αὐτῷ κρίματι εἶ; καὶ ἡμεῖς μὲν δικαίως, ἄξια γὰρ ὧν ἐπράξαμεν ἀπολαμβάνομεν· οὗτος δὲ οὐδὲν ἄτοπον ἔπραξεν.<hr><b>luke 23:40</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>ἀποκριθεὶς ὁ ἕτερος ἐπιτιμῶν αὐτῷ ἔφη</td><td>*and* the other answering rebuking him said</td></tr>
+<tr><td>Οὐδὲ φοβῇ σὺ τὸν Θεόν,</td><td>Nor do *you* fear *the* God,</td></tr>
+<tr><td>ὅτι ἐν τῷ αὐτῷ κρίματι</td><td>because in the *same* judgment</td></tr>
+<tr><td>εἶ; καὶ μὲν ἡμεῖς δικαίως,</td><td>you are? and indeed *we* justly,</td></tr>
+</table>
+<hr><b>luke 23:41</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ἄξια ὧν ἐπράξαμεν</td><td>for *things* worthy *of* what we have done</td></tr>
+<tr><td>ἀπολαμβάνομεν· δὲ</td><td>we receive· however</td></tr>
+<tr><td>οὗτος οὐδὲν ἄτοπον ἔπραξεν.</td><td>this *man* nothing *wrong* has done</td></tr>
+</table>
+<hr>
+καὶ ἔλεγεν Ἰησοῦ, μνήσθητί μου ὅταν ἔλθῃς εἰς τὴν βασιλείαν σου.<hr><b>luke 23:42</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἔλεγεν Ἰησοῦ, μνήσθητί μου</td><td>and he was saying to *Jesus*, remember me</td></tr>
+<tr><td>ὅταν ἔλθῃς</td><td>when *you* come</td></tr>
+<tr><td>εἰς τὴν βασιλείαν σου.</td><td>into *the* kingdom *of* you</td></tr>
+</table>
+<hr>
+καὶ εἶπεν αὐτῷ Ἀμήν σοι λέγω, σήμερον μετ’ ἐμοῦ ἔσῃ ἐν τῷ Παραδείσῳ.<hr><b>luke 23:43</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ εἶπεν αὐτῷ</td><td>and he said to *him*</td></tr>
+<tr><td>Ἀμήν σοι λέγω,</td><td>Amen *to you* I *say*</td></tr>
+<tr><td>σήμερον μετ’ ἐμοῦ</td><td>today with *me*</td></tr>
+<tr><td>ἔσῃ ἐν τῷ Παραδείσῳ.</td><td>you will be in *the* Paradise</td></tr>
+</table>
+<hr>
+Καὶ ἦν ἤδη ὡσεὶ ὥρα ἕκτη καὶ σκότος ἐγένετο ἐφ’ ὅλην τὴν γῆν ἕως ὥρας ἐνάτης τοῦ ἡλίου ἐκλιπόντος, ἐσχίσθη δὲ τὸ καταπέτασμα τοῦ ναοῦ μέσον.<hr><b>luke 23:44</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ ἦν</td><td>and *it was*</td></tr>
+<tr><td>ἤδη ὡσεὶ ὥρα ἕκτη</td><td>already about *the* sixth hour</td></tr>
+<tr><td>καὶ σκότος ἐγένετο</td><td>and *there* was darkness</td></tr>
+<tr><td>ἐφ’ ὅλην τὴν γῆν</td><td>over *the* whole *land*</td></tr>
+<tr><td>ἕως ὥρας ἐνάτης</td><td>until *the* ninth hour</td></tr>
+</table>
+<hr><b>luke 23:45</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>τοῦ ἡλίου ἐκλιπόντος,</td><td>the sun *having* failed</td></tr>
+<tr><td>δὲ ἐσχίσθη</td><td>and *it* was torn</td></tr>
+<tr><td>τὸ καταπέτασμα τοῦ ναοῦ</td><td>the veil of *the* temple</td></tr>
+<tr><td>μέσον.</td><td>middle</td></tr>
+</table>
+<hr>
+καὶ φωνήσας φωνῇ μεγάλῃ ὁ Ἰησοῦς εἶπεν Πάτερ, εἰς χεῖράς σου παρατίθεμαι τὸ πνεῦμά μου.<hr><b>luke 23:46</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ φωνήσας φωνῇ μεγάλῃ</td><td>and having cried out with a loud voice</td></tr>
+<tr><td>ὁ Ἰησοῦς</td><td>the *Jesus*</td></tr>
+<tr><td>εἶπεν Πάτερ, εἰς χεῖράς σου</td><td>said *Father*, into your *hands*</td></tr>
+<tr><td>παρατίθεμαι τὸ πνεῦμά μου.</td><td>I commit *my* spirit</td></tr>
+<tr><td>δὲ τοῦτο εἰπὼν ἐξέπνευσεν.</td><td>and *having said* this, *he* breathed his last</td></tr>
+</table>
+<hr>
+ἰδὼν δὲ ὁ ἑκατοντάρχης τὸ γενόμενον ἐδόξαζεν τὸν Θεὸν λέγων Ὄντως ὁ ἄνθρωπος οὗτος δίκαιος ἦν.<hr><b>luke 23:47</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ ἑκατοντάρχης</td><td>but *the* centurion</td></tr>
+<tr><td>ἰδὼν τὸ γενόμενον</td><td>seeing *what* had happened</td></tr>
+<tr><td>ἐδόξαζεν τὸν Θεὸν</td><td>glorified *the* God</td></tr>
+<tr><td>λέγων Ὄντως ὁ ἄνθρωπος οὗτος</td><td>saying *truly* this man</td></tr>
+<tr><td>δίκαιος ἦν.</td><td>righteous *he* was</td></tr>
+</table>
+<hr>
+καὶ πάντες οἱ συνπαραγενόμενοι ὄχλοι ἐπὶ τὴν θεωρίαν ταύτην, θεωρήσαντες τὰ γενόμενα, τύπτοντες τὰ στήθη ὑπέστρεφον.<hr><b>luke 23:48</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ πάντες οἱ συνπαραγενόμενοι</td><td>and *all* those who had gathered together</td></tr>
+<tr><td>ἐπὶ τὴν θεωρίαν ταύτην,</td><td>upon *this* spectacle</td></tr>
+<tr><td>ὄχλοι θεωρήσαντες τὰ γενόμενα,</td><td>crowds having-seen the *things-that-had-happened*</td></tr>
+<tr><td>τύπτοντες τὰ στήθη</td><td>beating *their* chests</td></tr>
+<tr><td>ὑπέστρεφον.</td><td>*they* were returning</td></tr>
+</table>
+<hr>
+εἱστήκεισαν δὲ πάντες οἱ γνωστοὶ αὐτῷ ἀπὸ μακρόθεν, καὶ γυναῖκες αἱ συνακολουθοῦσαι αὐτῷ ἀπὸ τῆς Γαλιλαίας, ὁρῶσαι ταῦτα.<hr><b>luke 23:49</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἱστήκεισαν ἀπὸ μακρόθεν,</td><td>but they were standing *from* afar</td></tr>
+<tr><td>πάντες οἱ γνωστοὶ αὐτῷ</td><td>all *the acquaintances* *of* him</td></tr>
+<tr><td>καὶ γυναῖκες αἱ συνακολουθοῦσαι</td><td>and women who *were* following</td></tr>
+<tr><td>αὐτῷ ἀπὸ τῆς Γαλιλαίας,</td><td>with him *from* Galilee,</td></tr>
+<tr><td>ὁρῶσαι ταῦτα.</td><td>seeing *these things*</td></tr>
+</table>
+<hr>
+Καὶ ἰδοὺ ἀνὴρ ὀνόματι Ἰωσὴφ βουλευτὴς ὑπάρχων, ἀνὴρ ἀγαθὸς καὶ δίκαιος, —οὗτος οὐκ ἦν συνκατατεθειμένος τῇ βουλῇ καὶ τῇ πράξει αὐτῶν,— ἀπὸ Ἀριμαθαίας πόλεως τῶν Ἰουδαίων, ὃς προσεδέχετο τὴν βασιλείαν τοῦ Θεοῦ, οὗτος προσελθὼν τῷ Πειλάτῳ ᾐτήσατο τὸ σῶμα τοῦ Ἰησοῦ, καὶ καθελὼν ἐνετύλιξεν αὐτὸ σινδόνι, καὶ ἔθηκεν αὐτὸν ἐν μνήματι λαξευτῷ, οὗ οὐκ ἦν οὐδεὶς οὔπω κείμενος.<hr><b>luke 23:50</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ ἰδοὺ ἀνὴρ ὀνόματι Ἰωσὴφ</td><td>And *behold* a man named Joseph</td></tr>
+<tr><td>ὑπάρχων, βουλευτὴς</td><td>being *a member* *of the council*</td></tr>
+<tr><td>ἀνὴρ ἀγαθὸς καὶ δίκαιος,</td><td>a good *man* and a righteous *man*</td></tr>
+</table>
+<hr><b>luke 23:51</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>—οὗτος οὐκ ἦν συνκατατεθειμένος</td><td>this *man* was not consenting</td></tr>
+<tr><td>τῇ βουλῇ καὶ τῇ πράξει</td><td>the council and *their* action</td></tr>
+<tr><td>αὐτῶν,— ἀπὸ</td><td>their *plans*,— from</td></tr>
+<tr><td>Ἀριμαθαίας πόλεως τῶν Ἰουδαίων,</td><td>from *the* city of Arimathea *of the* Jews</td></tr>
+<tr><td>ὃς προσεδέχετο</td><td>who was waiting for *the*</td></tr>
+<tr><td>τὴν βασιλείαν τοῦ Θεοῦ,</td><td>*the* kingdom *of* God</td></tr>
+</table>
+<hr><b>luke 23:52</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὗτος προσελθὼν τῷ Πειλάτῳ</td><td>this one approaching *the* Pilate</td></tr>
+<tr><td>ᾐτήσατο τὸ σῶμα τοῦ Ἰησοῦ,</td><td>he-asked-for *the* body *of* Jesus</td></tr>
+</table>
+<hr><b>luke 23:53</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ καθελὼν ἐνετύλιξεν αὐτὸ σινδόνι,</td><td>and *having taken down* wrapped it in a linen cloth,</td></tr>
+<tr><td>καὶ ἔθηκεν</td><td>and *he* placed</td></tr>
+<tr><td>αὐτὸν ἐν μνήματι λαξευτῷ,</td><td>him in a *tomb* cut-out-of-rock</td></tr>
+<tr><td>οὗ οὐκ ἦν κείμενος. οὐδεὶς οὔπω</td><td>where *there* was laid not-yet *no one*</td></tr>
+</table>
+<hr>
+καὶ ἡμέρα ἦν Παρασκευῆς, καὶ σάββατον ἐπέφωσκεν.<hr><b>luke 23:54</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἡμέρα Παρασκευῆς, ἦν</td><td>and *the day* of Preparation *it* was</td></tr>
+<tr><td>καὶ σάββατον ἐπέφωσκεν.</td><td>and *the* Sabbath *was* dawning</td></tr>
+</table>
+<hr>
+Κατακολουθήσασαι δὲ αἱ γυναῖκες, αἵτινες ἦσαν συνεληλυθυῖαι ἐκ τῆς Γαλιλαίας αὐτῷ, ἐθεάσαντο τὸ μνημεῖον καὶ ὡς ἐτέθη τὸ σῶμα αὐτοῦ, ὑποστρέψασαι δὲ ἡτοίμασαν ἀρώματα καὶ μύρα.<hr><b>luke 23:55</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Κατακολουθήσασαι αἱ</td><td>but having followed the *women*</td></tr>
+<tr><td>γυναῖκες, αἵτινες ἦσαν συνεληλυθυῖαι</td><td>women, *who were* having-come-with</td></tr>
+<tr><td>ἐκ τῆς Γαλιλαίας</td><td>from *the* Galilee</td></tr>
+<tr><td>αὐτῷ, ἐθεάσαντο τὸ μνημεῖον</td><td>with *him*, they saw the tomb</td></tr>
+<tr><td>καὶ ὡς</td><td>and *as*</td></tr>
+<tr><td>ἐτέθη τὸ σῶμα αὐτοῦ,</td><td>*as* his body *was* placed</td></tr>
+</table>
+<hr><b>luke 23:56</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὑποστρέψασαι</td><td>but *they* returned</td></tr>
+<tr><td>ἡτοίμασαν ἀρώματα καὶ μύρα.</td><td>prepared spices and perfumes</td></tr>
+<tr><td>Καὶ μὲν τὸ σάββατον</td><td>And *on* the Sabbath</td></tr>
+<tr><td>ἡσύχασαν κατὰ τὴν ἐντολήν,</td><td>they-rested according-to *the* commandment,</td></tr>
+</table>
+<div class="chapter-links">
+<a href="22.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="selected-chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="24.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>
