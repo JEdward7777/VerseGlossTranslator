@@ -1,29 +1,29 @@
 # %%
 
-# input_files_array = [ {
-#     "filename": "./data/php_21.01.2024.json",
-#     "title": "French"
+input_files_array = [ {
+    "filename": "./data/php_21.01.2024.json",
+    "title": "French"
+},{
+#     "filename": "./data/php_OpenHerm_English.json",
+#     "title": "OpenHermes English",
 # },{
-# #     "filename": "./data/php_OpenHerm_English.json",
-# #     "title": "OpenHermes English",
-# # },{
-# #     "filename": "./data/php_ChatGPT_English.json",
-# #     "title": "ChatGPT English",
-# # },{
-#     "filename": "./data/php_ChatGPT_English_matched.json",
-#     "title": "ChatGPT English (matched)",
+#     "filename": "./data/php_ChatGPT_English.json",
+#     "title": "ChatGPT English",
 # },{
-#     "filename": "./data/php_ChatGPT_Farsi.json",
-#     "title": "ChatGPT Farsi",
-# },{
-#     "filename": "./data/php_ChatGPT_Spanish.json",
-#     "title": "ChatGPT Spanish",
-# },{
-#     "filename": "./data/php_ChatGPT_Russian.json",
-#     "title": "ChatGPT Russian",
-# }]
-# book_name = "Philippians"
-# output_filename = f"./data/Combined_output_for_{book_name}.html"
+    "filename": "./data/php_ChatGPT_English_matched.json",
+    "title": "ChatGPT English (matched)",
+},{
+    "filename": "./data/php_21.01.2024_ChatGPT_Farsi.json",
+    "title": "ChatGPT Farsi",
+},{
+    "filename": "./data/php_ChatGPT_Spanish.json",
+    "title": "ChatGPT Spanish",
+},{
+    "filename": "./data/php_ChatGPT_Russian.json",
+    "title": "ChatGPT Russian",
+}]
+book_name = "Philippians"
+output_filename = f"./data/Combined_output_for_{book_name}.html"
 
 # #-----
 # input_files_array = [ {
@@ -38,15 +38,15 @@
 
 
 #-----
-input_files_array = [ {
-    "filename": "./data/auto_21-1peter_ChatGPT_French.json",
-    "title": "ChatGPT French",
-},{
-    "filename": "./data/auto_21-1peter_ChatGPT_English.json",
-    "title": "ChatGPT English",
-}]
-book_name = "1 Peter"
-output_filename = f"./data/Combined_auto_output_for_{book_name}.html"
+# input_files_array = [ {
+#     "filename": "./data/auto_21-1peter_ChatGPT_French.json",
+#     "title": "ChatGPT French",
+# },{
+#     "filename": "./data/auto_21-1peter_ChatGPT_English.json",
+#     "title": "ChatGPT English",
+# }]
+# book_name = "1 Peter"
+# output_filename = f"./data/Combined_auto_output_for_{book_name}.html"
 
 
 # %%

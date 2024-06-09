@@ -280,7 +280,7 @@ def create_cache_saver( client_or_pipe, cache_saver ):
             
 
 # %%
-def get_output_data( data, input_data_basename, book_name, bible_usfx, output_language, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model_name, openai_api_key, host_local, output_callback=None, gloss_output_callback=None, cache_saver=None ):
+def get_output_data( data, input_data_basename, book_name, bible_usfx, output_language, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model_name, openai_api_key, host_local, output_callback=None, gloss_output_callback=None, cache_saver=None, output_suffix="" ):
 
     if output_callback:
         output_callback( "Starting..." )
@@ -324,7 +324,7 @@ def get_output_data( data, input_data_basename, book_name, bible_usfx, output_la
         gloss_output_log = []
 
     #append to process.log
-    with open( f"{input_data_basename}_{output_language}_process.log", "w" ) as process_out:
+    with open( f"{input_data_basename}_{output_language}{output_suffix}_process.log", "w" ) as process_out:
         done = False
 
         while not done:
@@ -390,7 +390,7 @@ def do_it( input_data, book_name, output_language, output_suffix, reference_bibl
     data = get_data( input_data )
     input_data_basename = get_input_data_basename( input_data )
     bible_usfx = get_bible_usfx( reference_bible_usfx_zip )
-    output_data = get_output_data( data, input_data_basename, book_name, bible_usfx, output_language, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model_name, openai_api_key, host_local, cache_saver=cache_saver )
+    output_data = get_output_data( data, input_data_basename, book_name, bible_usfx, output_language, bcv_template, exclude_source_gloss, extra_ChatGPT_instructions, model_name, openai_api_key, host_local, cache_saver=cache_saver, output_suffix=output_suffix )
     output_filename = get_output_filename( input_data_basename, output_language, output_suffix )
     write_output_data( output_data, output_filename )
 
@@ -414,11 +414,13 @@ if __name__ == "__main__":
 
     _host_local = False
 
+    _output_suffix = ""
     if not _host_local:
         #_model_name = "gpt-3.5-turbo"
-        #_model_name = "gpt-4"
+        #_model_name = "gpt-4"; _output_suffix = "_gpt4"
         #_model_name = "gpt-4-1106-preview"
-        _model_name = "gpt-4o"
+        #_model_name = "gpt-4o"; _output_suffix = "_gpt4o"
+        _model_name = "gpt-4-turbo"; _output_suffix = "_gpt4turbo"
     else:
         _model_name = "teknium/OpenHermes-2.5-Mistral-7B"
 
@@ -429,7 +431,6 @@ if __name__ == "__main__":
     _exclude_source_gloss = False
     _extra_ChatGPT_instructions = ""
     _reference_bible_usfx_zip = ""
-    _output_suffix = ""
     _bcv_template = None
     _cache_saver = None
 
@@ -486,18 +487,18 @@ if __name__ == "__main__":
     # _output_suffix = "_frasbl"
     # _extra_ChatGPT_instructions = "\n\nStick as close to the Greek as possible with a hyper literal translation."
 
-    # _output_language = "English"
-    # _input_data = "./data/auto_01-matthew.json"
-    # _book_name = "Matthew"
+    _output_language = "English"
+    _input_data = "./data/auto_01-matthew.json"
+    _book_name = "Matthew"
 
     # _output_language = "English"
     # _input_data = "./data/auto_02-mark.json"
     # _book_name = "Mark"
     # _cache_saver = "ChatGPT_cache.txt"
 
-    _output_language = "English"
-    _input_data = "./data/auto_03-luke.json"
-    _book_name = "Mark"
+    # _output_language = "English"
+    # _input_data = "./data/auto_03-luke.json"
+    # _book_name = "Mark"
 
     do_it( input_data=_input_data, book_name=_book_name, output_language=_output_language, output_suffix=_output_suffix,
         reference_bible_usfx_zip=_reference_bible_usfx_zip, bcv_template=_bcv_template, exclude_source_gloss=_exclude_source_gloss,
