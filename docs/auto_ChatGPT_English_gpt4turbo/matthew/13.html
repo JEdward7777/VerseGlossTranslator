@@ -1,0 +1,759 @@
+<!DOCTYPE html><html><head><title>matthew 13</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="13.html" class="current-book-chapter">13</a></li>
+   <li class="submenu_item"><a href="14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="28.html" class="">28</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="12.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="selected-chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="14.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Ἐν τῇ ἡμέρᾳ ἐκείνῃ ἐξελθὼν ὁ Ἰησοῦς τῆς οἰκίας ἐκάθητο παρὰ τὴν θάλασσαν·<hr><b>matthew 13:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἐν τῇ ἡμέρᾳ ἐκείνῃ</td><td>On that *day*</td></tr>
+<tr><td>ὁ Ἰησοῦς</td><td>the *Jesus*</td></tr>
+<tr><td>ἐξελθὼν τῆς οἰκίας</td><td>having come out *of* the house</td></tr>
+<tr><td>ἐκάθητο παρὰ τὴν θάλασσαν·</td><td>he was sitting by the sea</td></tr>
+</table>
+<hr>
+καὶ συνήχθησαν πρὸς αὐτὸν ὄχλοι πολλοί, ὥστε αὐτὸν εἰς πλοῖον ἐμβάντα καθῆσθαι, καὶ πᾶς ὁ ὄχλος ἐπὶ τὸν αἰγιαλὸν εἱστήκει.<hr><b>matthew 13:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ συνήχθησαν πρὸς αὐτὸν</td><td>and were gathered to him</td></tr>
+<tr><td>ὄχλοι πολλοί,</td><td>crowds many</td></tr>
+<tr><td>ὥστε αὐτὸν εἰς πλοῖον ἐμβάντα</td><td>so that *he* into a boat having embarked</td></tr>
+<tr><td>καθῆσθαι, καὶ πᾶς ὁ ὄχλος</td><td>to sit down, and *all* the crowd</td></tr>
+<tr><td>ἐπὶ τὸν αἰγιαλὸν</td><td>upon the *shore*</td></tr>
+<tr><td>εἱστήκει.</td><td>*was* standing</td></tr>
+</table>
+<hr>
+καὶ ἐλάλησεν αὐτοῖς πολλὰ ἐν παραβολαῖς λέγων Ἰδοὺ ἐξῆλθεν ὁ σπείρων τοῦ σπείρειν.<hr><b>matthew 13:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐλάλησεν</td><td>and *he* spoke</td></tr>
+<tr><td>αὐτοῖς πολλὰ ἐν παραβολαῖς</td><td>to them many in parables</td></tr>
+<tr><td>λέγων Ἰδοὺ</td><td>saying Behold</td></tr>
+<tr><td>ἐξῆλθεν ὁ σπείρων τοῦ σπείρειν.</td><td>went out the one sowing *to sow*</td></tr>
+</table>
+<hr>
+καὶ ἐν τῷ σπείρειν αὐτὸν ἃ μὲν ἔπεσεν παρὰ τὴν ὁδόν, καὶ ἐλθόντα τὰ πετεινὰ κατέφαγεν αὐτά. ἄλλα δὲ ἔπεσεν ἐπὶ τὰ πετρώδη ὅπου οὐκ εἶχεν γῆν πολλήν, καὶ εὐθέως ἐξανέτειλεν διὰ τὸ μὴ ἔχειν βάθος γῆς, ἡλίου δὲ ἀνατείλαντος ἐκαυματίσθη καὶ διὰ τὸ μὴ ἔχειν ῥίζαν ἐξηράνθη. ἄλλα δὲ ἔπεσεν ἐπὶ τὰς ἀκάνθας, καὶ ἀνέβησαν αἱ ἄκανθαι καὶ ἀπέπνιξαν αὐτά. ἄλλα δὲ ἔπεσεν ἐπὶ τὴν γῆν τὴν καλὴν καὶ ἐδίδου καρπόν, ὃ μὲν ἑκατὸν ὃ δὲ ἑξήκοντα ὃ δὲ τριάκοντα.<hr><b>matthew 13:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐν τῷ σπείρειν αὐτὸν</td><td>and *while* sowing him</td></tr>
+<tr><td>μὲν ἃ</td><td>indeed those</td></tr>
+<tr><td>ἔπεσεν παρὰ τὴν ὁδόν,</td><td>fell *beside* the road</td></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>ἐλθόντα τὰ πετεινὰ κατέφαγεν αὐτά.</td><td>having come the birds ate them</td></tr>
+</table>
+<hr><b>matthew 13:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἄλλα</td><td>but *other*</td></tr>
+<tr><td>ἔπεσεν ἐπὶ τὰ πετρώδη</td><td>fell on *the* rocky *places*</td></tr>
+<tr><td>ὅπου οὐκ εἶχεν γῆν πολλήν,</td><td>where *it* had not much soil</td></tr>
+<tr><td>καὶ εὐθέως ἐξανέτειλεν διὰ τὸ</td><td>and immediately sprang up because of the</td></tr>
+<tr><td>μὴ ἔχειν βάθος γῆς,</td><td>not *to* have depth *of* soil</td></tr>
+</table>
+<hr><b>matthew 13:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἡλίου ἀνατείλαντος ἐκαυματίσθη</td><td>but *when* the sun rose, it was scorched</td></tr>
+<tr><td>καὶ διὰ</td><td>and because of</td></tr>
+<tr><td>τὸ μὴ ἔχειν ῥίζαν</td><td>the not to have *a* root</td></tr>
+<tr><td>ἐξηράνθη. δὲ ἄλλα</td><td>was dried up. but *the* others</td></tr>
+</table>
+<hr><b>matthew 13:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἔπεσεν ἐπὶ τὰς ἀκάνθας,</td><td>fell upon the thorns</td></tr>
+<tr><td>καὶ ἀνέβησαν αἱ ἄκανθαι</td><td>and *the* thorns grew</td></tr>
+<tr><td>καὶ ἀπέπνιξαν αὐτά.</td><td>and *they* choked them</td></tr>
+</table>
+<hr><b>matthew 13:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἄλλα ἔπεσεν ἐπὶ</td><td>but other *seeds* fell upon</td></tr>
+<tr><td>τὴν γῆν τὴν καλὴν</td><td>the land the *good*</td></tr>
+<tr><td>καὶ ἐδίδου καρπόν,</td><td>and *it was giving* fruit</td></tr>
+<tr><td>μὲν ὃ ἑκατὸν δὲ ὃ ἑξήκοντα δὲ ὃ τριάκοντα.</td><td>indeed which a hundred but which sixty but which thirty</td></tr>
+</table>
+<hr>
+ὁ ἔχων ὦτα ἀκουέτω.<hr><b>matthew 13:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὁ ἔχων ὦτα</td><td>the one having *the* ears</td></tr>
+<tr><td>ἀκουέτω.</td><td>let *him* hear</td></tr>
+</table>
+<hr>
+Καὶ προσελθόντες οἱ μαθηταὶ εἶπαν αὐτῷ Διὰ τί ἐν παραβολαῖς λαλεῖς αὐτοῖς;<hr><b>matthew 13:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ</td><td>and</td></tr>
+<tr><td>προσελθόντες οἱ μαθηταὶ εἶπαν αὐτῷ</td><td>having approached the disciples said to him</td></tr>
+<tr><td>Διὰ τί ἐν παραβολαῖς λαλεῖς αὐτοῖς;</td><td>Why *do* in parables speak you to them?</td></tr>
+</table>
+<hr>
+ὁ δὲ ἀποκριθεὶς εἶπεν ὅτι Ὑμῖν δέδοται γνῶναι τὰ μυστήρια τῆς βασιλείας τῶν οὐρανῶν, ἐκείνοις δὲ οὐ δέδοται.<hr><b>matthew 13:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ ἀποκριθεὶς εἶπεν</td><td>but he answering said</td></tr>
+<tr><td>ὅτι Ὑμῖν</td><td>that *to* you</td></tr>
+<tr><td>δέδοται γνῶναι τὰ μυστήρια</td><td>is given *to* know the mysteries</td></tr>
+<tr><td>τῆς βασιλείας τῶν οὐρανῶν,</td><td>of the kingdom of the heavens</td></tr>
+<tr><td>δὲ ἐκείνοις οὐ δέδοται.</td><td>but to them it has not been given</td></tr>
+</table>
+<hr>
+ὅστις γὰρ ἔχει, δοθήσεται αὐτῷ καὶ περισσευθήσεται· ὅστις δὲ οὐκ ἔχει, καὶ ὃ ἔχει ἀρθήσεται ἀπ’ αὐτοῦ.<hr><b>matthew 13:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ὅστις ἔχει,</td><td>for whoever has</td></tr>
+<tr><td>δοθήσεται αὐτῷ καὶ περισσευθήσεται·</td><td>will be given to him and *he will* overflow</td></tr>
+<tr><td>δὲ ὅστις οὐκ ἔχει,</td><td>but whoever does not have</td></tr>
+<tr><td>καὶ ὃ ἔχει</td><td>and what he has</td></tr>
+<tr><td>ἀρθήσεται ἀπ’ αὐτοῦ.</td><td>will be taken away from *him*</td></tr>
+</table>
+<hr>
+διὰ τοῦτο ἐν παραβολαῖς αὐτοῖς λαλῶ, ὅτι βλέποντες οὐ βλέπουσιν καὶ ἀκούοντες οὐκ ἀκούουσιν οὐδὲ συνίουσιν.<hr><b>matthew 13:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>διὰ τοῦτο ἐν παραβολαῖς αὐτοῖς λαλῶ,</td><td>because of this in parables to them I speak</td></tr>
+<tr><td>ὅτι βλέποντες οὐ βλέπουσιν</td><td>because seeing *they* do not see</td></tr>
+<tr><td>καὶ ἀκούοντες</td><td>and hearing</td></tr>
+<tr><td>οὐκ ἀκούουσιν οὐδὲ συνίουσιν.</td><td>not *they* hear nor *do they* understand</td></tr>
+</table>
+<hr>
+καὶ ἀναπληροῦται αὐτοῖς ἡ προφητεία Ἠσαΐου ἡ λέγουσα Ἀκοῇ ἀκούσετε καὶ οὐ μὴ συνῆτε, καὶ βλέποντες βλέψετε καὶ οὐ μὴ ἴδητε.<hr><b>matthew 13:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἀναπληροῦται</td><td>and *is* fulfilled</td></tr>
+<tr><td>αὐτοῖς ἡ προφητεία Ἠσαΐου</td><td>to them the prophecy *of* Isaiah</td></tr>
+<tr><td>ἡ λέγουσα Ἀκοῇ ἀκούσετε</td><td>the one saying *By* hearing you will hear</td></tr>
+<tr><td>καὶ οὐ μὴ συνῆτε,</td><td>and *you will* not perceive</td></tr>
+<tr><td>καὶ βλέποντες βλέψετε</td><td>and seeing you will see</td></tr>
+<tr><td>καὶ οὐ μὴ ἴδητε.</td><td>and you will *not* see</td></tr>
+</table>
+<hr>
+ἐπαχύνθη γὰρ ἡ καρδία τοῦ λαοῦ τούτου, καὶ τοῖς ὠσὶν βαρέως ἤκουσαν, καὶ τοὺς ὀφθαλμοὺς αὐτῶν ἐκάμμυσαν· μή ποτε ἴδωσιν τοῖς ὀφθαλμοῖς καὶ τοῖς ὠσὶν ἀκούσωσιν καὶ τῇ καρδίᾳ συνῶσιν καὶ ἐπιστρέψωσιν, καὶ ἰάσομαι αὐτούς.<hr><b>matthew 13:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ἐπαχύνθη ἡ</td><td>for *was* thickened the</td></tr>
+<tr><td>καρδία τοῦ λαοῦ τούτου,</td><td>heart of *the* this people</td></tr>
+<tr><td>καὶ τοῖς ὠσὶν βαρέως ἤκουσαν,</td><td>and with the ears heavily they heard</td></tr>
+<tr><td>καὶ τοὺς ὀφθαλμοὺς αὐτῶν</td><td>and *the* eyes of them</td></tr>
+<tr><td>ἐκάμμυσαν·</td><td>*they* squinted</td></tr>
+<tr><td>μή ποτε ἴδωσιν τοῖς ὀφθαλμοῖς</td><td>lest at any time they should see with *the* eyes</td></tr>
+<tr><td>καὶ τοῖς ὠσὶν ἀκούσωσιν</td><td>and *with* the ears they might hear</td></tr>
+<tr><td>καὶ τῇ καρδίᾳ συνῶσιν</td><td>and with *the* heart understand</td></tr>
+<tr><td>καὶ ἐπιστρέψωσιν, καὶ ἰάσομαι αὐτούς.</td><td>and *they* shall turn back, and *I* shall heal them</td></tr>
+</table>
+<hr>
+ὑμῶν δὲ μακάριοι οἱ ὀφθαλμοὶ ὅτι βλέπουσιν, καὶ τὰ ὦτα ὑμῶν ὅτι ἀκούουσιν.<hr><b>matthew 13:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ μακάριοι ὑμῶν οἱ ὀφθαλμοὶ</td><td>but blessed *are* your eyes</td></tr>
+<tr><td>ὅτι βλέπουσιν,</td><td>because *they* see</td></tr>
+<tr><td>καὶ τὰ ὦτα ὑμῶν</td><td>and the ears *of you*</td></tr>
+<tr><td>ὅτι ἀκούουσιν.</td><td>that *they* hear</td></tr>
+</table>
+<hr>
+ἀμὴν γὰρ λέγω ὑμῖν ὅτι πολλοὶ προφῆται καὶ δίκαιοι ἐπεθύμησαν ἰδεῖν ἃ βλέπετε καὶ οὐκ εἶδαν, καὶ ἀκοῦσαι ἃ ἀκούετε καὶ οὐκ ἤκουσαν.<hr><b>matthew 13:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ἀμὴν λέγω ὑμῖν</td><td>for amen I-say to-you</td></tr>
+<tr><td>ὅτι πολλοὶ προφῆται καὶ δίκαιοι</td><td>that many prophets and righteous</td></tr>
+<tr><td>ἐπεθύμησαν ἰδεῖν ἃ βλέπετε</td><td>desired to see *the things* that you see</td></tr>
+<tr><td>καὶ οὐκ εἶδαν,</td><td>and *they* did not see</td></tr>
+<tr><td>καὶ ἀκοῦσαι ἃ ἀκούετε</td><td>and to hear that which *you* hear</td></tr>
+<tr><td>καὶ οὐκ ἤκουσαν.</td><td>and *they* did not hear</td></tr>
+</table>
+<hr>
+Ὑμεῖς οὖν ἀκούσατε τὴν παραβολὴν τοῦ σπείραντος.<hr><b>matthew 13:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν Ὑμεῖς ἀκούσατε</td><td>therefore you *all* listen</td></tr>
+<tr><td>τὴν παραβολὴν τοῦ σπείραντος.</td><td>the parable of the *one* sowing</td></tr>
+</table>
+<hr>
+Παντὸς ἀκούοντος τὸν λόγον τῆς βασιλείας καὶ μὴ συνιέντος, ἔρχεται ὁ πονηρὸς καὶ ἁρπάζει τὸ ἐσπαρμένον ἐν τῇ καρδίᾳ αὐτοῦ·<hr><b>matthew 13:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Παντὸς ἀκούοντος</td><td>of everyone hearing</td></tr>
+<tr><td>τὸν λόγον τῆς βασιλείας</td><td>the word *of* the kingdom</td></tr>
+<tr><td>καὶ μὴ συνιέντος,</td><td>and *he* not understanding</td></tr>
+<tr><td>ἔρχεται ὁ πονηρὸς</td><td>comes *the* evil one</td></tr>
+<tr><td>καὶ ἁρπάζει τὸ ἐσπαρμένον</td><td>and *he* snatches away the *seed* that was sown</td></tr>
+<tr><td>ἐν τῇ καρδίᾳ αὐτοῦ·</td><td>in *his* heart</td></tr>
+<tr><td>οὗτός ἐστιν</td><td>this is</td></tr>
+<tr><td>ὁ παρὰ τὴν ὁδὸν</td><td>the *one* by the road</td></tr>
+<tr><td>σπαρείς.</td><td>sown</td></tr>
+</table>
+<hr>
+ὁ δὲ ἐπὶ τὰ πετρώδη σπαρείς, οὗτός ἐστιν ὁ τὸν λόγον ἀκούων καὶ εὐθὺς μετὰ χαρᾶς λαμβάνων αὐτόν·<hr><b>matthew 13:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ ἐπὶ τὰ πετρώδη</td><td>but the one on the rocky</td></tr>
+<tr><td>σπαρείς, οὗτός ἐστιν</td><td>sown, this is</td></tr>
+<tr><td>ὁ τὸν λόγον ἀκούων</td><td>the one hearing the word</td></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>εὐθὺς μετὰ χαρᾶς λαμβάνων αὐτόν·</td><td>immediately with joy receiving it</td></tr>
+</table>
+<hr>
+οὐκ ἔχει δὲ ῥίζαν ἐν ἑαυτῷ ἀλλὰ πρόσκαιρός ἐστιν, γενομένης δὲ θλίψεως ἢ διωγμοῦ διὰ τὸν λόγον εὐθὺς σκανδαλίζεται.<hr><b>matthew 13:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>οὐκ ἔχει ῥίζαν ἐν ἑαυτῷ</td><td>does not have a root in *himself*</td></tr>
+<tr><td>ἀλλὰ πρόσκαιρός ἐστιν,</td><td>but *he is* temporary</td></tr>
+<tr><td>δὲ γενομένης θλίψεως ἢ διωγμοῦ</td><td>but when *there is* tribulation or persecution</td></tr>
+<tr><td>διὰ τὸν λόγον</td><td>because of *the* word</td></tr>
+<tr><td>εὐθὺς σκανδαλίζεται.</td><td>immediately *he/she/it* is offended</td></tr>
+</table>
+<hr>
+ὁ δὲ εἰς τὰς ἀκάνθας σπαρείς, οὗτός ἐστιν ὁ τὸν λόγον ἀκούων, καὶ ἡ μέριμνα τοῦ αἰῶνος καὶ ἡ ἀπάτη τοῦ πλούτου συμπνίγει τὸν λόγον, καὶ ἄκαρπος γίνεται.<hr><b>matthew 13:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ εἰς τὰς ἀκάνθας</td><td>but the *one* into the thorns</td></tr>
+<tr><td>σπαρείς, οὗτός ἐστιν</td><td>sown, this *one* is</td></tr>
+<tr><td>ὁ τὸν λόγον ἀκούων,</td><td>the *one* hearing the word</td></tr>
+<tr><td>καὶ ἡ μέριμνα τοῦ αἰῶνος</td><td>and the *cares* of the *age*</td></tr>
+<tr><td>καὶ ἡ ἀπάτη τοῦ πλούτου</td><td>and the deceit of *the* wealth</td></tr>
+<tr><td>συμπνίγει τὸν λόγον,</td><td>chokes *the* word</td></tr>
+<tr><td>καὶ ἄκαρπος γίνεται.</td><td>and *he* becomes unfruitful</td></tr>
+</table>
+<hr>
+ὁ δὲ ἐπὶ τὴν καλὴν γῆν σπαρείς, οὗτός ἐστιν ὁ τὸν λόγον ἀκούων καὶ συνιείς, ὃς δὴ καρποφορεῖ καὶ ποιεῖ ὃ μὲν ἑκατὸν ὃ δὲ ἑξήκοντα ὃ δὲ τριάκοντα.<hr><b>matthew 13:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ</td><td>but the</td></tr>
+<tr><td>ἐπὶ τὴν καλὴν γῆν</td><td>upon the good *earth*</td></tr>
+<tr><td>σπαρείς, οὗτός ἐστιν</td><td>sown, this one is</td></tr>
+<tr><td>ὁ τὸν λόγον ἀκούων</td><td>the one *who is* hearing the word</td></tr>
+<tr><td>καὶ συνιείς, δὴ ὃς καρποφορεῖ</td><td>and understands, indeed *he who* bears fruit</td></tr>
+<tr><td>καὶ μὲν ποιεῖ ὃ ἑκατὸν</td><td>and indeed he produces *a* hundred</td></tr>
+<tr><td>δὲ ὃ ἑξήκοντα</td><td>but one sixty</td></tr>
+<tr><td>δὲ ὃ τριάκοντα.</td><td>but *he* thirty</td></tr>
+</table>
+<hr>
+Ἄλλην παραβολὴν παρέθηκεν αὐτοῖς λέγων Ὡμοιώθη ἡ βασιλεία τῶν οὐρανῶν ἀνθρώπῳ σπείραντι καλὸν σπέρμα ἐν τῷ ἀγρῷ αὐτοῦ.<hr><b>matthew 13:24</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἄλλην παραβολὴν</td><td>*Another* parable</td></tr>
+<tr><td>παρέθηκεν αὐτοῖς λέγων Ὡμοιώθη</td><td>he presented *to them* saying *it has been* likened</td></tr>
+<tr><td>ἡ βασιλεία τῶν οὐρανῶν</td><td>the kingdom *of the* heavens</td></tr>
+<tr><td>ἀνθρώπῳ σπείραντι καλὸν σπέρμα</td><td>man *who* sowed good seed</td></tr>
+<tr><td>ἐν τῷ ἀγρῷ αὐτοῦ.</td><td>in his *field*</td></tr>
+</table>
+<hr>
+ἐν δὲ τῷ καθεύδειν τοὺς ἀνθρώπους ἦλθεν αὐτοῦ ὁ ἐχθρὸς καὶ ἐπέσπειρεν ζιζάνια ἀνὰ μέσον τοῦ σίτου καὶ ἀπῆλθεν.<hr><b>matthew 13:25</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐν</td><td>but in</td></tr>
+<tr><td>τῷ καθεύδειν τοὺς ἀνθρώπους</td><td>while *the* people were sleeping</td></tr>
+<tr><td>ἦλθεν αὐτοῦ ὁ ἐχθρὸς</td><td>came *his* enemy</td></tr>
+<tr><td>καὶ ἐπέσπειρεν ζιζάνια</td><td>and *he* sowed darnel</td></tr>
+<tr><td>ἀνὰ μέσον τοῦ σίτου</td><td>*among* the middle of the wheat</td></tr>
+<tr><td>καὶ ἀπῆλθεν.</td><td>and *he* went away</td></tr>
+</table>
+<hr>
+ὅτε δὲ ἐβλάστησεν ὁ χόρτος καὶ καρπὸν ἐποίησεν, τότε ἐφάνη καὶ τὰ ζιζάνια.<hr><b>matthew 13:26</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὅτε ἐβλάστησεν ὁ χόρτος</td><td>but when *the* grass sprouted</td></tr>
+<tr><td>καὶ καρπὸν ἐποίησεν,</td><td>and *it produced* fruit,</td></tr>
+<tr><td>τότε ἐφάνη καὶ τὰ ζιζάνια.</td><td>then appeared also the tares</td></tr>
+</table>
+<hr>
+προσελθόντες δὲ οἱ δοῦλοι τοῦ οἰκοδεσπότου εἶπον αὐτῷ Κύριε, οὐχὶ καλὸν σπέρμα ἔσπειρας ἐν τῷ σῷ ἀγρῷ;<hr><b>matthew 13:27</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ προσελθόντες</td><td>but having approached</td></tr>
+<tr><td>οἱ δοῦλοι τοῦ οἰκοδεσπότου</td><td>the *slaves* of the *household master*</td></tr>
+<tr><td>εἶπον αὐτῷ</td><td>they said to him</td></tr>
+<tr><td>Κύριε, οὐχὶ καλὸν σπέρμα</td><td>Lord, *did* you not *sow* good seed</td></tr>
+<tr><td>ἔσπειρας ἐν τῷ σῷ ἀγρῷ;</td><td>you sowed in *your* field</td></tr>
+<tr><td>οὖν πόθεν ἔχει ζιζάνια;</td><td>then where *does it* have weeds?</td></tr>
+</table>
+<hr>
+ὁ δὲ ἔφη αὐτοῖς Ἐχθρὸς ἄνθρωπος τοῦτο ἐποίησεν.<hr><b>matthew 13:28</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ ἔφη αὐτοῖς</td><td>but he said to them</td></tr>
+<tr><td>Ἐχθρὸς ἄνθρωπος τοῦτο ἐποίησεν.</td><td>An enemy *man* did this</td></tr>
+<tr><td>δὲ οἱ δοῦλοι αὐτῷ λέγουσιν</td><td>but the servants to him they say</td></tr>
+<tr><td>οὖν Θέλεις ἀπελθόντες συλλέξωμεν αὐτά;</td><td>therefore *do* you want having gone *we* gather them?</td></tr>
+</table>
+<hr>
+ὁ δέ φησιν Οὔ, μή ποτε συλλέγοντες τὰ ζιζάνια ἐκριζώσητε ἅμα αὐτοῖς τὸν σῖτον·<hr><b>matthew 13:29</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δέ ὁ φησιν</td><td>but *he* says</td></tr>
+<tr><td>Οὔ, μή</td><td>No, *not*</td></tr>
+<tr><td>ποτε συλλέγοντες τὰ ζιζάνια</td><td>perhaps gathering the weeds</td></tr>
+<tr><td>ἐκριζώσητε ἅμα αὐτοῖς</td><td>you-might-uproot together with *them*</td></tr>
+<tr><td>τὸν σῖτον·</td><td>the *wheat*</td></tr>
+</table>
+<hr>
+ἄφετε συναυξάνεσθαι ἀμφότερα ἕως τοῦ θερισμοῦ·<hr><b>matthew 13:30</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἄφετε συναυξάνεσθαι</td><td>allow *to* grow together</td></tr>
+<tr><td>ἀμφότερα ἕως τοῦ θερισμοῦ·</td><td>both until the harvest</td></tr>
+<tr><td>καὶ ἐν καιρῷ τοῦ θερισμοῦ</td><td>and in *the time* of harvest</td></tr>
+<tr><td>ἐρῶ τοῖς θερισταῖς</td><td>I will say to the harvesters</td></tr>
+<tr><td>Συλλέξατε πρῶτον τὰ ζιζάνια</td><td>Gather first the weeds</td></tr>
+<tr><td>καὶ δήσατε αὐτὰ εἰς δέσμας</td><td>and bind them into bundles</td></tr>
+<tr><td>πρὸς τὸ κατακαῦσαι αὐτά,</td><td>toward the *purpose* to burn them up</td></tr>
+<tr><td>δὲ τὸν σῖτον</td><td>but the *grain*</td></tr>
+<tr><td>συναγάγετε εἰς τὴν ἀποθήκην μου.</td><td>gather into *the* storehouse *of* mine</td></tr>
+</table>
+<hr>
+Ἄλλην παραβολὴν παρέθηκεν αὐτοῖς λέγων Ὁμοία ἐστὶν ἡ βασιλεία τῶν οὐρανῶν κόκκῳ σινάπεως, ὃν λαβὼν ἄνθρωπος ἔσπειρεν ἐν τῷ ἀγρῷ αὐτοῦ·<hr><b>matthew 13:31</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἄλλην παραβολὴν</td><td>another parable</td></tr>
+<tr><td>παρέθηκεν αὐτοῖς λέγων Ὁμοία ἐστὶν</td><td>he presented to them saying It *is* similar</td></tr>
+<tr><td>ἡ βασιλεία τῶν οὐρανῶν</td><td>the kingdom of *the* heavens</td></tr>
+<tr><td>κόκκῳ σινάπεως,</td><td>mustard seed</td></tr>
+<tr><td>ὃν λαβὼν</td><td>whom having taken</td></tr>
+<tr><td>ἄνθρωπος ἔσπειρεν</td><td>man sowed</td></tr>
+<tr><td>ἐν τῷ ἀγρῷ αὐτοῦ·</td><td>in *the* field of him</td></tr>
+</table>
+<hr>
+ὃ μικρότερον μέν ἐστιν πάντων τῶν σπερμάτων, ὅταν δὲ αὐξηθῇ, μεῖζον τῶν λαχάνων ἐστὶν καὶ γίνεται δένδρον, ὥστε ἐλθεῖν τὰ πετεινὰ τοῦ οὐρανοῦ καὶ κατασκηνοῖν ἐν τοῖς κλάδοις αὐτοῦ.<hr><b>matthew 13:32</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μέν ὃ μικρότερον</td><td>which *is* smaller</td></tr>
+<tr><td>ἐστιν πάντων τῶν σπερμάτων,</td><td>is of *all* the seeds</td></tr>
+<tr><td>δὲ ὅταν αὐξηθῇ,</td><td>but when *it* grows</td></tr>
+<tr><td>μεῖζον τῶν λαχάνων ἐστὶν</td><td>greater *is* than the vegetables</td></tr>
+<tr><td>καὶ γίνεται δένδρον,</td><td>and becomes *a* tree</td></tr>
+<tr><td>ὥστε ἐλθεῖν</td><td>so as to *come*</td></tr>
+<tr><td>τὰ πετεινὰ τοῦ οὐρανοῦ</td><td>the birds *of* the heaven</td></tr>
+<tr><td>καὶ κατασκηνοῖν</td><td>and to dwell</td></tr>
+<tr><td>ἐν τοῖς κλάδοις αὐτοῦ.</td><td>in *the* branches of it</td></tr>
+</table>
+<hr>
+Ἄλλην παραβολὴν ἐλάλησεν αὐτοῖς<hr><b>matthew 13:33</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἄλλην παραβολὴν ἐλάλησεν αὐτοῖς</td><td>Another parable he-spoke to-them</td></tr>
+<tr><td>Ὁμοία ἐστὶν</td><td>*It* is like</td></tr>
+<tr><td>ἡ βασιλεία τῶν οὐρανῶν</td><td>the kingdom of *the* heavens</td></tr>
+<tr><td>ζύμῃ, ἣν λαβοῦσα</td><td>leaven, which having taken</td></tr>
+<tr><td>γυνὴ ἐνέκρυψεν</td><td>woman *hid*</td></tr>
+<tr><td>εἰς ἀλεύρου σάτα τρία,</td><td>into *three measures of* flour</td></tr>
+<tr><td>ἕως οὗ ἐζυμώθη ὅλον.</td><td>until *it* was *all* leavened</td></tr>
+</table>
+<hr>
+Ταῦτα πάντα ἐλάλησεν ὁ Ἰησοῦς ἐν παραβολαῖς τοῖς ὄχλοις, καὶ χωρὶς παραβολῆς οὐδὲν ἐλάλει αὐτοῖς· ὅπως πληρωθῇ τὸ ῥηθὲν διὰ τοῦ προφήτου λέγοντος Ἀνοίξω ἐν παραβολαῖς τὸ στόμα μου, ἐρεύξομαι κεκρυμμένα ἀπὸ καταβολῆς.<hr><b>matthew 13:34</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ταῦτα πάντα ἐλάλησεν ὁ Ἰησοῦς ἐν παραβολαῖς τοῖς ὄχλοις,</td><td>All these things Jesus spoke in parables to *the* crowds</td></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>χωρὶς παραβολῆς οὐδὲν ἐλάλει αὐτοῖς·</td><td>without a parable *he spoke* nothing to them</td></tr>
+</table>
+<hr><b>matthew 13:35</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅπως πληρωθῇ τὸ</td><td>so that it might be fulfilled the</td></tr>
+<tr><td>ῥηθὲν διὰ τοῦ προφήτου</td><td>spoken through *the* prophet</td></tr>
+<tr><td>λέγοντος Ἀνοίξω ἐν παραβολαῖς</td><td>saying I-will-open in parables</td></tr>
+<tr><td>τὸ στόμα μου,</td><td>the mouth *of* me</td></tr>
+<tr><td>ἐρεύξομαι κεκρυμμένα ἀπὸ καταβολῆς.</td><td>I-will-utter things-hidden from *the* foundation</td></tr>
+</table>
+<hr>
+Τότε ἀφεὶς τοὺς ὄχλους ἦλθεν εἰς τὴν οἰκίαν.<hr><b>matthew 13:36</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Τότε ἀφεὶς τοὺς ὄχλους</td><td>Then having dismissed *the* crowds</td></tr>
+<tr><td>ἦλθεν εἰς τὴν οἰκίαν.</td><td>he went into the house</td></tr>
+<tr><td>Καὶ προσῆλθον</td><td>And *they* approached</td></tr>
+<tr><td>αὐτῷ οἱ μαθηταὶ αὐτοῦ</td><td>to him his disciples</td></tr>
+<tr><td>λέγοντες Διασάφησον ἡμῖν τὴν παραβολὴν</td><td>saying explain *to us* the parable</td></tr>
+<tr><td>τῶν ζιζανίων τοῦ ἀγροῦ.</td><td>of the weeds of the *field*</td></tr>
+</table>
+<hr>
+ὁ δὲ ἀποκριθεὶς εἶπεν Ὁ σπείρων τὸ καλὸν σπέρμα ἐστὶν ὁ Υἱὸς τοῦ ἀνθρώπου·<hr><b>matthew 13:37</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ ἀποκριθεὶς εἶπεν</td><td>but he having replied said</td></tr>
+<tr><td>Ὁ σπείρων τὸ καλὸν σπέρμα</td><td>The one sowing the good seed</td></tr>
+<tr><td>ἐστὶν ὁ Υἱὸς τοῦ ἀνθρώπου·</td><td>is the Son of *the* Man</td></tr>
+</table>
+<hr>
+ὁ δὲ ἀγρός ἐστιν ὁ κόσμος·<hr><b>matthew 13:38</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>ὁ ἀγρός ἐστιν ὁ κόσμος·</td><td>the field is the world</td></tr>
+<tr><td>δὲ τὸ καλὸν σπέρμα,</td><td>but the good seed</td></tr>
+<tr><td>οὗτοί εἰσιν</td><td>these *are*</td></tr>
+<tr><td>οἱ υἱοὶ τῆς βασιλείας·</td><td>the *sons* of the kingdom</td></tr>
+<tr><td>δὲ τὰ ζιζάνιά</td><td>but the weeds</td></tr>
+<tr><td>εἰσιν οἱ υἱοὶ τοῦ πονηροῦ,</td><td>are the sons of the evil one</td></tr>
+</table>
+<hr>
+τὰ δὲ ζιζάνιά εἰσιν οἱ υἱοὶ τοῦ πονηροῦ, ὁ δὲ ἐχθρὸς ὁ σπείρας αὐτά ἐστιν ὁ διάβολος·<hr><b>matthew 13:39</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ ἐχθρὸς</td><td>but the enemy</td></tr>
+<tr><td>ὁ σπείρας αὐτά</td><td>the one who sowed *them*</td></tr>
+<tr><td>ἐστιν ὁ διάβολος·</td><td>is the devil</td></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>ὁ θερισμὸς συντέλεια αἰῶνός ἐστιν,</td><td>the harvest *is* the end of the age</td></tr>
+<tr><td>δὲ οἱ θερισταὶ ἄγγελοί εἰσιν.</td><td>but the reapers *are* angels</td></tr>
+</table>
+<hr>
+ὥσπερ οὖν συλλέγεται τὰ ζιζάνια καὶ πυρὶ κατακαίεται, οὕτως ἔσται ἐν τῇ συντελείᾳ τοῦ αἰῶνος.<hr><b>matthew 13:40</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν ὥσπερ συλλέγεται τὰ ζιζάνια</td><td>therefore just as *the* weeds are gathered</td></tr>
+<tr><td>καὶ πυρὶ κατακαίεται,</td><td>and with fire it-is-burned</td></tr>
+<tr><td>οὕτως ἔσται ἐν</td><td>thus it will be in</td></tr>
+<tr><td>τῇ συντελείᾳ τοῦ αἰῶνος.</td><td>the completion *of* the age</td></tr>
+</table>
+<hr>
+ἀποστελεῖ ὁ Υἱὸς τοῦ ἀνθρώπου τοὺς ἀγγέλους αὐτοῦ, καὶ συλλέξουσιν ἐκ τῆς βασιλείας αὐτοῦ πάντα τὰ σκάνδαλα καὶ τοὺς ποιοῦντας τὴν ἀνομίαν, καὶ βαλοῦσιν αὐτοὺς εἰς τὴν κάμινον τοῦ πυρός·<hr><b>matthew 13:41</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἀποστελεῖ ὁ Υἱὸς τοῦ ἀνθρώπου</td><td>*will send* the Son of Man</td></tr>
+<tr><td>τοὺς ἀγγέλους αὐτοῦ,</td><td>his *the* angels</td></tr>
+<tr><td>καὶ συλλέξουσιν</td><td>and they will gather</td></tr>
+<tr><td>ἐκ τῆς βασιλείας αὐτοῦ</td><td>from *the* kingdom of him</td></tr>
+<tr><td>πάντα τὰ σκάνδαλα</td><td>all the *offenses*</td></tr>
+<tr><td>καὶ τοὺς ποιοῦντας τὴν ἀνομίαν,</td><td>and the ones practicing *the* lawlessness</td></tr>
+</table>
+<hr><b>matthew 13:42</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ βαλοῦσιν αὐτοὺς εἰς</td><td>and they will throw them into</td></tr>
+<tr><td>τὴν κάμινον τοῦ πυρός·</td><td>the furnace *of* the fire</td></tr>
+<tr><td>ἐκεῖ ἔσται ὁ κλαυθμὸς</td><td>there will be the weeping</td></tr>
+<tr><td>καὶ ὁ βρυγμὸς τῶν ὀδόντων.</td><td>and the gnashing *of the* teeth</td></tr>
+</table>
+<hr>
+τότε οἱ δίκαιοι ἐκλάμψουσιν ὡς ὁ ἥλιος ἐν τῇ βασιλείᾳ τοῦ Πατρὸς αὐτῶν.<hr><b>matthew 13:43</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>τότε οἱ δίκαιοι</td><td>then the *righteous*</td></tr>
+<tr><td>ἐκλάμψουσιν ἐν τῇ</td><td>will shine *in* the</td></tr>
+<tr><td>βασιλείᾳ τοῦ Πατρὸς αὐτῶν.</td><td>kingdom of the *their* Father</td></tr>
+<tr><td>ὡς ὁ ἥλιος</td><td>as the *sun*</td></tr>
+<tr><td>ὁ ἔχων ὦτα</td><td>the one having *the* ears</td></tr>
+<tr><td>ἀκουέτω.</td><td>let *him* hear</td></tr>
+</table>
+<hr>
+Ὁμοία ἐστὶν ἡ βασιλεία τῶν οὐρανῶν θησαυρῷ κεκρυμμένῳ ἐν τῷ ἀγρῷ, ὃν εὑρὼν ἄνθρωπος ἔκρυψεν, καὶ ἀπὸ τῆς χαρᾶς αὐτοῦ ὑπάγει καὶ πωλεῖ ὅσα ἔχει καὶ ἀγοράζει τὸν ἀγρὸν ἐκεῖνον.<hr><b>matthew 13:44</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ὁμοία ἐστὶν</td><td>is *similar to*</td></tr>
+<tr><td>ἡ βασιλεία τῶν οὐρανῶν</td><td>the kingdom of *the* heavens</td></tr>
+<tr><td>θησαυρῷ κεκρυμμένῳ ἐν τῷ ἀγρῷ,</td><td>with a treasure hidden in the field</td></tr>
+<tr><td>ὃν εὑρὼν ἄνθρωπος ἔκρυψεν,</td><td>whom having found *a* man hid</td></tr>
+<tr><td>καὶ ἀπὸ τῆς χαρᾶς αὐτοῦ</td><td>and from the joy of him</td></tr>
+<tr><td>ὑπάγει καὶ πωλεῖ ὅσα ἔχει</td><td>he goes and sells all *that* he has</td></tr>
+<tr><td>καὶ ἀγοράζει τὸν ἀγρὸν ἐκεῖνον.</td><td>and he buys *that* field</td></tr>
+</table>
+<hr>
+Πάλιν ὁμοία ἐστὶν ἡ βασιλεία τῶν οὐρανῶν ἐμπόρῳ ζητοῦντι καλοὺς μαργαρίτας·<hr><b>matthew 13:45</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Πάλιν ὁμοία ἐστὶν</td><td>Again it is similar</td></tr>
+<tr><td>ἡ βασιλεία τῶν οὐρανῶν</td><td>the kingdom *of* the heavens</td></tr>
+<tr><td>ἐμπόρῳ ζητοῦντι καλοὺς μαργαρίτας·</td><td>merchant seeking *fine* pearls</td></tr>
+</table>
+<hr>
+εὑρὼν δὲ ἕνα πολύτιμον μαργαρίτην ἀπελθὼν πέπρακεν πάντα ὅσα εἶχεν καὶ ἠγόρασεν αὐτόν.<hr><b>matthew 13:46</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εὑρὼν ἕνα πολύτιμον μαργαρίτην</td><td>but having found one valuable pearl</td></tr>
+<tr><td>ἀπελθὼν πέπρακεν πάντα ὅσα εἶχεν</td><td>having gone he sold *all* that he had</td></tr>
+<tr><td>καὶ ἠγόρασεν αὐτόν.</td><td>and *he* bought it</td></tr>
+</table>
+<hr>
+Πάλιν ὁμοία ἐστὶν ἡ βασιλεία τῶν οὐρανῶν σαγήνῃ βληθείσῃ εἰς τὴν θάλασσαν καὶ ἐκ παντὸς γένους συναγαγούσῃ· ἣν ὅτε ἐπληρώθη ἀναβιβάσαντες ἐπὶ τὸν αἰγιαλὸν καὶ καθίσαντες συνέλεξαν τὰ καλὰ εἰς ἄγγη, τὰ δὲ σαπρὰ ἔξω ἔβαλον.<hr><b>matthew 13:47</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Πάλιν ὁμοία ἐστὶν</td><td>Again *it is* similar</td></tr>
+<tr><td>ἡ βασιλεία τῶν οὐρανῶν</td><td>the kingdom *of* the heavens</td></tr>
+<tr><td>σαγήνῃ βληθείσῃ εἰς τὴν θάλασσαν</td><td>net *that was* thrown into the sea</td></tr>
+<tr><td>καὶ ἐκ παντὸς γένους</td><td>and from every kind</td></tr>
+<tr><td>συναγαγούσῃ· ἣν ὅτε ἐπληρώθη</td><td>having gathered, which when *it* was filled</td></tr>
+</table>
+<hr><b>matthew 13:48</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἀναβιβάσαντες ἐπὶ τὸν αἰγιαλὸν</td><td>having brought up onto the *shore*</td></tr>
+<tr><td>καὶ καθίσαντες συνέλεξαν τὰ καλὰ</td><td>and sitting down they gathered the good</td></tr>
+<tr><td>εἰς ἄγγη,</td><td>into *containers*</td></tr>
+<tr><td>δὲ τὰ σαπρὰ ἔξω ἔβαλον.</td><td>but the rotten [things] *they* threw out</td></tr>
+</table>
+<hr>
+οὕτως ἔσται ἐν τῇ συντελείᾳ τοῦ αἰῶνος·<hr><b>matthew 13:49</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὕτως ἔσται ἐν</td><td>thus it will be in</td></tr>
+<tr><td>τῇ συντελείᾳ τοῦ αἰῶνος·</td><td>the completion of *the* age</td></tr>
+<tr><td>ἐξελεύσονται οἱ ἄγγελοι</td><td>*will* *go* out the angels</td></tr>
+<tr><td>καὶ ἀφοριοῦσιν τοὺς πονηροὺς</td><td>and will separate the wicked</td></tr>
+<tr><td>ἐκ μέσου τῶν δικαίων,</td><td>from among *the* righteous</td></tr>
+</table>
+<hr>
+ἐξελεύσονται οἱ ἄγγελοι καὶ ἀφοριοῦσιν τοὺς πονηροὺς ἐκ μέσου τῶν δικαίων, καὶ βαλοῦσιν αὐτοὺς εἰς τὴν κάμινον τοῦ πυρός·<hr><b>matthew 13:50</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ βαλοῦσιν αὐτοὺς εἰς</td><td>and they will cast them into</td></tr>
+<tr><td>τὴν κάμινον τοῦ πυρός·</td><td>the furnace of *the* fire</td></tr>
+<tr><td>ἐκεῖ ἔσται ὁ κλαυθμὸς</td><td>there will be the weeping</td></tr>
+<tr><td>καὶ ὁ βρυγμὸς τῶν ὀδόντων.</td><td>and the *gnashing* of *the* teeth</td></tr>
+</table>
+<hr>
+Συνήκατε ταῦτα πάντα;<hr><b>matthew 13:51</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Συνήκατε ταῦτα πάντα;</td><td>Have you understood all these *things*?</td></tr>
+<tr><td>λέγουσιν αὐτῷ Ναί.</td><td>they say to him Yes</td></tr>
+</table>
+<hr>
+ὁ δὲ εἶπεν αὐτοῖς Διὰ τοῦτο πᾶς γραμματεὺς μαθητευθεὶς τῇ βασιλείᾳ τῶν οὐρανῶν ὅμοιός ἐστιν ἀνθρώπῳ οἰκοδεσπότῃ ὅστις ἐκβάλλει ἐκ τοῦ θησαυροῦ αὐτοῦ καινὰ καὶ παλαιά.<hr><b>matthew 13:52</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ εἶπεν αὐτοῖς</td><td>but he said to them</td></tr>
+<tr><td>Διὰ τοῦτο</td><td>Because of *this*</td></tr>
+<tr><td>πᾶς γραμματεὺς μαθητευθεὶς</td><td>every *scribe* having been discipled</td></tr>
+<tr><td>τῇ βασιλείᾳ τῶν οὐρανῶν</td><td>the kingdom of *the* heavens</td></tr>
+<tr><td>ὅμοιός ἐστιν ἀνθρώπῳ οἰκοδεσπότῃ</td><td>is like *a* man *who is a* householder</td></tr>
+<tr><td>ὅστις ἐκβάλλει</td><td>who *he* throws out</td></tr>
+<tr><td>ἐκ τοῦ θησαυροῦ αὐτοῦ</td><td>out of *his* treasury</td></tr>
+<tr><td>καινὰ καὶ παλαιά.</td><td>new and *old*</td></tr>
+</table>
+<hr>
+Καὶ ἐγένετο ὅτε ἐτέλεσεν ὁ Ἰησοῦς τὰς παραβολὰς ταύτας, μετῆρεν ἐκεῖθεν.<hr><b>matthew 13:53</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ ἐγένετο</td><td>And it came to pass</td></tr>
+<tr><td>ὅτε ἐτέλεσεν ὁ Ἰησοῦς</td><td>when Jesus *had* completed</td></tr>
+<tr><td>τὰς παραβολὰς ταύτας,</td><td>the parables these</td></tr>
+<tr><td>μετῆρεν ἐκεῖθεν.</td><td>he moved from there</td></tr>
+</table>
+<hr>
+καὶ ἐλθὼν εἰς τὴν πατρίδα αὐτοῦ ἐδίδασκεν αὐτοὺς ἐν τῇ συναγωγῇ αὐτῶν, ὥστε ἐκπλήσσεσθαι αὐτοὺς καὶ λέγειν Πόθεν τούτῳ ἡ σοφία αὕτη καὶ αἱ δυνάμεις;<hr><b>matthew 13:54</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐλθὼν</td><td>and having come</td></tr>
+<tr><td>εἰς τὴν πατρίδα αὐτοῦ</td><td>into his *homeland*</td></tr>
+<tr><td>ἐδίδασκεν αὐτοὺς</td><td>he was teaching *them*</td></tr>
+<tr><td>ἐν τῇ συναγωγῇ αὐτῶν,</td><td>in *the* synagogue of *them*</td></tr>
+<tr><td>ὥστε ἐκπλήσσεσθαι αὐτοὺς</td><td>so as to *be* astonished *at* them</td></tr>
+<tr><td>καὶ λέγειν Πόθεν</td><td>and to say Where</td></tr>
+<tr><td>τούτῳ ἡ σοφία αὕτη</td><td>to this *man* the wisdom this</td></tr>
+<tr><td>καὶ αἱ δυνάμεις;</td><td>and the *powers*</td></tr>
+</table>
+<hr>
+οὐχ οὗτός ἐστιν ὁ τοῦ τέκτονος υἱός;<hr><b>matthew 13:55</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὐχ οὗτός ἐστιν</td><td>is not this</td></tr>
+<tr><td>ὁ τοῦ τέκτονος υἱός;</td><td>the *son* of the carpenter</td></tr>
+<tr><td>οὐχ ἡ μήτηρ αὐτοῦ</td><td>is not his mother</td></tr>
+<tr><td>λέγεται Μαριὰμ</td><td>is called Mary</td></tr>
+<tr><td>καὶ οἱ ἀδελφοὶ αὐτοῦ</td><td>and the *brothers* of him</td></tr>
+<tr><td>Ἰάκωβος καὶ Ἰωσὴφ καὶ Σίμων καὶ Ἰούδας;</td><td>James and Joseph and Simon and Judas</td></tr>
+</table>
+<hr>
+καὶ αἱ ἀδελφαὶ αὐτοῦ οὐχὶ πᾶσαι πρὸς ἡμᾶς εἰσιν;<hr><b>matthew 13:56</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ αἱ ἀδελφαὶ αὐτοῦ</td><td>and his *sisters*</td></tr>
+<tr><td>οὐχὶ πᾶσαι πρὸς ἡμᾶς εἰσιν;</td><td>are not *all* with *us*?</td></tr>
+<tr><td>οὖν πόθεν τούτῳ ταῦτα πάντα;</td><td>then where to this all *are*?</td></tr>
+</table>
+<hr>
+καὶ ἐσκανδαλίζοντο ἐν αὐτῷ.<hr><b>matthew 13:57</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐσκανδαλίζοντο ἐν αὐτῷ.</td><td>and they were offended by *him*</td></tr>
+<tr><td>δὲ ὁ Ἰησοῦς εἶπεν αὐτοῖς</td><td>but *Jesus* said to them</td></tr>
+<tr><td>Οὐκ ἔστιν προφήτης ἄτιμος</td><td>There is no prophet *without honor*</td></tr>
+<tr><td>εἰ μὴ ἐν τῇ πατρίδι</td><td>if not in the *homeland*</td></tr>
+<tr><td>καὶ ἐν τῇ οἰκίᾳ αὐτοῦ.</td><td>and in *his* house</td></tr>
+</table>
+<hr>
+καὶ οὐκ ἐποίησεν ἐκεῖ δυνάμεις πολλὰς διὰ τὴν ἀπιστίαν αὐτῶν.<hr><b>matthew 13:58</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ οὐκ</td><td>and not</td></tr>
+<tr><td>ἐποίησεν ἐκεῖ δυνάμεις πολλὰς</td><td>did *there* many miracles</td></tr>
+<tr><td>διὰ τὴν ἀπιστίαν αὐτῶν.</td><td>because of *the* unbelief of them</td></tr>
+</table>
+<div class="chapter-links">
+<a href="12.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="selected-chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="14.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>

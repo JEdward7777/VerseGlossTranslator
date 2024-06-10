@@ -1,0 +1,549 @@
+<!DOCTYPE html><html><head><title>matthew 6</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="6.html" class="current-book-chapter">6</a></li>
+   <li class="submenu_item"><a href="7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="28.html" class="">28</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="5.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="selected-chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="7.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Προσέχετε δὲ τὴν δικαιοσύνην ὑμῶν μὴ ποιεῖν ἔμπροσθεν τῶν ἀνθρώπων πρὸς τὸ θεαθῆναι αὐτοῖς·<hr><b>matthew 6:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Προσέχετε τὴν δικαιοσύνην ὑμῶν</td><td>but *be careful with* your righteousness</td></tr>
+<tr><td>μὴ ποιεῖν ἔμπροσθεν τῶν ἀνθρώπων</td><td>not to do *it* in front of men</td></tr>
+<tr><td>πρὸς τὸ θεαθῆναι αὐτοῖς·</td><td>for the *purpose* to be seen by them</td></tr>
+<tr><td>δὲ εἰ μήγε,</td><td>but if not,</td></tr>
+<tr><td>μισθὸν οὐκ ἔχετε</td><td>reward *you* do not have</td></tr>
+<tr><td>παρὰ τῷ Πατρὶ ὑμῶν</td><td>from your *Father*</td></tr>
+<tr><td>τῷ ἐν τοῖς οὐρανοῖς.</td><td>the one *who is* in the heavens</td></tr>
+</table>
+<hr>
+Ὅταν οὖν ποιῇς ἐλεημοσύνην, μὴ σαλπίσῃς ἔμπροσθέν σου, ὥσπερ οἱ ὑποκριταὶ ποιοῦσιν ἐν ταῖς συναγωγαῖς καὶ ἐν ταῖς ῥύμαις, ὅπως δοξασθῶσιν ὑπὸ τῶν ἀνθρώπων·<hr><b>matthew 6:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν Ὅταν ποιῇς ἐλεημοσύνην,</td><td>therefore when you do *an act of* charity,</td></tr>
+<tr><td>μὴ σαλπίσῃς ἔμπροσθέν σου,</td><td>*do* not trumpet before you</td></tr>
+<tr><td>ὥσπερ οἱ ὑποκριταὶ</td><td>just as *the* hypocrites</td></tr>
+<tr><td>ποιοῦσιν ἐν ταῖς συναγωγαῖς</td><td>they do in the *synagogues*</td></tr>
+<tr><td>καὶ ἐν ταῖς ῥύμαις,</td><td>and in the *streets*</td></tr>
+<tr><td>ὅπως δοξασθῶσιν ὑπὸ τῶν ἀνθρώπων·</td><td>so that they may be glorified *by* the people</td></tr>
+<tr><td>ἀμὴν λέγω ὑμῖν,</td><td>truly I say to *you*</td></tr>
+<tr><td>ἀπέχουσιν τὸν μισθὸν αὐτῶν.</td><td>they receive *the* wage of them</td></tr>
+</table>
+<hr>
+σοῦ δὲ ποιοῦντος ἐλεημοσύνην μὴ γνώτω ἡ ἀριστερά σου τί ποιεῖ ἡ δεξιά σου, ὅπως ᾖ σου ἡ ἐλεημοσύνη ἐν τῷ κρυπτῷ·<hr><b>matthew 6:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ σοῦ ποιοῦντος ἐλεημοσύνην</td><td>but *of* you doing alms</td></tr>
+<tr><td>μὴ γνώτω ἡ ἀριστερά σου</td><td>*let* not *your* left [hand]</td></tr>
+<tr><td>τί ποιεῖ ἡ δεξιά σου,</td><td>what does *the* right *hand* of yours do</td></tr>
+</table>
+<hr><b>matthew 6:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅπως ᾖ σου ἡ ἐλεημοσύνη</td><td>so that *it may be* your charity</td></tr>
+<tr><td>ἐν τῷ κρυπτῷ·</td><td>in the *secret place*</td></tr>
+<tr><td>καὶ ὁ Πατήρ σου</td><td>and the *Father* of-you</td></tr>
+<tr><td>ὁ βλέπων ἐν τῷ κρυπτῷ</td><td>the one seeing *in* the secret</td></tr>
+<tr><td>ἀποδώσει σοι.</td><td>will reward *to* you</td></tr>
+</table>
+<hr>
+Καὶ ὅταν προσεύχησθε, οὐκ ἔσεσθε ὡς οἱ ὑποκριταί· ὅτι φιλοῦσιν ἐν ταῖς συναγωγαῖς καὶ ἐν ταῖς γωνίαις τῶν πλατειῶν ἑστῶτες προσεύχεσθαι, ὅπως φανῶσιν τοῖς ἀνθρώποις·<hr><b>matthew 6:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ ὅταν προσεύχησθε,</td><td>And *when* you pray,</td></tr>
+<tr><td>οὐκ ἔσεσθε ὡς οἱ ὑποκριταί·</td><td>you shall not be as the hypocrites</td></tr>
+<tr><td>ὅτι φιλοῦσιν ἐν ταῖς συναγωγαῖς</td><td>because they love *to pray* in the synagogues</td></tr>
+<tr><td>καὶ ἐν</td><td>and in</td></tr>
+<tr><td>ταῖς γωνίαις τῶν πλατειῶν</td><td>in the corners of *the* streets</td></tr>
+<tr><td>ἑστῶτες προσεύχεσθαι,</td><td>standing *to* pray</td></tr>
+<tr><td>ὅπως φανῶσιν τοῖς ἀνθρώποις·</td><td>so that they may appear to *the* people</td></tr>
+<tr><td>ἀμὴν λέγω ὑμῖν,</td><td>truly I say to *you*</td></tr>
+<tr><td>ἀπέχουσιν τὸν μισθὸν αὐτῶν.</td><td>they receive their *reward*</td></tr>
+</table>
+<hr>
+σὺ δὲ ὅταν προσεύχῃ, εἴσελθε εἰς τὸ ταμεῖόν σου καὶ κλείσας τὴν θύραν σου πρόσευξαι τῷ Πατρί σου τῷ ἐν τῷ κρυπτῷ·<hr><b>matthew 6:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὅταν σὺ προσεύχῃ,</td><td>but when *you* pray</td></tr>
+<tr><td>εἴσελθε εἰς τὸ ταμεῖόν σου</td><td>enter into *the* inner room of *yours*</td></tr>
+<tr><td>καὶ κλείσας τὴν θύραν σου</td><td>and having shut *the* door of you</td></tr>
+<tr><td>πρόσευξαι τῷ Πατρί σου</td><td>pray to *your* Father</td></tr>
+<tr><td>τῷ ἐν τῷ κρυπτῷ·</td><td>to the *Father* who *is* in the secret *place*</td></tr>
+<tr><td>καὶ ὁ Πατήρ σου</td><td>and the Father of yours</td></tr>
+<tr><td>ὁ βλέπων ἐν τῷ κρυπτῷ</td><td>the one seeing in the *secret place*</td></tr>
+<tr><td>ἀποδώσει σοι.</td><td>will give *to you*</td></tr>
+</table>
+<hr>
+Προσευχόμενοι δὲ μὴ βατταλογήσητε ὥσπερ οἱ ἐθνικοί· δοκοῦσιν γὰρ ὅτι ἐν τῇ πολυλογίᾳ αὐτῶν εἰσακουσθήσονται.<hr><b>matthew 6:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Προσευχόμενοι μὴ βατταλογήσητε</td><td>but *when* praying do not babble</td></tr>
+<tr><td>ὥσπερ οἱ ἐθνικοί·</td><td>just like *the* Gentiles</td></tr>
+<tr><td>γὰρ δοκοῦσιν ὅτι</td><td>for they think that</td></tr>
+<tr><td>ἐν τῇ πολυλογίᾳ αὐτῶν</td><td>in *the* verbosity of them</td></tr>
+<tr><td>εἰσακουσθήσονται.</td><td>*they will be* heard</td></tr>
+</table>
+<hr>
+μὴ οὖν ὁμοιωθῆτε αὐτοῖς· οἶδεν γὰρ ὁ Πατὴρ ὑμῶν ὧν χρείαν ἔχετε πρὸ τοῦ ὑμᾶς αἰτῆσαι αὐτόν.<hr><b>matthew 6:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν μὴ ὁμοιωθῆτε αὐτοῖς·</td><td>therefore *do* not be like them</td></tr>
+<tr><td>γὰρ οἶδεν ὁ Πατὴρ ὑμῶν</td><td>for *knows* the Father *of* you</td></tr>
+<tr><td>ὧν χρείαν ἔχετε</td><td>which *things* you need</td></tr>
+<tr><td>πρὸ τοῦ ὑμᾶς αἰτῆσαι αὐτόν.</td><td>before *you* ask him</td></tr>
+</table>
+<hr>
+οὕτως οὖν προσεύχεσθε ὑμεῖς<hr><b>matthew 6:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν οὕτως προσεύχεσθε ὑμεῖς</td><td>therefore thus pray *you*</td></tr>
+<tr><td>Πάτερ ἡμῶν</td><td>Father *of us*</td></tr>
+<tr><td>ὁ ἐν τοῖς οὐρανοῖς·</td><td>the one *who is* in the heavens</td></tr>
+<tr><td>Ἁγιασθήτω τὸ ὄνομά σου·</td><td>Hallowed be *the* name *of you*</td></tr>
+</table>
+<hr>
+Πάτερ ἡμῶν ὁ ἐν τοῖς οὐρανοῖς· Ἁγιασθήτω τὸ ὄνομά σου· ἐλθάτω ἡ βασιλεία σου· γενηθήτω τὸ θέλημά σου, ὡς ἐν οὐρανῷ καὶ ἐπὶ γῆς·<hr><b>matthew 6:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἐλθάτω ἡ βασιλεία σου·</td><td>come *your* kingdom</td></tr>
+<tr><td>γενηθήτω τὸ θέλημά σου,</td><td>be done *the* will of you</td></tr>
+<tr><td>ὡς ἐν οὐρανῷ</td><td>as in *the* heaven</td></tr>
+<tr><td>καὶ ἐπὶ γῆς·</td><td>and *on* earth</td></tr>
+</table>
+<hr>
+Τὸν ἄρτον ἡμῶν τὸν ἐπιούσιον δὸς ἡμῖν σήμερον·<hr><b>matthew 6:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Τὸν ἄρτον ἡμῶν τὸν ἐπιούσιον</td><td>the bread of *us* the *coming*</td></tr>
+<tr><td>δὸς ἡμῖν σήμερον·</td><td>give *to* us today</td></tr>
+</table>
+<hr>
+καὶ ἄφες ἡμῖν τὰ ὀφειλήματα ἡμῶν, ὡς καὶ ἡμεῖς ἀφήκαμεν τοῖς ὀφειλέταις ἡμῶν·<hr><b>matthew 6:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἄφες</td><td>and forgive</td></tr>
+<tr><td>ἡμῖν τὰ ὀφειλήματα ἡμῶν,</td><td>to us the debts of us</td></tr>
+<tr><td>ὡς καὶ ἡμεῖς</td><td>as also we</td></tr>
+<tr><td>ἀφήκαμεν τοῖς ὀφειλέταις ἡμῶν·</td><td>we-forgave *to* the debtors of us</td></tr>
+</table>
+<hr>
+καὶ μὴ εἰσενέγκῃς ἡμᾶς εἰς πειρασμόν, ἀλλὰ ῥῦσαι ἡμᾶς ἀπὸ τοῦ πονηροῦ.<hr><b>matthew 6:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ μὴ</td><td>and *do* not</td></tr>
+<tr><td>εἰσενέγκῃς ἡμᾶς εἰς πειρασμόν,</td><td>lead us into temptation</td></tr>
+<tr><td>ἀλλὰ ῥῦσαι</td><td>but deliver</td></tr>
+<tr><td>ἡμᾶς ἀπὸ τοῦ πονηροῦ.</td><td>us from the evil</td></tr>
+</table>
+<hr>
+Ἐὰν γὰρ ἀφῆτε τοῖς ἀνθρώποις τὰ παραπτώματα αὐτῶν, ἀφήσει καὶ ὑμῖν ὁ Πατὴρ ὑμῶν ὁ οὐράνιος·<hr><b>matthew 6:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ Ἐὰν ἀφῆτε τοῖς ἀνθρώποις</td><td>for if *you* forgive *to* the people</td></tr>
+<tr><td>τὰ παραπτώματα αὐτῶν,</td><td>the trespasses *of them*</td></tr>
+<tr><td>ἀφήσει καὶ ὑμῖν</td><td>will forgive also *to* you</td></tr>
+<tr><td>ὁ Πατὴρ ὑμῶν ὁ οὐράνιος·</td><td>the Father *of* you the heavenly</td></tr>
+</table>
+<hr>
+ἐὰν δὲ μὴ ἀφῆτε τοῖς ἀνθρώποις, οὐδὲ ὁ Πατὴρ ὑμῶν ἀφήσει τὰ παραπτώματα ὑμῶν.<hr><b>matthew 6:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐὰν</td><td>but if</td></tr>
+<tr><td>μὴ ἀφῆτε τοῖς ἀνθρώποις,</td><td>not forgive *to* the men</td></tr>
+<tr><td>οὐδὲ ὁ Πατὴρ ὑμῶν</td><td>*neither* the Father of *you*</td></tr>
+<tr><td>ἀφήσει τὰ παραπτώματα ὑμῶν.</td><td>will forgive *the* trespasses *of you*</td></tr>
+</table>
+<hr>
+Ὅταν δὲ νηστεύητε, μὴ γίνεσθε ὡς οἱ ὑποκριταὶ σκυθρωποί· ἀφανίζουσιν γὰρ τὰ πρόσωπα αὐτῶν ὅπως φανῶσιν τοῖς ἀνθρώποις νηστεύοντες·<hr><b>matthew 6:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ὅταν νηστεύητε,</td><td>but when *you* fast</td></tr>
+<tr><td>μὴ γίνεσθε ὡς οἱ ὑποκριταὶ</td><td>do *not* become like the hypocrites</td></tr>
+<tr><td>σκυθρωποί· γὰρ</td><td>sad-looking; for</td></tr>
+<tr><td>ἀφανίζουσιν τὰ πρόσωπα αὐτῶν</td><td>they make their faces unrecognizable</td></tr>
+<tr><td>ὅπως φανῶσιν τοῖς ἀνθρώποις νηστεύοντες·</td><td>so that they might appear to *the* people fasting</td></tr>
+<tr><td>ἀμὴν λέγω ὑμῖν,</td><td>truly I say to *you*</td></tr>
+<tr><td>ἀπέχουσιν τὸν μισθὸν αὐτῶν.</td><td>they receive *their* reward</td></tr>
+</table>
+<hr>
+σὺ δὲ νηστεύων ἄλειψαί σου τὴν κεφαλὴν καὶ τὸ πρόσωπόν σου νίψαι, ὅπως μὴ φανῇς τοῖς ἀνθρώποις νηστεύων ἀλλὰ τῷ Πατρί σου τῷ ἐν τῷ κρυφαίῳ·<hr><b>matthew 6:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ σὺ νηστεύων</td><td>but *you* fasting</td></tr>
+<tr><td>ἄλειψαί σου τὴν κεφαλὴν</td><td>anoint *your* head</td></tr>
+<tr><td>καὶ τὸ πρόσωπόν σου</td><td>and *the* face *of* yours</td></tr>
+<tr><td>νίψαι, ὅπως μὴ</td><td>wash, so that *you* may not</td></tr>
+</table>
+<hr><b>matthew 6:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>φανῇς τοῖς ἀνθρώποις νηστεύων</td><td>you might appear *to* the people fasting</td></tr>
+<tr><td>ἀλλὰ τῷ Πατρί σου</td><td>but to your *Father*</td></tr>
+<tr><td>τῷ ἐν τῷ κρυφαίῳ·</td><td>to the one *who is* in *the* secret</td></tr>
+<tr><td>καὶ ὁ Πατήρ σου</td><td>and *the* Father of-you</td></tr>
+<tr><td>ὁ βλέπων ἐν τῷ κρυφαίῳ</td><td>the one seeing in the *secret place*</td></tr>
+<tr><td>ἀποδώσει σοι.</td><td>will reward *you*</td></tr>
+</table>
+<hr>
+Μὴ θησαυρίζετε ὑμῖν θησαυροὺς ἐπὶ τῆς γῆς, ὅπου σὴς καὶ βρῶσις ἀφανίζει, καὶ ὅπου κλέπται διορύσσουσιν καὶ κλέπτουσιν·<hr><b>matthew 6:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Μὴ θησαυρίζετε ὑμῖν</td><td>Do not store up for *yourselves*</td></tr>
+<tr><td>θησαυροὺς ἐπὶ τῆς γῆς,</td><td>treasures *upon* the earth</td></tr>
+<tr><td>ὅπου σὴς καὶ βρῶσις</td><td>where moth and *eating*</td></tr>
+<tr><td>ἀφανίζει, καὶ ὅπου</td><td>destroys, and *in* where</td></tr>
+<tr><td>κλέπται διορύσσουσιν καὶ κλέπτουσιν·</td><td>thieves dig through and steal</td></tr>
+</table>
+<hr>
+θησαυρίζετε δὲ ὑμῖν θησαυροὺς ἐν οὐρανῷ, ὅπου οὔτε σὴς οὔτε βρῶσις ἀφανίζει, καὶ ὅπου κλέπται οὐ διορύσσουσιν οὐδὲ κλέπτουσιν·<hr><b>matthew 6:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>θησαυρίζετε ὑμῖν θησαυροὺς ἐν οὐρανῷ,</td><td>store up *for* yourselves treasures in heaven</td></tr>
+<tr><td>ὅπου οὔτε σὴς οὔτε βρῶσις</td><td>where neither moth nor rust</td></tr>
+<tr><td>ἀφανίζει, καὶ ὅπου κλέπται</td><td>destroys, and where thieves</td></tr>
+<tr><td>οὐ διορύσσουσιν οὐδὲ κλέπτουσιν·</td><td>*where* they do not break through nor steal</td></tr>
+</table>
+<hr>
+ὅπου γάρ ἐστιν ὁ θησαυρός σου, ἐκεῖ ἔσται καὶ ἡ καρδία σου.<hr><b>matthew 6:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γάρ ὅπου</td><td>for where</td></tr>
+<tr><td>ἐστιν ὁ θησαυρός σου,</td><td>is *the* treasure of you</td></tr>
+<tr><td>ἐκεῖ ἔσται</td><td>there will-be</td></tr>
+<tr><td>καὶ ἡ καρδία σου.</td><td>and the heart *of* you</td></tr>
+</table>
+<hr>
+Ὁ λύχνος τοῦ σώματός ἐστιν ὁ ὀφθαλμός.<hr><b>matthew 6:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ὁ λύχνος τοῦ σώματός</td><td>The lamp of *the* body</td></tr>
+<tr><td>ἐστιν ὁ ὀφθαλμός.</td><td>is the *eye*</td></tr>
+<tr><td>οὖν ἐὰν</td><td>therefore if</td></tr>
+<tr><td>ᾖ ὁ ὀφθαλμός σου</td><td>is *the* eye of you</td></tr>
+<tr><td>ἁπλοῦς, ὅλον τὸ σῶμά σου</td><td>single, whole *the* body *of* you</td></tr>
+<tr><td>φωτεινὸν ἔσται·</td><td>will be *bright*</td></tr>
+</table>
+<hr>
+ἐὰν δὲ ὁ ὀφθαλμός σου πονηρὸς ᾖ, ὅλον τὸ σῶμά σου σκοτεινὸν ἔσται.<hr><b>matthew 6:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐὰν ὁ ὀφθαλμός σου</td><td>but if the eye of *yours*</td></tr>
+<tr><td>πονηρὸς ᾖ,</td><td>evil *is*</td></tr>
+<tr><td>ὅλον τὸ σῶμά σου</td><td>*the* whole *the* body of you</td></tr>
+<tr><td>σκοτεινὸν ἔσται.</td><td>dark *it will be*</td></tr>
+<tr><td>οὖν εἰ τὸ φῶς</td><td>therefore if the *light*</td></tr>
+<tr><td>τὸ ἐν σοὶ</td><td>the *that is* in you</td></tr>
+<tr><td>σκότος ἐστίν, τὸ σκότος πόσον.</td><td>darkness is, the darkness how great</td></tr>
+</table>
+<hr>
+Οὐδεὶς δύναται δυσὶ κυρίοις δουλεύειν· ἢ γὰρ τὸν ἕνα μισήσει καὶ τὸν ἕτερον ἀγαπήσει, ἢ ἑνὸς ἀνθέξεται καὶ τοῦ ἑτέρου καταφρονήσει·<hr><b>matthew 6:24</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Οὐδεὶς δύναται δυσὶ κυρίοις δουλεύειν·</td><td>No one is able *to* serve two masters</td></tr>
+<tr><td>γὰρ ἢ τὸν ἕνα μισήσει</td><td>for *either* the one *he* will hate</td></tr>
+<tr><td>καὶ τὸν ἕτερον ἀγαπήσει,</td><td>and the other *one* he will love</td></tr>
+<tr><td>ἢ ἑνὸς ἀνθέξεται</td><td>or *he will* hold firmly to one</td></tr>
+<tr><td>καὶ τοῦ ἑτέρου καταφρονήσει·</td><td>and *of* the other *he will* despise</td></tr>
+<tr><td>οὐ δύνασθε</td><td>you *are* not able</td></tr>
+<tr><td>Θεῷ δουλεύειν καὶ μαμωνᾷ.</td><td>God to serve and *mammon*</td></tr>
+</table>
+<hr>
+Διὰ τοῦτο λέγω ὑμῖν, μὴ μεριμνᾶτε τῇ ψυχῇ ὑμῶν τί φάγητε, ἢ τί πίητε μηδὲ τῷ σώματι ὑμῶν τί ἐνδύσησθε·<hr><b>matthew 6:25</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Διὰ τοῦτο λέγω ὑμῖν,</td><td>Because of this I say to *you*,</td></tr>
+<tr><td>μὴ μεριμνᾶτε τῇ ψυχῇ ὑμῶν</td><td>do not be anxious for *the* soul *of* yours</td></tr>
+<tr><td>τί φάγητε, ἢ τί πίητε</td><td>what you might eat, or what you might drink</td></tr>
+<tr><td>μηδὲ τῷ σώματι ὑμῶν</td><td>nor *concerning* the body of you</td></tr>
+<tr><td>τί ἐνδύσησθε·</td><td>what *you* should wear</td></tr>
+<tr><td>οὐχὶ</td><td>is it not</td></tr>
+<tr><td>ἡ ψυχὴ πλεῖόν ἐστιν τῆς τροφῆς</td><td>the soul is more than the food</td></tr>
+<tr><td>καὶ τὸ σῶμα τοῦ ἐνδύματος;</td><td>and the body *is more than* the clothing</td></tr>
+</table>
+<hr>
+ἐμβλέψατε εἰς τὰ πετεινὰ τοῦ οὐρανοῦ, ὅτι οὐ σπείρουσιν οὐδὲ θερίζουσιν οὐδὲ συνάγουσιν εἰς ἀποθήκας, καὶ ὁ Πατὴρ ὑμῶν ὁ οὐράνιος τρέφει αὐτά·<hr><b>matthew 6:26</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἐμβλέψατε εἰς</td><td>look at *into*</td></tr>
+<tr><td>τὰ πετεινὰ τοῦ οὐρανοῦ,</td><td>the *birds* of the *heavens*</td></tr>
+<tr><td>ὅτι οὐ σπείρουσιν</td><td>because *they* do not sow</td></tr>
+<tr><td>οὐδὲ θερίζουσιν</td><td>nor do they *harvest*</td></tr>
+<tr><td>οὐδὲ συνάγουσιν εἰς ἀποθήκας,</td><td>nor do they gather into barns</td></tr>
+<tr><td>καὶ ὁ</td><td>and the</td></tr>
+<tr><td>Πατὴρ ὑμῶν ὁ οὐράνιος</td><td>Father *of* you the heavenly</td></tr>
+<tr><td>τρέφει αὐτά·</td><td>nourishes *them*</td></tr>
+<tr><td>οὐχ ὑμεῖς μᾶλλον διαφέρετε αὐτῶν;</td><td>not you *are* more valued than them?</td></tr>
+</table>
+<hr>
+τίς δὲ ἐξ ὑμῶν μεριμνῶν δύναται προσθεῖναι ἐπὶ τὴν ἡλικίαν αὐτοῦ πῆχυν ἕνα;<hr><b>matthew 6:27</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ τίς ἐξ ὑμῶν</td><td>but who *is* from *among* you</td></tr>
+<tr><td>μεριμνῶν δύναται προσθεῖναι</td><td>worrying can add</td></tr>
+<tr><td>ἐπὶ τὴν ἡλικίαν αὐτοῦ</td><td>upon his *age*</td></tr>
+<tr><td>πῆχυν ἕνα;</td><td>a *cubit*</td></tr>
+</table>
+<hr>
+καὶ περὶ ἐνδύματος τί μεριμνᾶτε;<hr><b>matthew 6:28</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ περὶ ἐνδύματος τί μεριμνᾶτε;</td><td>and about clothing why *do you* worry</td></tr>
+<tr><td>καταμάθετε τὰ κρίνα τοῦ ἀγροῦ</td><td>learn *about* the lilies of the field</td></tr>
+<tr><td>πῶς αὐξάνουσιν·</td><td>how they *grow*</td></tr>
+<tr><td>οὐ κοπιῶσιν οὐδὲ νήθουσιν·</td><td>they neither toil nor *do they* spin</td></tr>
+</table>
+<hr>
+λέγω δὲ ὑμῖν ὅτι οὐδὲ Σολομὼν ἐν πάσῃ τῇ δόξῃ αὐτοῦ περιεβάλετο ὡς ἓν τούτων.<hr><b>matthew 6:29</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ λέγω ὑμῖν</td><td>but I say to *you*</td></tr>
+<tr><td>ὅτι οὐδὲ Σολομὼν ἐν</td><td>that not even Solomon in</td></tr>
+<tr><td>πάσῃ τῇ δόξῃ αὐτοῦ</td><td>in all *the* glory of him</td></tr>
+<tr><td>περιεβάλετο ὡς ἓν τούτων.</td><td>was clothed as *one of these*</td></tr>
+</table>
+<hr>
+εἰ δὲ τὸν χόρτον τοῦ ἀγροῦ σήμερον ὄντα καὶ αὔριον εἰς κλίβανον βαλλόμενον ὁ Θεὸς οὕτως ἀμφιέννυσιν, οὐ πολλῷ μᾶλλον ὑμᾶς, ὀλιγόπιστοι;<hr><b>matthew 6:30</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἰ</td><td>but if</td></tr>
+<tr><td>τὸν χόρτον τοῦ ἀγροῦ</td><td>the grass *of* the field</td></tr>
+<tr><td>σήμερον ὄντα</td><td>today *being*</td></tr>
+<tr><td>καὶ αὔριον εἰς κλίβανον βαλλόμενον</td><td>and tomorrow into *the* furnace being thrown</td></tr>
+<tr><td>ὁ Θεὸς</td><td>the *God*</td></tr>
+<tr><td>οὕτως ἀμφιέννυσιν,</td><td>thus *he* clothes</td></tr>
+<tr><td>οὐ πολλῷ μᾶλλον ὑμᾶς,</td><td>not much more *will He clothe* you</td></tr>
+<tr><td>ὀλιγόπιστοι;</td><td>you of little faith</td></tr>
+</table>
+<hr>
+μὴ οὖν μεριμνήσητε λέγοντες· Τί φάγωμεν; ἤ· Τί πίωμεν; ἤ· Τί περιβαλώμεθα;<hr><b>matthew 6:31</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν μὴ μεριμνήσητε λέγοντες·</td><td>therefore do not worry saying</td></tr>
+<tr><td>Τί φάγωμεν; ἤ· Τί πίωμεν; ἤ· Τί περιβαλώμεθα;</td><td>What shall we eat? or What shall we drink? or What shall we wear?</td></tr>
+</table>
+<hr>
+πάντα γὰρ ταῦτα τὰ ἔθνη ἐπιζητοῦσιν·<hr><b>matthew 6:32</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ</td><td>for</td></tr>
+<tr><td>πάντα ταῦτα τὰ ἔθνη ἐπιζητοῦσιν·</td><td>all these the nations seek</td></tr>
+<tr><td>γὰρ οἶδεν ὁ</td><td>for *he* knows the</td></tr>
+<tr><td>Πατὴρ ὑμῶν ὁ οὐράνιος</td><td>Father *of* you the heavenly</td></tr>
+<tr><td>ὅτι χρῄζετε τούτων ἁπάντων.</td><td>that *you* need all these *things*</td></tr>
+</table>
+<hr>
+ζητεῖτε δὲ πρῶτον τὴν βασιλείαν καὶ τὴν δικαιοσύνην αὐτοῦ, καὶ ταῦτα πάντα προστεθήσεται ὑμῖν.<hr><b>matthew 6:33</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ζητεῖτε πρῶτον τὴν βασιλείαν</td><td>but seek first the kingdom</td></tr>
+<tr><td>καὶ τὴν δικαιοσύνην αὐτοῦ,</td><td>and his righteousness</td></tr>
+<tr><td>καὶ ταῦτα πάντα προστεθήσεται ὑμῖν.</td><td>and these all will-be-added to you</td></tr>
+</table>
+<hr>
+μὴ οὖν μεριμνήσητε εἰς τὴν αὔριον, ἡ γὰρ αὔριον μεριμνήσει ἑαυτῆς·<hr><b>matthew 6:34</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν μὴ</td><td>therefore *do* not</td></tr>
+<tr><td>μεριμνήσητε εἰς τὴν αὔριον,</td><td>do not be anxious about *the* tomorrow,</td></tr>
+<tr><td>γὰρ ἡ αὔριον μεριμνήσει ἑαυτῆς·</td><td>for the tomorrow will worry *about* itself</td></tr>
+<tr><td>ἀρκετὸν τῇ ἡμέρᾳ</td><td>sufficient for *the* day</td></tr>
+<tr><td>ἡ κακία αὐτῆς.</td><td>the evil *of it*</td></tr>
+</table>
+<div class="chapter-links">
+<a href="5.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="selected-chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="7.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>

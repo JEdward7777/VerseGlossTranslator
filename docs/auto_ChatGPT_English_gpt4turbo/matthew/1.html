@@ -1,0 +1,430 @@
+<!DOCTYPE html><html><head><title>matthew 1</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="current-book-chapter">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="28.html" class="">28</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a class="chapter-link" href="#">&lt;-</a>
+<a href="1.html" class="selected-chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="2.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Βίβλος γενέσεως Ἰησοῦ Χριστοῦ υἱοῦ Δαυεὶδ υἱοῦ Ἀβραάμ.<hr><b>matthew 1:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Βίβλος γενέσεως</td><td>book of *the* generation</td></tr>
+<tr><td>Ἰησοῦ Χριστοῦ υἱοῦ Δαυεὶδ</td><td>Jesus Christ son of *David*</td></tr>
+<tr><td>υἱοῦ Ἀβραάμ.</td><td>son of *Abraham*</td></tr>
+</table>
+<hr>
+Ἀβραὰμ ἐγέννησεν τὸν Ἰσαάκ, Ἰσαὰκ δὲ ἐγέννησεν τὸν Ἰακώβ, Ἰακὼβ δὲ ἐγέννησεν τὸν Ἰούδαν καὶ τοὺς ἀδελφοὺς αὐτοῦ, Ἰούδας δὲ ἐγέννησεν τὸν Φαρὲς καὶ τὸν Ζαρὰ ἐκ τῆς Θάμαρ, Φαρὲς δὲ ἐγέννησεν τὸν Ἐσρώμ, Ἐσρὼμ δὲ ἐγέννησεν τὸν Ἀράμ, Ἀρὰμ δὲ ἐγέννησεν τὸν Ἀμιναδάβ, Ἀμιναδὰβ δὲ ἐγέννησεν τὸν Ναασσών, Ναασσὼν δὲ ἐγέννησεν τὸν Σαλμών, Σαλμὼν δὲ ἐγέννησεν τὸν Βόες ἐκ τῆς Ῥαχάβ, Βόες δὲ ἐγέννησεν τὸν Ἰωβὴδ ἐκ τῆς Ῥούθ, Ἰωβὴδ δὲ ἐγέννησεν τὸν Ἰεσσαί, Ἰεσσαὶ δὲ ἐγέννησεν τὸν Δαυεὶδ τὸν βασιλέα.<hr><b>matthew 1:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἀβραὰμ ἐγέννησεν τὸν Ἰσαάκ,</td><td>Abraham begat *the* Isaac</td></tr>
+<tr><td>δὲ Ἰσαὰκ ἐγέννησεν τὸν Ἰακώβ,</td><td>but Isaac begot *the* Jacob</td></tr>
+<tr><td>δὲ Ἰακὼβ ἐγέννησεν τὸν Ἰούδαν</td><td>and Jacob begot *the* Judah</td></tr>
+<tr><td>καὶ τοὺς ἀδελφοὺς αὐτοῦ,</td><td>and the *his* brothers</td></tr>
+</table>
+<hr><b>matthew 1:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἰούδας ἐγέννησεν</td><td>and *then* Judah fathered</td></tr>
+<tr><td>τὸν Φαρὲς καὶ τὸν Ζαρὰ</td><td>the Phares and *the* Zara</td></tr>
+<tr><td>ἐκ τῆς Θάμαρ,</td><td>from *the* Tamar</td></tr>
+<tr><td>δὲ Φαρὲς ἐγέννησεν τὸν Ἐσρώμ,</td><td>and Phares begat *the* Esrom</td></tr>
+<tr><td>δὲ Ἐσρὼμ ἐγέννησεν τὸν Ἀράμ,</td><td>and *Esrom* begat *Aram*</td></tr>
+</table>
+<hr><b>matthew 1:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἀρὰμ ἐγέννησεν τὸν Ἀμιναδάβ,</td><td>and Aram fathered *the* Aminadab</td></tr>
+<tr><td>δὲ Ἀμιναδὰβ ἐγέννησεν τὸν Ναασσών,</td><td>and Aminadab begot *the* Naasson</td></tr>
+<tr><td>δὲ Ναασσὼν ἐγέννησεν τὸν Σαλμών,</td><td>and Naasson begot *the* Salmon</td></tr>
+</table>
+<hr><b>matthew 1:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Σαλμὼν ἐγέννησεν τὸν Βόες</td><td>and Salmon begot Boaz</td></tr>
+<tr><td>ἐκ τῆς Ῥαχάβ,</td><td>from *the* Rahab</td></tr>
+<tr><td>δὲ Βόες ἐγέννησεν τὸν Ἰωβὴδ</td><td>and Boaz *fathered* Jobed</td></tr>
+<tr><td>ἐκ τῆς Ῥούθ,</td><td>from *the* Ruth</td></tr>
+<tr><td>δὲ Ἰωβὴδ ἐγέννησεν τὸν Ἰεσσαί,</td><td>and *Obed begot* Jesse</td></tr>
+</table>
+<hr><b>matthew 1:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἰεσσαὶ ἐγέννησεν</td><td>and Jesse fathered</td></tr>
+<tr><td>τὸν Δαυεὶδ τὸν βασιλέα.</td><td>David the *king*</td></tr>
+<tr><td>δὲ Δαυεὶδ ἐγέννησεν τὸν Σολομῶνα</td><td>but David begot *the* Solomon</td></tr>
+<tr><td>ἐκ τῆς τοῦ Οὐρίου,</td><td>from the *wife* of Uriah</td></tr>
+</table>
+<hr>
+Δαυεὶδ δὲ ἐγέννησεν τὸν Σολομῶνα ἐκ τῆς τοῦ Οὐρίου, Σολομὼν δὲ ἐγέννησεν τὸν Ῥοβοάμ, Ῥοβοὰμ δὲ ἐγέννησεν τὸν Ἀβιά, Ἀβιὰ δὲ ἐγέννησεν τὸν Ἀσάφ, Ἀσὰφ δὲ ἐγέννησεν τὸν Ἰωσαφάτ, Ἰωσαφὰτ δὲ ἐγέννησεν τὸν Ἰωράμ, Ἰωρὰμ δὲ ἐγέννησεν τὸν Ὀζείαν, Ὀζείας δὲ ἐγέννησεν τὸν Ἰωαθάμ, Ἰωαθὰμ δὲ ἐγέννησεν τὸν Ἄχαζ, Ἄχαζ δὲ ἐγέννησεν τὸν Ἐζεκίαν, Ἐζεκίας δὲ ἐγέννησεν τὸν Μανασσῆ, Μανασσῆς δὲ ἐγέννησεν τὸν Ἀμώς, Ἀμὼς δὲ ἐγέννησεν τὸν Ἰωσείαν, Ἰωσείας δὲ ἐγέννησεν τὸν Ἰεχονίαν καὶ τοὺς ἀδελφοὺς αὐτοῦ ἐπὶ τῆς μετοικεσίας Βαβυλῶνος.<hr><b>matthew 1:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Σολομὼν ἐγέννησεν τὸν Ῥοβοάμ,</td><td>but Solomon begot *the* Rehoboam</td></tr>
+<tr><td>δὲ Ῥοβοὰμ ἐγέννησεν τὸν Ἀβιά,</td><td>and Rehoboam begot *the* Abijah</td></tr>
+<tr><td>δὲ Ἀβιὰ ἐγέννησεν τὸν Ἀσάφ,</td><td>and Abijah fathered Asaph</td></tr>
+</table>
+<hr><b>matthew 1:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἀσὰφ ἐγέννησεν τὸν Ἰωσαφάτ,</td><td>and Asaph begot *the* Jehoshaphat</td></tr>
+<tr><td>δὲ Ἰωσαφὰτ ἐγέννησεν τὸν Ἰωράμ,</td><td>and *Jehoshaphat begot* Joram</td></tr>
+<tr><td>δὲ Ἰωρὰμ ἐγέννησεν τὸν Ὀζείαν,</td><td>and Joram fathered *the* Uzziah</td></tr>
+</table>
+<hr><b>matthew 1:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ὀζείας ἐγέννησεν τὸν Ἰωαθάμ,</td><td>and Ozias begat *the* Joatham</td></tr>
+<tr><td>δὲ Ἰωαθὰμ ἐγέννησεν τὸν Ἄχαζ,</td><td>and Joatham begot *the* Ahaz</td></tr>
+<tr><td>δὲ Ἄχαζ ἐγέννησεν τὸν Ἐζεκίαν,</td><td>and Ahaz fathered *the* Hezekiah</td></tr>
+</table>
+<hr><b>matthew 1:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἐζεκίας ἐγέννησεν τὸν Μανασσῆ,</td><td>and Hezekiah fathered *the* Manasseh</td></tr>
+<tr><td>δὲ Μανασσῆς ἐγέννησεν τὸν Ἀμώς,</td><td>and Manasseh begot *the* Amos</td></tr>
+<tr><td>δὲ Ἀμὼς ἐγέννησεν τὸν Ἰωσείαν,</td><td>and Amos begot *the* Josiah</td></tr>
+</table>
+<hr><b>matthew 1:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἰωσείας ἐγέννησεν τὸν Ἰεχονίαν</td><td>and Josiah begot *the* Jeconiah</td></tr>
+<tr><td>καὶ τοὺς ἀδελφοὺς αὐτοῦ</td><td>and *the* brothers *of him*</td></tr>
+<tr><td>ἐπὶ τῆς μετοικεσίας Βαβυλῶνος.</td><td>at the *time of the* deportation *to* Babylon</td></tr>
+</table>
+<hr>
+Μετὰ δὲ τὴν μετοικεσίαν Βαβυλῶνος Ἰεχονίας ἐγέννησεν τὸν Σαλαθιήλ, Σαλαθιὴλ δὲ ἐγέννησεν τὸν Ζοροβαβέλ, Ζοροβαβὲλ δὲ ἐγέννησεν τὸν Ἀβιούδ, Ἀβιοὺδ δὲ ἐγέννησεν τὸν Ἐλιακείμ, Ἐλιακεὶμ δὲ ἐγέννησεν τὸν Ἀζώρ, Ἀζὼρ δὲ ἐγέννησεν τὸν Σαδώκ, Σαδὼκ δὲ ἐγέννησεν τὸν Ἀχείμ, Ἀχεὶμ δὲ ἐγέννησεν τὸν Ἐλιούδ, Ἐλιοὺδ δὲ ἐγέννησεν τὸν Ἐλεάζαρ, Ἐλεάζαρ δὲ ἐγέννησεν τὸν Μαθθάν, Μαθθὰν δὲ ἐγέννησεν τὸν Ἰακώβ, Ἰακὼβ δὲ ἐγέννησεν τὸν Ἰωσὴφ τὸν ἄνδρα Μαρίας, ἐξ ἧς ἐγεννήθη Ἰησοῦς ὁ λεγόμενος Χριστός.<hr><b>matthew 1:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Μετὰ τὴν μετοικεσίαν Βαβυλῶνος</td><td>but after the deportation of Babylon</td></tr>
+<tr><td>Ἰεχονίας ἐγέννησεν τὸν Σαλαθιήλ,</td><td>Jechoniah fathered *the* Shealtiel,</td></tr>
+<tr><td>δὲ Σαλαθιὴλ ἐγέννησεν τὸν Ζοροβαβέλ,</td><td>and Salathiel begot *the* Zerubbabel</td></tr>
+</table>
+<hr><b>matthew 1:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ζοροβαβὲλ ἐγέννησεν τὸν Ἀβιούδ,</td><td>and Zerubbabel begot *the* Abiud</td></tr>
+<tr><td>δὲ Ἀβιοὺδ ἐγέννησεν τὸν Ἐλιακείμ,</td><td>and Abiud begot *the* Eliakim</td></tr>
+<tr><td>δὲ Ἐλιακεὶμ ἐγέννησεν τὸν Ἀζώρ,</td><td>and Eliakim begat Azor</td></tr>
+</table>
+<hr><b>matthew 1:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἀζὼρ ἐγέννησεν τὸν Σαδώκ,</td><td>but Azor fathered *the* Sadok</td></tr>
+<tr><td>δὲ Σαδὼκ ἐγέννησεν τὸν Ἀχείμ,</td><td>and *then* Sadok begat Achim</td></tr>
+<tr><td>δὲ Ἀχεὶμ ἐγέννησεν τὸν Ἐλιούδ,</td><td>and Achim begat Eliud</td></tr>
+</table>
+<hr><b>matthew 1:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἐλιοὺδ ἐγέννησεν τὸν Ἐλεάζαρ,</td><td>and Eliud fathered *the* Eleazar</td></tr>
+<tr><td>δὲ Ἐλεάζαρ ἐγέννησεν τὸν Μαθθάν,</td><td>and Eleazar begat *the* Matthan</td></tr>
+<tr><td>δὲ Μαθθὰν ἐγέννησεν τὸν Ἰακώβ,</td><td>and Maththan begot *the* Jacob</td></tr>
+</table>
+<hr><b>matthew 1:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἰακὼβ ἐγέννησεν τὸν Ἰωσὴφ</td><td>and Jacob fathered Joseph</td></tr>
+<tr><td>τὸν ἄνδρα Μαρίας, ἐξ ἧς</td><td>the husband *of* Mary, from whom</td></tr>
+<tr><td>ἐγεννήθη Ἰησοῦς ὁ λεγόμενος Χριστός.</td><td>*was born* Jesus the *one* called Christ</td></tr>
+</table>
+<hr>
+Πᾶσαι οὖν αἱ γενεαὶ ἀπὸ Ἀβραὰμ ἕως Δαυεὶδ γενεαὶ δεκατέσσαρες, καὶ ἀπὸ Δαυεὶδ ἕως τῆς μετοικεσίας Βαβυλῶνος γενεαὶ δεκατέσσαρες, καὶ ἀπὸ τῆς μετοικεσίας Βαβυλῶνος ἕως τοῦ Χριστοῦ γενεαὶ δεκατέσσαρες.<hr><b>matthew 1:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν Πᾶσαι αἱ γενεαὶ</td><td>therefore all the generations</td></tr>
+<tr><td>ἀπὸ Ἀβραὰμ ἕως Δαυεὶδ</td><td>from Abraham to David</td></tr>
+<tr><td>γενεαὶ δεκατέσσαρες,</td><td>generations fourteen</td></tr>
+<tr><td>καὶ ἀπὸ Δαυεὶδ</td><td>and from David</td></tr>
+<tr><td>ἕως τῆς μετοικεσίας Βαβυλῶνος</td><td>until the *Babylonian* exile</td></tr>
+<tr><td>γενεαὶ δεκατέσσαρες,</td><td>generations fourteen</td></tr>
+<tr><td>καὶ ἀπὸ τῆς μετοικεσίας Βαβυλῶνος</td><td>and from the deportation *of* Babylon</td></tr>
+<tr><td>ἕως τοῦ Χριστοῦ</td><td>until *the* Christ</td></tr>
+<tr><td>γενεαὶ δεκατέσσαρες.</td><td>fourteen *generations*</td></tr>
+</table>
+<hr>
+Τοῦ δὲ Ἰησοῦ Χριστοῦ ἡ γένεσις οὕτως ἦν.<hr><b>matthew 1:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Τοῦ Ἰησοῦ Χριστοῦ</td><td>but of *the* Jesus Christ</td></tr>
+<tr><td>ἡ γένεσις</td><td>the *birth*</td></tr>
+<tr><td>οὕτως ἦν.</td><td>was thus</td></tr>
+<tr><td>μνηστευθείσης τῆς μητρὸς αὐτοῦ</td><td>having been betrothed *of* the mother of him</td></tr>
+<tr><td>Μαρίας τῷ Ἰωσήφ,</td><td>Mary to *Joseph*</td></tr>
+<tr><td>πρὶν ἢ συνελθεῖν αὐτοὺς</td><td>before *they* came together</td></tr>
+<tr><td>εὑρέθη ἐν γαστρὶ</td><td>was found *to be* in womb</td></tr>
+<tr><td>ἔχουσα ἐκ Πνεύματος Ἁγίου.</td><td>having *a child* from *the* Holy Spirit</td></tr>
+</table>
+<hr>
+Ἰωσὴφ δὲ ὁ ἀνὴρ αὐτῆς, δίκαιος ὢν καὶ μὴ θέλων αὐτὴν δειγματίσαι, ἐβουλήθη λάθρᾳ ἀπολῦσαι αὐτήν.<hr><b>matthew 1:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἰωσὴφ ὁ ἀνὴρ αὐτῆς,</td><td>but Joseph her *husband*</td></tr>
+<tr><td>δίκαιος ὢν</td><td>being *a* righteous</td></tr>
+<tr><td>καὶ μὴ θέλων αὐτὴν δειγματίσαι,</td><td>and not wanting to expose her</td></tr>
+<tr><td>ἐβουλήθη λάθρᾳ ἀπολῦσαι αὐτήν.</td><td>he *decided* secretly to send her away</td></tr>
+</table>
+<hr>
+ταῦτα δὲ αὐτοῦ ἐνθυμηθέντος ἰδοὺ ἄγγελος Κυρίου κατ’ ὄναρ ἐφάνη αὐτῷ λέγων Ἰωσὴφ υἱὸς Δαυείδ, μὴ φοβηθῇς παραλαβεῖν Μαρίαν τὴν γυναῖκά σου, τὸ γὰρ ἐν αὐτῇ γεννηθὲν ἐκ Πνεύματός ἐστιν Ἁγίου· τέξεται δὲ υἱὸν καὶ καλέσεις τὸ ὄνομα αὐτοῦ Ἰησοῦν· αὐτὸς γὰρ σώσει τὸν λαὸν αὐτοῦ ἀπὸ τῶν ἁμαρτιῶν αὐτῶν.<hr><b>matthew 1:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ταῦτα αὐτοῦ ἐνθυμηθέντος</td><td>but these *things* of him having considered</td></tr>
+<tr><td>ἰδοὺ ἄγγελος Κυρίου</td><td>behold *an* angel of *the* Lord</td></tr>
+<tr><td>κατ’ ὄναρ</td><td>in *a* dream</td></tr>
+<tr><td>ἐφάνη αὐτῷ</td><td>appeared to *him*</td></tr>
+<tr><td>λέγων Ἰωσὴφ υἱὸς Δαυείδ,</td><td>saying Joseph, *son* of David,</td></tr>
+<tr><td>μὴ φοβηθῇς παραλαβεῖν</td><td>do not be afraid to take</td></tr>
+<tr><td>Μαρίαν τὴν γυναῖκά σου,</td><td>Maria *the* wife *of* you</td></tr>
+<tr><td>γὰρ τὸ ἐν αὐτῇ γεννηθὲν</td><td>for *what* *is* born in her</td></tr>
+<tr><td>ἐκ Πνεύματός Ἁγίου·</td><td>from *the* Holy Spirit</td></tr>
+<tr><td>ἐστιν δὲ τέξεται υἱὸν</td><td>is but *she will* bear a son</td></tr>
+</table>
+<hr><b>matthew 1:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ καλέσεις τὸ ὄνομα αὐτοῦ</td><td>and *you will* call his name</td></tr>
+<tr><td>Ἰησοῦν· γὰρ αὐτὸς</td><td>Jesus; for *he*</td></tr>
+<tr><td>σώσει τὸν λαὸν αὐτοῦ</td><td>he will save *his* people</td></tr>
+<tr><td>ἀπὸ τῶν ἁμαρτιῶν αὐτῶν.</td><td>from *the* sins of them</td></tr>
+</table>
+<hr>
+Τοῦτο δὲ ὅλον γέγονεν ἵνα πληρωθῇ τὸ ῥηθὲν ὑπὸ Κυρίου διὰ τοῦ προφήτου λέγοντος Ἰδοὺ ἡ παρθένος ἐν γαστρὶ ἕξει καὶ τέξεται υἱόν, καὶ καλέσουσιν τὸ ὄνομα αὐτοῦ Ἐμμανουήλ, ὅ ἐστιν μεθερμηνευόμενον Μεθ’ ἡμῶν ὁ Θεός.<hr><b>matthew 1:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Τοῦτο ὅλον γέγονεν</td><td>but all this has happened</td></tr>
+<tr><td>ἵνα πληρωθῇ</td><td>so that *it* might be fulfilled</td></tr>
+<tr><td>τὸ ῥηθὲν ὑπὸ Κυρίου</td><td>the thing having been spoken by *the* Lord</td></tr>
+<tr><td>διὰ τοῦ προφήτου</td><td>through the *words of the* prophet</td></tr>
+<tr><td>λέγοντος Ἰδοὺ</td><td>saying *Behold*</td></tr>
+</table>
+<hr><b>matthew 1:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἡ παρθένος ἐν γαστρὶ ἕξει</td><td>the virgin in *the* womb will have</td></tr>
+<tr><td>καὶ τέξεται υἱόν,</td><td>and she-will-bear a-son</td></tr>
+<tr><td>καὶ καλέσουσιν τὸ ὄνομα αὐτοῦ</td><td>and *they* will call his name</td></tr>
+<tr><td>Ἐμμανουήλ, ὅ ἐστιν μεθερμηνευόμενον</td><td>Emmanuel, which *is* being interpreted</td></tr>
+<tr><td>Μεθ’ ἡμῶν ὁ Θεός.</td><td>With *us* the God</td></tr>
+</table>
+<hr>
+ἐγερθεὶς δὲ ὁ Ἰωσὴφ ἀπὸ τοῦ ὕπνου ἐποίησεν ὡς προσέταξεν αὐτῷ ὁ ἄγγελος Κυρίου, καὶ παρέλαβεν τὴν γυναῖκα αὐτοῦ· καὶ οὐκ ἐγίνωσκεν αὐτὴν ἕως οὗ ἔτεκεν υἱόν· καὶ ἐκάλεσεν τὸ ὄνομα αὐτοῦ Ἰησοῦν.<hr><b>matthew 1:24</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ Ἰωσὴφ</td><td>but *Joseph*</td></tr>
+<tr><td>ἐγερθεὶς ἀπὸ τοῦ ὕπνου</td><td>having arisen from the sleep</td></tr>
+<tr><td>ἐποίησεν ὡς προσέταξεν</td><td>he did as he *had been* commanded</td></tr>
+<tr><td>αὐτῷ ὁ ἄγγελος Κυρίου,</td><td>to him the angel *of the* Lord</td></tr>
+<tr><td>καὶ παρέλαβεν τὴν γυναῖκα αὐτοῦ·</td><td>and he took *his* wife</td></tr>
+</table>
+<hr><b>matthew 1:25</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ οὐκ ἐγίνωσκεν αὐτὴν</td><td>and he did not know her</td></tr>
+<tr><td>ἕως οὗ ἔτεκεν υἱόν·</td><td>until *she* bore a son</td></tr>
+<tr><td>καὶ ἐκάλεσεν τὸ ὄνομα αὐτοῦ</td><td>and he called *the* name *of him*</td></tr>
+<tr><td>Ἰησοῦν.</td><td>*They called* His name Jesus</td></tr>
+</table>
+<div class="chapter-links">
+<a class="chapter-link" href="#">&lt;-</a>
+<a href="1.html" class="selected-chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="2.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>

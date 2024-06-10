@@ -1,0 +1,524 @@
+<!DOCTYPE html><html><head><title>matthew 14</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="14.html" class="current-book-chapter">14</a></li>
+   <li class="submenu_item"><a href="15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="28.html" class="">28</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="13.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="selected-chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="15.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Ἐν ἐκείνῳ τῷ καιρῷ ἤκουσεν Ἠρῴδης ὁ τετραάρχης τὴν ἀκοὴν Ἰησοῦ, καὶ εἶπεν τοῖς παισὶν αὐτοῦ Οὗτός ἐστιν Ἰωάνης ὁ Βαπτιστής· αὐτὸς ἠγέρθη ἀπὸ τῶν νεκρῶν, καὶ διὰ τοῦτο αἱ δυνάμεις ἐνεργοῦσιν ἐν αὐτῷ.<hr><b>matthew 14:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἐν ἐκείνῳ τῷ καιρῷ</td><td>At *that* time</td></tr>
+<tr><td>ἤκουσεν Ἠρῴδης ὁ τετραάρχης</td><td>heard Herod the *tetrarch*</td></tr>
+<tr><td>τὴν ἀκοὴν Ἰησοῦ,</td><td>the hearing *of* Jesus</td></tr>
+</table>
+<hr><b>matthew 14:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ εἶπεν τοῖς παισὶν αὐτοῦ</td><td>and he said to *his* servants</td></tr>
+<tr><td>Οὗτός ἐστιν Ἰωάνης ὁ Βαπτιστής·</td><td>This *is* John the Baptist</td></tr>
+<tr><td>αὐτὸς ἠγέρθη ἀπὸ τῶν νεκρῶν,</td><td>he *was* raised from the dead</td></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>διὰ τοῦτο αἱ δυνάμεις ἐνεργοῦσιν ἐν αὐτῷ.</td><td>because of this the powers are working *in* him</td></tr>
+</table>
+<hr>
+Ὁ γὰρ Ἠρῴδης κρατήσας τὸν Ἰωάνην ἔδησεν καὶ ἐν φυλακῇ ἀπέθετο διὰ Ἠρῳδιάδα τὴν γυναῖκα Φιλίππου τοῦ ἀδελφοῦ αὐτοῦ·<hr><b>matthew 14:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ Ὁ Ἠρῴδης</td><td>for *indeed* Herod</td></tr>
+<tr><td>κρατήσας τὸν Ἰωάνην</td><td>having arrested *John*</td></tr>
+<tr><td>ἔδησεν καὶ ἐν φυλακῇ</td><td>bound and *in* prison</td></tr>
+<tr><td>ἀπέθετο διὰ Ἠρῳδιάδα τὴν γυναῖκα</td><td>put in prison because of Herodias the wife</td></tr>
+<tr><td>Φιλίππου τοῦ ἀδελφοῦ αὐτοῦ·</td><td>of Philip his *brother*</td></tr>
+</table>
+<hr>
+ἔλεγεν γὰρ ὁ Ἰωάνης αὐτῷ Οὐκ ἔξεστίν σοι ἔχειν αὐτήν.<hr><b>matthew 14:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ἔλεγεν ὁ Ἰωάνης αὐτῷ</td><td>for John was saying to him</td></tr>
+<tr><td>Οὐκ ἔξεστίν σοι ἔχειν αὐτήν.</td><td>It is not lawful *for you* to have her</td></tr>
+</table>
+<hr>
+καὶ θέλων αὐτὸν ἀποκτεῖναι ἐφοβήθη τὸν ὄχλον, ὅτι ὡς προφήτην αὐτὸν εἶχον.<hr><b>matthew 14:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ θέλων αὐτὸν ἀποκτεῖναι</td><td>and wanting *him* to kill</td></tr>
+<tr><td>ἐφοβήθη τὸν ὄχλον,</td><td>he feared the crowd</td></tr>
+<tr><td>ὅτι ὡς προφήτην αὐτὸν εἶχον.</td><td>because as *a* prophet *they* held him</td></tr>
+</table>
+<hr>
+γενεσίοις δὲ γενομένοις τοῦ Ἠρῴδου ὠρχήσατο ἡ θυγάτηρ τῆς Ἠρῳδιάδος ἐν τῷ μέσῳ καὶ ἤρεσεν τῷ Ἠρῴδῃ, ὅθεν μεθ’ ὅρκου ὡμολόγησεν αὐτῇ δοῦναι ὃ ἐὰν αἰτήσηται.<hr><b>matthew 14:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ γενεσίοις τοῦ Ἠρῴδου</td><td>but *on* the birthday of Herod</td></tr>
+<tr><td>γενομένοις ὠρχήσατο</td><td>having been made *the birthday celebration* she danced</td></tr>
+<tr><td>ἡ θυγάτηρ τῆς Ἠρῳδιάδος</td><td>the daughter of *Herodias*</td></tr>
+<tr><td>ἐν τῷ μέσῳ</td><td>in the *middle*</td></tr>
+<tr><td>καὶ ἤρεσεν τῷ Ἠρῴδῃ,</td><td>and pleased *to* Herod</td></tr>
+</table>
+<hr><b>matthew 14:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅθεν μεθ’ ὅρκου</td><td>whence with *an* oath</td></tr>
+<tr><td>ὡμολόγησεν αὐτῇ</td><td>he promised *to* her</td></tr>
+<tr><td>δοῦναι ἐὰν ὃ αἰτήσηται.</td><td>to give whatever she might ask for</td></tr>
+</table>
+<hr>
+ἡ δὲ προβιβασθεῖσα ὑπὸ τῆς μητρὸς αὐτῆς Δός μοι, φησίν, ὧδε ἐπὶ πίνακι τὴν κεφαλὴν Ἰωάνου τοῦ Βαπτιστοῦ.<hr><b>matthew 14:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἡ προβιβασθεῖσα</td><td>but she *who had been* prompted</td></tr>
+<tr><td>ὑπὸ τῆς μητρὸς αὐτῆς</td><td>by *the* mother of her</td></tr>
+<tr><td>φησίν, Δός</td><td>she says, Give *to me*</td></tr>
+<tr><td>μοι, ὧδε ἐπὶ πίνακι</td><td>to me, here on *a* platter</td></tr>
+<tr><td>τὴν κεφαλὴν Ἰωάνου τοῦ Βαπτιστοῦ.</td><td>the head of John the Baptist</td></tr>
+</table>
+<hr>
+καὶ λυπηθεὶς ὁ βασιλεὺς διὰ τοὺς ὅρκους καὶ τοὺς συνανακειμένους ἐκέλευσεν δοθῆναι, καὶ πέμψας ἀπεκεφάλισεν Ἰωάνην ἐν τῇ φυλακῇ.<hr><b>matthew 14:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ λυπηθεὶς ὁ βασιλεὺς</td><td>and being grieved the king</td></tr>
+<tr><td>διὰ</td><td>because of</td></tr>
+<tr><td>τοὺς ὅρκους καὶ τοὺς συνανακειμένους</td><td>the oaths and *those reclining with him*</td></tr>
+<tr><td>ἐκέλευσεν δοθῆναι, καὶ πέμψας ἀπεκεφάλισεν</td><td>commanded to be given, and *having sent* beheaded</td></tr>
+</table>
+<hr><b>matthew 14:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἰωάνην ἐν τῇ φυλακῇ.</td><td>John in the *prison*</td></tr>
+</table>
+<hr>
+καὶ ἠνέχθη ἡ κεφαλὴ αὐτοῦ ἐπὶ πίνακι καὶ ἐδόθη τῷ κορασίῳ, καὶ ἤνεγκεν τῇ μητρὶ αὐτῆς.<hr><b>matthew 14:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἠνέχθη ἡ κεφαλὴ αὐτοῦ</td><td>and his head was brought</td></tr>
+<tr><td>ἐπὶ πίνακι</td><td>on *a* platter</td></tr>
+<tr><td>καὶ ἐδόθη τῷ κορασίῳ,</td><td>and was given to the girl,</td></tr>
+<tr><td>καὶ ἤνεγκεν τῇ μητρὶ αὐτῆς.</td><td>and she brought *it* to her mother</td></tr>
+</table>
+<hr>
+καὶ προσελθόντες οἱ μαθηταὶ αὐτοῦ ἦραν τὸ πτῶμα καὶ ἔθαψαν αὐτόν, καὶ ἐλθόντες ἀπήγγειλαν τῷ Ἰησοῦ.<hr><b>matthew 14:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ προσελθόντες οἱ μαθηταὶ αὐτοῦ</td><td>and his disciples having come near</td></tr>
+<tr><td>ἦραν τὸ πτῶμα</td><td>they took up the body</td></tr>
+<tr><td>καὶ ἔθαψαν αὐτόν,</td><td>and they buried him</td></tr>
+<tr><td>καὶ ἐλθόντες ἀπήγγειλαν τῷ Ἰησοῦ.</td><td>and having come, they reported to *the* Jesus</td></tr>
+</table>
+<hr>
+Ἀκούσας δὲ ὁ Ἰησοῦς ἀνεχώρησεν ἐκεῖθεν ἐν πλοίῳ εἰς ἔρημον τόπον κατ’ ἰδίαν·<hr><b>matthew 14:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἀκούσας ὁ Ἰησοῦς</td><td>but *when* having heard Jesus</td></tr>
+<tr><td>ἀνεχώρησεν ἐκεῖθεν ἐν πλοίῳ</td><td>he departed from there by boat</td></tr>
+<tr><td>εἰς ἔρημον τόπον</td><td>into a *desolate* place</td></tr>
+<tr><td>κατ’ ἰδίαν·</td><td>by *himself*</td></tr>
+<tr><td>καὶ ἀκούσαντες οἱ ὄχλοι</td><td>and *having heard* the crowds</td></tr>
+<tr><td>ἠκολούθησαν αὐτῷ</td><td>they followed him</td></tr>
+<tr><td>πεζῇ ἀπὸ τῶν πόλεων.</td><td>on foot from the *cities*</td></tr>
+</table>
+<hr>
+Καὶ ἐξελθὼν εἶδεν πολὺν ὄχλον, καὶ ἐσπλαγχνίσθη ἐπ’ αὐτοῖς καὶ ἐθεράπευσεν τοὺς ἀρρώστους αὐτῶν.<hr><b>matthew 14:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ ἐξελθὼν εἶδεν πολὺν ὄχλον,</td><td>And having gone out he saw a large crowd</td></tr>
+<tr><td>καὶ ἐσπλαγχνίσθη ἐπ’ αὐτοῖς</td><td>and *he had compassion* on them</td></tr>
+<tr><td>καὶ ἐθεράπευσεν τοὺς ἀρρώστους αὐτῶν.</td><td>and he healed their sick</td></tr>
+</table>
+<hr>
+ὀψίας δὲ γενομένης προσῆλθον αὐτῷ οἱ μαθηταὶ λέγοντες Ἔρημός ἐστιν ὁ τόπος καὶ ἡ ὥρα ἤδη παρῆλθεν· ἀπόλυσον οὖν τοὺς ὄχλους, ἵνα ἀπελθόντες εἰς τὰς κώμας ἀγοράσωσιν ἑαυτοῖς βρώματα.<hr><b>matthew 14:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὀψίας γενομένης</td><td>but *when* evening *had* come</td></tr>
+<tr><td>προσῆλθον αὐτῷ οἱ μαθηταὶ</td><td>approached *to* him the disciples</td></tr>
+<tr><td>λέγοντες Ἔρημός ἐστιν ὁ τόπος</td><td>saying *the* place *is* desolate</td></tr>
+<tr><td>καὶ ἡ ὥρα ἤδη παρῆλθεν·</td><td>and the hour already has-passed</td></tr>
+<tr><td>οὖν ἀπόλυσον τοὺς ὄχλους,</td><td>therefore *you* dismiss the crowds</td></tr>
+<tr><td>ἵνα ἀπελθόντες εἰς τὰς κώμας</td><td>so that, having departed into the *villages*</td></tr>
+<tr><td>ἀγοράσωσιν ἑαυτοῖς βρώματα.</td><td>they might buy *for* themselves food</td></tr>
+</table>
+<hr>
+ὁ δὲ Ἰησοῦς εἶπεν αὐτοῖς Οὐ χρείαν ἔχουσιν ἀπελθεῖν· δότε αὐτοῖς ὑμεῖς φαγεῖν.<hr><b>matthew 14:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ Ἰησοῦς εἶπεν αὐτοῖς</td><td>but Jesus said to them</td></tr>
+<tr><td>Οὐ χρείαν ἔχουσιν ἀπελθεῖν·</td><td>They do not *have* need to go away</td></tr>
+<tr><td>δότε αὐτοῖς ὑμεῖς φαγεῖν.</td><td>give to-them *you* to-eat</td></tr>
+</table>
+<hr>
+οἱ δὲ λέγουσιν αὐτῷ Οὐκ ἔχομεν ὧδε εἰ μὴ πέντε ἄρτους καὶ δύο ἰχθύας.<hr><b>matthew 14:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ λέγουσιν αὐτῷ</td><td>but they say to him</td></tr>
+<tr><td>Οὐκ ἔχομεν ὧδε</td><td>*We* do not have *here*</td></tr>
+<tr><td>εἰ μὴ</td><td>if not *except*</td></tr>
+<tr><td>πέντε ἄρτους καὶ δύο ἰχθύας.</td><td>five loaves and two fish</td></tr>
+</table>
+<hr>
+ὁ δὲ εἶπεν· Φέρετέ μοι ὧδε αὐτούς.<hr><b>matthew 14:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ εἶπεν·</td><td>but he said</td></tr>
+<tr><td>Φέρετέ μοι ὧδε αὐτούς.</td><td>Bring to me *here* them</td></tr>
+</table>
+<hr>
+καὶ κελεύσας τοὺς ὄχλους ἀνακλιθῆναι ἐπὶ τοῦ χόρτου, λαβὼν τοὺς πέντε ἄρτους καὶ τοὺς δύο ἰχθύας, ἀναβλέψας εἰς τὸν οὐρανὸν εὐλόγησεν, καὶ κλάσας ἔδωκεν τοῖς μαθηταῖς τοὺς ἄρτους, οἱ δὲ μαθηταὶ τοῖς ὄχλοις.<hr><b>matthew 14:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ κελεύσας τοὺς ὄχλους</td><td>and having commanded the crowds</td></tr>
+<tr><td>ἀνακλιθῆναι ἐπὶ τοῦ χόρτου,</td><td>to recline *upon* the grass</td></tr>
+<tr><td>λαβὼν τοὺς πέντε ἄρτους</td><td>having taken the five loaves</td></tr>
+<tr><td>καὶ τοὺς δύο ἰχθύας,</td><td>and the two fish</td></tr>
+<tr><td>ἀναβλέψας εἰς τὸν οὐρανὸν</td><td>having looked up into *the* heaven</td></tr>
+<tr><td>εὐλόγησεν, καὶ</td><td>he blessed, and</td></tr>
+<tr><td>κλάσας ἔδωκεν τοῖς μαθηταῖς τοὺς ἄρτους,</td><td>having broken *He* gave to the disciples the loaves</td></tr>
+<tr><td>δὲ οἱ μαθηταὶ τοῖς ὄχλοις.</td><td>but *the* disciples *to* the crowds</td></tr>
+</table>
+<hr>
+καὶ ἔφαγον πάντες καὶ ἐχορτάσθησαν, καὶ ἦραν τὸ περισσεῦον τῶν κλασμάτων δώδεκα κοφίνους πλήρεις.<hr><b>matthew 14:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἔφαγον πάντες καὶ ἐχορτάσθησαν,</td><td>and *they* ate all and *they* were satisfied</td></tr>
+<tr><td>καὶ ἦραν</td><td>and they picked up</td></tr>
+<tr><td>τὸ περισσεῦον τῶν κλασμάτων</td><td>the leftover *pieces* of the fragments</td></tr>
+<tr><td>δώδεκα κοφίνους πλήρεις.</td><td>twelve baskets full</td></tr>
+</table>
+<hr>
+οἱ δὲ ἐσθίοντες ἦσαν ἄνδρες ὡσεὶ πεντακισχίλιοι χωρὶς γυναικῶν καὶ παιδίων.<hr><b>matthew 14:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ ἐσθίοντες</td><td>but the *ones* eating</td></tr>
+<tr><td>ἦσαν ἄνδρες ὡσεὶ πεντακισχίλιοι</td><td>were men about five-thousand</td></tr>
+<tr><td>χωρὶς γυναικῶν καὶ παιδίων.</td><td>without women and *children*</td></tr>
+</table>
+<hr>
+Καὶ εὐθέως ἠνάγκασεν τοὺς μαθητὰς ἐμβῆναι εἰς τὸ πλοῖον καὶ προάγειν αὐτὸν εἰς τὸ πέραν, ἕως οὗ ἀπολύσῃ τοὺς ὄχλους.<hr><b>matthew 14:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ εὐθέως ἠνάγκασεν τοὺς μαθητὰς</td><td>And immediately he compelled the disciples</td></tr>
+<tr><td>ἐμβῆναι εἰς τὸ πλοῖον</td><td>to embark into the boat</td></tr>
+<tr><td>καὶ προάγειν</td><td>and *to* lead</td></tr>
+<tr><td>αὐτὸν εἰς τὸ πέραν,</td><td>him to the other side</td></tr>
+<tr><td>ἕως οὗ ἀπολύσῃ τοὺς ὄχλους.</td><td>until *he* releases the crowds</td></tr>
+</table>
+<hr>
+καὶ ἀπολύσας τοὺς ὄχλους ἀνέβη εἰς τὸ ὄρος κατ’ ἰδίαν προσεύξασθαι.<hr><b>matthew 14:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἀπολύσας τοὺς ὄχλους</td><td>and having dismissed the crowds</td></tr>
+<tr><td>ἀνέβη εἰς τὸ ὄρος</td><td>ascended into the *mountain*</td></tr>
+<tr><td>κατ’ ἰδίαν</td><td>by *himself*</td></tr>
+<tr><td>προσεύξασθαι.</td><td>to pray</td></tr>
+<tr><td>δὲ ὀψίας γενομένης</td><td>but *when* evening came</td></tr>
+<tr><td>μόνος ἦν ἐκεῖ.</td><td>alone he was there</td></tr>
+</table>
+<hr>
+τὸ δὲ πλοῖον ἤδη σταδίους πολλοὺς ἀπὸ τῆς γῆς ἀπεῖχεν, βασανιζόμενον ὑπὸ τῶν κυμάτων, ἦν γὰρ ἐναντίος ὁ ἄνεμος.<hr><b>matthew 14:24</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ τὸ πλοῖον</td><td>but the *ship*</td></tr>
+<tr><td>ἤδη σταδίους πολλοὺς</td><td>already many stadia</td></tr>
+<tr><td>ἀπὸ τῆς γῆς</td><td>from *the* land</td></tr>
+<tr><td>ἀπεῖχεν, βασανιζόμενον ὑπὸ τῶν κυμάτων,</td><td>was distant, being tormented by the waves</td></tr>
+<tr><td>γὰρ ἦν ἐναντίος ὁ ἄνεμος.</td><td>for *it* was contrary the wind</td></tr>
+</table>
+<hr>
+τετάρτῃ δὲ φυλακῇ τῆς νυκτὸς ἦλθεν πρὸς αὐτοὺς περιπατῶν ἐπὶ τὴν θάλασσαν.<hr><b>matthew 14:25</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ τετάρτῃ φυλακῇ τῆς νυκτὸς</td><td>but *at* the fourth watch of the night</td></tr>
+<tr><td>ἦλθεν πρὸς αὐτοὺς</td><td>came to *them*</td></tr>
+<tr><td>περιπατῶν ἐπὶ τὴν θάλασσαν.</td><td>walking on *the* sea</td></tr>
+</table>
+<hr>
+οἱ δὲ μαθηταὶ ἰδόντες αὐτὸν ἐπὶ τῆς θαλάσσης περιπατοῦντα ἐταράχθησαν λέγοντες ὅτι Φάντασμά ἐστιν, καὶ ἀπὸ τοῦ φόβου ἔκραξαν.<hr><b>matthew 14:26</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ μαθηταὶ</td><td>but the *disciples*</td></tr>
+<tr><td>ἰδόντες αὐτὸν ἐπὶ τῆς θαλάσσης</td><td>having seen him upon the sea</td></tr>
+<tr><td>περιπατοῦντα ἐταράχθησαν</td><td>walking they were troubled</td></tr>
+<tr><td>λέγοντες ὅτι Φάντασμά ἐστιν,</td><td>saying that *it is* a phantom,</td></tr>
+<tr><td>καὶ ἀπὸ τοῦ φόβου</td><td>and from the *of* fear</td></tr>
+<tr><td>ἔκραξαν.</td><td>they cried out</td></tr>
+</table>
+<hr>
+εὐθὺς δὲ ἐλάλησεν ὁ Ἰησοῦς αὐτοῖς λέγων Θαρσεῖτε, ἐγώ εἰμι· μὴ φοβεῖσθε.<hr><b>matthew 14:27</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εὐθὺς ἐλάλησεν ὁ Ἰησοῦς</td><td>but immediately spoke *the* Jesus</td></tr>
+<tr><td>αὐτοῖς λέγων Θαρσεῖτε, ἐγώ εἰμι·</td><td>to them saying Take courage, I am</td></tr>
+<tr><td>μὴ φοβεῖσθε.</td><td>*do* not be afraid</td></tr>
+</table>
+<hr>
+ἀποκριθεὶς δὲ αὐτῷ ὁ Πέτρος εἶπεν Κύριε, εἰ σὺ εἶ, κέλευσόν με ἐλθεῖν πρὸς σὲ ἐπὶ τὰ ὕδατα.<hr><b>matthew 14:28</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ</td><td>but</td></tr>
+<tr><td>ἀποκριθεὶς αὐτῷ ὁ Πέτρος εἶπεν</td><td>and Peter *having* responded to him said</td></tr>
+<tr><td>Κύριε, εἰ σὺ εἶ,</td><td>Lord, if you *are*</td></tr>
+<tr><td>κέλευσόν με ἐλθεῖν πρὸς σὲ</td><td>command *you* me to come to *you*</td></tr>
+<tr><td>ἐπὶ τὰ ὕδατα.</td><td>upon the *waters*</td></tr>
+</table>
+<hr>
+ὁ δὲ εἶπεν Ἐλθέ.<hr><b>matthew 14:29</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ εἶπεν Ἐλθέ.</td><td>and he said Come.</td></tr>
+<tr><td>καὶ καταβὰς ἀπὸ τοῦ πλοίου</td><td>and *having* descended from the boat</td></tr>
+<tr><td>Πέτρος περιεπάτησεν ἐπὶ τὰ ὕδατα</td><td>Peter walked upon the waters</td></tr>
+<tr><td>καὶ ἦλθεν πρὸς τὸν Ἰησοῦν.</td><td>and came to *the* Jesus</td></tr>
+</table>
+<hr>
+βλέπων δὲ τὸν ἄνεμον ἐφοβήθη, καὶ ἀρξάμενος καταποντίζεσθαι ἔκραξεν λέγων Κύριε, σῶσόν με.<hr><b>matthew 14:30</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ βλέπων τὸν ἄνεμον</td><td>but seeing the wind</td></tr>
+<tr><td>ἐφοβήθη, καὶ ἀρξάμενος καταποντίζεσθαι</td><td>he was afraid, and *having begun* to sink</td></tr>
+<tr><td>ἔκραξεν λέγων Κύριε, σῶσόν με.</td><td>he cried out saying, Lord, *save* me</td></tr>
+</table>
+<hr>
+εὐθέως δὲ ὁ Ἰησοῦς ἐκτείνας τὴν χεῖρα ἐπελάβετο αὐτοῦ καὶ λέγει αὐτῷ Ὀλιγόπιστε, εἰς τί ἐδίστασας;<hr><b>matthew 14:31</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εὐθέως ὁ Ἰησοῦς</td><td>but immediately *Jesus*</td></tr>
+<tr><td>ἐκτείνας τὴν χεῖρα</td><td>having stretched out the *hand*</td></tr>
+<tr><td>ἐπελάβετο αὐτοῦ καὶ λέγει αὐτῷ</td><td>took hold of him and says to him</td></tr>
+<tr><td>Ὀλιγόπιστε, εἰς τί ἐδίστασας;</td><td>O you of little faith, why did you doubt?</td></tr>
+</table>
+<hr>
+καὶ ἀναβάντων αὐτῶν εἰς τὸ πλοῖον ἐκόπασεν ὁ ἄνεμος.<hr><b>matthew 14:32</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἀναβάντων</td><td>and *having gone aboard*</td></tr>
+<tr><td>αὐτῶν εἰς τὸ πλοῖον</td><td>of them into the *boat*</td></tr>
+<tr><td>ἐκόπασεν ὁ ἄνεμος.</td><td>ceased the wind</td></tr>
+</table>
+<hr>
+οἱ δὲ ἐν τῷ πλοίῳ προσεκύνησαν αὐτῷ λέγοντες Ἀληθῶς Θεοῦ Υἱὸς εἶ.<hr><b>matthew 14:33</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ ἐν τῷ πλοίῳ</td><td>but those *who were* in the boat</td></tr>
+<tr><td>προσεκύνησαν αὐτῷ λέγοντες</td><td>they worshiped *him* saying</td></tr>
+<tr><td>Ἀληθῶς Θεοῦ Υἱὸς εἶ.</td><td>Truly *the* Son of God you are</td></tr>
+</table>
+<hr>
+Καὶ διαπεράσαντες ἦλθον ἐπὶ τὴν γῆν εἰς Γεννησαρέτ.<hr><b>matthew 14:34</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ διαπεράσαντες</td><td>And having crossed</td></tr>
+<tr><td>ἦλθον ἐπὶ τὴν γῆν</td><td>they came upon the *land*</td></tr>
+<tr><td>εἰς Γεννησαρέτ.</td><td>into *Gennesaret*</td></tr>
+</table>
+<hr>
+καὶ ἐπιγνόντες αὐτὸν οἱ ἄνδρες τοῦ τόπου ἐκείνου ἀπέστειλαν εἰς ὅλην τὴν περίχωρον ἐκείνην, καὶ προσήνεγκαν αὐτῷ πάντας τοὺς κακῶς ἔχοντας, καὶ παρεκάλουν αὐτὸν ἵνα μόνον ἅψωνται τοῦ κρασπέδου τοῦ ἱματίου αὐτοῦ·<hr><b>matthew 14:35</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐπιγνόντες αὐτὸν</td><td>and recognizing him</td></tr>
+<tr><td>οἱ ἄνδρες τοῦ τόπου ἐκείνου</td><td>the men of *the* place that</td></tr>
+<tr><td>ἀπέστειλαν εἰς ὅλην τὴν περίχωρον</td><td>they sent into *the* whole region</td></tr>
+<tr><td>ἐκείνην, καὶ προσήνεγκαν αὐτῷ</td><td>that region, and they brought to him</td></tr>
+<tr><td>πάντας τοὺς κακῶς ἔχοντας,</td><td>all the ones having *illness*</td></tr>
+</table>
+<hr><b>matthew 14:36</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ παρεκάλουν αὐτὸν</td><td>and they were imploring him</td></tr>
+<tr><td>ἵνα μόνον ἅψωνται τοῦ</td><td>that *they* only might touch of</td></tr>
+<tr><td>κρασπέδου τοῦ ἱματίου αὐτοῦ·</td><td>the hem *of* his garment</td></tr>
+<tr><td>καὶ ὅσοι ἥψαντο διεσώθησαν.</td><td>and as-many-as touched were-saved</td></tr>
+</table>
+<div class="chapter-links">
+<a href="13.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="selected-chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="15.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>

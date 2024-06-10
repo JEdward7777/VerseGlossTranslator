@@ -1,0 +1,658 @@
+<!DOCTYPE html><html><head><title>matthew 5</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="current-book-chapter">5</a></li>
+   <li class="submenu_item"><a href="6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="28.html" class="">28</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="4.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="selected-chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="6.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Ἰδὼν δὲ τοὺς ὄχλους ἀνέβη εἰς τὸ ὄρος·<hr><b>matthew 5:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἰδὼν τοὺς ὄχλους</td><td>but seeing the crowds</td></tr>
+<tr><td>ἀνέβη εἰς τὸ ὄρος·</td><td>he went up onto *the* mountain</td></tr>
+<tr><td>καὶ καθίσαντος αὐτοῦ</td><td>and when he had sat down</td></tr>
+<tr><td>προσῆλθαν αὐτῷ οἱ μαθηταὶ αὐτοῦ·</td><td>approached him his disciples</td></tr>
+</table>
+<hr>
+καὶ ἀνοίξας τὸ στόμα αὐτοῦ ἐδίδασκεν αὐτοὺς λέγων<hr><b>matthew 5:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἀνοίξας τὸ στόμα αὐτοῦ</td><td>and *having* opened his mouth</td></tr>
+<tr><td>ἐδίδασκεν αὐτοὺς λέγων</td><td>he was teaching them saying</td></tr>
+</table>
+<hr>
+Μακάριοι οἱ πτωχοὶ τῷ πνεύματι, ὅτι αὐτῶν ἐστιν ἡ βασιλεία τῶν οὐρανῶν.<hr><b>matthew 5:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Μακάριοι οἱ πτωχοὶ τῷ πνεύματι,</td><td>Blessed *are* the poor in spirit,</td></tr>
+<tr><td>ὅτι αὐτῶν ἐστιν</td><td>because *it* is theirs</td></tr>
+<tr><td>ἡ βασιλεία τῶν οὐρανῶν.</td><td>the kingdom of *the* heavens</td></tr>
+</table>
+<hr>
+μακάριοι οἱ πενθοῦντες, ὅτι αὐτοὶ παρακληθήσονται.<hr><b>matthew 5:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μακάριοι οἱ πενθοῦντες,</td><td>blessed *are* those who mourn,</td></tr>
+<tr><td>ὅτι αὐτοὶ παρακληθήσονται.</td><td>because *they* will be comforted</td></tr>
+</table>
+<hr>
+μακάριοι οἱ πραεῖς, ὅτι αὐτοὶ κληρονομήσουσιν τὴν γῆν.<hr><b>matthew 5:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μακάριοι οἱ πραεῖς,</td><td>blessed *are* the meek,</td></tr>
+<tr><td>ὅτι αὐτοὶ κληρονομήσουσιν τὴν γῆν.</td><td>because *they* will inherit the earth</td></tr>
+</table>
+<hr>
+μακάριοι οἱ πεινῶντες καὶ διψῶντες τὴν δικαιοσύνην, ὅτι αὐτοὶ χορτασθήσονται.<hr><b>matthew 5:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μακάριοι οἱ πεινῶντες καὶ διψῶντες</td><td>blessed *are* those who hunger and thirst</td></tr>
+<tr><td>τὴν δικαιοσύνην,</td><td>the *righteousness*</td></tr>
+<tr><td>ὅτι αὐτοὶ χορτασθήσονται.</td><td>because they *will be* satisfied</td></tr>
+</table>
+<hr>
+μακάριοι οἱ ἐλεήμονες, ὅτι αὐτοὶ ἐλεηθήσονται.<hr><b>matthew 5:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μακάριοι οἱ ἐλεήμονες,</td><td>blessed *are* the merciful,</td></tr>
+<tr><td>ὅτι αὐτοὶ ἐλεηθήσονται.</td><td>because *they* will be shown mercy</td></tr>
+</table>
+<hr>
+μακάριοι οἱ καθαροὶ τῇ καρδίᾳ, ὅτι αὐτοὶ τὸν Θεὸν ὄψονται.<hr><b>matthew 5:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μακάριοι οἱ καθαροὶ τῇ καρδίᾳ,</td><td>blessed *are* the pure in heart</td></tr>
+<tr><td>ὅτι αὐτοὶ τὸν Θεὸν ὄψονται.</td><td>because *they* God *will see*</td></tr>
+</table>
+<hr>
+μακάριοι οἱ εἰρηνοποιοί, ὅτι αὐτοὶ υἱοὶ Θεοῦ κληθήσονται.<hr><b>matthew 5:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μακάριοι οἱ εἰρηνοποιοί,</td><td>blessed *are* the peacemakers</td></tr>
+<tr><td>ὅτι αὐτοὶ υἱοὶ Θεοῦ κληθήσονται.</td><td>because they *will be* called sons of God</td></tr>
+</table>
+<hr>
+μακάριοι οἱ δεδιωγμένοι ἕνεκεν δικαιοσύνης, ὅτι αὐτῶν ἐστιν ἡ βασιλεία τῶν οὐρανῶν.<hr><b>matthew 5:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μακάριοι οἱ δεδιωγμένοι ἕνεκεν δικαιοσύνης,</td><td>blessed *are* those who have been persecuted for the sake of righteousness</td></tr>
+<tr><td>ὅτι αὐτῶν ἐστιν</td><td>because *it* is theirs</td></tr>
+<tr><td>ἡ βασιλεία τῶν οὐρανῶν.</td><td>the kingdom *of the* heavens</td></tr>
+</table>
+<hr>
+μακάριοί ἐστε ὅταν ὀνειδίσωσιν ὑμᾶς καὶ διώξωσιν καὶ εἴπωσιν πᾶν πονηρὸν καθ’ ὑμῶν ψευδόμενοι ἕνεκεν ἐμοῦ.<hr><b>matthew 5:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μακάριοί ἐστε</td><td>blessed *are*</td></tr>
+<tr><td>ὅταν ὀνειδίσωσιν ὑμᾶς</td><td>when *they* reproach you</td></tr>
+<tr><td>καὶ διώξωσιν καὶ</td><td>and *they* persecute and</td></tr>
+<tr><td>εἴπωσιν πᾶν πονηρὸν καθ’ ὑμῶν ψευδόμενοι ἕνεκεν ἐμοῦ.</td><td>say all evil against you, lying for my sake</td></tr>
+</table>
+<hr>
+χαίρετε καὶ ἀγαλλιᾶσθε, ὅτι ὁ μισθὸς ὑμῶν πολὺς ἐν τοῖς οὐρανοῖς·<hr><b>matthew 5:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>χαίρετε καὶ ἀγαλλιᾶσθε,</td><td>rejoice and be exceedingly glad</td></tr>
+<tr><td>ὅτι ὁ μισθὸς ὑμῶν</td><td>because *the* reward of *you*</td></tr>
+<tr><td>πολὺς ἐν τοῖς οὐρανοῖς·</td><td>great in *the* heavens</td></tr>
+<tr><td>γὰρ οὕτως ἐδίωξαν τοὺς προφήτας</td><td>for thus they persecuted the prophets</td></tr>
+<tr><td>τοὺς πρὸ ὑμῶν.</td><td>the prophets *who were* before you</td></tr>
+</table>
+<hr>
+Ὑμεῖς ἐστε τὸ ἅλας τῆς γῆς·<hr><b>matthew 5:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ὑμεῖς ἐστε</td><td>you are</td></tr>
+<tr><td>τὸ ἅλας τῆς γῆς·</td><td>the salt *of* the earth</td></tr>
+<tr><td>δὲ ἐὰν τὸ ἅλας μωρανθῇ,</td><td>but if the salt becomes foolish,</td></tr>
+<tr><td>ἐν τίνι ἁλισθήσεται;</td><td>in what will it be salted?</td></tr>
+<tr><td>εἰς οὐδὲν</td><td>into nothing</td></tr>
+<tr><td>ἰσχύει ἔτι</td><td>is strong *still*</td></tr>
+<tr><td>εἰ μὴ βληθὲν ἔξω</td><td>unless *it is* thrown out</td></tr>
+<tr><td>καταπατεῖσθαι ὑπὸ τῶν ἀνθρώπων.</td><td>to be trampled *under* by the people</td></tr>
+</table>
+<hr>
+Ὑμεῖς ἐστε τὸ φῶς τοῦ κόσμου.<hr><b>matthew 5:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ὑμεῖς ἐστε</td><td>You are</td></tr>
+<tr><td>τὸ φῶς τοῦ κόσμου.</td><td>the light of *the* world</td></tr>
+<tr><td>οὐ δύναται πόλις</td><td>*a* city cannot</td></tr>
+<tr><td>κρυβῆναι ἐπάνω ὄρους κειμένη·</td><td>to be hidden upon *a* mountain situated</td></tr>
+</table>
+<hr>
+οὐδὲ καίουσιν λύχνον καὶ τιθέασιν αὐτὸν ὑπὸ τὸν μόδιον, ἀλλ’ ἐπὶ τὴν λυχνίαν, καὶ λάμπει πᾶσιν τοῖς ἐν τῇ οἰκίᾳ.<hr><b>matthew 5:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὐδὲ καίουσιν λύχνον</td><td>nor do *they* light a lamp</td></tr>
+<tr><td>καὶ τιθέασιν</td><td>and *they* place</td></tr>
+<tr><td>αὐτὸν ὑπὸ τὸν μόδιον,</td><td>it under the *a* measure</td></tr>
+<tr><td>ἀλλ’ ἐπὶ τὴν λυχνίαν,</td><td>but upon the lampstand</td></tr>
+<tr><td>καὶ λάμπει πᾶσιν</td><td>and *it* shines to all</td></tr>
+<tr><td>τοῖς ἐν τῇ οἰκίᾳ.</td><td>to those *who are* in the house</td></tr>
+</table>
+<hr>
+οὕτως λαμψάτω τὸ φῶς ὑμῶν ἔμπροσθεν τῶν ἀνθρώπων, ὅπως ἴδωσιν ὑμῶν τὰ καλὰ ἔργα καὶ δοξάσωσιν τὸν πατέρα ὑμῶν τὸν ἐν τοῖς οὐρανοῖς.<hr><b>matthew 5:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὕτως λαμψάτω τὸ φῶς ὑμῶν</td><td>thus let shine the light of *you*</td></tr>
+<tr><td>ἔμπροσθεν τῶν ἀνθρώπων,</td><td>in front of the people</td></tr>
+<tr><td>ὅπως ἴδωσιν</td><td>so that they may see</td></tr>
+<tr><td>ὑμῶν τὰ καλὰ ἔργα</td><td>*your* the good works</td></tr>
+<tr><td>καὶ δοξάσωσιν τὸν πατέρα ὑμῶν</td><td>and *they may* glorify *the* father *of* your</td></tr>
+<tr><td>τὸν ἐν τοῖς οὐρανοῖς.</td><td>the one *who is* in the heavens</td></tr>
+</table>
+<hr>
+Μὴ νομίσητε ὅτι ἦλθον καταλῦσαι τὸν νόμον ἢ τοὺς προφήτας·<hr><b>matthew 5:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Μὴ νομίσητε</td><td>Do not think</td></tr>
+<tr><td>ὅτι ἦλθον καταλῦσαι</td><td>that I came to abolish</td></tr>
+<tr><td>τὸν νόμον ἢ τοὺς προφήτας·</td><td>the law or the prophets</td></tr>
+<tr><td>οὐκ ἦλθον καταλῦσαι ἀλλὰ πληρῶσαι·</td><td>*I* did not come to abolish but *to* fulfill</td></tr>
+</table>
+<hr>
+ἀμὴν γὰρ λέγω ὑμῖν, ἕως ἂν παρέλθῃ ὁ οὐρανὸς καὶ ἡ γῆ, ἰῶτα ἓν ἢ μία κεραία οὐ μὴ παρέλθῃ ἀπὸ τοῦ νόμου, ἕως ἂν πάντα γένηται.<hr><b>matthew 5:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ἀμὴν λέγω ὑμῖν,</td><td>for truly I say to *you*</td></tr>
+<tr><td>ἕως ἂν παρέλθῃ</td><td>until *it* passes away</td></tr>
+<tr><td>ὁ οὐρανὸς καὶ ἡ γῆ,</td><td>the heaven and the earth</td></tr>
+<tr><td>ἰῶτα ἓν ἢ μία κεραία</td><td>one iota or one stroke</td></tr>
+<tr><td>οὐ μὴ</td><td>not *at all*</td></tr>
+<tr><td>παρέλθῃ ἀπὸ τοῦ νόμου,</td><td>passes away from the law</td></tr>
+<tr><td>ἕως ἂν πάντα γένηται.</td><td>until *all things* might happen</td></tr>
+</table>
+<hr>
+ὃς ἐὰν οὖν λύσῃ μίαν τῶν ἐντολῶν τούτων τῶν ἐλαχίστων καὶ διδάξῃ οὕτως τοὺς ἀνθρώπους, ἐλάχιστος κληθήσεται ἐν τῇ βασιλείᾳ τῶν οὐρανῶν·<hr><b>matthew 5:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν ἐὰν ὃς λύσῃ</td><td>therefore if *anyone* breaks</td></tr>
+<tr><td>μίαν τῶν ἐντολῶν τούτων</td><td>one of these *commandments*</td></tr>
+<tr><td>τῶν ἐλαχίστων</td><td>of the *least*</td></tr>
+<tr><td>καὶ διδάξῃ οὕτως τοὺς ἀνθρώπους,</td><td>and *he* teaches thus *the* people</td></tr>
+<tr><td>ἐλάχιστος κληθήσεται ἐν</td><td>least will be called in</td></tr>
+<tr><td>τῇ βασιλείᾳ τῶν οὐρανῶν·</td><td>in the kingdom *of* the heavens</td></tr>
+<tr><td>δ’ ἂν</td><td>but *if*</td></tr>
+<tr><td>ὃς ποιήσῃ καὶ διδάξῃ,</td><td>whoever does and teaches</td></tr>
+<tr><td>οὗτος μέγας κληθήσεται ἐν</td><td>this *one* will be called great in</td></tr>
+<tr><td>τῇ βασιλείᾳ τῶν οὐρανῶν.</td><td>in the kingdom *of* the heavens</td></tr>
+</table>
+<hr>
+λέγω γὰρ ὑμῖν ὅτι ἐὰν μὴ περισσεύσῃ ὑμῶν ἡ δικαιοσύνη πλεῖον τῶν γραμματέων καὶ Φαρισαίων, οὐ μὴ εἰσέλθητε εἰς τὴν βασιλείαν τῶν οὐρανῶν.<hr><b>matthew 5:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ λέγω ὑμῖν</td><td>for I say to *you*</td></tr>
+<tr><td>ὅτι ἐὰν μὴ</td><td>that if not</td></tr>
+<tr><td>περισσεύσῃ ὑμῶν ἡ δικαιοσύνη</td><td>abound *your* righteousness</td></tr>
+<tr><td>πλεῖον τῶν γραμματέων καὶ Φαρισαίων,</td><td>more than the scribes and Pharisees</td></tr>
+<tr><td>οὐ μὴ</td><td>by no means *will*</td></tr>
+<tr><td>εἰσέλθητε εἰς</td><td>may enter into</td></tr>
+<tr><td>τὴν βασιλείαν τῶν οὐρανῶν.</td><td>the kingdom *of* the heavens</td></tr>
+</table>
+<hr>
+Ἠκούσατε ὅτι ἐρρέθη τοῖς ἀρχαίοις Οὐ φονεύσεις· ὃς δ’ ἂν φονεύσῃ, ἔνοχος ἔσται τῇ κρίσει.<hr><b>matthew 5:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἠκούσατε ὅτι ἐρρέθη τοῖς ἀρχαίοις</td><td>You have heard that *it was* said to *the* ancients</td></tr>
+<tr><td>Οὐ φονεύσεις·</td><td>You shall *not* murder</td></tr>
+<tr><td>δ’ ἂν ὃς φονεύσῃ,</td><td>but if *anyone* kills</td></tr>
+<tr><td>ἔνοχος ἔσται τῇ κρίσει.</td><td>liable *he will be* to the judgment</td></tr>
+</table>
+<hr>
+ἐγὼ δὲ λέγω ὑμῖν ὅτι πᾶς ὁ ὀργιζόμενος τῷ ἀδελφῷ αὐτοῦ ἔνοχος ἔσται τῇ κρίσει· ὃς δ’ ἂν εἴπῃ τῷ ἀδελφῷ αὐτοῦ Ῥακά, ἔνοχος ἔσται τῷ συνεδρίῳ· ὃς δ’ ἂν εἴπῃ Μωρέ, ἔνοχος ἔσται εἰς τὴν γέενναν τοῦ πυρός.<hr><b>matthew 5:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐγὼ λέγω ὑμῖν</td><td>but I say *to* you</td></tr>
+<tr><td>ὅτι πᾶς ὁ</td><td>that every the</td></tr>
+<tr><td>ὀργιζόμενος τῷ ἀδελφῷ αὐτοῦ</td><td>being angry with *his* brother</td></tr>
+<tr><td>ἔνοχος ἔσται τῇ κρίσει·</td><td>will be *liable to* the judgment</td></tr>
+<tr><td>δ’ ἂν ὃς</td><td>but if *anyone* who</td></tr>
+<tr><td>εἴπῃ τῷ ἀδελφῷ αὐτοῦ</td><td>shall say to his *brother*</td></tr>
+<tr><td>Ῥακά, ἔνοχος ἔσται τῷ συνεδρίῳ·</td><td>Raca, *will be* guilty to the council.</td></tr>
+<tr><td>δ’ ἂν ὃς εἴπῃ Μωρέ,</td><td>but if anyone says, *You* Fool,</td></tr>
+<tr><td>ἔνοχος ἔσται εἰς</td><td>will be *held* liable to</td></tr>
+<tr><td>τὴν γέενναν τοῦ πυρός.</td><td>the *hell* of the fire</td></tr>
+</table>
+<hr>
+ἐὰν οὖν προσφέρῃς τὸ δῶρόν σου ἐπὶ τὸ θυσιαστήριον κἀκεῖ μνησθῇς ὅτι ὁ ἀδελφός σου ἔχει τι κατὰ σοῦ, ἄφες ἐκεῖ τὸ δῶρόν σου ἔμπροσθεν τοῦ θυσιαστηρίου καὶ ὕπαγε πρῶτον διαλλάγηθι τῷ ἀδελφῷ σου, καὶ τότε ἐλθὼν πρόσφερε τὸ δῶρόν σου.<hr><b>matthew 5:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν ἐὰν</td><td>therefore if</td></tr>
+<tr><td>προσφέρῃς τὸ δῶρόν σου</td><td>you offer *the* gift of yours</td></tr>
+<tr><td>ἐπὶ τὸ θυσιαστήριον</td><td>upon the *altar*</td></tr>
+<tr><td>κἀκεῖ μνησθῇς</td><td>and there *you* remember</td></tr>
+<tr><td>ὅτι ὁ ἀδελφός σου</td><td>that *the* brother of yours</td></tr>
+<tr><td>ἔχει τι κατὰ σοῦ,</td><td>has something against *you*</td></tr>
+</table>
+<hr><b>matthew 5:24</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἄφες ἐκεῖ τὸ δῶρόν σου</td><td>leave there *your* gift</td></tr>
+<tr><td>ἔμπροσθεν τοῦ θυσιαστηρίου</td><td>in front of the altar</td></tr>
+<tr><td>καὶ ὕπαγε πρῶτον</td><td>and *you* go first</td></tr>
+<tr><td>διαλλάγηθι τῷ ἀδελφῷ σου,</td><td>be reconciled to *your* brother</td></tr>
+<tr><td>καὶ τότε ἐλθὼν</td><td>and *then* having come</td></tr>
+<tr><td>πρόσφερε τὸ δῶρόν σου.</td><td>offer *up* your gift</td></tr>
+</table>
+<hr>
+ἴσθι εὐνοῶν τῷ ἀντιδίκῳ σου ταχὺ ἕως ὅτου εἶ μετ’ αὐτοῦ ἐν τῇ ὁδῷ· μή ποτέ σε παραδῷ ὁ ἀντίδικος τῷ κριτῇ, καὶ ὁ κριτὴς τῷ ὑπηρέτῃ, καὶ εἰς φυλακὴν βληθήσῃ·<hr><b>matthew 5:25</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἴσθι εὐνοῶν</td><td>be *being* favorable</td></tr>
+<tr><td>τῷ ἀντιδίκῳ σου</td><td>to *the* opponent of you</td></tr>
+<tr><td>ταχὺ ἕως</td><td>quickly *until*</td></tr>
+<tr><td>ὅτου εἶ μετ’ αὐτοῦ</td><td>while you are *with* him</td></tr>
+<tr><td>ἐν τῇ ὁδῷ·</td><td>in the *way*</td></tr>
+<tr><td>μή ποτέ σε παραδῷ ὁ ἀντίδικος τῷ κριτῇ,</td><td>lest at any time *he* deliver you the opponent to the judge</td></tr>
+<tr><td>καὶ ὁ κριτὴς τῷ ὑπηρέτῃ,</td><td>and the judge *to* the servant</td></tr>
+<tr><td>καὶ εἰς φυλακὴν βληθήσῃ·</td><td>and *you shall be* thrown into prison</td></tr>
+</table>
+<hr>
+ἀμὴν λέγω σοι, οὐ μὴ ἐξέλθῃς ἐκεῖθεν ἕως ἂν ἀποδῷς τὸν ἔσχατον κοδράντην.<hr><b>matthew 5:26</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἀμὴν λέγω σοι,</td><td>truly I say to *you*</td></tr>
+<tr><td>οὐ μὴ ἐξέλθῃς ἐκεῖθεν</td><td>you will *not* leave from there</td></tr>
+<tr><td>ἕως ἂν</td><td>until *you*</td></tr>
+<tr><td>ἀποδῷς τὸν ἔσχατον κοδράντην.</td><td>you give back the last *small coin*</td></tr>
+</table>
+<hr>
+Ἠκούσατε ὅτι ἐρρέθη Οὐ μοιχεύσεις.<hr><b>matthew 5:27</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἠκούσατε ὅτι ἐρρέθη Οὐ μοιχεύσεις.</td><td>You have heard that it was said, *You shall* not commit adultery</td></tr>
+</table>
+<hr>
+ἐγὼ δὲ λέγω ὑμῖν ὅτι πᾶς ὁ βλέπων γυναῖκα πρὸς τὸ ἐπιθυμῆσαι αὐτὴν ἤδη ἐμοίχευσεν αὐτὴν ἐν τῇ καρδίᾳ αὐτοῦ.<hr><b>matthew 5:28</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐγὼ λέγω ὑμῖν</td><td>but I *am* saying to you</td></tr>
+<tr><td>ὅτι πᾶς ὁ βλέπων γυναῖκα</td><td>that every *man* who looks at a woman</td></tr>
+<tr><td>πρὸς τὸ ἐπιθυμῆσαι αὐτὴν</td><td>towards *the purpose of* desiring her</td></tr>
+<tr><td>ἤδη ἐμοίχευσεν αὐτὴν</td><td>already *has* committed-adultery *with* her</td></tr>
+<tr><td>ἐν τῇ καρδίᾳ αὐτοῦ.</td><td>in the heart *of him*</td></tr>
+</table>
+<hr>
+εἰ δὲ ὁ ὀφθαλμός σου ὁ δεξιὸς σκανδαλίζει σε, ἔξελε αὐτὸν καὶ βάλε ἀπὸ σοῦ·<hr><b>matthew 5:29</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ εἰ ὁ</td><td>but if the</td></tr>
+<tr><td>ὀφθαλμός σου ὁ δεξιὸς</td><td>eye of *the* your right</td></tr>
+<tr><td>σκανδαλίζει σε, ἔξελε αὐτὸν</td><td>causes you to stumble, remove it</td></tr>
+<tr><td>καὶ βάλε ἀπὸ σοῦ·</td><td>and throw *it* away from *you*</td></tr>
+<tr><td>γάρ συμφέρει σοι ἵνα ἀπόληται</td><td>for it is beneficial *to* you *that* be destroyed</td></tr>
+<tr><td>ἓν τῶν μελῶν σου</td><td>one of *the* members *of yours*</td></tr>
+<tr><td>καὶ μὴ</td><td>and *not*</td></tr>
+<tr><td>ὅλον τὸ σῶμά σου</td><td>*the* whole *your* body</td></tr>
+<tr><td>βληθῇ εἰς γέενναν.</td><td>be thrown into *Gehenna*</td></tr>
+</table>
+<hr>
+καὶ εἰ ἡ δεξιά σου χεὶρ σκανδαλίζει σε, ἔκκοψον αὐτὴν καὶ βάλε ἀπὸ σοῦ·<hr><b>matthew 5:30</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ εἰ</td><td>and if</td></tr>
+<tr><td>ἡ δεξιά σου χεὶρ</td><td>the right *hand* of you</td></tr>
+<tr><td>σκανδαλίζει σε, ἔκκοψον αὐτὴν</td><td>causes you to stumble, cut it off</td></tr>
+<tr><td>καὶ βάλε ἀπὸ σοῦ·</td><td>and throw *it* away from you</td></tr>
+<tr><td>γάρ συμφέρει σοι ἵνα ἀπόληται</td><td>for it is advantageous to you that *one* be destroyed</td></tr>
+<tr><td>ἓν τῶν μελῶν σου</td><td>one of *the* members *of you*</td></tr>
+<tr><td>καὶ μὴ</td><td>and not</td></tr>
+<tr><td>ὅλον τὸ σῶμά σου</td><td>*the* whole body of *you*</td></tr>
+<tr><td>εἰς γέενναν</td><td>into *Gehenna*</td></tr>
+<tr><td>ἀπέλθῃ.</td><td>*may* go away</td></tr>
+</table>
+<hr>
+Ἐρρέθη δέ Ὃς ἂν ἀπολύσῃ τὴν γυναῖκα αὐτοῦ, δότω αὐτῇ ἀποστάσιον.<hr><b>matthew 5:31</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δέ Ἐρρέθη ἂν Ὃς</td><td>and it *has* been said if anyone</td></tr>
+<tr><td>ἀπολύσῃ τὴν γυναῖκα αὐτοῦ,</td><td>should divorce *his* wife</td></tr>
+<tr><td>δότω αὐτῇ ἀποστάσιον.</td><td>let him give *to* her a certificate of divorce</td></tr>
+</table>
+<hr>
+ἐγὼ δὲ λέγω ὑμῖν ὅτι πᾶς ὁ ἀπολύων τὴν γυναῖκα αὐτοῦ παρεκτὸς λόγου πορνείας ποιεῖ αὐτὴν μοιχευθῆναι, καὶ ὃς ἐὰν ἀπολελυμένην γαμήσῃ μοιχᾶται.<hr><b>matthew 5:32</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐγὼ λέγω ὑμῖν</td><td>but I say to *you*</td></tr>
+<tr><td>ὅτι πᾶς ὁ</td><td>that every *one who*</td></tr>
+<tr><td>ἀπολύων τὴν γυναῖκα αὐτοῦ</td><td>whoever divorces *his* wife</td></tr>
+<tr><td>παρεκτὸς λόγου πορνείας</td><td>except for *the matter of* sexual immorality</td></tr>
+<tr><td>ποιεῖ αὐτὴν μοιχευθῆναι,</td><td>makes her *to be* adulterated</td></tr>
+<tr><td>καὶ ἐὰν ὃς ἀπολελυμένην γαμήσῃ</td><td>and if *whoever* marries *a* divorced</td></tr>
+<tr><td>μοιχᾶται.</td><td>*he* commits adultery</td></tr>
+</table>
+<hr>
+Πάλιν ἠκούσατε ὅτι ἐρρέθη τοῖς ἀρχαίοις Οὐκ ἐπιορκήσεις, ἀποδώσεις δὲ τῷ Κυρίῳ τοὺς ὅρκους σου.<hr><b>matthew 5:33</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Πάλιν ἠκούσατε</td><td>Again you* have heard</td></tr>
+<tr><td>ὅτι ἐρρέθη τοῖς ἀρχαίοις</td><td>that it-was-said to the* ancient-ones</td></tr>
+<tr><td>Οὐκ ἐπιορκήσεις,</td><td>*You shall* not swear falsely</td></tr>
+<tr><td>δὲ ἀποδώσεις τῷ Κυρίῳ</td><td>but you shall give to *the* Lord</td></tr>
+<tr><td>τοὺς ὅρκους σου.</td><td>the oaths *of* you</td></tr>
+</table>
+<hr>
+ἐγὼ δὲ λέγω ὑμῖν μὴ ὀμόσαι ὅλως·<hr><b>matthew 5:34</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐγὼ λέγω ὑμῖν</td><td>but I say to *you*</td></tr>
+<tr><td>μὴ ὀμόσαι ὅλως·</td><td>not to swear at all</td></tr>
+<tr><td>μήτε ἐν τῷ οὐρανῷ,</td><td>nor in *the* heaven</td></tr>
+<tr><td>ὅτι ἐστὶν θρόνος τοῦ Θεοῦ·</td><td>because *it* is *the* throne of *the* God</td></tr>
+</table>
+<hr>
+μήτε ἐν τῷ οὐρανῷ, ὅτι θρόνος ἐστὶν τοῦ Θεοῦ· μήτε ἐν τῇ γῇ, ὅτι ὑποπόδιόν ἐστιν τῶν ποδῶν αὐτοῦ· μήτε εἰς Ἱεροσόλυμα, ὅτι πόλις ἐστὶν τοῦ μεγάλου Βασιλέως· μήτε ἐν τῇ κεφαλῇ σου ὀμόσῃς, ὅτι οὐ δύνασαι μίαν τρίχα λευκὴν ποιῆσαι ἢ μέλαιναν.<hr><b>matthew 5:35</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μήτε ἐν τῇ γῇ,</td><td>nor on *the* earth</td></tr>
+<tr><td>ὅτι ἐστιν</td><td>that *it* is</td></tr>
+<tr><td>ὑποπόδιόν τῶν ποδῶν αὐτοῦ·</td><td>footstool *of* his *feet*</td></tr>
+<tr><td>μήτε εἰς Ἱεροσόλυμα,</td><td>nor *swear* by Jerusalem,</td></tr>
+<tr><td>ὅτι ἐστὶν</td><td>that *it* is</td></tr>
+<tr><td>πόλις τοῦ μεγάλου Βασιλέως·</td><td>city of the *great* King</td></tr>
+</table>
+<hr><b>matthew 5:36</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>μήτε ἐν τῇ κεφαλῇ σου</td><td>nor *swear* by your head</td></tr>
+<tr><td>ὀμόσῃς, ὅτι</td><td>swear, *because*</td></tr>
+<tr><td>οὐ δύνασαι μίαν τρίχα</td><td>you *are* not able *to make* one hair</td></tr>
+<tr><td>ποιῆσαι λευκὴν ἢ μέλαιναν.</td><td>to make white or black</td></tr>
+</table>
+<hr>
+ἔστω δὲ ὁ λόγος ὑμῶν ναὶ ναί, οὒ οὔ·<hr><b>matthew 5:37</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἔστω ὁ λόγος ὑμῶν</td><td>but let *be* the word of you</td></tr>
+<tr><td>ναὶ ναί, οὒ οὔ·</td><td>yes yes, no no</td></tr>
+<tr><td>δὲ τὸ περισσὸν τούτων</td><td>but the excess of *these*</td></tr>
+<tr><td>ἐκ τοῦ πονηροῦ</td><td>from the *evil one*</td></tr>
+<tr><td>ἐστιν.</td><td>it *is*</td></tr>
+</table>
+<hr>
+Ἠκούσατε ὅτι ἐρρέθη Ὀφθαλμὸν ἀντὶ ὀφθαλμοῦ καὶ ὀδόντα ἀντὶ ὀδόντος.<hr><b>matthew 5:38</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἠκούσατε ὅτι</td><td>You have heard that *it was said*</td></tr>
+<tr><td>ἐρρέθη Ὀφθαλμὸν ἀντὶ ὀφθαλμοῦ</td><td>[it] was said [an] eye in-exchange-for [an] eye</td></tr>
+<tr><td>καὶ ὀδόντα ἀντὶ ὀδόντος.</td><td>and a tooth for a tooth</td></tr>
+</table>
+<hr>
+ἐγὼ δὲ λέγω ὑμῖν μὴ ἀντιστῆναι τῷ πονηρῷ·<hr><b>matthew 5:39</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐγὼ λέγω ὑμῖν</td><td>but I say to you</td></tr>
+<tr><td>μὴ ἀντιστῆναι τῷ πονηρῷ·</td><td>not to-resist the evil-one</td></tr>
+<tr><td>ἀλλ’ ὅστις σε ῥαπίζει εἰς</td><td>but whoever *hits* you on</td></tr>
+<tr><td>τὴν δεξιὰν σιαγόνα σου,</td><td>the right cheek *of yours*</td></tr>
+<tr><td>στρέψον αὐτῷ καὶ τὴν ἄλλην·</td><td>turn to him also the other</td></tr>
+</table>
+<hr>
+καὶ τῷ θέλοντί σοι κριθῆναι καὶ τὸν χιτῶνά σου λαβεῖν, ἄφες αὐτῷ καὶ τὸ ἱμάτιον·<hr><b>matthew 5:40</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ τῷ θέλοντί σοι κριθῆναι</td><td>and to the one wanting *to sue* you</td></tr>
+<tr><td>καὶ τὸν χιτῶνά σου</td><td>and *the* tunic of yours</td></tr>
+<tr><td>λαβεῖν, ἄφες</td><td>take, let *him* have</td></tr>
+<tr><td>αὐτῷ καὶ τὸ ἱμάτιον·</td><td>to him and the cloak</td></tr>
+</table>
+<hr>
+καὶ ὅστις σε ἀγγαρεύσει μίλιον ἕν, ὕπαγε μετ’ αὐτοῦ δύο.<hr><b>matthew 5:41</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ</td><td>and</td></tr>
+<tr><td>ὅστις σε ἀγγαρεύσει μίλιον ἕν,</td><td>whoever compels you to go one mile,</td></tr>
+<tr><td>ὕπαγε μετ’ αὐτοῦ δύο.</td><td>go with *him* two</td></tr>
+</table>
+<hr>
+τῷ αἰτοῦντί σε δός, καὶ τὸν θέλοντα ἀπὸ σοῦ δανίσασθαι μὴ ἀποστραφῇς.<hr><b>matthew 5:42</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>τῷ αἰτοῦντί σε</td><td>to the one asking *from* you</td></tr>
+<tr><td>δός, καὶ τὸν</td><td>give, and *the one*</td></tr>
+<tr><td>θέλοντα ἀπὸ σοῦ δανίσασθαι</td><td>wanting from you to borrow</td></tr>
+<tr><td>μὴ ἀποστραφῇς.</td><td>do not *you* turn away</td></tr>
+</table>
+<hr>
+Ἠκούσατε ὅτι ἐρρέθη Ἀγαπήσεις τὸν πλησίον σου καὶ μισήσεις τὸν ἐχθρόν σου.<hr><b>matthew 5:43</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Ἠκούσατε ὅτι ἐρρέθη</td><td>You have heard that it was said</td></tr>
+<tr><td>Ἀγαπήσεις τὸν πλησίον σου</td><td>You shall love *your* neighbor</td></tr>
+<tr><td>καὶ μισήσεις τὸν ἐχθρόν σου.</td><td>and *you shall* hate your enemy</td></tr>
+</table>
+<hr>
+ἐγὼ δὲ λέγω ὑμῖν, ἀγαπᾶτε τοὺς ἐχθροὺς ὑμῶν καὶ προσεύχεσθε ὑπὲρ τῶν διωκόντων ὑμᾶς· ὅπως γένησθε υἱοὶ τοῦ Πατρὸς ὑμῶν τοῦ ἐν οὐρανοῖς, ὅτι τὸν ἥλιον αὐτοῦ ἀνατέλλει ἐπὶ πονηροὺς καὶ ἀγαθοὺς καὶ βρέχει ἐπὶ δικαίους καὶ ἀδίκους.<hr><b>matthew 5:44</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἐγὼ λέγω ὑμῖν,</td><td>but I say to *you*</td></tr>
+<tr><td>ἀγαπᾶτε τοὺς ἐχθροὺς ὑμῶν</td><td>love *you* your enemies</td></tr>
+<tr><td>καὶ προσεύχεσθε</td><td>and *you* pray</td></tr>
+<tr><td>ὑπὲρ τῶν διωκόντων ὑμᾶς·</td><td>for *those* persecuting you</td></tr>
+</table>
+<hr><b>matthew 5:45</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ὅπως γένησθε</td><td>so that you may *become*</td></tr>
+<tr><td>υἱοὶ τοῦ Πατρὸς ὑμῶν</td><td>sons of *the* Father of you</td></tr>
+<tr><td>τοῦ ἐν οὐρανοῖς,</td><td>of *the one* in *the* heavens</td></tr>
+<tr><td>ὅτι τὸν ἥλιον αὐτοῦ</td><td>because *his* sun</td></tr>
+<tr><td>ἀνατέλλει ἐπὶ πονηροὺς καὶ ἀγαθοὺς</td><td>rises on evil and good</td></tr>
+<tr><td>καὶ βρέχει</td><td>and *it* rains</td></tr>
+<tr><td>ἐπὶ δικαίους καὶ ἀδίκους.</td><td>upon the righteous and *the* unrighteous</td></tr>
+</table>
+<hr>
+ἐὰν γὰρ ἀγαπήσητε τοὺς ἀγαπῶντας ὑμᾶς, τίνα μισθὸν ἔχετε;<hr><b>matthew 5:46</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>γὰρ ἐὰν</td><td>for if</td></tr>
+<tr><td>ἀγαπήσητε τοὺς ἀγαπῶντας ὑμᾶς,</td><td>love *you* those loving you</td></tr>
+<tr><td>τίνα μισθὸν ἔχετε;</td><td>what reward do *you* have</td></tr>
+<tr><td>οὐχὶ καὶ οἱ τελῶναι</td><td>do not even the tax collectors</td></tr>
+<tr><td>τὸ αὐτὸ</td><td>the same</td></tr>
+<tr><td>ποιοῦσιν;</td><td>*they* do</td></tr>
+</table>
+<hr>
+καὶ ἐὰν ἀσπάσησθε τοὺς ἀδελφοὺς ὑμῶν μόνον, τί περισσὸν ποιεῖτε;<hr><b>matthew 5:47</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐὰν</td><td>and if</td></tr>
+<tr><td>ἀσπάσησθε τοὺς ἀδελφοὺς ὑμῶν</td><td>greet *your* brothers</td></tr>
+<tr><td>μόνον, τί περισσὸν ποιεῖτε;</td><td>only, what *more* do you do?</td></tr>
+<tr><td>οὐχὶ καὶ οἱ ἐθνικοὶ</td><td>do not even *the* Gentiles</td></tr>
+<tr><td>τὸ αὐτὸ</td><td>the same</td></tr>
+<tr><td>ποιοῦσιν;</td><td>*they* do</td></tr>
+</table>
+<hr>
+Ἔσεσθε οὖν ὑμεῖς τέλειοι ὡς ὁ Πατὴρ ὑμῶν ὁ οὐράνιος τέλειός ἐστιν.<hr><b>matthew 5:48</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>οὖν Ἔσεσθε ὑμεῖς τέλειοι</td><td>therefore *be* you perfect</td></tr>
+<tr><td>ὡς ὁ</td><td>as the</td></tr>
+<tr><td>Πατὴρ ὑμῶν ὁ οὐράνιος</td><td>Father of *you* the heavenly</td></tr>
+<tr><td>τέλειός ἐστιν.</td><td>perfect *he* is</td></tr>
+</table>
+<div class="chapter-links">
+<a href="4.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="selected-chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="6.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>

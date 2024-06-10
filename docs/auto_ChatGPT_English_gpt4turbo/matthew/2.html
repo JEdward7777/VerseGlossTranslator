@@ -1,0 +1,447 @@
+<!DOCTYPE html><html><head><title>matthew 2</title>
+<meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* https://alistapart.com/article/horizdropdowns/ */
+/*ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+}
+
+ul li {
+ position: relative;
+}
+
+li ul {
+ position: absolute;
+ left: 149px;
+ top: 0;
+ display: none;
+}
+ul li a {
+ display: block;
+ text-decoration: none;
+ color: #777;
+ background: #fff;
+ padding: 5px;
+ border: 1px solid #ccc;
+ border-bottom: 0;
+}
+/* Fix IE. Hide from IE Mac */
+* html ul li { float: left; }
+* html ul li a { height: 1%; }
+/* End */
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ width: 150px;
+ border-bottom: 1px solid #ccc;
+}
+li:hover ul { display: block; } */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+}
+
+ul li {
+  position: relative;
+}
+
+li ul {
+  position: absolute;
+  left: 100%; /* Adjust the position relative to the parent li */
+  top: 0;
+  display: none;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+  display: block;
+}
+
+
+
+/* Internal CSS */
+.navy-blue { color: navy; }
+.forest-green { color: forestgreen; }
+.burgundy { color: #800020; }
+.goldenrod { color: goldenrod; }
+.slate-gray { color: slategray; }
+.deep-purple { color: #36013F; }
+.teal { color: teal; }
+.maroon { color: maroon; }
+.olive-green { color: olive; }
+.royal-blue { color: royalblue; }
+
+  /* Style for the menu */
+  .menu {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  /* Style for the content */
+  .content {
+    margin-left: 220px; /* Make space for the menu */
+    padding: 20px;
+  }
+
+  .current-book-chapter {
+        font-weight: bold;
+        color: navy;
+  }
+.chapter-links {
+  display: flex;
+}
+.chapter-link {
+        background-color: lightgray;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+}
+.selected-chapter-link {
+        /*background-color: lightgray;*/
+        background-color: #f0f0f0;
+        color: navy;
+        padding: 10px;
+        margin: 5px;
+        text-decoration: none;
+        font-weight: bold;
+}
+</style></head><body>
+<ul class="menu">
+ <li class="menu_item"><a href="1.html" class="current-book-chapter">matthew</a>
+  <ul class="submenu">
+   <li class="submenu_item"><a href="1.html" class="">1</a></li>
+   <li class="submenu_item"><a href="2.html" class="current-book-chapter">2</a></li>
+   <li class="submenu_item"><a href="3.html" class="">3</a></li>
+   <li class="submenu_item"><a href="4.html" class="">4</a></li>
+   <li class="submenu_item"><a href="5.html" class="">5</a></li>
+   <li class="submenu_item"><a href="6.html" class="">6</a></li>
+   <li class="submenu_item"><a href="7.html" class="">7</a></li>
+   <li class="submenu_item"><a href="8.html" class="">8</a></li>
+   <li class="submenu_item"><a href="9.html" class="">9</a></li>
+   <li class="submenu_item"><a href="10.html" class="">10</a></li>
+   <li class="submenu_item"><a href="11.html" class="">11</a></li>
+   <li class="submenu_item"><a href="12.html" class="">12</a></li>
+   <li class="submenu_item"><a href="13.html" class="">13</a></li>
+   <li class="submenu_item"><a href="14.html" class="">14</a></li>
+   <li class="submenu_item"><a href="15.html" class="">15</a></li>
+   <li class="submenu_item"><a href="16.html" class="">16</a></li>
+   <li class="submenu_item"><a href="17.html" class="">17</a></li>
+   <li class="submenu_item"><a href="18.html" class="">18</a></li>
+   <li class="submenu_item"><a href="19.html" class="">19</a></li>
+   <li class="submenu_item"><a href="20.html" class="">20</a></li>
+   <li class="submenu_item"><a href="21.html" class="">21</a></li>
+   <li class="submenu_item"><a href="22.html" class="">22</a></li>
+   <li class="submenu_item"><a href="23.html" class="">23</a></li>
+   <li class="submenu_item"><a href="24.html" class="">24</a></li>
+   <li class="submenu_item"><a href="25.html" class="">25</a></li>
+   <li class="submenu_item"><a href="26.html" class="">26</a></li>
+   <li class="submenu_item"><a href="27.html" class="">27</a></li>
+   <li class="submenu_item"><a href="28.html" class="">28</a></li>
+  </ul></li>
+</ul>
+<div class="content">
+<div class="chapter-links">
+<a href="1.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="selected-chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="3.html" class="chapter-link">-&gt;</a>
+</div>
+<hr>
+Τοῦ δὲ Ἰησοῦ γεννηθέντος ἐν Βηθλέεμ τῆς Ἰουδαίας ἐν ἡμέραις Ἠρῴδου τοῦ βασιλέως, ἰδοὺ μάγοι ἀπὸ ἀνατολῶν παρεγένοντο εἰς Ἱεροσόλυμα λέγοντες Ποῦ ἐστιν ὁ τεχθεὶς βασιλεὺς τῶν Ἰουδαίων; εἴδομεν γὰρ αὐτοῦ τὸν ἀστέρα ἐν τῇ ἀνατολῇ καὶ ἤλθομεν προσκυνῆσαι αὐτῷ.<hr><b>matthew 2:1</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Τοῦ Ἰησοῦ</td><td>of *the* Jesus</td></tr>
+<tr><td>γεννηθέντος ἐν Βηθλέεμ τῆς Ἰουδαίας</td><td>having been born in *the city of* Bethlehem of Judea</td></tr>
+<tr><td>ἐν ἡμέραις Ἠρῴδου τοῦ βασιλέως,</td><td>in *the* days *of* Herod *the* king</td></tr>
+<tr><td>ἰδοὺ μάγοι ἀπὸ ἀνατολῶν</td><td>behold, *wise men* from *the* east</td></tr>
+<tr><td>παρεγένοντο εἰς Ἱεροσόλυμα</td><td>arrived in *Jerusalem*</td></tr>
+</table>
+<hr><b>matthew 2:2</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>λέγοντες Ποῦ ἐστιν ὁ</td><td>saying Where is the</td></tr>
+<tr><td>τεχθεὶς βασιλεὺς τῶν Ἰουδαίων;</td><td>born king of *the* Jews</td></tr>
+<tr><td>γὰρ εἴδομεν αὐτοῦ τὸν ἀστέρα</td><td>for *we* saw his star</td></tr>
+<tr><td>ἐν τῇ ἀνατολῇ</td><td>in the *east*</td></tr>
+<tr><td>καὶ ἤλθομεν προσκυνῆσαι αὐτῷ.</td><td>and we came to worship him</td></tr>
+</table>
+<hr>
+ἀκούσας δὲ ὁ βασιλεὺς Ἠρῴδης ἐταράχθη, καὶ πᾶσα Ἱεροσόλυμα μετ’ αὐτοῦ, καὶ συναγαγὼν πάντας τοὺς ἀρχιερεῖς καὶ γραμματεῖς τοῦ λαοῦ ἐπυνθάνετο παρ’ αὐτῶν ποῦ ὁ Χριστὸς γεννᾶται.<hr><b>matthew 2:3</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἀκούσας ὁ βασιλεὺς Ἠρῴδης</td><td>but having heard *the* king Herod</td></tr>
+<tr><td>ἐταράχθη, καὶ</td><td>was troubled, and</td></tr>
+<tr><td>πᾶσα Ἱεροσόλυμα μετ’ αὐτοῦ,</td><td>all Jerusalem with *him*</td></tr>
+</table>
+<hr><b>matthew 2:4</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ συναγαγὼν πάντας τοὺς ἀρχιερεῖς</td><td>and *having* gathered all the chief priests</td></tr>
+<tr><td>καὶ γραμματεῖς τοῦ λαοῦ</td><td>and *the* scribes of the people</td></tr>
+<tr><td>ἐπυνθάνετο παρ’ αὐτῶν</td><td>he inquired from *them*</td></tr>
+<tr><td>ποῦ ὁ Χριστὸς γεννᾶται.</td><td>where *is* the Christ born</td></tr>
+</table>
+<hr>
+οἱ δὲ εἶπαν αὐτῷ· Ἐν Βηθλέεμ τῆς Ἰουδαίας· οὕτως γὰρ γέγραπται διὰ τοῦ προφήτου· Καὶ σύ, Βηθλέεμ γῆ Ἰούδα, οὐδαμῶς ἐλαχίστη εἶ ἐν τοῖς ἡγεμόσιν Ἰούδα· ἐκ σοῦ γὰρ ἐξελεύσεται ἡγούμενος, ὅστις ποιμανεῖ τὸν λαόν μου τὸν Ἰσραήλ.<hr><b>matthew 2:5</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ εἶπαν αὐτῷ·</td><td>and they said to *him*</td></tr>
+<tr><td>Ἐν Βηθλέεμ τῆς Ἰουδαίας·</td><td>In *the* Bethlehem of *the* Judea</td></tr>
+<tr><td>γὰρ οὕτως</td><td>for thus</td></tr>
+<tr><td>γέγραπται διὰ τοῦ προφήτου·</td><td>it has been written *through* the prophet</td></tr>
+</table>
+<hr><b>matthew 2:6</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Καὶ Βηθλέεμ γῆ Ἰούδα,</td><td>And *you,* Bethlehem, land of Judah,</td></tr>
+<tr><td>σύ, οὐδαμῶς ἐλαχίστη εἶ</td><td>you, *are* by no means least</td></tr>
+<tr><td>ἐν τοῖς ἡγεμόσιν Ἰούδα·</td><td>among the *rulers of* Judah</td></tr>
+<tr><td>γὰρ ἐκ σοῦ</td><td>for *from* you</td></tr>
+<tr><td>ἐξελεύσεται ἡγούμενος, ὅστις</td><td>will come forth a leader, who</td></tr>
+<tr><td>ποιμανεῖ τὸν λαόν μου</td><td>will shepherd my *people*</td></tr>
+<tr><td>τὸν Ἰσραήλ.</td><td>the *people of* Israel</td></tr>
+</table>
+<hr>
+Τότε Ἠρῴδης λάθρᾳ καλέσας τοὺς μάγους ἠκρίβωσεν παρ’ αὐτῶν τὸν χρόνον τοῦ φαινομένου ἀστέρος, καὶ πέμψας αὐτοὺς εἰς Βηθλέεμ εἶπεν· Πορευθέντες ἐξετάσατε ἀκριβῶς περὶ τοῦ παιδίου· ἐπὰν δὲ εὕρητε, ἀπαγγείλατέ μοι, ὅπως κἀγὼ ἐλθὼν προσκυνήσω αὐτῷ.<hr><b>matthew 2:7</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Τότε Ἠρῴδης</td><td>Then *Herod*</td></tr>
+<tr><td>λάθρᾳ καλέσας τοὺς μάγους</td><td>secretly having called *the* magi</td></tr>
+<tr><td>ἠκρίβωσεν παρ’ αὐτῶν</td><td>he inquired *from* them</td></tr>
+<tr><td>τὸν χρόνον τοῦ φαινομένου ἀστέρος,</td><td>the time of the appearing *star*</td></tr>
+</table>
+<hr><b>matthew 2:8</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ πέμψας αὐτοὺς εἰς Βηθλέεμ</td><td>and having sent them to Bethlehem</td></tr>
+<tr><td>εἶπεν· Πορευθέντες ἐξετάσατε</td><td>he said: Having gone, examine</td></tr>
+<tr><td>ἀκριβῶς περὶ τοῦ παιδίου·</td><td>carefully about *the* child</td></tr>
+<tr><td>δὲ ἐπὰν εὕρητε, ἀπαγγείλατέ μοι,</td><td>but when *you* find *it*, report *it* to me</td></tr>
+<tr><td>ὅπως κἀγὼ ἐλθὼν προσκυνήσω αὐτῷ.</td><td>so that I also, having come, may worship *to* him</td></tr>
+</table>
+<hr>
+οἱ δὲ ἀκούσαντες τοῦ βασιλέως ἐπορεύθησαν· καὶ ἰδοὺ ὁ ἀστὴρ, ὃν εἶδον ἐν τῇ ἀνατολῇ, προῆγεν αὐτούς ἕως ἐλθὼν ἐστάθη ἐπάνω οὗ ἦν τὸ παιδίον.<hr><b>matthew 2:9</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ οἱ ἀκούσαντες τοῦ βασιλέως</td><td>but they, having heard *from* the king</td></tr>
+<tr><td>ἐπορεύθησαν· καὶ</td><td>they went and</td></tr>
+<tr><td>ἰδοὺ ὁ ἀστὴρ, ὃν</td><td>behold the star, which</td></tr>
+<tr><td>εἶδον ἐν τῇ ἀνατολῇ,</td><td>they saw in the east</td></tr>
+<tr><td>προῆγεν αὐτούς</td><td>led *them*</td></tr>
+<tr><td>ἕως ἐλθὼν ἐστάθη ἐπάνω</td><td>until having come *he* stood over</td></tr>
+<tr><td>οὗ ἦν τὸ παιδίον.</td><td>where *was* the child</td></tr>
+</table>
+<hr>
+ἰδόντες δὲ τὸν ἀστέρα ἐχάρησαν χαρὰν μεγάλην σφόδρα.<hr><b>matthew 2:10</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἰδόντες τὸν ἀστέρα</td><td>but having seen the *star*</td></tr>
+<tr><td>ἐχάρησαν χαρὰν μεγάλην</td><td>they rejoiced *with* great joy</td></tr>
+<tr><td>σφόδρα.</td><td>exceedingly</td></tr>
+</table>
+<hr>
+καὶ ἐλθόντες εἰς τὴν οἰκίαν εἶδον τὸ παιδίον μετὰ Μαρίας τῆς μητρὸς αὐτοῦ, καὶ πεσόντες προσεκύνησαν αὐτῷ, καὶ ἀνοίξαντες τοὺς θησαυροὺς αὐτῶν προσήνεγκαν αὐτῷ δῶρα, χρυσὸν καὶ λίβανον καὶ σμύρναν.<hr><b>matthew 2:11</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐλθόντες εἰς τὴν οἰκίαν</td><td>and having come into the house</td></tr>
+<tr><td>εἶδον τὸ παιδίον μετὰ</td><td>they saw the child with</td></tr>
+<tr><td>Μαρίας τῆς μητρὸς αὐτοῦ,</td><td>Mary *the* mother of him</td></tr>
+<tr><td>καὶ πεσόντες προσεκύνησαν αὐτῷ,</td><td>and having fallen, they worshipped him</td></tr>
+<tr><td>καὶ ἀνοίξαντες τοὺς θησαυροὺς αὐτῶν</td><td>and having opened *their* treasures</td></tr>
+<tr><td>προσήνεγκαν αὐτῷ δῶρα,</td><td>they offered to him gifts</td></tr>
+<tr><td>χρυσὸν καὶ λίβανον καὶ σμύρναν.</td><td>gold and frankincense and myrrh</td></tr>
+</table>
+<hr>
+καὶ χρηματισθέντες κατ’ ὄναρ μὴ ἀνακάμψαι πρὸς Ἠρῴδην, δι’ ἄλλης ὁδοῦ ἀνεχώρησαν εἰς τὴν χώραν αὐτῶν.<hr><b>matthew 2:12</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ χρηματισθέντες κατ’ ὄναρ</td><td>and having been warned in *a* dream</td></tr>
+<tr><td>μὴ ἀνακάμψαι πρὸς Ἠρῴδην,</td><td>not to return to Herod</td></tr>
+<tr><td>δι’ ἄλλης ὁδοῦ</td><td>through *a* different way</td></tr>
+<tr><td>ἀνεχώρησαν εἰς τὴν χώραν αὐτῶν.</td><td>they departed to *their* country</td></tr>
+</table>
+<hr>
+Ἀναχωρησάντων δὲ αὐτῶν, ἰδοὺ ἄγγελος κυρίου φαίνεται κατ’ ὄναρ τῷ Ἰωσὴφ λέγων Ἐγερθεὶς παράλαβε τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ καὶ φεῦγε εἰς Αἴγυπτον, καὶ ἴσθι ἐκεῖ ἕως ἂν εἴπω σοι· μέλλει γὰρ Ἠρῴδης ζητεῖν τὸ παιδίον τοῦ ἀπολέσαι αὐτό.<hr><b>matthew 2:13</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Ἀναχωρησάντων αὐτῶν,</td><td>but *after* their departing</td></tr>
+<tr><td>ἰδοὺ ἄγγελος κυρίου</td><td>behold, *an* angel of *the* Lord</td></tr>
+<tr><td>φαίνεται κατ’ ὄναρ</td><td>appears in *a* dream</td></tr>
+<tr><td>τῷ Ἰωσὴφ</td><td>to *Joseph*</td></tr>
+<tr><td>λέγων Ἐγερθεὶς παράλαβε τὸ παιδίον</td><td>saying *having arisen* take the child</td></tr>
+<tr><td>καὶ τὴν μητέρα αὐτοῦ</td><td>and *the* mother of him</td></tr>
+<tr><td>καὶ φεῦγε εἰς Αἴγυπτον,</td><td>and flee into Egypt</td></tr>
+<tr><td>καὶ ἴσθι ἐκεῖ</td><td>and *be* there</td></tr>
+<tr><td>ἕως ἂν εἴπω σοι·</td><td>until *I* tell you</td></tr>
+<tr><td>γὰρ μέλλει</td><td>for *is about to*</td></tr>
+<tr><td>Ἠρῴδης ζητεῖν τὸ παιδίον</td><td>Herod to seek the *child*</td></tr>
+<tr><td>τοῦ ἀπολέσαι αὐτό.</td><td>to destroy it</td></tr>
+</table>
+<hr>
+ὁ δὲ ἐγερθεὶς παρέλαβεν τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ νυκτὸς καὶ ἀνεχώρησεν εἰς Αἴγυπτον, καὶ ἦν ἐκεῖ ἕως τῆς τελευτῆς Ἠρῴδου· ἵνα πληρωθῇ τὸ ῥηθὲν ὑπὸ κυρίου διὰ τοῦ προφήτου λέγοντος Ἐξ Αἰγύπτου ἐκάλεσα τὸν υἱόν μου.<hr><b>matthew 2:14</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ</td><td>but *he*</td></tr>
+<tr><td>ἐγερθεὶς παρέλαβεν τὸ παιδίον</td><td>having arisen he took the child</td></tr>
+<tr><td>καὶ τὴν μητέρα αὐτοῦ</td><td>and *the* mother of him</td></tr>
+<tr><td>νυκτὸς καὶ ἀνεχώρησεν εἰς Αἴγυπτον,</td><td>by night and *he* departed into Egypt</td></tr>
+</table>
+<hr><b>matthew 2:15</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἦν ἐκεῖ</td><td>and he was there</td></tr>
+<tr><td>ἕως τῆς τελευτῆς Ἠρῴδου·</td><td>until the death of *Herod*</td></tr>
+<tr><td>ἵνα πληρωθῇ</td><td>so that *it* might be fulfilled</td></tr>
+<tr><td>τὸ ῥηθὲν ὑπὸ κυρίου</td><td>the *thing* said by *the* Lord</td></tr>
+<tr><td>διὰ τοῦ προφήτου</td><td>through *the* prophet</td></tr>
+<tr><td>λέγοντος Ἐξ Αἰγύπτου</td><td>saying *Out of* Egypt</td></tr>
+<tr><td>ἐκάλεσα τὸν υἱόν μου.</td><td>I called my *son*</td></tr>
+</table>
+<hr>
+Τότε Ἠρῴδης ἰδὼν ὅτι ἐνεπαίχθη ὑπὸ τῶν μάγων ἐθυμώθη λίαν, καὶ ἀποστείλας ἀνεῖλεν πάντας τοὺς παῖδας τοὺς ἐν Βηθλέεμ καὶ ἐν πᾶσι τοῖς ὁρίοις αὐτῆς ἀπὸ διετοῦς καὶ κατωτέρω, κατὰ τὸν χρόνον ὃν ἠκρίβωσεν παρὰ τῶν μάγων.<hr><b>matthew 2:16</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>Τότε Ἠρῴδης ἰδὼν ὅτι</td><td>Then Herod, seeing that</td></tr>
+<tr><td>ἐνεπαίχθη ὑπὸ τῶν μάγων</td><td>was mocked by *the* magi</td></tr>
+<tr><td>ἐθυμώθη λίαν, καὶ ἀποστείλας</td><td>became very angry, and *having* sent</td></tr>
+<tr><td>ἀνεῖλεν πάντας τοὺς παῖδας</td><td>he killed *all* the children</td></tr>
+<tr><td>τοὺς ἐν Βηθλέεμ</td><td>the *ones* in Bethlehem</td></tr>
+<tr><td>καὶ ἐν</td><td>and in</td></tr>
+<tr><td>πᾶσι τοῖς ὁρίοις αὐτῆς</td><td>in all *the* borders *of* her</td></tr>
+<tr><td>ἀπὸ διετοῦς καὶ κατωτέρω,</td><td>from two-year-old and *those* younger</td></tr>
+<tr><td>κατὰ τὸν χρόνον ὃν</td><td>according to the time which</td></tr>
+<tr><td>ἠκρίβωσεν παρὰ τῶν μάγων.</td><td>he had ascertained *from* the magi</td></tr>
+</table>
+<hr>
+τότε ἐπληρώθη τὸ ῥηθὲν διὰ Ἰερεμίου τοῦ προφήτου λέγοντος Φωνὴ ἐν Ῥαμὰ ἠκούσθη, κλαυθμὸς καὶ ὀδυρμὸς πολύς· Ῥαχὴλ κλαίουσα τὰ τέκνα αὐτῆς, καὶ οὐκ ἤθελεν παρακληθῆναι ὅτι οὐκ εἰσίν.<hr><b>matthew 2:17</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>τότε ἐπληρώθη τὸ ῥηθὲν</td><td>then was fulfilled the *thing* spoken</td></tr>
+<tr><td>διὰ Ἰερεμίου τοῦ προφήτου</td><td>through *the prophet* Jeremiah</td></tr>
+<tr><td>λέγοντος ἐν Ῥαμὰ</td><td>saying in *Rama*</td></tr>
+</table>
+<hr><b>matthew 2:18</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>ἠκούσθη, Φωνὴ</td><td>was heard, Voice</td></tr>
+<tr><td>κλαυθμὸς καὶ ὀδυρμὸς πολύς·</td><td>weeping and *great* lamentation</td></tr>
+<tr><td>Ῥαχὴλ κλαίουσα τὰ τέκνα αὐτῆς,</td><td>Rachel weeping *for* her children</td></tr>
+<tr><td>καὶ οὐκ ἤθελεν παρακληθῆναι</td><td>and she did not want to be comforted</td></tr>
+<tr><td>ὅτι οὐκ εἰσίν.</td><td>because *they* are not</td></tr>
+</table>
+<hr>
+Τελευτήσαντος δὲ τοῦ Ἠρῴδου, ἰδοὺ ἄγγελος Κυρίου φαίνεται κατ’ ὄναρ τῷ Ἰωσὴφ ἐν Αἰγύπτῳ λέγων Ἐγερθεὶς παράλαβε τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ καὶ πορεύου εἰς γῆν Ἰσραήλ· τεθνήκασιν γὰρ οἱ ζητοῦντες τὴν ψυχὴν τοῦ παιδίου.<hr><b>matthew 2:19</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ Τελευτήσαντος τοῦ Ἠρῴδου,</td><td>but *after* Herod *had died*</td></tr>
+<tr><td>ἰδοὺ ἄγγελος Κυρίου</td><td>behold, an *angel* of the Lord</td></tr>
+<tr><td>φαίνεται κατ’ ὄναρ</td><td>appears *in* a dream</td></tr>
+<tr><td>τῷ Ἰωσὴφ</td><td>to *Joseph*</td></tr>
+<tr><td>ἐν Αἰγύπτῳ</td><td>in *Egypt*</td></tr>
+</table>
+<hr><b>matthew 2:20</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>λέγων Ἐγερθεὶς παράλαβε τὸ παιδίον</td><td>saying *you* arise take the child</td></tr>
+<tr><td>καὶ τὴν μητέρα αὐτοῦ</td><td>and the mother of *him*</td></tr>
+<tr><td>καὶ πορεύου εἰς γῆν Ἰσραήλ·</td><td>and go into *the* land of Israel</td></tr>
+<tr><td>γὰρ τεθνήκασιν οἱ ζητοῦντες</td><td>for *they* have died those seeking</td></tr>
+<tr><td>τὴν ψυχὴν τοῦ παιδίου.</td><td>the *life* of the child</td></tr>
+</table>
+<hr>
+ὁ δὲ ἐγερθεὶς παρέλαβεν τὸ παιδίον καὶ τὴν μητέρα αὐτοῦ καὶ εἰσῆλθεν εἰς γῆν Ἰσραήλ.<hr><b>matthew 2:21</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ὁ</td><td>but he</td></tr>
+<tr><td>ἐγερθεὶς παρέλαβεν τὸ παιδίον</td><td>having arisen he took the child</td></tr>
+<tr><td>καὶ τὴν μητέρα αὐτοῦ</td><td>and the mother of him</td></tr>
+<tr><td>καὶ εἰσῆλθεν εἰς γῆν Ἰσραήλ.</td><td>and entered into *the* land of Israel</td></tr>
+</table>
+<hr>
+ἀκούσας δὲ ὅτι Ἀρχέλαος βασιλεύει τῆς Ἰουδαίας ἀντὶ τοῦ πατρὸς αὐτοῦ Ἠρῴδου ἐφοβήθη ἐκεῖ ἀπελθεῖν·<hr><b>matthew 2:22</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>δὲ ἀκούσας ὅτι</td><td>but having heard that</td></tr>
+<tr><td>Ἀρχέλαος βασιλεύει τῆς Ἰουδαίας</td><td>Archelaus reigns *over* Judea</td></tr>
+<tr><td>ἀντὶ τοῦ πατρὸς αὐτοῦ</td><td>in place of his *father*</td></tr>
+<tr><td>Ἠρῴδου ἐφοβήθη ἐκεῖ ἀπελθεῖν·</td><td>Herod feared there to go</td></tr>
+<tr><td>δὲ χρηματισθεὶς κατ’ ὄναρ</td><td>but having been warned by *a* dream</td></tr>
+<tr><td>ἀνεχώρησεν εἰς</td><td>he departed into</td></tr>
+<tr><td>τὰ μέρη τῆς Γαλιλαίας,</td><td>the regions of *the* Galilee</td></tr>
+</table>
+<hr>
+χρηματισθεὶς δὲ κατ’ ὄναρ ἀνεχώρησεν εἰς τὰ μέρη τῆς Γαλιλαίας, καὶ ἐλθὼν κατῴκησεν εἰς πόλιν λεγομένην Ναζαρέτ· ὅπως πληρωθῇ τὸ ῥηθὲν διὰ τῶν προφητῶν ὅτι Ναζωραῖος κληθήσεται.<hr><b>matthew 2:23</b><br><hr>
+<table><tr><th>Greek</th><th>Gloss</th></tr>
+<tr><td>καὶ ἐλθὼν κατῴκησεν</td><td>and having come he dwelt</td></tr>
+<tr><td>εἰς πόλιν λεγομένην Ναζαρέτ·</td><td>into a city called Nazareth</td></tr>
+<tr><td>ὅπως πληρωθῇ τὸ</td><td>so that it might be fulfilled the</td></tr>
+<tr><td>ῥηθὲν διὰ τῶν προφητῶν</td><td>said through the *words of the* prophets</td></tr>
+<tr><td>ὅτι Ναζωραῖος κληθήσεται.</td><td>that *he shall be called* a Nazarene</td></tr>
+</table>
+<div class="chapter-links">
+<a href="1.html" class="chapter-link">&lt;-</a>
+<a href="1.html" class="chapter-link">1</a>
+<a href="2.html" class="selected-chapter-link">2</a>
+<a href="3.html" class="chapter-link">3</a>
+<a href="4.html" class="chapter-link">4</a>
+<a href="5.html" class="chapter-link">5</a>
+<a href="6.html" class="chapter-link">6</a>
+<a href="7.html" class="chapter-link">7</a>
+<a href="8.html" class="chapter-link">8</a>
+<a href="9.html" class="chapter-link">9</a>
+<a href="10.html" class="chapter-link">10</a>
+<a href="11.html" class="chapter-link">11</a>
+<a href="12.html" class="chapter-link">12</a>
+<a href="13.html" class="chapter-link">13</a>
+<a href="14.html" class="chapter-link">14</a>
+<a href="15.html" class="chapter-link">15</a>
+<a href="16.html" class="chapter-link">16</a>
+<a href="17.html" class="chapter-link">17</a>
+<a href="18.html" class="chapter-link">18</a>
+<a href="19.html" class="chapter-link">19</a>
+<a href="20.html" class="chapter-link">20</a>
+<a href="21.html" class="chapter-link">21</a>
+<a href="22.html" class="chapter-link">22</a>
+<a href="23.html" class="chapter-link">23</a>
+<a href="24.html" class="chapter-link">24</a>
+<a href="25.html" class="chapter-link">25</a>
+<a href="26.html" class="chapter-link">26</a>
+<a href="27.html" class="chapter-link">27</a>
+<a href="28.html" class="chapter-link">28</a>
+<a href="3.html" class="chapter-link">-&gt;</a>
+</div>
+</div>
+</body></html>

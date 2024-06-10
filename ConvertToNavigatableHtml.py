@@ -11,11 +11,10 @@ from collections import defaultdict
 # input_file_filter = "auto_\\d+-([^_]+).json"
 # directory_template = "/data/auto_just_greek/{book}/{chapter}.html"
 
-input_file_filter = "auto_\\d+-([^_]+)_ChatGPT_English.json"
-directory_template = "/docs/auto_ChatGPT_English/{book}/{chapter}.html"
 
 
-def relative_link( other_book, other_chapter, current_book, current_chapter ):
+
+def relative_link( other_book, other_chapter, current_book, current_chapter, directory_template ):
     other_file = directory_template.format( book=other_book, chapter=other_chapter )
     this_file = directory_template.format( book=current_book, chapter=current_chapter )
 
@@ -40,7 +39,7 @@ def collect_files( input_folder, input_file_filter ):
     return filename_to_json
 
 # %%
-def index_files_into_book_chapter_verse( filename_to_json ):
+def index_files_into_book_chapter_verse( filename_to_json, input_file_filter ):
     pattern = re.compile(input_file_filter)
     book_chapter_verse_to_sentence = defaultdict( lambda: defaultdict( lambda: defaultdict( list ) ) )
 
@@ -63,7 +62,7 @@ def number_of_sentences( _data ):
 def number_of_chunks( _data, verse_index ):
     return len(_data[verse_index]['chunks'])
 # %%
-def generate_output_files( book_chapter_verse_to_sentence ):
+def generate_output_files( book_chapter_verse_to_sentence, directory_template ):
     for book_name, chapter_verse_to_sentence in book_chapter_verse_to_sentence.items():
         for chapter_number, verse_to_sentence in chapter_verse_to_sentence.items():
             #we have a page per chapter.
@@ -232,13 +231,13 @@ li:hover ul {
                         menu_class = ""
                     other_chapter = 1
                     if other_chapter in other_chapter_verse_to_sentence:
-                        other_filename = relative_link( other_book_name, other_chapter, book_name, chapter_number )
+                        other_filename = relative_link( other_book_name, other_chapter, book_name, chapter_number, directory_template )
                         fout.write( f" <li class=\"menu_item\"><a href=\"{other_filename}\" class=\"{menu_class}\">{other_book_name}</a>\n" )
                     else:
                         fout.write( f" <li class=\"menu_item\"><a href=\"#\" class=\"{menu_class}\">{other_book_name}</a>\n" )
                     fout.write( f"  <ul class=\"submenu\">\n" )
                     for other_chapter, other_verse_to_sentence in other_chapter_verse_to_sentence.items():
-                        other_filename = relative_link( other_book_name, other_chapter, book_name, chapter_number )
+                        other_filename = relative_link( other_book_name, other_chapter, book_name, chapter_number, directory_template )
                         if other_book_name == book_name and other_chapter == chapter_number:
                             submenu_class = "current-book-chapter"
                         else:
@@ -273,7 +272,7 @@ li:hover ul {
                         chapter_link_class = "selected-chapter-link"
                     else:
                         chapter_link_class = "chapter-link"
-                    other_filename = relative_link( book_name, other_chapter, book_name, chapter_number )
+                    other_filename = relative_link( book_name, other_chapter, book_name, chapter_number, directory_template )
                     chapter_links +=  f"<a href=\"{other_filename}\" class=\"{chapter_link_class}\">{other_chapter}</a>\n"
 
                 if next_link:
@@ -407,9 +406,24 @@ li:hover ul {
 
                 fout.write( "</body></html>\n" )
 # %%
-test = collect_files( "./data", input_file_filter )
-indexed_test = index_files_into_book_chapter_verse( test )
-generate_output_files( indexed_test )
+
+def do_it( input_file_filter, directory_template ):
+    test = collect_files( "./data", input_file_filter )
+    indexed_test = index_files_into_book_chapter_verse( test, input_file_filter )
+    generate_output_files( indexed_test, directory_template )
+
+
+
+do_it( input_file_filter  = "auto_\\d+-([^_]+)_ChatGPT_English_gpt4o.json",
+       directory_template = "/docs/auto_ChatGPT_English/{book}/{chapter}.html" )
+
+do_it( input_file_filter  = "auto_\\d+-([^_]+)_ChatGPT_English_gpt4.json",
+       directory_template = "/docs/auto_ChatGPT_English_gpt4/{book}/{chapter}.html" )
+
+do_it( input_file_filter  = "auto_\\d+-([^_]+)_ChatGPT_English_gpt4turbo.json",
+       directory_template = "/docs/auto_ChatGPT_English_gpt4turbo/{book}/{chapter}.html" )
+
+
 # %%
 
 #TODO fix it so that you can select even without a scroll wheel if the sub menu goes off the bottom of the page.
