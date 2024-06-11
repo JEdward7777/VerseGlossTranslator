@@ -285,7 +285,13 @@ def get_output_data( data, input_data_basename, book_name, bible_usfx, output_la
     if output_callback:
         output_callback( "Starting..." )
 
-    if not host_local:
+    if host_local == "ollama":
+        import ollama
+        def client_or_pipe( messages ):
+            response = ollama.chat( model = model_name, messages = messages )
+            return response['message']['content']
+
+    elif not host_local:
         from openai import OpenAI
         open_ai = OpenAI( api_key = openai_api_key )
         def client_or_pipe( messages ):
@@ -371,7 +377,7 @@ def get_output_data( data, input_data_basename, book_name, bible_usfx, output_la
                             output_callback( f"Estimated end time: {time.strftime('%Y-%m-%d %I:%M:%S %p', time.localtime(end_estimation_time))}  Arrange count: {verse_index}/{number_of_verses(data)}" )
 
                 #catch ValueError
-                except ValueError as e:
+                except (ValueError, AttributeError) as e:
                     process_out.write( f"Error processing verse {verse_index} chunk {chunk_index}: {e}\n" )
                     process_out.flush()
                     if output_callback:
@@ -412,18 +418,17 @@ if __name__ == "__main__":
         _openai_api_key = getpass.getpass("OpenAI api key?")
 
 
-    _host_local = False
 
     _output_suffix = ""
-    if not _host_local:
-        #_model_name = "gpt-3.5-turbo"
-        #_model_name = "gpt-4"; _output_suffix = "_gpt4"
-        #_model_name = "gpt-4-1106-preview"
-        #_model_name = "gpt-4o"; _output_suffix = "_gpt4o"
-        _model_name = "gpt-4-turbo"; _output_suffix = "_gpt4turbo"
-    else:
-        _model_name = "teknium/OpenHermes-2.5-Mistral-7B"
 
+    #_host_local = False; _model_name = "gpt-3.5-turbo" ; _output_suffix = "_gpt3_5_turbo"
+    #_host_local = False; _model_name = "gpt-4"; _output_suffix = "_gpt4" 
+    #_host_local = False; _model_name = "gpt-4-1106-preview" ; _output_suffix = "_gpt4_1106"
+    #_host_local = False; _model_name = "gpt-4o"     ; _output_suffix = "_gpt4o"
+    #_host_local = False; _model_name = "gpt-4-turbo"; _output_suffix = "_gpt4turbo"
+    #_host_local = True; _model_name = "teknium/OpenHermes-2.5-Mistral-7B" ; _output_suffix = "_openhermies"
+    _host_local = "ollama"; _model_name = "openhermes:latest"; _output_suffix = "_openhermes"
+                                           
 
     #client = OpenAI( api_key = _openai_api_key )
 
