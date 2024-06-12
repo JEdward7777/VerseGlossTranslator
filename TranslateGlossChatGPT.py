@@ -346,7 +346,7 @@ def get_output_data( data, input_data_basename, book_name, bible_usfx, output_la
                     response = generate_gloss_for( data, verse_index, chunk_index, book_name, system_message, bible_usfx, model_name, bcv_template, exclude_source_gloss, output_language, extra_ChatGPT_instructions, client_or_pipe, host_local )
 
                     process_out.write( f"Response:\n{response}\n\n" )
-
+                    #print( f"Response:\n{response}\n\n" )
 
                 
                     sources = data[verse_index]['chunks'][chunk_index]['source']
@@ -426,8 +426,9 @@ if __name__ == "__main__":
     #_host_local = False; _model_name = "gpt-4-1106-preview" ; _output_suffix = "_gpt4_1106"
     #_host_local = False; _model_name = "gpt-4o"     ; _output_suffix = "_gpt4o"
     #_host_local = False; _model_name = "gpt-4-turbo"; _output_suffix = "_gpt4turbo"
-    #_host_local = True; _model_name = "teknium/OpenHermes-2.5-Mistral-7B" ; _output_suffix = "_openhermies"
-    _host_local = "ollama"; _model_name = "openhermes:latest"; _output_suffix = "_openhermes"
+    _host_local = True; _model_name = "teknium/OpenHermes-2.5-Mistral-7B" ; _output_suffix = "_openhermes_hf"
+    #_host_local = "ollama"; _model_name = "openhermes:latest"; _output_suffix = "_openhermes"
+    #_host_local = "ollama"; _model_name = "llama3:latest"; _output_suffix = "_llama3"
                                            
 
     #client = OpenAI( api_key = _openai_api_key )
